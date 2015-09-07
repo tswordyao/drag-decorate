@@ -26,7 +26,7 @@
             <div class="mol-tag" id="tag-double-good" draggable="true" >双宝贝模块</div>
           </li>
           <li id="li-03">
-            <div class="mol-tag" id="tag-single-pic" draggable="true"  >单图片模块</div>
+            <div class="mol-tag" id="tag-single-pic" draggable="true"  >焦点图模块</div>
           </li>
           <li id="li-04">
             <div class="mol-tag" id="tag-double-pic" draggable="true"  >双图片模块</div>
@@ -88,8 +88,6 @@
    </div>
 
 
-   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#goods-modal" id="show-good-list">选择宝贝</button>
-
    <!-- 模态框（Modal） -->
    <div class="modal fade" id="goods-modal" tabindex="-1" role="dialog">
        <div class="modal-dialog">
@@ -116,11 +114,12 @@
                    <div id="good-checked-list"></div>
                </div>
                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                   <button type="button" class="btn btn-primary">提交</button>
+                   <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goods_list_cls()">取消</button>
+                   <button type="button" class="btn btn-success" data-dismiss="modal" onclick="checked_done(this)" id="checked_done">提交</button>
                </div>
            </div><!-- /.modal-content -->
        </div><!-- /.modal -->
+   </div>
 
 
     <!-- 模板 -->
@@ -162,28 +161,46 @@
     <script type="text/template" id="temp-double-pic">
     <div class="mol-wrap" molid="double-pic">
       <div class="double-pic-wrap-one">
-        <img src="good02.jpg" alt="">
-        <p>图片描述1</p>
+        <img src="{imgsrc}" alt="">
+        <p>{desc}</p>
       </div>
       <div class="double-pic-wrap-one">
-        <img src="good01.jpg" alt="">
-        <p>图片描述2</p>
+        <img src="{imgsrc2}" alt="">
+        <p>{desc2}</p>
       </div>
     </div>
     </script>
 
     <script type="text/template" id="temp-word-pic">
     <div class="mol-wrap" molid="word-pic">
-      <p>图片描述文字,一些文字,怕怕拉拉,什么的<br><br>或者,图片可以做成100%, 文字遮罩在图片左上角<br>这需要图片设计配合,左上角统一色调或留白</p>
-      <img src="good03.jpg" alt="">
+      <p>{desc}</p>
+      <img src="{imgsrc}" alt="">
     </div>
     </script>
 
-    <script type="text/template" id="temp-single-good-list">
+   <script type="text/template" id="temp-title-only">
+       <a class="mol-wrap" molid="title-only" ng-href="{href}">
+           <h3>{title}</h3>
+       </a>
+   </script>
+
+   <script type="text/template" id="temp-word-only">
+       <a class="mol-wrap" molid="word-only" ng-href="{href}">
+           <p>{desc}</p>
+       </a>
+   </script>
+
+   <script type="text/template" id="temp-tel-only">
+       <a class="mol-wrap" molid="tel-only" ng-href="{href}">
+           <img src="tel.png"  alt=""/><b>{tel}</b>
+       </a>
+   </script>
+
+   <script type="text/template" id="temp-single-good-list">
        <div class="mol-wrap" molid="single-good-list">
            <br>宝贝列表,每行一个宝贝,依次排列<br><br>请点击为其配置宝贝
        </div>
-    </script>
+   </script>
 
     <script type="text/template" id="temp-double-good-list">
        <div class="mol-wrap" molid="double-good-list">
@@ -215,6 +232,14 @@
     </div>
     </script>
 
+   <script type="text/template" id="temp-ctrl-word-pic">
+       <div class="mol-ctrl-wrap" ctrlid="word-pic">
+           <input type="text"   mapid="desc"       placeholder="输入文字描述">
+           <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <input type="text"   mapid="href"       placeholder="输入链接转向地址">
+       </div>
+   </script>
+
     <script type="text/template" id="temp-ctrl-single-pic">
     <div class="mol-ctrl-wrap" ctrlid="single-pic">
       <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
@@ -223,17 +248,49 @@
     </div>
     </script>
 
+   <script type="text/template" id="temp-ctrl-double-pic">
+       <div class="mol-ctrl-wrap" ctrlid="double-pic">
+           <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <input type="text"   mapid="href"       placeholder="输入链接转向地址">
+           <input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+           <br><hr><br>
+           <input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
+           <input type="text"   mapid="href2"      placeholder="输入链接转向地址">
+           <input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
+       </div>
+   </script>
+
+   <script type="text/template" id="temp-ctrl-word-only">
+       <div class="mol-ctrl-wrap" ctrlid="word-only">
+           <textarea   mapid="desc"    placeholder="输入文字描述"></textarea>
+       </div>
+   </script>
+
+   <script type="text/template" id="temp-ctrl-title-only">
+       <div class="mol-ctrl-wrap" ctrlid="title-only">
+           <input type="text"   mapid="title"       placeholder="输入标题文字">
+       </div>
+   </script>
+
+   <script type="text/template" id="temp-ctrl-tel-only">
+       <div class="mol-ctrl-wrap" ctrlid="tel-only">
+           <input type="text"   mapid="tel"       placeholder="输入电话">
+       </div>
+   </script>
+
    <script type="text/template" id="temp-ctrl-single-good-list">
        <div class="mol-ctrl-wrap" ctrlid="single-good-list">
            <div class="show-checked-good"></div>
-           <button class="to-check-good1">选择宝贝</button>
+           <button class="btn btn-primary show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+           <!--<button class="btn btn-success to-check-good">确定</button>-->
        </div>
    </script>
 
    <script type="text/template" id="temp-ctrl-double-good-list">
        <div class="mol-ctrl-wrap" ctrlid="double-good-list">
             <div class="show-checked-good"></div>
-           <button class="to-check-good2">选择宝贝</button>
+           <button class="btn btn-primary show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+           <!--<button class="btn btn-success to-check-good2">确定</button>-->
        </div>
    </script>
 

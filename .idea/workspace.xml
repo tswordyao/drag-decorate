@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good09.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good21.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good22.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good23.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good24.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/good25.jpg" />
-      <change type="DELETED" beforePath="D:\@code important\decorate\good05.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hot2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hot3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tel.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.css" afterPath="$PROJECT_DIR$/decorate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.js" afterPath="$PROJECT_DIR$/decorate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drag decorate.html" afterPath="$PROJECT_DIR$/drag decorate.html" />
@@ -44,21 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/decorate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="289" column="41" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decorate.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decorate.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decorate.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.8682766">
-              <caret line="374" column="22" selection-start-line="374" selection-start-column="22" selection-end-line="374" selection-end-column="22" />
+            <state vertical-scroll-proportion="-23.275862">
+              <caret line="164" column="12" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -67,8 +42,18 @@
       <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drag decorate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.125">
-              <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+            <state vertical-scroll-proportion="-15.625">
+              <caret line="167" column="19" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/decorate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47969264">
+              <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -90,9 +75,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/decorate.js" />
-        <option value="$PROJECT_DIR$/drag decorate.html" />
         <option value="$PROJECT_DIR$/decorate.css" />
+        <option value="$PROJECT_DIR$/drag decorate.html" />
+        <option value="$PROJECT_DIR$/decorate.js" />
       </list>
     </option>
   </component>
@@ -257,26 +242,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/decorate.js">
+    <entry file="file://$PROJECT_DIR$/decorate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="289" column="41" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
+        <state vertical-scroll-proportion="-23.275862">
+          <caret line="164" column="12" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/drag decorate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125">
-          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="167" column="19" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decorate.css">
+    <entry file="file://$PROJECT_DIR$/decorate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8682766">
-          <caret line="374" column="22" selection-start-line="374" selection-start-column="22" selection-end-line="374" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.47969264">
+          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
           <folding />
         </state>
       </provider>
