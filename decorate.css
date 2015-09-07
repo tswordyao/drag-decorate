@@ -287,8 +287,94 @@ a.double-good-wrap-one{
     border: 1px solid gray;
     border-radius: 3px;
 }
-#goodlist-forcheck input{
+#goods-modal>.modal-dialog{
+    width:960px;
+}
+#goodlist-forcheck2 input{
     margin: 5px 10px;
     height: 30px;
     border-radius: 3px;
+}
+.good-list{
+    height:480px;
+}
+.good-list>.good-cell{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    height:62px;
+    width: 162px;
+    overflow: hidden;
+    clear: both;
+}
+.good-list>.good-cell>img{
+   width:60px;
+   border-radius: 5px;
+}
+.good-list>.good-cell>p.good-name{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:90px;
+    height:40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.good-list>.good-cell>p.good-price{
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    width:90px;
+    line-height: 20px;
+    background: #fff;
+    border-radius: 5px;
+    color:maroon;
+}
+.good-tag{
+    position: relative;
+    display: inline-block;
+    margin: 0px 15px;
+    width:60px;
+    height: 60px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+.good-tag>img{
+    width: 100%;
+}
+.good-tag>i{
+    position: absolute;
+    top:-10px;
+    right: -10px;
+    display: block;
+    width: 25px;
+    line-height: 20px;
+    background: #fff;
+    border: 2px solid gray;
+    border-radius:50% ;
+    text-align: center;
+    cursor: pointer;
+}
+
+.good-list-pager{
+    height:24px;
+    margin: 5px 5px 20px 5px;
+    overflow: hidden;
+}
+.good-list-pager>a{
+    display: inline-block;
+    border: 1px solid gray;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 3px;
+}
+.good-list-pager>input{
+    width: 60px;
+    height: 20px!important;
 }

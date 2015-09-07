@@ -215,13 +215,13 @@ $('#ctrl-area [type=submit]').on('click',function(e){
 });
 
 //先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是选取的宝贝数据
-var datas=[
-    {imgsrc:'good01.jpg',href:'',price:10,goodname:'good01'},
-    {imgsrc:'good02.jpg',href:'',price:20,goodname:'good02'},
-    {imgsrc:'good03.jpg',href:'',price:30,goodname:'good03'},
-    {imgsrc:'good04.jpg',href:'',price:40,goodname:'good04'},
-    {imgsrc:'good05.jpg',href:'',price:50,goodname:'good05'},
-    {imgsrc:'good06.jpg',href:'',price:60,goodname:'good06'}
+window.datas=[
+    {imgsrc:'good01.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+    {imgsrc:'good02.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
+    {imgsrc:'good03.jpg',href:'',price:30,goodname:'韩版2015春秋款秋款秋装女宝宝'},
+    {imgsrc:'good04.jpg',href:'',price:40,goodname:'夏季新款童裤女童棉麻短裤无烟'},
+    {imgsrc:'good05.jpg',href:'',price:50,goodname:'巴布泡泡 松紧系带 毛圈 蓬松'},
+    {imgsrc:'good06.jpg',href:'',price:60,goodname:'韩版2015春秋款秋款秋装女godd'}
 ];
 
 //数组填充宝贝列表
@@ -261,8 +261,32 @@ function goods_list_instance(datas,rowCount){
 }
 
 $('#ctrl-area').on('click','.to-check-good2',function(){
-                    goods_list_instance(datas,2);
+                    goods_list_instance(window.datas,2);
                 })
                 .on('click','.to-check-good1',function(){
-                    goods_list_instance(datas,1);
+                    goods_list_instance(window.datas,1);
                 })
+
+$('#show-good-list').on('click',function(){
+    var html=$('#temp-good-cell')[0].innerHTML;
+    var goodList=$('.good-list')[0];
+    var good;
+    window.datas.forEach(function(obj,i){
+        good=$(html.replace('{goodname}',obj['goodname'])
+                .replace('{imgsrc}',obj['imgsrc'])
+                .replace('{href}',obj['href'])
+                .replace('{price}',obj['price']));
+        goodList.appendChild(good[0]);
+    })
+});
+
+function check_it(good){
+    var good_tag=$('<div class="good-tag">');
+    $(good).find('img').clone().appendTo(good_tag);
+    good_tag.append('<i>&times;</i>');
+    $('#good-checked-list').append(good_tag);
+}
+
+$('#good-checked-list').on('click','i',function(){
+    $(this).parent().remove();
+});

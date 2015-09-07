@@ -83,12 +83,55 @@
     <div class="clear"></div>
   </div>
 
-   <div id="goodlist-forcheck" class="modle-content">
-       <div class="toolbar"><input type="text" placeholder="输入宝贝关键字"/><a href="" class="btn">搜索</a></div>
-       <div class="goodlist"></div>
+   <div id="goodlist-forcheck " class="modal fade  my-modal modle-content">
+
    </div>
 
+
+   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#goods-modal" id="show-good-list">选择宝贝</button>
+
+   <!-- 模态框（Modal） -->
+   <div class="modal fade" id="goods-modal" tabindex="-1" role="dialog">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   <h4 class="modal-title" id="myModalLabel">宝贝选择标题</h4>
+               </div>
+               <div class="modal-body" id="goodlist-forcheck2" >
+                   <div class="toolbar"><input type="text" placeholder="输入宝贝关键字"/><button href="" class="btn btn-search">搜索</button></div>
+                   <div class="good-list">
+                   </div>
+                   <div class="good-list-pager">
+                       <a href="" class="go-first">|«</a>
+                       <a href="" class="go-prev">«</a>
+                       <a href="" class="page-clicker">1</a>
+                       <a href="" class="page-clicker">2</a>
+                       <a href="" class="page-clicker">3</a>
+                       ...
+                       <a href="" class="go-next">»</a>
+                       <a href="" class="go-last">»|</a>
+                       共&nbsp;<i>8</i>&nbsp;页
+                   </div>
+                   <div id="good-checked-list"></div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                   <button type="button" class="btn btn-primary">提交</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal -->
+
+
     <!-- 模板 -->
+   <script type="text/template" id="temp-good-cell">
+   <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
+       <img src="{imgsrc}" alt="" class=""/>
+       <p class="good-name">{goodname}</p>
+       <p class="good-price">￥{price}</p>
+   </a>
+   </script>
+
     <script type="text/template" id="temp-single-good">
     <a class="mol-wrap" molid="single-good" ng-href="{href}">
       <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
@@ -194,6 +237,9 @@
        </div>
    </script>
 
+
+   <link rel="stylesheet" href="bootstrap.css">
+   <script src="bootstrap.min.js"></script>
    <script src="decorate.js"></script>
  </body>
 </html>
