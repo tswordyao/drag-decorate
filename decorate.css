@@ -9,15 +9,18 @@ ul,li {list-style-type : none}
 #main{
     margin: 10px auto;
     padding: 10px;
-    width: 1200px;
+    width: 100%;
+    min-height:820px;
     overflow: hidden;
     background: #f2f2f2;
 }
 
 #model-list{
-    float: left;
+    position: absolute;
+    top:5px;
+    left:5px;
     width: 240px;
-    height: 860px;
+    height: 800px;
     border: 1px solid #bbc;
     border-radius:5px ;
 }
@@ -25,8 +28,7 @@ ul,li {list-style-type : none}
 #show-mobile{
     display: block;
     position:relative;
-    margin-left: 50px;
-    float: left;
+    margin: 0 auto;
     width: 400px;
     min-height: 720px;
     overflow: auto;
@@ -165,11 +167,11 @@ ul,li {list-style-type : none}
     width:49%;
 }
 #ctrl-area{
-    position: relative;
-    float: left;
-    margin-left: 50px;
+    position: absolute;
+    top:5px;
+    right:5px;
     width:360px;
-    min-height:860px;
+    min-height:800px;
     border: 1px solid #bbc;
     border-radius:5px ;
 }
@@ -226,20 +228,6 @@ a.double-good-wrap-one{
 .assertive{
     border: 2px solid #f21;
 }
-#btn-info,#btn-count{
-    display: inline-block;
-    width:360px;
-    height: 36px;
-    margin: 5px;
-    border-radius:10px;
-    background: #ddf;
-    outline:none;
-}
-#btn-wrap{
-    width: 1200px;
-    margin: 0 auto;
-}
-
 [molid="double-good-list"]>div{
     width:100%;
 }
@@ -413,4 +401,17 @@ a.double-good-wrap-one{
 }
 .mol-wrap[molid="word-only"]{
     min-height: 90px;
+}
+.alert-assertive{
+    position: fixed;
+    top:0;
+    display: none;
+    width: 100%;
+    background: #fcc;
+    text-align: center;
+}
+.rows{
+    position: relative;
+    text-align: center;
+    height: 100%;
 }

@@ -12,19 +12,6 @@ window.mol_dic={
     'single-good-list':document.getElementById('temp-single-good-list').innerHTML,
     'double-good-list':document.getElementById('temp-double-good-list').innerHTML
 };
-//模板使用状态机
-window.mol_count_dic={
-    'single-good':0,
-    'double-good':0,
-    'single-pic':0,
-    'double-pic':0,
-    'word-pic':0,
-    'word-only':0,
-    'title-only':0,
-    'tel-only':0,
-    'single-good-list':0,
-    'double-good-list':0
-};
 //编辑模板映射
 window.mol_ctrl_dic={
     'single-good':document.getElementById('temp-ctrl-single-good').innerHTML,
@@ -38,6 +25,14 @@ window.mol_ctrl_dic={
     'single-good-list':document.getElementById('temp-ctrl-single-good-list').innerHTML,
     'double-good-list':document.getElementById('temp-ctrl-double-good-list').innerHTML
 };
+
+/*
+* 如果是写死在页面内的模板HTML,其实可以用function(id){return $(id).html();}来实现,更简洁
+* 为什么写成映射形式?
+* 因为模板数据可以方便地改为从后台配置传输,更大的灵活性
+* eof yyf 2015.09
+*/
+
 //模板映射默认值
 window.mol_val_dic={
     "val-single-good":{
@@ -85,13 +80,36 @@ window.mol_val_dic={
     },
 
 };
+//模板使用数限制状态机
+window.mol_count_dic={
+    'single-good':1,
+    'double-good':1,
+    'single-pic':2,
+    'double-pic':1,
+    'word-pic':1,
+    'word-only':1,
+    'title-only':1,
+    'tel-only':1,
+    'single-good-list':1,
+    'double-good-list':1
+};
 
 //拖入的容器
 $('#show-mobile').on('drop',function(e){
     event.preventDefault();
     //console.log('drop');
+
     var transData=event.dataTransfer.getData("Text");
-    var target= $('.mol-wrap').filter('.blue-top')[0];//console.info(target);
+    var target= $('.mol-wrap').filter('.blue-top')[0];
+
+    if(!window.mol_count_dic[transData.replace('tag-','')]){
+        $('.alert').fadeIn(300,function(){
+            setTimeout((function(){
+               $(this).fadeOut(500);
+            }).bind(this),1500);
+        });
+        return false;
+    }
 
     //获取模板HTML和默认数据, 并实例化
     var html=window.mol_dic[transData.replace('tag-','')];
@@ -105,7 +123,7 @@ $('#show-mobile').on('drop',function(e){
     target?this.insertBefore(div,target):this.appendChild(div);
 
     //更新计数器, 去除插入位置提示条, 重置右侧编辑区
-    window.mol_count_dic[div.getAttribute('molid')]+=1;
+    window.mol_count_dic[div.getAttribute('molid')]--;
     $('.mol-wrap').removeClass('blue-top');
     $('#ctrl-wrap')[0].innerHTML='';
 })
@@ -135,15 +153,14 @@ $('.mol-tag').on('selectstart',function(e){
     });
 
 
-//模板排列信息
+//提取模板排列信息
 $('#btn-info').click(function(){
     var json=[];
     var mols=$('#show-mobile').find('.mol-wrap');
     mols.each(function(v,i){
         json.push({
             'molid':this.getAttribute('molid'),
-            'imgsrc':$(this).find('img')[0].getAttribute('src'),
-            'goodname':$(this).find('p')[0].innerHTML
+            'native':JSON.stringify($(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')])
         })
     });
     console.table(json);
@@ -230,6 +247,9 @@ $('#ctrl-area [type=submit]').on('click',function(e){
     });
     //更新模板默认数据和选中块数据
     window.mol_val_dic['val-'+molid]=obj;
+    //保存原始数据
+    molobj.data('native',obj);
+    //实例化HTML内容
     for(var k in obj){
         html=html.replace('{'+k+'}',obj[k]);
     }
@@ -237,7 +257,7 @@ $('#ctrl-area [type=submit]').on('click',function(e){
     molobj.html( $(html)[0].innerHTML+ '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
 });
 
-//先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是选取的宝贝数据
+//先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
 window.datas=[
     {goodid:1001,imgsrc:'good01.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
     {goodid:1002,imgsrc:'good02.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
@@ -286,9 +306,9 @@ function goods_list_instance(datas,rowCount){
     var html,node_good,node_wrap=$(html_wrap)[0];
     datas.forEach(function(obj,i){
         html=html_good.replace('{goodname}',obj['goodname'])
-                        .replace('{imgsrc}',obj['imgsrc'])
-                        .replace('{href}',obj['href'])
-                        .replace('{price}',obj['price']);
+                      .replace('{imgsrc}',obj['imgsrc'])
+                      .replace('{href}',obj['href'])
+                      .replace('{price}',obj['price']);
         node_good=$(html)[0];
         if(rowCount==1){
             div[0].appendChild(node_good);
@@ -299,14 +319,16 @@ function goods_list_instance(datas,rowCount){
             }
             node_wrap.appendChild(node_good);
             //每装两个good,一个包裹饱和,插入到div
-            if(i%2!=0){
+            if(i%2!=0||i==datas.length-1){
                 div[0].appendChild(node_wrap);
             }
         }
     });
-    //console.log(div.html());
+    // 找到要应用的元素
     molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
     molobj.html( div.html() +  '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
+    // 同时保存原始数据
+    molobj.data('native',datas);
 }
 
 $('#ctrl-area').on('click','.to-check-good2',function(){
@@ -328,7 +350,7 @@ $('#ctrl-area').on('click','.to-check-good2',function(){
                                     .replace('{price}',obj['price']));
                         good.data('good-info',obj);
                         goodList.appendChild(good[0]);
-                    })
+                    });
                 });
 
 function check_it(good){
@@ -339,7 +361,6 @@ function check_it(good){
     good_tag.data('good-info',goodInfo);
     window.checkedGoods.push(goodInfo);
     $('#good-checked-list').append(good_tag);
-
 }
 
 function goods_list_cls(){
