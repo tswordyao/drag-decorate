@@ -27,6 +27,14 @@ window.mol_ctrl_dic={
 };
 //提示语映射
 window.mol_tip_dic={
+    'single-good':'这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
+    'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
+    'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
+    'double-pic':'并列图片,一般用来做品牌区域,块状LOGO图',
+    'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
+    'title-only':'纯文字的标题,用于分段标注',
+    'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
+    'tel-only':'您的联系电话,写上电话卖家更容易联系到你',
     'single-good-list':'这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
     'double-good-list':'这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
 }
@@ -63,16 +71,16 @@ window.mol_val_dic={
     },
     "val-single-pic":{
         href:'www.163.com',
-        imgsrc:'hot.png',
+        imgsrc:'hot3.jpg',
         desc:'婴童夏装换季清仓中! 点击进入专区!',
     },
     "val-double-pic":{
         href:'www.163.com',
-        imgsrc:'good04.jpg',
-        desc:'这是第一张图片的描述,可修改',
+        imgsrc:'area-logo-01.jpg',
+        desc:'LOGO AREA<br>奶粉专区',
         href2:'www.163.com',
-        imgsrc2:'good02.jpg',
-        desc2:'这是第二张图片的描述,可修改',
+        imgsrc2:'area-logo-02.jpg',
+        desc2:'LOGO AREA<br>母婴专区',
     },
     "val-title-only":{
         title:'全场宝贝包邮热销中!'
@@ -136,11 +144,14 @@ window.checkedGoods=[];
 
 window.templates= {
     'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'tel-only'],
-    'temp02': ['single-pic', 'title-only', 'single-good', 'double-good-list', 'tel-only'],
+    'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'tel-only'],
     'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
 };
 
 function autoAppendNodes(tempid){
+    if(typeof tempid=='undefined'){
+        return false;
+    }
     var molids=window.templates[tempid];
     var html,defaultVals, div,i, k,mobile=$('#show-mobile')[0];
     //获取模板HTML和默认数据, 并实例化
@@ -219,9 +230,15 @@ $('.mol-tag').on('selectstart',function(e){
     })
     .on('dragstart',function(e){
         //console.log('\ndragstart-----');
-        $('.mol-tip').fadeIn(800).html(function(i,c) {
-            return c + window.mol_tip_dic[this.id.replace('tag-', '')]
-        }.bind(this));
+        var the=this;
+        $('.mol-tip').show().animate({top:$(this).parent().index()*77,opacity:0.9},function(){
+            $(this).html(function(i,c) {
+                return c + window.mol_tip_dic[this.id.replace('tag-', '')]
+            }.bind(the));
+        });
+        //$('.mol-tip').fadeIn(800).html(function(i,c) {
+        //    return c + window.mol_tip_dic[this.id.replace('tag-', '')]
+        //}.bind(this));
         event.dataTransfer.setData("Text",this.id);
     })
     .on('dragend',function(e){
@@ -238,7 +255,7 @@ $('#btn-info').click(function(){
     mols.each(function(v,i){
         json.push({
             'molid':this.getAttribute('molid'),
-            'native':JSON.stringify($(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')])
+            'native':$(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')]
         })
     });
     console.table(json);
@@ -291,6 +308,7 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
     //选中块开始编辑
     .on('click','.mol-wrap',function(e){
         var molid=this.getAttribute('molid');
+        var obj=$(this).data('native')||window.mol_val_dic['val-'+molid];
         var key;
 
         //高亮当前选中块
@@ -302,9 +320,9 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
         //载入节点对应的编辑模块
                          .html( window.mol_ctrl_dic[molid] )
         //编辑模块再载入节点当前数据
-                        .find('input,textarea').each(function(){
+                        .find('[type=text],textarea').each(function(){
                             key=this.getAttribute('mapid')||'none';
-                            this.innerText?this.innerText=window.mol_val_dic['val-'+molid][key]:this.value=window.mol_val_dic['val-'+molid][key];
+                            this.innerText?this.innerText=obj[key]:this.value=obj[key];
                         });
     })
 
@@ -346,9 +364,9 @@ function goods_list_instance(datas,rowCount){
     molobj.data('native',datas);
 }
 
-//右侧控制区
+//右侧编辑区
 $('#ctrl-area')
-    // 手动编辑数据提交
+    // 编辑完成
     .on('click','[type=submit]',function(e){
         var molid,html,key,obj={},molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
         //获取并用键值对保存编辑区数据
@@ -359,7 +377,7 @@ $('#ctrl-area')
             this.innerText?obj[key]=this.innerText:obj[key]=this.value;
         });
         //更新模板默认数据和选中块数据
-        window.mol_val_dic['val-'+molid]=obj;
+        //window.mol_val_dic['val-'+molid]=obj;
         //保存原始数据
         molobj.data('native',obj);
         //实例化HTML内容

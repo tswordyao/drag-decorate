@@ -6,7 +6,8 @@ hr{border-color: #ccc!important;}
 #main{
     margin: 1px auto;
     padding: 1px 10px;
-    width: 100%;
+    width:100%;
+    min-width: 1280px;
     min-height:800px;
     overflow: hidden;
 }
@@ -14,7 +15,7 @@ hr{border-color: #ccc!important;}
 #model-list{
     position: absolute;
     top:0px;
-    left:0px;
+    left:10px;
     width: 240px;
     border: 1px solid #bbc;
     border-radius:5px ;
@@ -22,7 +23,7 @@ hr{border-color: #ccc!important;}
 
 #mobile-wrap{
     margin:0 auto;
-    width: 470px;
+    width: 560px;
     overflow-y: auto;
     height: 800px;
 }
@@ -126,7 +127,7 @@ hr{border-color: #ccc!important;}
 .mol-wrap{
     position: relative;
     width: 373px;
-    min-height:160px;
+    min-height:80px;
     margin: 1px;
     padding: 1px;
     /*background: pink;*/
@@ -179,7 +180,6 @@ hr{border-color: #ccc!important;}
     position: absolute;
     width:100%;
     bottom: 0;
-    padding: 5px;
     background: rgba(0,0,0,0.6);
     color: #fff;
 }
@@ -188,7 +188,7 @@ hr{border-color: #ccc!important;}
     width:49%;
 }
 #model-list,#ctrl-area{
-    min-height:770px;
+    min-height:780px;
     background: #888;
     border: 0px solid silver;
     border-radius:15px ;
@@ -197,7 +197,7 @@ hr{border-color: #ccc!important;}
 #ctrl-area{
     position: absolute;
     top:0px;
-    right:5px;
+    right:10px;
     width:460px;
 }
 #ctrl-area h2{
@@ -451,24 +451,33 @@ a.double-good-wrap-one{
 .mol-tip{
     display: none;
     position: absolute;
-    top: 200px;
+    top: 0px;
     left: 300px;
     width: 200px;
-    height: 300px;
+    height: 160px;
     padding: 15px;
     background:#ccc;
     border: 0px solid silver;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 5px 5px 5px #aaa;
     z-index: 9;
 }
 .arrow{
     position: absolute;
-    top: 60px;
+    top: 20px;
     left: -40px;
     width: 0;
     border-style:solid;
     border-width:20px 25px  20px 15px ;
     border-color:transparent #ccc transparent transparent;
     z-index: 10;
+}
+.double-pic-wrap-one{
+    position:relative;
+}
+.double-pic-wrap-one>p{
+    position: absolute;
+    color: white;
+    bottom: -5px;
+    left: 1px;
 }
