@@ -132,7 +132,7 @@ window.checkedGoods=[];
 window.templates= {
     'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'tel-only'],
     'temp02': ['single-pic', 'title-only', 'single-good', 'double-good-list', 'tel-only'],
-    'temp03': ['single-pic',  'tel-only', 'double-good', 'single-good-list','word-only'],
+    'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
 };
 
 function autoAppendNodes(tempid){
@@ -159,6 +159,7 @@ function autoAppendNodes(tempid){
 
 $('a[tempid]').on('click',function(){
     $('#show-mobile').find('.mol-wrap').remove();
+    $('#ctrl-wrap').empty();
     autoAppendNodes($(this).attr('tempid'))
 });
 

@@ -1,14 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+*{  margin: 0;  padding: 0;  }
 ul,li {list-style-type : none}
-.clear{
-    clear:both;
-}
+.clear{  clear:both;  }
+
 #main{
-    margin: 10px auto;
-    padding: 10px;
+    margin: 1px auto;
+    padding: 1px 10px;
     width: 100%;
     min-height:820px;
     overflow: hidden;
@@ -23,6 +19,14 @@ ul,li {list-style-type : none}
     height: 800px;
     border: 1px solid #bbc;
     border-radius:5px ;
+    background: gray;
+}
+
+#mobile-wrap{
+    margin:0 auto;
+    width: 460px;
+    overflow-y: auto;
+    height: 800px;
 }
 
 #show-mobile{
@@ -30,7 +34,7 @@ ul,li {list-style-type : none}
     position:relative;
     margin: 0 auto;
     width: 400px;
-    min-height: 720px;
+    min-height: 800px;
     overflow: auto;
     border: 12px ridge #ccc;
     border-right: 12px groove #ccc;
@@ -83,7 +87,7 @@ ul,li {list-style-type : none}
     border-radius:8px ;
     color:white;
     text-shadow:  0 .2px 0 rgba(255,255,255,.3);
-    box-shadow:  0px 2px 0px rgba(255,255,255,.5) inset,8px 8px 8px rgba(0,0,0,.2);
+    box-shadow:  0px 2px 0px rgba(255,255,255,.5) inset,8px 8px 8px rgba(1,1,1,.2);
     /*-webkit-tap-highlight-color: rgba(225, 225, 225, 0.498039);*/
     background-image: -webkit-linear-gradient(top, rgb(173, 218, 77), rgb(134, 184, 70));
     background-origin: padding-box;
@@ -170,10 +174,11 @@ ul,li {list-style-type : none}
     position: absolute;
     top:5px;
     right:5px;
-    width:360px;
+    width:460px;
     min-height:800px;
     border: 1px solid #bbc;
     border-radius:5px ;
+    background:gray;
 }
 #ctrl-area>.submit-reset-wrap{
     margin: 10px 5px;
@@ -186,13 +191,16 @@ ul,li {list-style-type : none}
     margin-left: 15px;
     border-radius:5px ;
 }
+#ctrl-area label{
+    color:white;
+}
 .mol-ctrl-wrap{
     position: relative;
     padding: 10px;
 }
 
 .mol-ctrl-wrap>input[type=text],.mol-ctrl-wrap>input[type=number]{
-    display: block;
+    display: inline-block;
     height:32px;
     width:296px;
     padding: 2px 5px;

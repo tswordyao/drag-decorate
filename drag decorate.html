@@ -62,7 +62,8 @@
             </li>
             </ul>
 
-            <div id="show-mobile"  class="col-lg-4-" data-mcs-theme="dark">
+            <div id="mobile-wrap">
+                <div id="show-mobile"  class="col-lg-4-" data-mcs-theme="dark">
                 <div class="iphone-head"><i></i></div>
                 <div id="store-head">
                     <!--<img src="store-logo.jpg" alt="" id="store-log"/>-->
@@ -80,12 +81,13 @@
                 <!--<div id="store-bottom"><a href="">查看所有宝贝</a></div>-->
                 <div class="iphone-foot"><i></i></div>
             </div>
+            </div>
 
             <div id="ctrl-area"  class="col-lg-4-">
                 <div id="ctrl-wrap"></div>
                 <div class="submit-reset-wrap">
-                <input type="reset">
-                <input type="submit">
+                <input type="reset" class="btn btn-info">
+                <input type="submit"  class="btn btn-success">
                 </div>
             </div>
 
@@ -224,71 +226,72 @@
 
     <!-- 设置模板的模板 -->
     <script type="text/template" id="temp-ctrl-single-good">
-    <div class="mol-ctrl-wrap" ctrlid="single-good">
-      <input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
-      <input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
-      <input type="text"   mapid="goodname"   placeholder="输入宝贝名称">
-      <input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
-    </div>
+        <div class="mol-ctrl-wrap" ctrlid="single-good">
+            <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
+            <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
+            <br><label>宝贝名称：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝名称">
+            <br><label>宝贝价格：</label><input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
+        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-double-good">
-    <div class="mol-ctrl-wrap" ctrlid="double-good">
-      <input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
-      <input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
-      <input type="text"   mapid="goodname"   placeholder="输入宝贝1名称">
-      <input type="number" mapid="price"      placeholder="输入宝贝1价格(纯数字,可精确到2位小数)">
-      <br><hr><br>
-      <input type="text"   mapid="imgsrc2"    placeholder="输入宝贝2图片地址">
-      <input type="text"   mapid="href2"      placeholder="输入宝贝2链接地址">
-      <input type="text"   mapid="goodname2"  placeholder="输入宝贝2名称">
-      <input type="number" mapid="price2"     placeholder="输入宝贝2价格(纯数字,可精确到2位小数)">
-    </div>
+        <div class="mol-ctrl-wrap" ctrlid="double-good">
+            <br><label>图片地址1：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
+            <br><label>宝贝链接1：</label><input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
+            <br><label>宝贝名称1：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝1名称">
+            <br><label>宝贝价格1：</label><input type="number" mapid="price"      placeholder="输入宝贝1价格(纯数字,可精确到2位小数)">
+            <br><hr>
+            <br><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入宝贝2图片地址">
+            <br><label>宝贝链接2：</label><input type="text"   mapid="href2"      placeholder="输入宝贝2链接地址">
+            <br><label>宝贝名称2：</label><input type="text"   mapid="goodname2"  placeholder="输入宝贝2名称">
+            <br><label>宝贝价格2：</label><input type="number" mapid="price2"     placeholder="输入宝贝2价格(纯数字,可精确到2位小数)">
+        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-word-pic">
        <div class="mol-ctrl-wrap" ctrlid="word-pic">
-           <input type="text"   mapid="desc"       placeholder="输入文字描述">
-           <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-           <input type="text"   mapid="href"       placeholder="输入链接转向地址">
+           <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入文字描述">
+           <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-single-pic">
-    <div class="mol-ctrl-wrap" ctrlid="single-pic">
-      <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-      <input type="text"   mapid="href"       placeholder="输入链接转向地址">
-      <input type="text"   mapid="desc"       placeholder="输入图片文字描述">
-    </div>
+        <div class="mol-ctrl-wrap" ctrlid="single-pic">
+            <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-double-pic">
        <div class="mol-ctrl-wrap" ctrlid="double-pic">
-           <input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-           <input type="text"   mapid="href"       placeholder="输入链接转向地址">
-           <input type="text"   mapid="desc"       placeholder="输入图片文字描述">
-           <br><hr><br>
-           <input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
-           <input type="text"   mapid="href2"      placeholder="输入链接转向地址">
-           <input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
+           <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+           <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+           <br><hr>
+           <br><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
+           <br><label>跳转链接2：</label><input type="text"   mapid="href2"      placeholder="输入链接转向地址">
+           <br><label>文字描述2：</label> <input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-word-only">
        <div class="mol-ctrl-wrap" ctrlid="word-only">
+           <br><label>文字描述：</label>
            <textarea   mapid="desc"    placeholder="输入文字描述"></textarea>
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-title-only">
        <div class="mol-ctrl-wrap" ctrlid="title-only">
-           <input type="text"   mapid="title"       placeholder="输入标题文字">
+           <br><label>标题文字：</label><input type="text"   mapid="title"       placeholder="输入标题文字">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-tel-only">
        <div class="mol-ctrl-wrap" ctrlid="tel-only">
-           <input type="text"   mapid="tel"       placeholder="输入电话">
+           <br><label>输入电话：</label><input type="text"   mapid="tel"       placeholder="输入电话">
        </div>
     </script>
 
