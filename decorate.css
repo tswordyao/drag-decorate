@@ -236,11 +236,13 @@ a.double-good-wrap-one{
 }
 #store-head{
     position: relative;
-    height:100px;
+    height:125px;
     overflow: hidden;
     vertical-align: top;
     color: gray;
     background: #fff;
+    background-image: url("store-head.png");
+    background-size: cover;
 }
 #store-head>img,#store-head>div,#store-head li{
     display: inline-block;
@@ -412,6 +414,5 @@ a.double-good-wrap-one{
 }
 .rows{
     position: relative;
-    text-align: center;
     height: 100%;
 }
