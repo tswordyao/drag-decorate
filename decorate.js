@@ -25,6 +25,11 @@ window.mol_ctrl_dic={
     'single-good-list':document.getElementById('temp-ctrl-single-good-list').innerHTML,
     'double-good-list':document.getElementById('temp-ctrl-double-good-list').innerHTML
 };
+//提示语映射
+window.mol_tip_dic={
+    'single-good-list':'这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
+    'double-good-list':'这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
+}
 
 /*
 * 如果是写死在页面内的模板HTML,其实可以用function(id){return $(id).html();}来实现,更简洁
@@ -37,7 +42,7 @@ window.mol_ctrl_dic={
 window.mol_val_dic={
     "val-single-good":{
         href:'www.163.com',
-        imgsrc:'good21.jpg',
+        imgsrc:'good03.jpg',
         goodname:'优质棉麻男童马夹 保暖透气',
         price:92.00
     },
@@ -153,7 +158,7 @@ function autoAppendNodes(tempid){
     //自动装载宝贝列表
     $('#ctrl-wrap').data('index',3);
     var listType=$('#show-mobile').find('.mol-wrap').eq(3).attr('molid')=='single-good-list' ? 1:2;
-    goods_list_instance(window.goods.slice(0,8), listType);
+    goods_list_instance(window.goods.slice(0,16), listType);
 
 }
 
@@ -214,10 +219,14 @@ $('.mol-tag').on('selectstart',function(e){
     })
     .on('dragstart',function(e){
         //console.log('\ndragstart-----');
+        $('.mol-tip').fadeIn(800).html(function(i,c) {
+            return c + window.mol_tip_dic[this.id.replace('tag-', '')]
+        }.bind(this));
         event.dataTransfer.setData("Text",this.id);
     })
     .on('dragend',function(e){
         //console.log('--------dragend\n');
+        $('.mol-tip').fadeOut(300,function(){$(this).html('<div class="arrow"></div>')});
         event.preventDefault();
     });
 

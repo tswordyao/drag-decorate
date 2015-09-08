@@ -25,42 +25,47 @@
      </div>
     </nav>
 
-    <div style="clear:both"></div>
+    <hr/>
 
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-              <li id="li-01">
-                <div class="mol-tag" id="tag-single-good" draggable="true" >单宝贝模块</div>
-              </li>
-              <li id="li-02">
-                <div class="mol-tag" id="tag-double-good" draggable="true" >双宝贝模块</div>
-              </li>
-              <li id="li-03">
-                <div class="mol-tag" id="tag-single-pic" draggable="true"  >焦点图模块</div>
-              </li>
-              <li id="li-04">
-                <div class="mol-tag" id="tag-double-pic" draggable="true"  >双图片模块</div>
-              </li>
-              <li id="li-05">
-                <div class="mol-tag" id="tag-word-pic" draggable="true"  >左文右图模块</div>
-              </li>
-              <li id="li-06">
-                <div class="mol-tag" id="tag-title-only" draggable="true"  >标题模块</div>
-              </li>
-              <li id="li-07">
-                <div class="mol-tag" id="tag-word-only" draggable="true"  >文字模块</div>
-              </li>
-              <li id="li-08">
-                <div class="mol-tag" id="tag-tel-only" draggable="true"  >电话模块</div>
-              </li>
-            <li id="li-09">
-                <div class="mol-tag" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
-            </li>
-            <li id="li-10">
-                <div class="mol-tag" id="tag-double-good-list" draggable="true" >双宝贝列表</div>
-            </li>
+                <li id="li-01">
+                    <div class="mol-tag mol-tag-assertive" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
+                </li>
+                <li id="li-02">
+                    <div class="mol-tag mol-tag-assertive" id="tag-double-good-list" draggable="true" >双宝贝列表</div>
+                </li>
+                <li id="li-03">
+                    <div class="mol-tag" id="tag-single-good" draggable="true" >单宝贝模块</div>
+                </li>
+                <li id="li-04">
+                    <div class="mol-tag" id="tag-double-good" draggable="true" >双宝贝模块</div>
+                </li>
+                <li id="li-05">
+                    <div class="mol-tag" id="tag-single-pic" draggable="true"  >焦点图模块</div>
+                </li>
+                <li id="li-06">
+                    <div class="mol-tag" id="tag-double-pic" draggable="true"  >双图片模块</div>
+                </li>
+                <li id="li-07">
+                    <div class="mol-tag mol-tag-positive" id="tag-word-pic" draggable="true"  >左文右图模块</div>
+                </li>
+                <li id="li-08">
+                 <div class="mol-tag mol-tag-positive" id="tag-title-only" draggable="true"  >标题模块</div>
+                </li>
+                <li id="li-09">
+                    <div class="mol-tag mol-tag-positive" id="tag-word-only" draggable="true"  >文字模块</div>
+                </li>
+                <li id="li-10">
+                    <div class="mol-tag mol-tag-positive" id="tag-tel-only" draggable="true"  >电话模块</div>
+                </li>
+
+
             </ul>
+
+
+            <div class="mol-tip"><div class="arrow"></div></div>
 
             <div id="mobile-wrap">
                 <div id="show-mobile"  class="col-lg-4-" data-mcs-theme="dark">
@@ -94,7 +99,7 @@
             <div class="clear"></div>
         </div>
     </div>
-
+    <hr/>
     <div id="goodlist-forcheck " class="modal fade  my-modal modle-content">
 
     </div>
@@ -214,20 +219,21 @@
 
     <script type="text/template" id="temp-single-good-list">
        <div class="mol-wrap" molid="single-good-list">
-           <br>宝贝列表,每行一个宝贝,依次排列<br><br>请点击为其配置宝贝
+            <div><br>宝贝列表,每行一个宝贝,依次排列<br><br>请点击为其配置宝贝</div>
        </div>
     </script>
 
     <script type="text/template" id="temp-double-good-list">
        <div class="mol-wrap" molid="double-good-list">
-           <br>宝贝列表,每行两个宝贝,依次排列<br><br>请点击为其配置宝贝
+            <div><br>宝贝列表,每行两个宝贝,依次排列<br><br>请点击为其配置宝贝</div>
        </div>
     </script>
 
     <!-- 设置模板的模板 -->
     <script type="text/template" id="temp-ctrl-single-good">
         <div class="mol-ctrl-wrap" ctrlid="single-good">
-            <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
+            <h2>单个宝贝(自定义)</h2>
+            <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
             <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
             <br><label>宝贝名称：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝名称">
             <br><label>宝贝价格：</label><input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
@@ -236,7 +242,8 @@
 
     <script type="text/template" id="temp-ctrl-double-good">
         <div class="mol-ctrl-wrap" ctrlid="double-good">
-            <br><label>图片地址1：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
+            <h2>一行双宝贝(自定义)</h2>
+            <hr><label>图片地址1：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
             <br><label>宝贝链接1：</label><input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
             <br><label>宝贝名称1：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝1名称">
             <br><label>宝贝价格1：</label><input type="number" mapid="price"      placeholder="输入宝贝1价格(纯数字,可精确到2位小数)">
@@ -250,63 +257,73 @@
 
     <script type="text/template" id="temp-ctrl-word-pic">
        <div class="mol-ctrl-wrap" ctrlid="word-pic">
-           <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入文字描述">
+           <h2>图文模块(自定义)</h2>
+           <hr><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入文字描述">
            <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <br><label>图片上传：</label><input type="file"   mapid="img-up"     placeholder=" ">
            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-single-pic">
         <div class="mol-ctrl-wrap" ctrlid="single-pic">
+            <h2>焦点图(自定义)</h2>
+            <hr><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
             <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <br><label>图片上传：</label><input type="file"   mapid="img-up"     placeholder=" ">
             <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-double-pic">
        <div class="mol-ctrl-wrap" ctrlid="double-pic">
-           <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <h2>一行双图(自定义)</h2>
+           <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
            <br><hr>
            <br><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
            <br><label>跳转链接2：</label><input type="text"   mapid="href2"      placeholder="输入链接转向地址">
-           <br><label>文字描述2：</label> <input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
+           <br><label>文字描述2：</label><input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-word-only">
        <div class="mol-ctrl-wrap" ctrlid="word-only">
-           <br><label>文字描述：</label>
+           <h2>纯宣传文字(自定义)</h2>
+           <hr><label>文字描述：</label>
            <textarea   mapid="desc"    placeholder="输入文字描述"></textarea>
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-title-only">
        <div class="mol-ctrl-wrap" ctrlid="title-only">
-           <br><label>标题文字：</label><input type="text"   mapid="title"       placeholder="输入标题文字">
+           <h2>标题模块(自定义)</h2>
+           <hr><label>标题文字：</label><input type="text"   mapid="title"       placeholder="输入标题文字">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-tel-only">
        <div class="mol-ctrl-wrap" ctrlid="tel-only">
-           <br><label>输入电话：</label><input type="text"   mapid="tel"       placeholder="输入电话">
+           <h2>电话模块(自定义)</h2>
+           <hr><label>输入电话：</label><input type="text"   mapid="tel"       placeholder="输入电话">
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-single-good-list">
        <div class="mol-ctrl-wrap" ctrlid="single-good-list">
+           <h2>宝贝列表(每行一个)</h2><hr>
            <div class="show-checked-good"></div>
-           <button class="btn btn-primary show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+           <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
            <!--<button class="btn btn-success to-check-good">确定</button>-->
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-double-good-list">
        <div class="mol-ctrl-wrap" ctrlid="double-good-list">
-            <div class="show-checked-good"></div>
-           <button class="btn btn-primary show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+           <h2>宝贝列表(每行两个)</h2><hr>
+           <div class="show-checked-good"></div>
+           <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
            <!--<button class="btn btn-success to-check-good2">确定</button>-->
        </div>
     </script>
