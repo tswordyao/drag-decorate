@@ -149,7 +149,7 @@ window.templates= {
 };
 
 function autoAppendNodes(tempid){
-    if(typeof tempid=='undefined'){
+    if(typeof tempid=='undefined' || !tempid){
         return false;
     }
     var molids=window.templates[tempid];
@@ -165,16 +165,19 @@ function autoAppendNodes(tempid){
         div=$(html)[0];
         div.innerHTML+= '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
         mobile.appendChild(div);
+        window.mol_count_dic[div.getAttribute('molid')]-=1;
     }
     //自动装载宝贝列表
     $('#ctrl-wrap').data('index',3);
     var listType=$('#show-mobile').find('.mol-wrap').eq(3).attr('molid')=='single-good-list' ? 1:2;
     goods_list_instance(window.goods.slice(0,16), listType);
-
 }
 
 $('a[tempid]').on('click',function(){
-    $('#show-mobile').find('.mol-wrap').remove();
+    $('#show-mobile').find('.mol-wrap').each(function(){
+        $(this).remove();
+        window.mol_count_dic[this.getAttribute('molid')]++;
+    });
     $('#ctrl-wrap').empty();
     autoAppendNodes($(this).attr('tempid'))
 });
@@ -271,8 +274,8 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
 })
     .on('click','.go-recycle',function(e){
         event.preventDefault();
-        window.mol_count_dic[this.parentNode.getAttribute('molid')]-=1
         $(this.parentNode).remove();
+        window.mol_count_dic[this.parentNode.getAttribute('molid')]+=1;
     })
     .on('click','.go-down',function(e){
         event.preventDefault();
