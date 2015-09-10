@@ -5,6 +5,7 @@ window.mol_dic={
     'double-good':document.getElementById('temp-double-good').innerHTML,
     'single-pic':document.getElementById('temp-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-double-pic').innerHTML,
+    'four-brand':document.getElementById('temp-four-brand').innerHTML,
     'word-pic':document.getElementById('temp-word-pic').innerHTML,
     'title-only':document.getElementById('temp-title-only').innerHTML,
     'word-only':document.getElementById('temp-word-only').innerHTML,
@@ -18,6 +19,7 @@ window.mol_ctrl_dic={
     'double-good':document.getElementById('temp-ctrl-double-good').innerHTML,
     'single-pic':document.getElementById('temp-ctrl-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-ctrl-double-pic').innerHTML,
+    'four-brand':document.getElementById('temp-ctrl-four-brand').innerHTML,
     'word-pic':document.getElementById('temp-ctrl-word-pic').innerHTML,
     'title-only':document.getElementById('temp-ctrl-title-only').innerHTML,
     'word-only':document.getElementById('temp-ctrl-word-only').innerHTML,
@@ -31,6 +33,7 @@ window.mol_tip_dic={
     'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
     'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
     'double-pic':'并列图片,一般用来做品牌区域,块状LOGO图',
+    'four-brand':'4格图片,一般用来做品牌或类别分类',
     'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
     'title-only':'纯文字的标题,用于分段标注',
     'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
@@ -76,11 +79,25 @@ window.mol_val_dic={
     },
     "val-double-pic":{
         href:'www.163.com',
+        imgsrc:'baby-joy01.jpg',
+        desc:'童车特价中! 点击进入专区!',
+        href2:'www.163.com',
+        imgsrc2:'baby-joy02.jpg',
+        desc2:'玩具特价! 点击进入专区!',
+    },
+    "val-four-brand":{
+        href:'www.163.com',
         imgsrc:'area-logo-01.jpg',
         desc:'LOGO AREA<br>奶粉专区',
         href2:'www.163.com',
         imgsrc2:'area-logo-02.jpg',
-        desc2:'LOGO AREA<br>母婴专区',
+        desc2:'LOGO AREA<br>玩具专区',
+        href3:'www.163.com',
+        imgsrc3:'area-logo-03.jpg',
+        desc3:'LOGO AREA<br>婴童服饰',
+        href4:'www.163.com',
+        imgsrc4:'area-logo-04.jpg',
+        desc4:'LOGO AREA<br>亲子母婴',
     },
     "val-title-only":{
         title:'全场宝贝包邮热销中!'
@@ -99,6 +116,7 @@ window.mol_count_dic={
     'double-good':2,
     'single-pic':3,
     'double-pic':2,
+    'four-brand':2,
     'word-pic':3,
     'word-only':3,
     'title-only':2,
@@ -234,7 +252,7 @@ $('.mol-tag').on('selectstart',function(e){
     .on('dragstart',function(e){
         //console.log('\ndragstart-----');
         var the=this;
-        $('.mol-tip').show().animate({top:$(this).parent().index()*77,opacity:0.9},function(){
+        $('.mol-tip').show().css('opacity',0).animate({top:$(this).parent().index()*65,opacity:0.9},function(){
             $(this).html(function(i,c) {
                 return c + window.mol_tip_dic[this.id.replace('tag-', '')]
             }.bind(the));
@@ -248,6 +266,9 @@ $('.mol-tag').on('selectstart',function(e){
         //console.log('--------dragend\n');
         $('.mol-tip').fadeOut(300,function(){$(this).html('<div class="arrow"></div>')});
         event.preventDefault();
+    })
+    .on('mousedown',function(){
+
     });
 
 
@@ -323,7 +344,7 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
         //载入节点对应的编辑模块
                          .html( window.mol_ctrl_dic[molid] )
         //编辑模块再载入节点当前数据
-                        .find('[type=text],textarea').each(function(){
+                        .find('[type=text],[type=number],textarea').each(function(){
                             key=this.getAttribute('mapid')||'none';
                             this.innerText?this.innerText=obj[key]:this.value=obj[key];
                         });
@@ -370,7 +391,7 @@ function goods_list_instance(datas,rowCount){
 //右侧编辑区
 $('#ctrl-area')
     // 编辑完成
-    .on('click','[type=submit]',function(e){
+    .on('click','.btn-submit',function(e){
         var molid,html,key,obj={},molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
         //获取并用键值对保存编辑区数据
         $(this.parentNode).prev().find('input,textarea').each(function(){
@@ -465,3 +486,29 @@ function post_ctrl_id(the){
         $(the).parent().attr('ctrlid')
     );
 }
+
+$(document).on('submit','#img-up-form',function(){
+    var files=$('#img-up-file')[0].files;
+    for(var i=0;i<files.length;i++){
+        if(files[i].size>200){
+            alert('单张图片大小不能超过200k,请压缩后重新上传');
+            break;
+        }
+    }
+    //console.log($('#img-up-file').files[0].size)
+    var data = new FormData($('#img-up-form')[0]);
+    $.ajax({
+        url: 'ajaxupfile2.php',
+        type: 'POST',
+        data: data,
+        dataType: 'JSON',
+        cache: false,
+        processData: false,
+        contentType: false,
+        success:function(data){
+            //alert(data);
+            alert("UploadFile Success");
+        }
+    });
+    return false;
+});

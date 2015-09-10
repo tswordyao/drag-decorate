@@ -31,6 +31,9 @@
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
+                <li id="li-00">
+                    <div class="mol-tag mol-tag-assertive" id="tag-four-brand" draggable="true" >类别组合</div>
+                </li>
                 <li id="li-01">
                     <div class="mol-tag mol-tag-assertive" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
                 </li>
@@ -92,8 +95,8 @@
             <div id="ctrl-area"  class="col-lg-4-">
                 <div id="ctrl-wrap"></div>
                 <div class="submit-reset-wrap">
-                <input type="reset" class="btn btn-info">
-                <input type="submit"  class="btn btn-success">
+                <input type="reset" class="btn btn-info btn-reset">
+                <input type="submit"  class="btn btn-success btn-submit">
                 </div>
             </div>
 
@@ -193,6 +196,27 @@
     </div>
     </script>
 
+    <script type="text/template" id="temp-four-brand">
+        <div class="mol-wrap" molid="four-brand">
+            <div class="four-brand-wrap-one">
+                <img src="{imgsrc}" alt="">
+                <p>{desc}</p>
+            </div>
+            <div class="four-brand-wrap-one">
+                <img src="{imgsrc2}" alt="">
+                <p>{desc2}</p>
+            </div>
+            <div class="four-brand-wrap-one">
+                <img src="{imgsrc3}" alt="">
+                <p>{desc3}</p>
+            </div>
+            <div class="four-brand-wrap-one">
+                <img src="{imgsrc4}" alt="">
+                <p>{desc4}</p>
+            </div>
+        </div>
+    </script>
+
     <script type="text/template" id="temp-word-pic">
     <div class="mol-wrap" molid="word-pic">
       <p>{desc}</p>
@@ -270,9 +294,15 @@
         <div class="mol-ctrl-wrap" ctrlid="single-pic">
             <h2>焦点图(自定义)</h2>
             <hr><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
-            <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-            <br><label>图片上传：</label><input type="file"   mapid="img-up"     placeholder=" ">
-            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <form id="img-up-form">
+                <label>图片上传：</label>
+                <input type="file"   mapid="img-up"   name='img-up' id="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+                <input type="submit">
+                <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+            </form>
+            <label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+
         </div>
     </script>
 
@@ -287,6 +317,28 @@
            <br><label>跳转链接2：</label><input type="text"   mapid="href2"      placeholder="输入链接转向地址">
            <br><label>文字描述2：</label><input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
        </div>
+    </script>
+
+
+    <script type="text/template" id="temp-ctrl-four-brand">
+        <div class="mol-ctrl-wrap" ctrlid="four-brand">
+            <h2>宝贝类别(默认四大类)</h2>
+            <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+
+            <hr><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
+            <br><label>跳转链接2：</label><input type="text"   mapid="href2"      placeholder="输入链接转向地址">
+            <br><label>文字描述2：</label><input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
+
+            <hr><label>图片地址3：</label><input type="text"   mapid="imgsrc3"    placeholder="输入图片地址">
+            <br><label>跳转链接3：</label><input type="text"   mapid="href3"      placeholder="输入链接转向地址">
+            <br><label>文字描述3：</label><input type="text"   mapid="desc3"      placeholder="输入图片文字描述">
+
+            <hr><label>图片地址4：</label><input type="text"   mapid="imgsrc4"    placeholder="输入图片地址">
+            <br><label>跳转链接4：</label><input type="text"   mapid="href4"      placeholder="输入链接转向地址">
+            <br><label>文字描述4：</label><input type="text"   mapid="desc4"      placeholder="输入图片文字描述">
+        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-word-only">
@@ -333,5 +385,6 @@
     <link rel="stylesheet" href="bootstrap.css">
     <script src="bootstrap.min.js"></script>
     <script src="decorate.js"></script>
+
 </body>
 </html>
