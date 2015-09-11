@@ -200,7 +200,7 @@ hr{border-color: #ccc!important;}
     right:10px;
     width:460px;
 }
-#ctrl-area #img-up-form>p{
+#ctrl-area .img-up-form>p{
     margin-left: 78px;
     font-size: 13px;
     color: maroon;
@@ -481,10 +481,10 @@ a.double-good-wrap-one{
     border-color:transparent #ccc transparent transparent;
     z-index: 10;
 }
-.double-pic-wrap-one,.four-brand-wrap-one{
+.double-pic-wrap-one,.four-category-wrap-one{
     position:relative;
 }
-.double-pic-wrap-one>p,.four-brand-wrap-one>p{
+.double-pic-wrap-one>p,.four-category-wrap-one>p{
     position: absolute;
     width:240px;
     color: #fff;
@@ -492,6 +492,6 @@ a.double-good-wrap-one{
     left: 1px;
     background:rgba(0,0,0,0.5);
 }
-.four-brand-wrap-one>p{
+.four-category-wrap-one>p{
     background: transparent;
 }

@@ -5,7 +5,7 @@ window.mol_dic={
     'double-good':document.getElementById('temp-double-good').innerHTML,
     'single-pic':document.getElementById('temp-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-double-pic').innerHTML,
-    'four-brand':document.getElementById('temp-four-brand').innerHTML,
+    'four-category':document.getElementById('temp-four-category').innerHTML,
     'word-pic':document.getElementById('temp-word-pic').innerHTML,
     'title-only':document.getElementById('temp-title-only').innerHTML,
     'word-only':document.getElementById('temp-word-only').innerHTML,
@@ -19,7 +19,7 @@ window.mol_ctrl_dic={
     'double-good':document.getElementById('temp-ctrl-double-good').innerHTML,
     'single-pic':document.getElementById('temp-ctrl-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-ctrl-double-pic').innerHTML,
-    'four-brand':document.getElementById('temp-ctrl-four-brand').innerHTML,
+    'four-category':document.getElementById('temp-ctrl-four-category').innerHTML,
     'word-pic':document.getElementById('temp-ctrl-word-pic').innerHTML,
     'title-only':document.getElementById('temp-ctrl-title-only').innerHTML,
     'word-only':document.getElementById('temp-ctrl-word-only').innerHTML,
@@ -33,7 +33,7 @@ window.mol_tip_dic={
     'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
     'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
     'double-pic':'并列图片,一般用来做品牌区域,块状LOGO图',
-    'four-brand':'4格图片,一般用来做品牌或类别分类',
+    'four-category':'4格图片,一般用来做品牌或类别分类',
     'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
     'title-only':'纯文字的标题,用于分段标注',
     'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
@@ -85,7 +85,7 @@ window.mol_val_dic={
         imgsrc2:'baby-joy02.jpg',
         desc2:'玩具特价! 点击进入专区!',
     },
-    "val-four-brand":{
+    "val-four-category":{
         href:'www.163.com',
         imgsrc:'area-logo-01.jpg',
         desc:'LOGO AREA<br>奶粉专区',
@@ -116,7 +116,7 @@ window.mol_count_dic={
     'double-good':2,
     'single-pic':3,
     'double-pic':2,
-    'four-brand':2,
+    'four-category':2,
     'word-pic':3,
     'word-only':3,
     'title-only':2,
@@ -487,8 +487,8 @@ function post_ctrl_id(the){
     );
 }
 
-$(document).on('submit','#img-up-form',function(){
-    var files=$('#img-up-file')[0].files;
+$(document).on('submit','.img-up-form',function(){
+    var files=$('.img-up-file')[0].files;
     for(var i=0;i<files.length;i++){
         if(files[i].size>200){
             alert('单张图片大小不能超过200k,请压缩后重新上传');
@@ -505,8 +505,11 @@ $(document).on('submit','#img-up-form',function(){
         cache: false,
         processData: false,
         contentType: false,
-        success:function(data){
-            //alert(data);
+        success:function(res){
+            console.info(res);
+            //把回传过来的img-src地址,显示在下方,或者直接填充到input
+            //src=res.data[0];
+            //$(this).find('[mapid=href]').val(src);
             alert("UploadFile Success");
         }
     });

@@ -16,13 +16,13 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-brand" href="#"><<</a>
-         <a class="navbar-brand"  id="btn-info"  href="#">保存</a>
-         <a class="navbar-brand"  id="btn-count" href="#">状态</a>
-         <a class="navbar-brand"  tempid=""       href="#">清空</a>
-         <a class="navbar-brand"  tempid="temp01" href="#">默认模板</a>
-         <a class="navbar-brand"  tempid="temp02" href="#">模板二</a>
-         <a class="navbar-brand"  tempid="temp03" href="#">模板三</a>
+         <a class="navbar-category" href="#"><<</a>
+         <a class="navbar-category"  id="btn-info"  href="#">保存</a>
+         <a class="navbar-category"  id="btn-count" href="#">状态</a>
+         <a class="navbar-category"  tempid=""       href="#">清空</a>
+         <a class="navbar-category"  tempid="temp01" href="#">默认模板</a>
+         <a class="navbar-category"  tempid="temp02" href="#">模板二</a>
+         <a class="navbar-category"  tempid="temp03" href="#">模板三</a>
      </div>
     </nav>
 
@@ -32,7 +32,7 @@
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
                 <li id="li-00">
-                    <div class="mol-tag mol-tag-assertive" id="tag-four-brand" draggable="true" >类别组合</div>
+                    <div class="mol-tag mol-tag-assertive" id="tag-four-category" draggable="true" >类别组合</div>
                 </li>
                 <li id="li-01">
                     <div class="mol-tag mol-tag-assertive" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
@@ -62,7 +62,7 @@
                     <div class="mol-tag mol-tag-positive" id="tag-word-only" draggable="true"  >文字模块</div>
                 </li>
                 <li id="li-10">
-                    <div class="mol-tag mol-tag-positive" id="tag-tel-only" draggable="true"  >电话模块</div>
+                    <div class="mol-tag mol-tag-positive" id="tag-tel-only" draggable="true"  >微信模块</div>
                 </li>
 
 
@@ -196,21 +196,21 @@
     </div>
     </script>
 
-    <script type="text/template" id="temp-four-brand">
-        <div class="mol-wrap" molid="four-brand">
-            <div class="four-brand-wrap-one">
+    <script type="text/template" id="temp-four-category">
+        <div class="mol-wrap" molid="four-category">
+            <div class="four-category-wrap-one">
                 <img src="{imgsrc}" alt="">
                 <p>{desc}</p>
             </div>
-            <div class="four-brand-wrap-one">
+            <div class="four-category-wrap-one">
                 <img src="{imgsrc2}" alt="">
                 <p>{desc2}</p>
             </div>
-            <div class="four-brand-wrap-one">
+            <div class="four-category-wrap-one">
                 <img src="{imgsrc3}" alt="">
                 <p>{desc3}</p>
             </div>
-            <div class="four-brand-wrap-one">
+            <div class="four-category-wrap-one">
                 <img src="{imgsrc4}" alt="">
                 <p>{desc4}</p>
             </div>
@@ -283,26 +283,30 @@
     <script type="text/template" id="temp-ctrl-word-pic">
        <div class="mol-ctrl-wrap" ctrlid="word-pic">
            <h2>图文模块(自定义)</h2>
-           <hr><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入文字描述">
-           <br><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-           <br><label>图片上传：</label><input type="file"   mapid="img-up"     placeholder=" ">
-           <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+           <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+           <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+           <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+           <form class="img-up-form">
+               <label>图片上传：</label>
+               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+               <input type="submit">
+               <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+           </form>
        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-single-pic">
         <div class="mol-ctrl-wrap" ctrlid="single-pic">
             <h2>焦点图(自定义)</h2>
-            <hr><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
             <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-            <form id="img-up-form">
+            <form class="img-up-form">
                 <label>图片上传：</label>
-                <input type="file"   mapid="img-up"   name='img-up' id="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
                 <input type="submit">
                 <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
             </form>
-            <label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-
         </div>
     </script>
 
@@ -316,12 +320,18 @@
            <br><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入图片地址">
            <br><label>跳转链接2：</label><input type="text"   mapid="href2"      placeholder="输入链接转向地址">
            <br><label>文字描述2：</label><input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
+           <form class="img-up-form">
+               <label>图片上传：</label>
+               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+               <input type="submit">
+               <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+           </form>
        </div>
     </script>
 
 
-    <script type="text/template" id="temp-ctrl-four-brand">
-        <div class="mol-ctrl-wrap" ctrlid="four-brand">
+    <script type="text/template" id="temp-ctrl-four-category">
+        <div class="mol-ctrl-wrap" ctrlid="four-category">
             <h2>宝贝类别(默认四大类)</h2>
             <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
             <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
@@ -358,8 +368,8 @@
 
     <script type="text/template" id="temp-ctrl-tel-only">
        <div class="mol-ctrl-wrap" ctrlid="tel-only">
-           <h2>电话模块(自定义)</h2>
-           <hr><label>输入电话：</label><input type="text"   mapid="tel"       placeholder="输入电话">
+           <h2>联系模块(自定义)</h2>
+           <hr><label>输入微信账号：</label><input type="text"   mapid="tel"       placeholder="输入微信账号">
        </div>
     </script>
 
