@@ -16,13 +16,15 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-category" href="#"><<</a>
-         <a class="navbar-category"  id="btn-info"  href="#">保存</a>
-         <a class="navbar-category"  id="btn-count" href="#">状态</a>
-         <a class="navbar-category"  tempid=""       href="#">清空</a>
-         <a class="navbar-category"  tempid="temp01" href="#">默认模板</a>
-         <a class="navbar-category"  tempid="temp02" href="#">模板二</a>
-         <a class="navbar-category"  tempid="temp03" href="#">模板三</a>
+         <a class="navbar-brand" href="#">&lt;&lt;</a>
+         <a class="navbar-brand"  id="btn-info"  href="#">保存</a>
+         <a class="navbar-brand"  id="btn-count" href="#">状态</a>
+         <a class="navbar-brand"  tempid=""       href="#">清空</a>
+         <a class="navbar-brand"  tempid="temp01" href="#">默认模板</a>
+         <a class="navbar-brand"  tempid="temp02" href="#">模板二</a>
+         <a class="navbar-brand"  tempid="temp03" href="#">模板三</a>
+         <a class="navbar-brand"  tempid="tbstyle" href="#">温馨风</a>
+         <a class="navbar-brand"  tempid="hdstyle" href="#">海带风</a>
      </div>
     </nav>
 
@@ -62,10 +64,20 @@
                     <div class="mol-tag mol-tag-positive" id="tag-word-only" draggable="true"  >文字模块</div>
                 </li>
                 <li id="li-10">
-                    <div class="mol-tag mol-tag-positive" id="tag-tel-only" draggable="true"  >微信模块</div>
+                    <div class="mol-tag mol-tag-positive" id="tag-contract" draggable="true"  >联系模块</div>
                 </li>
-
-
+                <li id="li-11">
+                    <div class="mol-tag mol-tag-assertive" id="tag-features" draggable="true" >优势宣传</div>
+                </li>
+                <li id="li-12">
+                    <div class="mol-tag mol-tag-assertive" id="tag-hd-category" draggable="true" >热门类别</div>
+                </li>
+                <li id="li-13">
+                    <div class="mol-tag mol-tag-assertive" id="tag-brands" draggable="true" >热门品牌</div>
+                </li>
+                <li id="li-14">
+                    <div class="mol-tag mol-tag-assertive" id="hd-category" draggable="true" >热门分类</div>
+                </li>
             </ul>
 
 
@@ -148,6 +160,74 @@
     </div>
 
     <!-- 模板 -->
+    <script type="text/template" id="temp-features">
+        <div class="mol-wrap features-wrap">
+            <img src="feature/feature01.jpg"  alt=""/>
+            <img src="feature/feature02.jpg"  alt=""/>
+            <img src="feature/feature03.jpg"  alt=""/>
+            <img src="feature/feature04.jpg"  alt=""/>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-hd-features">
+        <div class="mol-wrap features-wrap hd">
+            <img src="feature/hd-feature01.png"  alt=""/>
+            <img src="feature/hd-feature02.png"  alt=""/>
+            <img src="feature/hd-feature03.png"  alt=""/>
+            <img src="feature/hd-feature04.png"  alt=""/>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-brands">
+        <div class="mol-wrap brands">
+            <img src="brand/g1.jpg" alt=""/>
+            <img src="brand/g2.jpg" alt=""/>
+            <img src="brand/g3.jpg" alt=""/>
+            <img src="brand/g4.jpg" alt=""/>
+            <img src="brand/g5.jpg" alt=""/>
+            <img src="brand/g6.jpg" alt=""/>
+            <img src="brand/g7.jpg" alt=""/>
+            <img src="brand/g8.jpg" alt=""/>
+            <img src="brand/g9.jpg" alt=""/>
+            <img src="brand/g10.jpg" alt=""/>
+            <img src="brand/g11.jpg" alt=""/>
+            <img src="brand/g12.jpg" alt=""/>
+            <img src="brand/g13.jpg" alt=""/>
+            <img src="brand/g14.jpg" alt=""/>
+            <img src="brand/g15.jpg" alt=""/>
+            <img src="brand/g16.jpg" alt=""/>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-hd-category">
+        <div class="mol-wrap hd-category">
+            <div class="hd-category-one">
+                <img src="category\hd-category01.jpg" alt=""/>
+                <div class="wrap-r">
+                    <h3>奶粉</h3><P>全球奶粉跨境购</P>
+                </div>
+            </div>
+            <div class="hd-category-one">
+                <img src="category\hd-category02.jpg" alt=""/>
+                <div class="wrap-r">
+                    <h3>尿不湿</h3><P>轻松透气一整天</P>
+                </div>
+            </div>
+            <div class="hd-category-one">
+                <img src="category\hd-category03.jpg" alt=""/>
+                <div class="wrap-r">
+                    <h3>辅食</h3><P>肠胃健康妈妈放心</P>
+                </div>
+            </div>
+            <div class="hd-category-one">
+                <img src="category\hd-category04.jpg" alt=""/>
+                <div class="wrap-r">
+                    <h3>保健品</h3><P>全球保健品一站采购</P>
+                </div>
+            </div>
+        </div>
+    </script>
+
     <script type="text/template" id="temp-good-cell">
     <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
        <img src="{imgsrc}" alt="" class=""/>
@@ -159,7 +239,7 @@
     <script type="text/template" id="temp-single-good">
     <a class="mol-wrap" molid="single-good" ng-href="{href}">
       <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
-      <p><u>{goodname}</u><b>价格</b>￥<i>{price}</i></p>
+      <p><u>{goodname}</u><i>￥{price}</i></p>
     </a>
     </script>
 
@@ -167,13 +247,21 @@
     <div class="mol-wrap" molid="double-good">
         <a class="double-good-wrap-one"  ng-href="{href}">
           <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
-          <p><u>{goodname}</u><b>价格</b>￥<i>{price}</i></p>
+          <p><u>{goodname}</u></p>
+          <i>￥{price}</i>
        </a>
         <a class="double-good-wrap-one"  ng-href="{href2}">
           <img src="{imgsrc2}" ng-src="{imgsrc2}" alt="">
-          <p><u>{goodname2}</u><b>价格</b>￥<i>{price2}</i></p>
+          <p><u>{goodname2}</u></p>
+          <i>￥{price2}</i>
        </a>
     </div>
+    </script>
+
+    <script type="text/template" id="temp-slide-pic">
+        <a class="mol-wrap" molid="slide-pic" ng-href="{href}">
+            <img src="{imgsrc}" ng-src="{imgsrc}">
+        </a>
     </script>
 
     <script type="text/template" id="temp-single-pic">
@@ -236,25 +324,56 @@
        </a>
     </script>
 
-    <script type="text/template" id="temp-tel-only">
-       <a class="mol-wrap" molid="tel-only" ng-href="{href}">
+    <script type="text/template" id="temp-contract">
+       <a class="mol-wrap" molid="contract" ng-href="{href}">
            <img src="tel.png"  alt=""/><b>{tel}</b>
+           <img src="wechat.png"  alt=""/><b>{wechat}</b>
        </a>
     </script>
 
     <script type="text/template" id="temp-single-good-list">
        <div class="mol-wrap" molid="single-good-list">
-            <div><br>宝贝列表,每行一个宝贝,依次排列<br><br>请点击为其配置宝贝</div>
+            <h4>宝贝列表</h4>
+            <p>每行一个,依次排列,请点击为其选择宝贝.</p>
        </div>
     </script>
 
     <script type="text/template" id="temp-double-good-list">
        <div class="mol-wrap" molid="double-good-list">
-            <div><br>宝贝列表,每行两个宝贝,依次排列<br><br>请点击为其配置宝贝</div>
+           <h4>宝贝列表</h4>
+           <p>每行两个,依次排列,请点击为其选择宝贝.</p>
        </div>
     </script>
 
     <!-- 设置模板的模板 -->
+    <script type="text/template" id="temp-ctrl-features">
+        <div class="mol-ctrl-wrap" ctrlid="features">
+            <h2>优势宣传</h2>
+            <i>此模块不可编辑</i>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-hd-features">
+        <div class="mol-ctrl-wrap" ctrlid="hd-features">
+            <h2>优势宣传</h2>
+            <i>此模块不可编辑</i>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-brands">
+        <div class="mol-ctrl-wrap" ctrlid="brand">
+            <h2>热门品牌</h2>
+            <i>此模块不可编辑</i>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-hd-category">
+        <div class="mol-ctrl-wrap" ctrlid="hd-category">
+            <h2>热门分类</h2>
+            <i>此模块不可编辑</i>
+        </div>
+    </script>
+
     <script type="text/template" id="temp-ctrl-single-good">
         <div class="mol-ctrl-wrap" ctrlid="single-good">
             <h2>单个宝贝(自定义)</h2>
@@ -293,6 +412,20 @@
                <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
            </form>
        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-slide-pic">
+        <div class="mol-ctrl-wrap" ctrlid="slide-pic">
+            <h2>焦点图(自定义)</h2>
+            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <form class="img-up-form">
+                <label>图片上传：</label>
+                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+                <input type="submit">
+                <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+            </form>
+        </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-single-pic">
@@ -366,10 +499,11 @@
        </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-tel-only">
-       <div class="mol-ctrl-wrap" ctrlid="tel-only">
-           <h2>联系模块(自定义)</h2>
-           <hr><label>输入微信账号：</label><input type="text"   mapid="tel"       placeholder="输入微信账号">
+    <script type="text/template" id="temp-ctrl-contract">
+       <div class="mol-ctrl-wrap" ctrlid="contract">
+           <h2>联系模块</h2>
+           <hr><label>输入微信账号：</label><input type="text"   mapid="wechat"   placeholder="输入微信账号">
+           <hr><label>输入电话号码：</label><input type="text"   mapid="tel"       placeholder="输入电话账号">
        </div>
     </script>
 

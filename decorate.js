@@ -1,34 +1,56 @@
 
 //模板映射
 window.mol_dic={
+    'features':document.getElementById('temp-features').innerHTML,
+    'hd-features':document.getElementById('temp-hd-features').innerHTML,
+    'brands':document.getElementById('temp-brands').innerHTML,
+    'hd-category':document.getElementById('temp-hd-category').innerHTML,
     'single-good':document.getElementById('temp-single-good').innerHTML,
     'double-good':document.getElementById('temp-double-good').innerHTML,
+    'slide-pic':document.getElementById('temp-slide-pic').innerHTML,
     'single-pic':document.getElementById('temp-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-double-pic').innerHTML,
     'four-category':document.getElementById('temp-four-category').innerHTML,
     'word-pic':document.getElementById('temp-word-pic').innerHTML,
     'title-only':document.getElementById('temp-title-only').innerHTML,
     'word-only':document.getElementById('temp-word-only').innerHTML,
-    'tel-only':document.getElementById('temp-tel-only').innerHTML,
+    'contract':document.getElementById('temp-contract').innerHTML,
     'single-good-list':document.getElementById('temp-single-good-list').innerHTML,
     'double-good-list':document.getElementById('temp-double-good-list').innerHTML
 };
+
+function get_mol(molid){
+    return document.getElementById('temp-'+molid).innerHTML;
+}
+
 //编辑模板映射
 window.mol_ctrl_dic={
+    'features':document.getElementById('temp-ctrl-features').innerHTML,
+    'hd-features':document.getElementById('temp-ctrl-hd-features').innerHTML,
+    'brands':document.getElementById('temp-ctrl-brands').innerHTML,
+    'hd-category':document.getElementById('temp-ctrl-hd-category').innerHTML,
     'single-good':document.getElementById('temp-ctrl-single-good').innerHTML,
     'double-good':document.getElementById('temp-ctrl-double-good').innerHTML,
+    'slide-pic':document.getElementById('temp-ctrl-slide-pic').innerHTML,
     'single-pic':document.getElementById('temp-ctrl-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-ctrl-double-pic').innerHTML,
     'four-category':document.getElementById('temp-ctrl-four-category').innerHTML,
     'word-pic':document.getElementById('temp-ctrl-word-pic').innerHTML,
     'title-only':document.getElementById('temp-ctrl-title-only').innerHTML,
     'word-only':document.getElementById('temp-ctrl-word-only').innerHTML,
-    'tel-only':document.getElementById('temp-ctrl-tel-only').innerHTML,
+    'contract':document.getElementById('temp-ctrl-contract').innerHTML,
     'single-good-list':document.getElementById('temp-ctrl-single-good-list').innerHTML,
     'double-good-list':document.getElementById('temp-ctrl-double-good-list').innerHTML
 };
+
+function get_mol_ctrl(molid){
+    return document.getElementById('temp-ctrl'+molid).innerHTML;
+}
+
 //提示语映射
 window.mol_tip_dic={
+    'features':'品牌优势',
+    'hd-features':'品牌优势',
     'single-good':'这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
     'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
     'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
@@ -37,7 +59,7 @@ window.mol_tip_dic={
     'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
     'title-only':'纯文字的标题,用于分段标注',
     'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
-    'tel-only':'您的联系电话,写上电话卖家更容易联系到你',
+    'contract':'您的联系电话,写上电话卖家更容易联系到你',
     'single-good-list':'这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
     'double-good-list':'这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
 }
@@ -72,6 +94,10 @@ window.mol_val_dic={
         imgsrc:'good04.png',
         desc:'图片描述文字,一些文字,怕怕拉拉,什么的<br><br>或者,图片可以做成100%, 文字遮罩在图片左上角<br>这需要图片设计配合,左上角统一色调或留白',
     },
+    "val-slide-pic":{
+        href:'www.163.com',
+        imgsrc:'hot3.png',
+    },
     "val-single-pic":{
         href:'www.163.com',
         imgsrc:'hot3.jpg',
@@ -105,37 +131,44 @@ window.mol_val_dic={
     "val-word-only":{
         desc:'一些文字,之类的,自定义的一段描述'
     },
-    "val-tel-only":{
-        tel:'1381396655'
+    "val-contract":{
+        tel:'1381396655',
+        wechat:'weixina2017006'
     },
 
 };
+
 //模板使用数限制状态机
 window.mol_count_dic={
+    'features':2,
+    'hd-features':2,
+    'brands':2,
+    'hd-category':2,
     'single-good':3,
     'double-good':2,
+    'slide-pic':2,
     'single-pic':3,
     'double-pic':2,
     'four-category':2,
     'word-pic':3,
     'word-only':3,
     'title-only':2,
-    'tel-only':2,
+    'contract':2,
     'single-good-list':2,
     'double-good-list':2
 };
 
 //先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
 window.goods=[
-    {goodid:1001,imgsrc:'good01.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-    {goodid:1002,imgsrc:'good02.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
-    {goodid:1003,imgsrc:'good03.jpg',href:'',price:30,goodname:'韩版2015春秋款秋款秋装女宝宝'},
-    {goodid:1004,imgsrc:'good04.jpg',href:'',price:40,goodname:'夏季新款童裤女童棉麻短裤无烟'},
-    {goodid:1005,imgsrc:'good05.jpg',href:'',price:50,goodname:'巴布泡泡 松紧系带 毛圈 蓬松'},
-    {goodid:1006,imgsrc:'good06.jpg',href:'',price:60,goodname:'韩版2015春秋款秋款秋装女godd'},
-    {goodid:1007,imgsrc:'good07.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-    {goodid:1008,imgsrc:'good08.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
-    {goodid:1009,imgsrc:'good09.jpg',href:'',price:30,goodname:'韩版2015春秋款秋款秋装女宝宝'},
+    {goodid:1001,imgsrc:'good31.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+    {goodid:1002,imgsrc:'good32.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
+    {goodid:1003,imgsrc:'good33.jpg',href:'',price:30,goodname:'韩版2015春秋款秋款秋装女宝宝'},
+    {goodid:1004,imgsrc:'good34.jpg',href:'',price:40,goodname:'夏季新款童裤女童棉麻短裤无烟'},
+    {goodid:1005,imgsrc:'good35.jpg',href:'',price:50,goodname:'巴布泡泡 松紧系带 毛圈 蓬松'},
+    {goodid:1006,imgsrc:'good36.jpg',href:'',price:60,goodname:'韩版2015春秋款秋款秋装女godd'},
+    {goodid:1007,imgsrc:'good37.jpg',href:'',price:10,goodname:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+    {goodid:1008,imgsrc:'good38.jpg',href:'',price:20,goodname:'童装男童男孩小孩纯棉夏天好用'},
+    {goodid:1009,imgsrc:'good39.jpg',href:'',price:30,goodname:'韩版2015春秋款秋款秋装女宝宝'},
     {goodid:1010,imgsrc:'good10.jpg',href:'',price:40,goodname:'夏季新款童裤女童棉麻短裤无烟'},
     {goodid:1011,imgsrc:'good11.jpg',href:'',price:50,goodname:'巴布泡泡 松紧系带 毛圈 蓬松'},
     {goodid:1012,imgsrc:'good12.jpg',href:'',price:60,goodname:'韩版2015春秋款秋款秋装女godd'},
@@ -161,17 +194,21 @@ window.goods=[
 window.checkedGoods=[];
 
 window.templates= {
-    'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'tel-only'],
-    'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'tel-only'],
+    'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'contract'],
+    'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'contract'],
     'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
+    tbstyle:['single-pic','features','four-category','double-good-list', 'contract'],
+    hdstyle:['slide-pic','hd-features','brands','hd-category', 'single-good-list', 'contract']
 };
 
-function autoAppendNodes(tempid){
+function autoAppendNodes(tempid,indexOfGoodlist){
+    var indexOfGoodlist;
     if(typeof tempid=='undefined' || !tempid){
         return false;
     }
     var molids=window.templates[tempid];
     var html,defaultVals, div,i, k,mobile=$('#show-mobile')[0];
+
     //获取模板HTML和默认数据, 并实例化
     for(i=0;i<molids.length;i++){
         html=window.mol_dic[molids[i]];
@@ -186,8 +223,13 @@ function autoAppendNodes(tempid){
         window.mol_count_dic[div.getAttribute('molid')]-=1;
     }
     //自动装载宝贝列表
-    $('#ctrl-wrap').data('index',3);
-    var listType=$('#show-mobile').find('.mol-wrap').eq(3).attr('molid')=='single-good-list' ? 1:2;
+    molids.forEach(function(v,i){
+        if(v.indexOf('good-list')!=-1){
+            indexOfGoodlist=i;
+        }
+    })
+    $('#ctrl-wrap').data('index',indexOfGoodlist);
+    var listType=$('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid')=='single-good-list' ? 1:2;
     goods_list_instance(window.goods.slice(0,16), listType);
 }
 
@@ -197,7 +239,7 @@ $('a[tempid]').on('click',function(){
         window.mol_count_dic[this.getAttribute('molid')]++;
     });
     $('#ctrl-wrap').empty();
-    autoAppendNodes($(this).attr('tempid'))
+    autoAppendNodes($(this).attr('tempid'));
 });
 
 //拖入的容器
@@ -355,10 +397,10 @@ function goods_list_instance(datas,rowCount){
     var html_wrap,html_good,div=$('<div>');
     if(rowCount==1){
         html_wrap='<div class="" molid="single-good"></div>';
-        html_good='<a class="single-good-wrap-one"  molid="single-good" ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p><u>{goodname}</u><b>价格</b>￥<i>{price}</i></p></a>';
+        html_good='<a class="single-good-wrap-one"  molid="single-good" ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
     }else{
         html_wrap='<div class="" molid="double-good"></div>';
-        html_good='<a class="double-good-wrap-one"  ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p><u>{goodname}</u><b>价格</b>￥<i>{price}</i></p></a>';
+        html_good='<a class="double-good-wrap-one"  ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
     }
     var html,node_good,node_wrap=$(html_wrap)[0];
     datas.forEach(function(obj,i){
