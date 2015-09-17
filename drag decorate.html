@@ -34,7 +34,7 @@
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
                 <li id="li-00">
-                    <div class="mol-tag mol-tag-assertive" id="tag-four-category" draggable="true" >类别组合</div>
+                    <div class="mol-tag mol-tag-assertive" id="tag-tb-category" draggable="true" >类别组合</div>
                 </li>
                 <li id="li-01">
                     <div class="mol-tag mol-tag-assertive" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
@@ -67,7 +67,7 @@
                     <div class="mol-tag mol-tag-positive" id="tag-contract" draggable="true"  >联系模块</div>
                 </li>
                 <li id="li-11">
-                    <div class="mol-tag mol-tag-assertive" id="tag-features" draggable="true" >优势宣传</div>
+                    <div class="mol-tag mol-tag-assertive" id="tag-tb-features" draggable="true" >优势宣传</div>
                 </li>
                 <li id="li-12">
                     <div class="mol-tag mol-tag-assertive" id="tag-hd-category" draggable="true" >热门类别</div>
@@ -160,8 +160,8 @@
     </div>
 
     <!-- 模板 -->
-    <script type="text/template" id="temp-features">
-        <div class="mol-wrap features-wrap">
+    <script type="text/template" id="temp-tb-features">
+        <div class="mol-wrap features-wrap" molid="tb-features">
             <img src="feature/feature01.jpg"  alt=""/>
             <img src="feature/feature02.jpg"  alt=""/>
             <img src="feature/feature03.jpg"  alt=""/>
@@ -170,7 +170,7 @@
     </script>
 
     <script type="text/template" id="temp-hd-features">
-        <div class="mol-wrap features-wrap hd">
+        <div class="mol-wrap features-wrap hd" molid="hd-features">
             <img src="feature/hd-feature01.png"  alt=""/>
             <img src="feature/hd-feature02.png"  alt=""/>
             <img src="feature/hd-feature03.png"  alt=""/>
@@ -179,7 +179,7 @@
     </script>
 
     <script type="text/template" id="temp-brands">
-        <div class="mol-wrap brands">
+        <div class="mol-wrap brands" molid="brands">
             <img src="brand/g1.jpg" alt=""/>
             <img src="brand/g2.jpg" alt=""/>
             <img src="brand/g3.jpg" alt=""/>
@@ -200,7 +200,7 @@
     </script>
 
     <script type="text/template" id="temp-hd-category">
-        <div class="mol-wrap hd-category">
+        <div class="mol-wrap hd-category" molid="hd-category">
             <div class="hd-category-one">
                 <img src="category\hd-category01.jpg" alt=""/>
                 <div class="wrap-r">
@@ -284,21 +284,21 @@
     </div>
     </script>
 
-    <script type="text/template" id="temp-four-category">
-        <div class="mol-wrap" molid="four-category">
-            <div class="four-category-wrap-one">
+    <script type="text/template" id="temp-tb-category">
+        <div class="mol-wrap" molid="tb-category">
+            <div class="tb-category-wrap-one">
                 <img src="{imgsrc}" alt="">
                 <p>{desc}</p>
             </div>
-            <div class="four-category-wrap-one">
+            <div class="tb-category-wrap-one">
                 <img src="{imgsrc2}" alt="">
                 <p>{desc2}</p>
             </div>
-            <div class="four-category-wrap-one">
+            <div class="tb-category-wrap-one">
                 <img src="{imgsrc3}" alt="">
                 <p>{desc3}</p>
             </div>
-            <div class="four-category-wrap-one">
+            <div class="tb-category-wrap-one">
                 <img src="{imgsrc4}" alt="">
                 <p>{desc4}</p>
             </div>
@@ -313,9 +313,9 @@
     </script>
 
     <script type="text/template" id="temp-title-only">
-       <a class="mol-wrap" molid="title-only" ng-href="{href}">
+       <div class="mol-wrap" molid="title-only" ng-href="{href}">
            <h3>{title}</h3>
-       </a>
+       </div>
     </script>
 
     <script type="text/template" id="temp-word-only">
@@ -346,31 +346,31 @@
     </script>
 
     <!-- 设置模板的模板 -->
-    <script type="text/template" id="temp-ctrl-features">
-        <div class="mol-ctrl-wrap" ctrlid="features">
+    <script type="text/template" id="temp-ctrl-tb-features">
+        <div class="mol-ctrl-wrap" ctrlid="tb-features">
             <h2>优势宣传</h2>
-            <i>此模块不可编辑</i>
+            <b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-hd-features">
         <div class="mol-ctrl-wrap" ctrlid="hd-features">
             <h2>优势宣传</h2>
-            <i>此模块不可编辑</i>
+            <b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-brands">
-        <div class="mol-ctrl-wrap" ctrlid="brand">
+        <div class="mol-ctrl-wrap" ctrlid="brands">
             <h2>热门品牌</h2>
-            <i>此模块不可编辑</i>
+            <b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-hd-category">
         <div class="mol-ctrl-wrap" ctrlid="hd-category">
             <h2>热门分类</h2>
-            <i>此模块不可编辑</i>
+            <b>此模块不可编辑</b>
         </div>
     </script>
 
@@ -463,8 +463,8 @@
     </script>
 
 
-    <script type="text/template" id="temp-ctrl-four-category">
-        <div class="mol-ctrl-wrap" ctrlid="four-category">
+    <script type="text/template" id="temp-ctrl-tb-category">
+        <div class="mol-ctrl-wrap" ctrlid="tb-category">
             <h2>宝贝类别(默认四大类)</h2>
             <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
             <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">

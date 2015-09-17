@@ -131,9 +131,9 @@ hr{border-color: #ccc!important;}
     position: relative;
     width: 373px;
     min-height:80px;
-    margin: 10px 1px;
+    margin: 5px 1px;
     padding: 1px;
-    /*background: pink;*/
+    background: #fff;
     border: 1px solid #aac;
     border-radius:3px ;
     overflow: hidden;
@@ -464,6 +464,15 @@ a.double-good-wrap-one{
 .mol-wrap[molid="contract"],.mol-wrap[molid="title-only"]{
     min-height: 36px;
 }
+.mol-wrap[molid="title-only"]>h3{
+    margin:5px 0;
+    font-family: 微软雅黑;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    color:#204d74;
+    font-size: 20px;
+}
 .mol-wrap[molid="contract"]>img{
     width: 18px;
     margin: 0 10px 0 20px;
@@ -515,10 +524,10 @@ a.double-good-wrap-one{
     border-color:transparent #ccc transparent transparent;
     z-index: 10;
 }
-.double-pic-wrap-one,.four-category-wrap-one{
+.double-pic-wrap-one,.tb-category-wrap-one{
     position:relative;
 }
-.double-pic-wrap-one>p,.four-category-wrap-one>p{
+.double-pic-wrap-one>p,.tb-category-wrap-one>p{
     position: absolute;
     width:240px;
     color: #fff;
@@ -526,23 +535,23 @@ a.double-good-wrap-one{
     left: 1px;
     background:rgba(0,0,0,0.5);
 }
-.four-category-wrap-one>p{
+.tb-category-wrap-one>p{
     background: transparent;
 }
 
-.features-wrap{
+.tb-features-wrap{
     text-align: center;
     padding: 5px 0;
     background: #fff;
 }
-.features-wrap>img{
+.tb-features-wrap>img{
     display: inline-block;
     width:22%;
     margin: 0 2px;
 }
 .hd.features-wrap>img{
     width: 17%;
-    margin: 5px 10px;
+    margin: 5px 12.5px;
 }
 .brands>img{
     width: 89px;

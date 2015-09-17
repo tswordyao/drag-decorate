@@ -1,7 +1,7 @@
 
 //模板映射
 window.mol_dic={
-    'features':document.getElementById('temp-features').innerHTML,
+    'tb-features':document.getElementById('temp-tb-features').innerHTML,
     'hd-features':document.getElementById('temp-hd-features').innerHTML,
     'brands':document.getElementById('temp-brands').innerHTML,
     'hd-category':document.getElementById('temp-hd-category').innerHTML,
@@ -10,7 +10,7 @@ window.mol_dic={
     'slide-pic':document.getElementById('temp-slide-pic').innerHTML,
     'single-pic':document.getElementById('temp-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-double-pic').innerHTML,
-    'four-category':document.getElementById('temp-four-category').innerHTML,
+    'tb-category':document.getElementById('temp-tb-category').innerHTML,
     'word-pic':document.getElementById('temp-word-pic').innerHTML,
     'title-only':document.getElementById('temp-title-only').innerHTML,
     'word-only':document.getElementById('temp-word-only').innerHTML,
@@ -25,16 +25,16 @@ function get_mol(molid){
 
 //编辑模板映射
 window.mol_ctrl_dic={
-    'features':document.getElementById('temp-ctrl-features').innerHTML,
+    'tb-features':document.getElementById('temp-ctrl-tb-features').innerHTML,
     'hd-features':document.getElementById('temp-ctrl-hd-features').innerHTML,
-    'brands':document.getElementById('temp-ctrl-brands').innerHTML,
+    'tb-category':document.getElementById('temp-ctrl-tb-category').innerHTML,
     'hd-category':document.getElementById('temp-ctrl-hd-category').innerHTML,
+    'brands':document.getElementById('temp-ctrl-brands').innerHTML,
     'single-good':document.getElementById('temp-ctrl-single-good').innerHTML,
     'double-good':document.getElementById('temp-ctrl-double-good').innerHTML,
     'slide-pic':document.getElementById('temp-ctrl-slide-pic').innerHTML,
     'single-pic':document.getElementById('temp-ctrl-single-pic').innerHTML,
     'double-pic':document.getElementById('temp-ctrl-double-pic').innerHTML,
-    'four-category':document.getElementById('temp-ctrl-four-category').innerHTML,
     'word-pic':document.getElementById('temp-ctrl-word-pic').innerHTML,
     'title-only':document.getElementById('temp-ctrl-title-only').innerHTML,
     'word-only':document.getElementById('temp-ctrl-word-only').innerHTML,
@@ -55,7 +55,7 @@ window.mol_tip_dic={
     'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
     'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
     'double-pic':'并列图片,一般用来做品牌区域,块状LOGO图',
-    'four-category':'4格图片,一般用来做品牌或类别分类',
+    'tb-category':'4格图片,一般用来做品牌或类别分类',
     'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
     'title-only':'纯文字的标题,用于分段标注',
     'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
@@ -111,7 +111,7 @@ window.mol_val_dic={
         imgsrc2:'baby-joy02.jpg',
         desc2:'玩具特价! 点击进入专区!',
     },
-    "val-four-category":{
+    "val-tb-category":{
         href:'www.163.com',
         imgsrc:'area-logo-01.jpg',
         desc:'LOGO AREA<br>奶粉专区',
@@ -140,7 +140,7 @@ window.mol_val_dic={
 
 //模板使用数限制状态机
 window.mol_count_dic={
-    'features':2,
+    'tb-features':2,
     'hd-features':2,
     'brands':2,
     'hd-category':2,
@@ -149,7 +149,7 @@ window.mol_count_dic={
     'slide-pic':2,
     'single-pic':3,
     'double-pic':2,
-    'four-category':2,
+    'tb-category':2,
     'word-pic':3,
     'word-only':3,
     'title-only':2,
@@ -197,7 +197,7 @@ window.templates= {
     'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'contract'],
     'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'contract'],
     'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
-    tbstyle:['single-pic','features','four-category','double-good-list', 'contract'],
+    tbstyle:['single-pic','tb-features','tb-category','double-good-list', 'contract'],
     hdstyle:['slide-pic','hd-features','brands','hd-category', 'single-good-list', 'contract']
 };
 
@@ -388,7 +388,8 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
         //编辑模块再载入节点当前数据
                         .find('[type=text],[type=number],textarea').each(function(){
                             key=this.getAttribute('mapid')||'none';
-                            this.innerText?this.innerText=obj[key]:this.value=obj[key];
+                            if(obj&&obj[key])
+                                this.innerText?this.innerText=obj[key]:this.value=obj[key];
                         });
     })
 
