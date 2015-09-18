@@ -91,8 +91,8 @@ window.mol_val_dic={
     },
     "val-word-pic":{
         href:'www.163.com',
-        imgsrc:'good04.png',
-        desc:'图片描述文字,一些文字,怕怕拉拉,什么的<br><br>或者,图片可以做成100%, 文字遮罩在图片左上角<br>这需要图片设计配合,左上角统一色调或留白',
+        imgsrc:'word-pic.jpg',
+        desc:'图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
     },
     "val-slide-pic":{
         href:'www.163.com',
@@ -129,7 +129,7 @@ window.mol_val_dic={
         title:'全场宝贝包邮热销中!'
     },
     "val-word-only":{
-        desc:'一些文字,之类的,自定义的一段描述'
+        desc:'欢迎光临小店!  本店的所有商品都是真宗境外直邮, 海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '
     },
     "val-contract":{
         tel:'1381396655',
@@ -197,7 +197,7 @@ window.templates= {
     'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'contract'],
     'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'contract'],
     'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
-    tbstyle:['single-pic','tb-features','tb-category','double-good-list', 'contract'],
+    tbstyle:['single-pic','word-only','tb-features','tb-category','double-good-list', 'contract'],
     hdstyle:['slide-pic','hd-features','brands','hd-category', 'single-good-list', 'contract']
 };
 
