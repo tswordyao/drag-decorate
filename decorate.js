@@ -5,18 +5,18 @@ window.mol_dic={
     'hd-features':document.getElementById('temp-hd-features').innerHTML,
     'brands':document.getElementById('temp-brands').innerHTML,
     'hd-category':document.getElementById('temp-hd-category').innerHTML,
-    'single-good':document.getElementById('temp-single-good').innerHTML,
-    'double-good':document.getElementById('temp-double-good').innerHTML,
-    'slide-pic':document.getElementById('temp-slide-pic').innerHTML,
-    'single-pic':document.getElementById('temp-single-pic').innerHTML,
-    'double-pic':document.getElementById('temp-double-pic').innerHTML,
+    'singleGood':document.getElementById('temp-singleGood').innerHTML,
+    'doubleGood':document.getElementById('temp-doubleGood').innerHTML,
+    'slidePic':document.getElementById('temp-slidePic').innerHTML,
+    'singlePic':document.getElementById('temp-singlePic').innerHTML,
+    'doublePic':document.getElementById('temp-doublePic').innerHTML,
     'tb-category':document.getElementById('temp-tb-category').innerHTML,
-    'word-pic':document.getElementById('temp-word-pic').innerHTML,
-    'title-only':document.getElementById('temp-title-only').innerHTML,
-    'word-only':document.getElementById('temp-word-only').innerHTML,
+    'wordPic':document.getElementById('temp-wordPic').innerHTML,
+    'titleOnly':document.getElementById('temp-titleOnly').innerHTML,
+    'wordOnly':document.getElementById('temp-wordOnly').innerHTML,
     'contract':document.getElementById('temp-contract').innerHTML,
-    'single-good-list':document.getElementById('temp-single-good-list').innerHTML,
-    'double-good-list':document.getElementById('temp-double-good-list').innerHTML
+    'singleGoodList':document.getElementById('temp-singleGoodList').innerHTML,
+    'doubleGoodList':document.getElementById('temp-doubleGoodList').innerHTML
 };
 
 function get_mol(molid){
@@ -30,17 +30,17 @@ window.mol_ctrl_dic={
     'tb-category':document.getElementById('temp-ctrl-tb-category').innerHTML,
     'hd-category':document.getElementById('temp-ctrl-hd-category').innerHTML,
     'brands':document.getElementById('temp-ctrl-brands').innerHTML,
-    'single-good':document.getElementById('temp-ctrl-single-good').innerHTML,
-    'double-good':document.getElementById('temp-ctrl-double-good').innerHTML,
-    'slide-pic':document.getElementById('temp-ctrl-slide-pic').innerHTML,
-    'single-pic':document.getElementById('temp-ctrl-single-pic').innerHTML,
-    'double-pic':document.getElementById('temp-ctrl-double-pic').innerHTML,
-    'word-pic':document.getElementById('temp-ctrl-word-pic').innerHTML,
-    'title-only':document.getElementById('temp-ctrl-title-only').innerHTML,
-    'word-only':document.getElementById('temp-ctrl-word-only').innerHTML,
+    'singleGood':document.getElementById('temp-ctrl-singleGood').innerHTML,
+    'doubleGood':document.getElementById('temp-ctrl-doubleGood').innerHTML,
+    'slidePic':document.getElementById('temp-ctrl-slidePic').innerHTML,
+    'singlePic':document.getElementById('temp-ctrl-singlePic').innerHTML,
+    'doublePic':document.getElementById('temp-ctrl-doublePic').innerHTML,
+    'wordPic':document.getElementById('temp-ctrl-wordPic').innerHTML,
+    'titleOnly':document.getElementById('temp-ctrl-titleOnly').innerHTML,
+    'wordOnly':document.getElementById('temp-ctrl-wordOnly').innerHTML,
     'contract':document.getElementById('temp-ctrl-contract').innerHTML,
-    'single-good-list':document.getElementById('temp-ctrl-single-good-list').innerHTML,
-    'double-good-list':document.getElementById('temp-ctrl-double-good-list').innerHTML
+    'singleGoodList':document.getElementById('temp-ctrl-singleGoodList').innerHTML,
+    'doubleGoodList':document.getElementById('temp-ctrl-doubleGoodList').innerHTML
 };
 
 function get_mol_ctrl(molid){
@@ -51,17 +51,17 @@ function get_mol_ctrl(molid){
 window.mol_tip_dic={
     'features':'品牌优势',
     'hd-features':'品牌优势',
-    'single-good':'这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
-    'double-good':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
-    'single-pic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
-    'double-pic':'并列图片,一般用来做品牌区域,块状LOGO图',
+    'singleGood':'这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
+    'doubleGood':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
+    'singlePic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
+    'doublePic':'并列图片,一般用来做品牌区域,块状LOGO图',
     'tb-category':'4格图片,一般用来做品牌或类别分类',
-    'word-pic':'图文并茂, 做图需要美工在左侧纯色或留白',
-    'title-only':'纯文字的标题,用于分段标注',
-    'word-only':'纯粹的文字,说一些你想跟卖家说的话吧',
+    'wordPic':'图文并茂, 做图需要美工在左侧纯色或留白',
+    'titleOnly':'纯文字的标题,用于分段标注',
+    'wordOnly':'纯粹的文字,说一些你想跟卖家说的话吧',
     'contract':'您的联系电话,写上电话卖家更容易联系到你',
-    'single-good-list':'这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
-    'double-good-list':'这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
+    'singleGoodList':'这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
+    'doubleGoodList':'这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
 }
 
 /*
@@ -73,13 +73,13 @@ window.mol_tip_dic={
 
 //模板映射默认值
 window.mol_val_dic={
-    "val-single-good":{
+    "val-singleGood":{
         href:'www.163.com',
         imgsrc:'good03.jpg',
         goodname:'优质棉麻男童马夹 保暖透气',
         price:92.00
     },
-    "val-double-good":{
+    "val-doubleGood":{
         href:'www.163.com',
         imgsrc:'good17.jpg',
         goodname:'漂亮的女童裤子 纯棉',
@@ -89,21 +89,18 @@ window.mol_val_dic={
         goodname2:'小脚裤子批发 颜色多',
         price2:52.00
     },
-    "val-word-pic":{
+    "val-wordPic":{
         href:'www.163.com',
-        imgsrc:'word-pic.jpg',
+        imgsrc:'wordPic.jpg',
         desc:'图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
     },
-    "val-slide-pic":{
-        href:'www.163.com',
-        imgsrc:'hot3.png',
-    },
-    "val-single-pic":{
+    "val-slidePic":{href:'www.163.com', imgsrc:'hot.jpg'},
+    "val-singlePic":{
         href:'www.163.com',
         imgsrc:'hot3.jpg',
         desc:'婴童夏装换季清仓中! 点击进入专区!',
     },
-    "val-double-pic":{
+    "val-doublePic":{
         href:'www.163.com',
         imgsrc:'baby-joy01.jpg',
         desc:'童车特价中! 点击进入专区!',
@@ -125,17 +122,9 @@ window.mol_val_dic={
         imgsrc4:'area-logo-04.jpg',
         desc4:'LOGO AREA<br>亲子母婴',
     },
-    "val-title-only":{
-        title:'全场宝贝包邮热销中!'
-    },
-    "val-word-only":{
-        desc:'欢迎光临小店!  本店的所有商品都是真宗境外直邮, 海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '
-    },
-    "val-contract":{
-        tel:'1381396655',
-        wechat:'weixina2017006'
-    },
-
+    "val-titleOnly":{title:'全场宝贝包邮热销中!'},
+    "val-wordOnly":{desc:'欢迎光临小店!<br>本店的所有商品都是真宗境外直邮, 海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
+    "val-contract":{tel:'1381396655', wechat:'weixina2017006'}
 };
 
 //模板使用数限制状态机
@@ -144,18 +133,18 @@ window.mol_count_dic={
     'hd-features':2,
     'brands':2,
     'hd-category':2,
-    'single-good':3,
-    'double-good':2,
-    'slide-pic':2,
-    'single-pic':3,
-    'double-pic':2,
+    'singleGood':3,
+    'doubleGood':2,
+    'slidePic':2,
+    'singlePic':3,
+    'doublePic':2,
     'tb-category':2,
-    'word-pic':3,
-    'word-only':3,
-    'title-only':2,
+    'wordPic':3,
+    'wordOnly':3,
+    'titleOnly':2,
     'contract':2,
-    'single-good-list':2,
-    'double-good-list':2
+    'singleGoodList':1,
+    'doubleGoodList':1
 };
 
 //先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
@@ -193,12 +182,13 @@ window.goods=[
 ];
 window.checkedGoods=[];
 
+//几套默认的模板组合
 window.templates= {
-    'temp01': ['single-pic', 'title-only', 'double-good', 'single-good-list', 'contract'],
-    'temp02': ['single-pic', 'double-pic', 'single-good', 'double-good-list', 'contract'],
-    'temp03': ['double-good', 'word-pic',  'single-pic',  'single-good-list','word-only'],
-    tbstyle:['single-pic','word-only','tb-features','tb-category','double-good-list', 'contract'],
-    hdstyle:['slide-pic','hd-features','brands','hd-category', 'single-good-list', 'contract']
+    'temp01': ['singlePic', 'titleOnly', 'doubleGood', 'singleGoodList', 'contract'],
+    'temp02': ['singlePic', 'doublePic', 'singleGood', 'doubleGoodList', 'contract'],
+    'temp03': ['doubleGood', 'wordPic',  'singlePic',  'singleGoodList','wordOnly'],
+    tbstyle:['singlePic','wordOnly','tb-features','tb-category','doubleGoodList', 'contract'],
+    hdstyle:['slidePic','hd-features','brands','hd-category', 'singleGoodList', 'contract']
 };
 
 function autoAppendNodes(tempid,indexOfGoodlist){
@@ -222,56 +212,63 @@ function autoAppendNodes(tempid,indexOfGoodlist){
         mobile.appendChild(div);
         window.mol_count_dic[div.getAttribute('molid')]-=1;
     }
-    //自动装载宝贝列表
+    //自动装载宝贝列表,目前只支持一个页面存在一个宝贝列表
     molids.forEach(function(v,i){
-        if(v.indexOf('good-list')!=-1){
+        if(v.indexOf('GoodList')!=-1){
             indexOfGoodlist=i;
         }
     })
     $('#ctrl-wrap').data('index',indexOfGoodlist);
-    var listType=$('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid')=='single-good-list' ? 1:2;
+    var listType=$('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid')=='singleGoodList' ? 1:2;
     goods_list_instance(window.goods.slice(0,16), listType);
 }
 
+//载入组合模板
 $('a[tempid]').on('click',function(){
+    // 先清空
     $('#show-mobile').find('.mol-wrap').each(function(){
         $(this).remove();
         window.mol_count_dic[this.getAttribute('molid')]++;
     });
     $('#ctrl-wrap').empty();
+    //再载入
     autoAppendNodes($(this).attr('tempid'));
 });
 
-//拖入的容器
+//写一个通用的alert提示,bootstrap样式
+function bootAlert(str){
+    $('.alert').fadeIn(300,function(){
+        setTimeout((function(){
+            $(this).fadeOut(500);
+        }).bind(this),1500);
+    }).html(function(i,old){return old.replace('{content}',str)});
+    return false;
+}
+
+//拖入的容器上定义的事件
 $('#show-mobile').on('drop',function(e){
+        // 拖放完成,先取消默认事件
         event.preventDefault();
-        //console.log('drop');
-
+        // 再提取传递的信息
         var transData=event.dataTransfer.getData("Text");
+        // 找到蓝顶标记的参照元素
         var target= $('.mol-wrap').filter('.blue-top')[0];
-
-        //超限控制及提示
+        // 超限控制及提示
         if(!window.mol_count_dic[transData.replace('tag-','')]){
-            $('.alert').fadeIn(300,function(){
-                setTimeout((function(){
-                   $(this).fadeOut(500);
-                }).bind(this),1500);
-            });
-            return false;
+            bootAlert('该组件的使用次数已达上限。');
         }
-
-        //获取模板HTML和默认数据, 并实例化
+        // 获取模板HTML和默认数据, 将其实例化
         var html=window.mol_dic[transData.replace('tag-','')];
         var defaultVals=window.mol_val_dic[transData.replace('tag-','val-')];
         for(var k in defaultVals){
             html=html.replace('{'+k+'}',defaultVals[k]);
         }
-        //转为节点, 加上按钮, 插入
+        // 转为节点, 加上按钮, 插入
         var div=$(html)[0];
         div.innerHTML+= '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+        // 判断参照元素是否存在,不存在就直接插入最后面
         target?this.insertBefore(div,target):this.appendChild(div);
-
-        //更新计数器, 去除插入位置提示条, 重置右侧编辑区
+        //更新计数器, 去除插入位置蓝顶标记, 重置右侧编辑区
         window.mol_count_dic[div.getAttribute('molid')]--;
         $('.mol-wrap').removeClass('blue-top');
         $('#ctrl-wrap')[0].innerHTML='';
@@ -280,61 +277,65 @@ $('#show-mobile').on('drop',function(e){
         //console.info('dragenter!');
     })
     .on('dragover',function(e){
+        // 拖入区域,准备放置...
         event.preventDefault();
+        // 先清空上次的标记
         $('.mol-wrap').removeClass('assertive');
         $('.mol-wrap').removeClass('blue-top');
+        //鼠标所处的已有模块打上蓝顶标记,表示松手即放置其上
         $(event.target).parents('.mol-wrap').eq(0).addClass('blue-top');
     });
 
 
-//被拖动控件
+//被拖动控件上定义的事件
 $('.mol-tag').on('selectstart',function(e){
         return false;
     })
     .on('dragstart',function(e){
-        //console.log('\ndragstart-----');
-        var the=this;
-        $('.mol-tip').show().css('opacity',0).animate({top:$(this).parent().index()*65,opacity:0.9},function(){
-            $(this).html(function(i,c) {
-                return c + window.mol_tip_dic[this.id.replace('tag-', '')]
-            }.bind(the));
-        });
-        //$('.mol-tip').fadeIn(800).html(function(i,c) {
-        //    return c + window.mol_tip_dic[this.id.replace('tag-', '')]
-        //}.bind(this));
+        // 绑定传入值
         event.dataTransfer.setData("Text",this.id);
     })
     .on('dragend',function(e){
-        //console.log('--------dragend\n');
-        $('.mol-tip').fadeOut(300,function(){$(this).html('<div class="arrow"></div>')});
+        // 取消默认事件
         event.preventDefault();
     })
     .on('mousedown',function(){
+        // 显示提示框,设置内容
+        var the=this;
+        $('.mol-tip').show().css('opacity',0).animate({top:$(this).parent().index()*57,opacity:0.9},function(){
+            $(this).html(function(i,old) {
+                return old + window.mol_tip_dic[this.id.replace('tag-', '')]
+            }.bind(the));
+        });
+    })
+    .on('mouseup',function(){
+        // 隐藏提示框,清空内容
+        $('.mol-tip').fadeOut(300,function(){$(this).html('<div class="arrow"></div>')});
+    })
 
-    });
 
-
-//提取模板排列信息
+// 保存 统计当前模块排列组合的信息及其绑定的数据
 $('#btn-info').click(function(){
     var json=[];
     var mols=$('#show-mobile').find('.mol-wrap');
     mols.each(function(v,i){
         json.push({
-            'molid':this.getAttribute('molid'),
-            'native':$(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')]
+            'name':this.getAttribute('molid'),
+            'data':$(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')]||null
         })
     });
     console.table(json);
 });
+
+//查看次数限制现状
 $('#btn-count').click(function(){
     console.info(window.mol_count_dic);
 });
 
-
 //上下移动和删除
 $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
-    return false;
-})
+        return false;
+    })
     .on('click','.go-recycle',function(e){
         event.preventDefault();
         $(this.parentNode).remove();
@@ -389,26 +390,83 @@ $('#show-mobile').on('selectstart','.go-down,.go-up,.go-recycle',function(e){
                         .find('[type=text],[type=number],textarea').each(function(){
                             key=this.getAttribute('mapid')||'none';
                             if(obj&&obj[key])
-                                this.innerText?this.innerText=obj[key]:this.value=obj[key];
+                                this.innerText?this.innerText=obj[key]:this.value=obj[key].replace(/\<br\>/gm,'\n');
                         });
     })
+
+//右侧编辑区
+$('#ctrl-area')
+    // 编辑完成
+    .on('click','.btn-submit',function(e){
+        var molid,
+            html,
+            key,
+            obj={},
+            molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
+        //获取并用键值对保存编辑区数据
+        $(this.parentNode).prev().find('input,textarea').each(function(){
+            molid=molid||this.parentNode.getAttribute('ctrlid')||'none';
+            html=html||window.mol_dic[molid];
+            key=this.getAttribute('mapid')||'none';
+            this.innerText?obj[key]=this.innerText:obj[key]=this.value.replace(/\n/gm,'<br>');
+        });
+        //更新模板默认数据和选中块数据
+        //window.mol_val_dic['val-'+molid]=obj;
+        //保存原始数据
+        molobj.data('native',obj);
+        //实例化HTML内容
+        for(var k in obj){
+            html=html.replace('{'+k+'}',obj[k]);
+        }
+        //别忘了加上按钮
+        molobj.html( $(html)[0].innerHTML+ '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
+    })
+    // 打开模态页时,载入goods数组
+    .on('click','.show-good-list',function(){
+        goods_list_cls();
+        var html=$('#temp-good-cell')[0].innerHTML;
+        var goodList=$('.good-list')[0];console.info(goodList)
+        var good;
+        var datas=window.goods.slice(0,20);
+        datas.forEach(function(obj,i){
+            good=$(html.replace('{goodname}',obj['goodname'])
+                        .replace('{imgsrc}',obj['imgsrc'])
+                        .replace('{href}',obj['href'])
+                        .replace('{price}',obj['price']));
+            good.data('good-info',obj);
+            goodList.appendChild(good[0]);
+        });
+    })
+    //.on('click','.to-check-good2',function(){
+    //    //goods_list_instance(window.goods,2);
+    //})
+    //.on('click','.to-check-good1',function(){alert()
+    //    //goods_list_instance(window.goods,1);
+    //})
+
+/*
+ *  宝贝列表 选择宝贝
+ *  先打开模态页面,列出供选
+ *  然后点击一个选中一个,加入checkedGoods数组
+ *  最后点确定,直接应用到选中的宝贝列表上
+ */
 
 //数组填充宝贝列表
 function goods_list_instance(datas,rowCount){
     var html_wrap,html_good,div=$('<div>');
     if(rowCount==1){
-        html_wrap='<div class="" molid="single-good"></div>';
-        html_good='<a class="single-good-wrap-one"  molid="single-good" ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
+        html_wrap='<div class="" molid="singleGood"></div>';
+        html_good='<a class="singleGood-wrap-one"  molid="singleGood" ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
     }else{
-        html_wrap='<div class="" molid="double-good"></div>';
-        html_good='<a class="double-good-wrap-one"  ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
+        html_wrap='<div class="" molid="doubleGood"></div>';
+        html_good='<a class="doubleGood-wrap-one"  ng-href="{href}"> <img src="{imgsrc}" ng-src="{imgsrc}" alt=""><p>{goodname}</p><i>￥{price}</i></a>';
     }
     var html,node_good,node_wrap=$(html_wrap)[0];
     datas.forEach(function(obj,i){
         html=html_good.replace('{goodname}',obj['goodname'])
-                      .replace('{imgsrc}',obj['imgsrc'])
-                      .replace('{href}',obj['href'])
-                      .replace('{price}',obj['price']);
+            .replace('{imgsrc}',obj['imgsrc'])
+            .replace('{href}',obj['href'])
+            .replace('{price}',obj['price']);
         node_good=$(html)[0];
         if(rowCount==1){
             div[0].appendChild(node_good);
@@ -431,60 +489,7 @@ function goods_list_instance(datas,rowCount){
     molobj.data('native',datas);
 }
 
-//右侧编辑区
-$('#ctrl-area')
-    // 编辑完成
-    .on('click','.btn-submit',function(e){
-        var molid,html,key,obj={},molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
-        //获取并用键值对保存编辑区数据
-        $(this.parentNode).prev().find('input,textarea').each(function(){
-            molid=molid||this.parentNode.getAttribute('ctrlid')||'none';
-            html=html||window.mol_dic[molid];
-            key=this.getAttribute('mapid')||'none';
-            this.innerText?obj[key]=this.innerText:obj[key]=this.value;
-        });
-        //更新模板默认数据和选中块数据
-        //window.mol_val_dic['val-'+molid]=obj;
-        //保存原始数据
-        molobj.data('native',obj);
-        //实例化HTML内容
-        for(var k in obj){
-            html=html.replace('{'+k+'}',obj[k]);
-        }
-        //别忘了加上按钮
-        molobj.html( $(html)[0].innerHTML+ '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
-    })
-    // 打开模态页时,载入goods数组
-    .on('click','.show-good-list',function(){
-        goods_list_cls();
-        var html=$('#temp-good-cell')[0].innerHTML;
-        var goodList=$('.good-list')[0];
-        var good;
-        var datas=window.goods.slice(0,20);
-        datas.forEach(function(obj,i){
-            good=$(html.replace('{goodname}',obj['goodname'])
-                .replace('{imgsrc}',obj['imgsrc'])
-                .replace('{href}',obj['href'])
-                .replace('{price}',obj['price']));
-            good.data('good-info',obj);
-            goodList.appendChild(good[0]);
-        });
-    })
-    //.on('click','.to-check-good2',function(){
-    //    //goods_list_instance(window.goods,2);
-    //})
-    //.on('click','.to-check-good1',function(){alert()
-    //    //goods_list_instance(window.goods,1);
-    //})
-
-/*
-*  宝贝列表 选择宝贝
-*  先打开模态页面,列出供选
-*  然后点击一个选中一个,加入checkedGoods数组
-*  最后点确定,直接应用到选中的宝贝列表上
- */
-
-//选中一个
+//选中一个宝贝
 function check_it(good){
     var goodInfo=$(good).data('good-info');
     var good_tag=$('<div class="good-tag">');
@@ -495,16 +500,16 @@ function check_it(good){
     $('#good-checked-list').append(good_tag);
 }
 
-//重置
+//重置 清空
 function goods_list_cls(){
     $('#good-checked-list').html('');
-    $('.good-list').html('');
+    $('.GoodList').html('');
     window.checkedGoods=[];
 }
 
-//选择完毕,实例化数据
+//选择宝贝完毕,实例化数据
 function checked_done(the){
-    if($(the).data('for-ctrlid')=='double-good-list') {
+    if($(the).data('for-ctrlid')=='doubleGoodList') {
         goods_list_instance(window.checkedGoods, 2);
     }else{
         goods_list_instance(window.checkedGoods, 1);
@@ -530,31 +535,52 @@ function post_ctrl_id(the){
     );
 }
 
+//上传图片检测
 $(document).on('submit','.img-up-form',function(){
     var files=$('.img-up-file')[0].files;
     for(var i=0;i<files.length;i++){
-        if(files[i].size>200){
-            alert('单张图片大小不能超过200k,请压缩后重新上传');
-            break;
+        //alert(files[i].size)
+        if(files[i].size>200*1024){
+            bootAlert('单张图片大小不能超过200k,请压缩后重新上传');
+            return false;
         }
     }
-    //console.log($('#img-up-file').files[0].size)
     var data = new FormData($('#img-up-form')[0]);
-    $.ajax({
-        url: 'ajaxupfile2.php',
-        type: 'POST',
-        data: data,
-        dataType: 'JSON',
-        cache: false,
-        processData: false,
-        contentType: false,
-        success:function(res){
-            console.info(res);
-            //把回传过来的img-src地址,显示在下方,或者直接填充到input
-            //src=res.data[0];
-            //$(this).find('[mapid=href]').val(src);
-            alert("UploadFile Success");
-        }
-    });
+    //$.ajax({
+    //    url: 'ajaxupfile2.php',
+    //    type: 'POST',
+    //    data: data,
+    //    dataType: 'JSON',
+    //    cache: false,
+    //    processData: false,
+    //    contentType: false,
+    //    success:function(res){
+    //        console.log("UploadFile Success");
+    //        //把回传过来的img-src地址,显示在下方,并保存到该模块对应的data中
+    //        if(res.srcs){
+                var res={};
+                res.srcs=[
+                    'adfadggg11.jpg',
+                    'dgtbpoopi22.jpg',
+                    'sdfjifuiifug33.png',
+                ];
+                var molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index')),
+                    m=document.getElementsByClassName('mol-ctrl-wrap')[0],
+                    fg=document.createDocumentFragment(),
+                    p,arr;
+                res.srcs.forEach(function(v,i){
+                    p=document.createElement('p');
+                    p.innerHTML=v;
+                    fg.appendChild(p);
+                })
+                p=document.createElement('p');
+                p.className='upload-ok-tip';
+                p.innerHTML='上传成功,地址如上.';
+                fg.appendChild(p);
+                m.appendChild(fg);
+                molobj.data('native',res.srcs);
+        //    }
+        //}
+    //});
     return false;
 });

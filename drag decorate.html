@@ -37,31 +37,31 @@
                     <div class="mol-tag mol-tag-assertive" id="tag-tb-category" draggable="true" >类别组合</div>
                 </li>
                 <li id="li-01">
-                    <div class="mol-tag mol-tag-assertive" id="tag-single-good-list" draggable="true" >单宝贝列表</div>
+                    <div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >单宝贝列表</div>
                 </li>
                 <li id="li-02">
-                    <div class="mol-tag mol-tag-assertive" id="tag-double-good-list" draggable="true" >双宝贝列表</div>
+                    <div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >双宝贝列表</div>
                 </li>
                 <li id="li-03">
-                    <div class="mol-tag" id="tag-single-good" draggable="true" >单宝贝模块</div>
+                    <div class="mol-tag" id="tag-singleGood" draggable="true" >单宝贝模块</div>
                 </li>
-                <li id="li-04">
-                    <div class="mol-tag" id="tag-double-good" draggable="true" >双宝贝模块</div>
-                </li>
+                <!--<li id="li-04">-->
+                    <!--<div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div>-->
+                <!--</li>-->
                 <li id="li-05">
-                    <div class="mol-tag" id="tag-single-pic" draggable="true"  >焦点图模块</div>
+                    <div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div>
                 </li>
                 <li id="li-06">
-                    <div class="mol-tag" id="tag-double-pic" draggable="true"  >双图片模块</div>
+                    <div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div>
                 </li>
                 <li id="li-07">
-                    <div class="mol-tag mol-tag-positive" id="tag-word-pic" draggable="true"  >左文右图模块</div>
+                    <div class="mol-tag mol-tag-positive" id="tag-wordPic" draggable="true"  >左文右图模块</div>
                 </li>
                 <li id="li-08">
-                 <div class="mol-tag mol-tag-positive" id="tag-title-only" draggable="true"  >标题模块</div>
+                 <div class="mol-tag mol-tag-positive" id="tag-titleOnly" draggable="true"  >标题模块</div>
                 </li>
                 <li id="li-09">
-                    <div class="mol-tag mol-tag-positive" id="tag-word-only" draggable="true"  >文字模块</div>
+                    <div class="mol-tag mol-tag-positive" id="tag-wordOnly" draggable="true"  >黑板报模块</div>
                 </li>
                 <li id="li-10">
                     <div class="mol-tag mol-tag-positive" id="tag-contract" draggable="true"  >联系模块</div>
@@ -74,9 +74,6 @@
                 </li>
                 <li id="li-13">
                     <div class="mol-tag mol-tag-assertive" id="tag-brands" draggable="true" >热门品牌</div>
-                </li>
-                <li id="li-14">
-                    <div class="mol-tag mol-tag-assertive" id="hd-category" draggable="true" >热门分类</div>
                 </li>
             </ul>
 
@@ -156,7 +153,7 @@
 
     <!-- 组件使用超限提示-->
     <div class="alert alert-assertive">
-       <strong>提示！</strong>该组件的使用次数已达上限。
+       <strong>提示！</strong>{content}
     </div>
 
     <!-- 模板 -->
@@ -236,21 +233,21 @@
     </a>
     </script>
 
-    <script type="text/template" id="temp-single-good">
-    <a class="mol-wrap" molid="single-good" ng-href="{href}">
+    <script type="text/template" id="temp-singleGood">
+    <a class="mol-wrap" molid="singleGood" ng-href="{href}">
       <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
       <p><u>{goodname}</u><i>￥{price}</i></p>
     </a>
     </script>
 
-    <script type="text/template" id="temp-double-good">
-    <div class="mol-wrap" molid="double-good">
-        <a class="double-good-wrap-one"  ng-href="{href}">
+    <script type="text/template" id="temp-doubleGood">
+    <div class="mol-wrap" molid="doubleGood">
+        <a class="doubleGood-wrap-one"  ng-href="{href}">
           <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
           <p><u>{goodname}</u></p>
           <i>￥{price}</i>
        </a>
-        <a class="double-good-wrap-one"  ng-href="{href2}">
+        <a class="doubleGood-wrap-one"  ng-href="{href2}">
           <img src="{imgsrc2}" ng-src="{imgsrc2}" alt="">
           <p><u>{goodname2}</u></p>
           <i>￥{price2}</i>
@@ -258,26 +255,26 @@
     </div>
     </script>
 
-    <script type="text/template" id="temp-slide-pic">
-        <a class="mol-wrap" molid="slide-pic" ng-href="{href}">
+    <script type="text/template" id="temp-slidePic">
+        <a class="mol-wrap" molid="slidePic" ng-href="{href}">
             <img src="{imgsrc}" ng-src="{imgsrc}">
         </a>
     </script>
 
-    <script type="text/template" id="temp-single-pic">
-    <a class="mol-wrap" molid="single-pic" ng-href="{href}">
+    <script type="text/template" id="temp-singlePic">
+    <a class="mol-wrap" molid="singlePic" ng-href="{href}">
       <img src="{imgsrc}" ng-src="{imgsrc}">
       <p>{desc}</p>
     </a>
     </script>
 
-    <script type="text/template" id="temp-double-pic">
-    <div class="mol-wrap" molid="double-pic">
-      <div class="double-pic-wrap-one">
+    <script type="text/template" id="temp-doublePic">
+    <div class="mol-wrap" molid="doublePic">
+      <div class="doublePic-wrap-one">
         <img src="{imgsrc}" alt="">
         <p>{desc}</p>
       </div>
-      <div class="double-pic-wrap-one">
+      <div class="doublePic-wrap-one">
         <img src="{imgsrc2}" alt="">
         <p>{desc2}</p>
       </div>
@@ -305,22 +302,22 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-word-pic">
-    <div class="mol-wrap" molid="word-pic">
+    <script type="text/template" id="temp-wordPic">
+    <div class="mol-wrap" molid="wordPic">
       <p>{desc}</p>
       <img src="{imgsrc}" alt="">
     </div>
     </script>
 
-    <script type="text/template" id="temp-title-only">
-       <div class="mol-wrap" molid="title-only" ng-href="{href}">
+    <script type="text/template" id="temp-titleOnly">
+       <div class="mol-wrap" molid="titleOnly" ng-href="{href}">
            <h3>{title}</h3>
        </div>
     </script>
 
-    <script type="text/template" id="temp-word-only">
-       <a class="mol-wrap" molid="word-only" ng-href="{href}">
-           <p class="word-only">{desc}</p>
+    <script type="text/template" id="temp-wordOnly">
+       <a class="mol-wrap" molid="wordOnly" ng-href="{href}">
+           <p class="wordOnly">{desc}</p>
        </a>
     </script>
 
@@ -331,15 +328,15 @@
        </a>
     </script>
 
-    <script type="text/template" id="temp-single-good-list">
-       <div class="mol-wrap" molid="single-good-list">
+    <script type="text/template" id="temp-singleGoodList">
+       <div class="mol-wrap" molid="singleGoodList">
             <h4>宝贝列表</h4>
             <p>每行一个,依次排列,请点击为其选择宝贝.</p>
        </div>
     </script>
 
-    <script type="text/template" id="temp-double-good-list">
-       <div class="mol-wrap" molid="double-good-list">
+    <script type="text/template" id="temp-doubleGoodList">
+       <div class="mol-wrap" molid="doubleGoodList">
            <h4>宝贝列表</h4>
            <p>每行两个,依次排列,请点击为其选择宝贝.</p>
        </div>
@@ -374,8 +371,8 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-single-good">
-        <div class="mol-ctrl-wrap" ctrlid="single-good">
+    <script type="text/template" id="temp-ctrl-singleGood">
+        <div class="mol-ctrl-wrap" ctrlid="singleGood">
             <h2>单个宝贝(自定义)</h2>
             <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
             <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
@@ -384,8 +381,8 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-double-good">
-        <div class="mol-ctrl-wrap" ctrlid="double-good">
+    <script type="text/template" id="temp-ctrl-doubleGood">
+        <div class="mol-ctrl-wrap" ctrlid="doubleGood">
             <h2>一行双宝贝(自定义)</h2>
             <hr><label>图片地址1：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
             <br><label>宝贝链接1：</label><input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
@@ -399,8 +396,8 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-word-pic">
-       <div class="mol-ctrl-wrap" ctrlid="word-pic">
+    <script type="text/template" id="temp-ctrl-wordPic">
+       <div class="mol-ctrl-wrap" ctrlid="wordPic">
            <h2>图文模块(自定义)</h2>
            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
            <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
@@ -414,8 +411,8 @@
        </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-slide-pic">
-        <div class="mol-ctrl-wrap" ctrlid="slide-pic">
+    <script type="text/template" id="temp-ctrl-slidePic">
+        <div class="mol-ctrl-wrap" ctrlid="slidePic">
             <h2>焦点图(自定义)</h2>
             <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
             <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
@@ -428,8 +425,8 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-single-pic">
-        <div class="mol-ctrl-wrap" ctrlid="single-pic">
+    <script type="text/template" id="temp-ctrl-singlePic">
+        <div class="mol-ctrl-wrap" ctrlid="singlePic">
             <h2>焦点图(自定义)</h2>
             <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
             <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
@@ -438,13 +435,13 @@
                 <label>图片上传：</label>
                 <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
                 <input type="submit">
-                <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+                <p>图片大小不超过200k</p>
             </form>
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-double-pic">
-       <div class="mol-ctrl-wrap" ctrlid="double-pic">
+    <script type="text/template" id="temp-ctrl-doublePic">
+       <div class="mol-ctrl-wrap" ctrlid="doublePic">
            <h2>一行双图(自定义)</h2>
            <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
@@ -484,16 +481,16 @@
         </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-word-only">
-       <div class="mol-ctrl-wrap" ctrlid="word-only">
+    <script type="text/template" id="temp-ctrl-wordOnly">
+       <div class="mol-ctrl-wrap" ctrlid="wordOnly">
            <h2>纯宣传文字(自定义)</h2>
            <hr><label>文字描述：</label>
            <textarea   mapid="desc"    placeholder="输入文字描述"></textarea>
        </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-title-only">
-       <div class="mol-ctrl-wrap" ctrlid="title-only">
+    <script type="text/template" id="temp-ctrl-titleOnly">
+       <div class="mol-ctrl-wrap" ctrlid="titleOnly">
            <h2>标题模块(自定义)</h2>
            <hr><label>标题文字：</label><input type="text"   mapid="title"       placeholder="输入标题文字">
        </div>
@@ -507,8 +504,8 @@
        </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-single-good-list">
-       <div class="mol-ctrl-wrap" ctrlid="single-good-list">
+    <script type="text/template" id="temp-ctrl-singleGoodList">
+       <div class="mol-ctrl-wrap" ctrlid="singleGoodList">
            <h2>宝贝列表(每行一个)</h2><hr>
            <div class="show-checked-good"></div>
            <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
@@ -516,8 +513,8 @@
        </div>
     </script>
 
-    <script type="text/template" id="temp-ctrl-double-good-list">
-       <div class="mol-ctrl-wrap" ctrlid="double-good-list">
+    <script type="text/template" id="temp-ctrl-doubleGoodList">
+       <div class="mol-ctrl-wrap" ctrlid="doubleGoodList">
            <h2>宝贝列表(每行两个)</h2><hr>
            <div class="show-checked-good"></div>
            <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
