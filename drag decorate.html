@@ -16,7 +16,7 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-brand"  href="#">&lt;&lt;店铺首页装修\</a>
+         <a class="navbar-brand"  href="#">店铺首页装修&nbsp;|</a>
          <a class="navbar-brand"  id="btn-info"          href="#">保存</a>
          <a class="navbar-brand"  id="btn-count"         href="#">状态</a>
          <a class="navbar-brand"  tempid=""              href="#">清空</a>
@@ -31,8 +31,12 @@
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-                <li><div class="mol-tag mol-tag-assertive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-tb-category" draggable="true" >类别组合</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-tb-category" draggable="true" >类别组合</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-hd-category"  draggable="true" >热门类别</div></li>
+
+                <li><div class="mol-tag mol-tag-assertive" id="tag-brands"       draggable="true" >品牌陈列</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >单宝贝列表</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >双宝贝列表</div></li>
 
@@ -44,12 +48,11 @@
                 <li><div class="mol-tag" id="tag-slidePic"  draggable="true"  >轮播图模块</div></li>
                 <li><div class="mol-tag" id="tag-wordPic"   draggable="true"  >左文右图模块</div></li>
 
-                <li><div class="mol-tag mol-tag-positive"   id="tag-titleOnly"  draggable="true"  >标题模块</div></li>
-                <li><div class="mol-tag mol-tag-positive"   id="tag-wordOnly"   draggable="true"  >黑板报模块</div></li>
-                <li><div class="mol-tag mol-tag-positive"   id="tag-contract"   draggable="true"  >联系模块</div></li>
+                <li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报模块</div></li>
+                <li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >标题模块</div></li>
+                <li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>
 
-                <li><div class="mol-tag mol-tag-assertive" id="tag-hd-category"  draggable="true" >热门类别</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-brands"       draggable="true" >热门品牌</div></li>
+
             </ul>
 
 
@@ -99,21 +102,32 @@
            <div class="modal-content">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title" id="myModalLabel">宝贝选择标题</h4>
+                   <h4 class="modal-title" id="myModalLabel">宝贝选择</h4>
                </div>
                <div class="modal-body" id="goodlist-forcheck2" >
-                   <div class="toolbar"><input type="text" placeholder="输入宝贝关键字"/><button href="" class="btn btn-search">搜索</button></div>
-                   <div class="good-list">
+                   <div class="toolbar">
+                       <input type="text" id="keyword-for-search" placeholder="输入宝贝关键字"/>
+                       <button href="" class="btn btn-search">搜索</button>
                    </div>
+                   <!--<ul class="good-type">-->
+                       <!--<li class="good-type" id=""></li>-->
+                       <!--<li class="good-type" id=""></li>-->
+                       <!--<li class="good-type" id=""></li>-->
+                       <!--<li class="good-type" id=""></li>-->
+                       <!--<li class="good-type" id=""></li>-->
+                       <!--<li class="good-type" id=""></li>-->
+                   <!--</ul>-->
+                   <div class="good-list"></div>
                    <div class="good-list-pager">
-                       <a href="" class="go-first">|«</a>
-                       <a href="" class="go-prev">«</a>
+                       <a href="javascript:void(0)" class="go-first">|«</a>
+                       <a href="javascript:void(0)" class="go-prev">«</a>
                        <!--<a href="" class="page-clicker">1</a>-->
                        <!--<a href="" class="page-clicker">2</a>-->
                        <!--<a href="" class="page-clicker">3</a>-->
-                       ...
-                       <a href="" class="go-next">»</a>
-                       <a href="" class="go-last">»|</a>
+                       <!--<input type="text" id="go-pagenum"/>-->
+                       <!--<button id="go-the-page">到</button>-->
+                       <a href="javascript:void(0)" class="go-next">»</a>
+                       <a href="javascript:void(0)" class="go-last">»|</a>
                        &nbsp;第<i id="now-pagenum">1</i>页/共<i id="total-pagenum">8</i>&nbsp;页
                    </div>
                    <div id="good-checked-list"></div>
@@ -202,28 +216,28 @@
 
     <script type="text/template" id="temp-good-cell">
     <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
-       <img src="{imgsrc}" alt="" class=""/>
+       <img src="{small}" alt="" class=""/>
        <p class="good-name">{name}</p>
        <p class="good-price">￥{price}</p>
     </a>
     </script>
 
     <script type="text/template" id="temp-singleGood">
-    <a class="mol-wrap" molid="singleGood" ng-href="{href}">
-      <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
+    <a class="mol-wrap" molid="singleGood" href="{href}">
+      <img src="{small}"  alt="">
       <p><u>{goodname}</u><i>￥{price}</i></p>
     </a>
     </script>
 
     <script type="text/template" id="temp-doubleGood">
     <div class="mol-wrap" molid="doubleGood">
-        <a class="doubleGood-wrap-one"  ng-href="{href}">
-          <img src="{imgsrc}" ng-src="{imgsrc}" alt="">
+        <a class="doubleGood-wrap-one"  href="{href}">
+          <img src="{small}"  alt="">
           <p><u>{goodname}</u></p>
           <i>￥{price}</i>
        </a>
-        <a class="doubleGood-wrap-one"  ng-href="{href2}">
-          <img src="{imgsrc2}" ng-src="{imgsrc2}" alt="">
+        <a class="doubleGood-wrap-one"  href="{href2}">
+          <img src="{small2}"  alt="">
           <p><u>{goodname2}</u></p>
           <i>￥{price2}</i>
        </a>
@@ -231,14 +245,14 @@
     </script>
 
     <script type="text/template" id="temp-slidePic">
-        <a class="mol-wrap" molid="slidePic" ng-href="{href}">
-            <img src="{imgsrc}" ng-src="{imgsrc}">
+        <a class="mol-wrap" molid="slidePic" href="{href}">
+            <img src="{imgsrc}" >
         </a>
     </script>
 
     <script type="text/template" id="temp-singlePic">
-    <a class="mol-wrap" molid="singlePic" ng-href="{href}">
-      <img src="{imgsrc}" ng-src="{imgsrc}">
+    <a class="mol-wrap" molid="singlePic" href="{href}">
+      <img src="{imgsrc}" alt="">
       <p>{desc}</p>
     </a>
     </script>
@@ -349,7 +363,7 @@
     <script type="text/template" id="temp-ctrl-singleGood">
         <div class="mol-ctrl-wrap" ctrlid="singleGood">
             <h2>单个宝贝(自定义)</h2>
-            <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝图片地址">
+            <hr><label>图片地址：</label><input type="text"   mapid="small"     placeholder="输入宝贝图片地址">
             <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
             <br><label>宝贝名称：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝名称">
             <br><label>宝贝价格：</label><input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
@@ -359,12 +373,12 @@
     <script type="text/template" id="temp-ctrl-doubleGood">
         <div class="mol-ctrl-wrap" ctrlid="doubleGood">
             <h2>一行双宝贝(自定义)</h2>
-            <hr><label>图片地址1：</label><input type="text"   mapid="imgsrc"     placeholder="输入宝贝1图片地址">
+            <hr><label>图片地址1：</label><input type="text"   mapid="small"     placeholder="输入宝贝1图片地址">
             <br><label>宝贝链接1：</label><input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
             <br><label>宝贝名称1：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝1名称">
             <br><label>宝贝价格1：</label><input type="number" mapid="price"      placeholder="输入宝贝1价格(纯数字,可精确到2位小数)">
             <br><hr>
-            <br><label>图片地址2：</label><input type="text"   mapid="imgsrc2"    placeholder="输入宝贝2图片地址">
+            <br><label>图片地址2：</label><input type="text"   mapid="small2"    placeholder="输入宝贝2图片地址">
             <br><label>宝贝链接2：</label><input type="text"   mapid="href2"      placeholder="输入宝贝2链接地址">
             <br><label>宝贝名称2：</label><input type="text"   mapid="goodname2"  placeholder="输入宝贝2名称">
             <br><label>宝贝价格2：</label><input type="number" mapid="price2"     placeholder="输入宝贝2价格(纯数字,可精确到2位小数)">

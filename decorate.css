@@ -117,7 +117,14 @@ hr{border-color: #ccc!important;}
 #model-list .mol-tag-positive:hover{
     background-image: -webkit-linear-gradient(top,#1a79d9,#1a70c7);
 }
-
+#model-list .mol-tag-energized {
+    background-color:#F8E97E;
+    background-image: -webkit-linear-gradient(top,#D1B70D, #D8C97C);
+    border: 1px solid #E7CD0D;
+}
+#model-list .mol-tag-energized:hover{
+    background-image: -webkit-linear-gradient(top,#D8C97C,#D1B70D);
+}
 .drag-able,.drag-copy{
     position:absolute;
 }
