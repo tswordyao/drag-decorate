@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\@code important\decorate\hot3.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.css" afterPath="$PROJECT_DIR$/decorate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.js" afterPath="$PROJECT_DIR$/decorate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drag decorate.html" afterPath="$PROJECT_DIR$/drag decorate.html" />
     </list>
@@ -29,7 +27,7 @@
       <file leaf-file-name="decorate.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decorate.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6989245">
+            <state vertical-scroll-proportion="-7.064516">
               <caret line="608" column="22" selection-start-line="608" selection-start-column="22" selection-end-line="608" selection-end-column="22" />
               <folding />
             </state>
@@ -39,9 +37,28 @@
       <file leaf-file-name="decorate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decorate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28649837">
-              <caret line="304" column="86" selection-start-line="304" selection-start-column="86" selection-end-line="304" selection-end-column="86" />
-              <folding />
+            <state vertical-scroll-proportion="0.585034">
+              <caret line="452" column="44" selection-start-line="452" selection-start-column="44" selection-end-line="452" selection-end-column="44" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#352#1618#0" expanded="false" />
+                <element signature="e#1780#3126#0" expanded="false" />
+                <element signature="e#3295#4043#0" expanded="false" />
+                <element signature="e#4122#4266#0" expanded="false" />
+                <element signature="e#4297#4569#0" expanded="false" />
+                <element signature="e#4597#4780#0" expanded="false" />
+                <element signature="e#4899#5018#0" expanded="false" />
+                <element signature="e#5048#5277#0" expanded="false" />
+                <element signature="e#5309#5777#0" expanded="false" />
+                <element signature="e#7235#9903#0" expanded="false" />
+                <element signature="e#13884#13921#0" expanded="false" />
+                <element signature="n#!!block;n#post_ctrl_id#0" expanded="false" />
+                <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
+                <element signature="n#!!block;n#check_it#0" expanded="false" />
+                <element signature="e#22844#23120#0" expanded="false" />
+                <element signature="n#!!block;n#checked_done#0" expanded="false" />
+                <element signature="n#!!block;n#goods_list_cls#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +66,8 @@
       <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drag decorate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.488">
-              <caret line="437" column="23" selection-start-line="437" selection-start-column="23" selection-end-line="437" selection-end-column="23" />
+            <state vertical-scroll-proportion="-10.0625">
+              <caret line="205" column="29" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -235,11 +252,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/decorate.js</url>
-          <line>74</line>
-          <option name="timeStamp" value="5" />
+          <line>160</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -254,7 +271,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decorate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6989245">
+        <state vertical-scroll-proportion="-7.064516">
           <caret line="608" column="22" selection-start-line="608" selection-start-column="22" selection-end-line="608" selection-end-column="22" />
           <folding />
         </state>
@@ -262,17 +279,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drag decorate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.488">
-          <caret line="437" column="23" selection-start-line="437" selection-start-column="23" selection-end-line="437" selection-end-column="23" />
+        <state vertical-scroll-proportion="-10.0625">
+          <caret line="205" column="29" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decorate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28649837">
-          <caret line="304" column="86" selection-start-line="304" selection-start-column="86" selection-end-line="304" selection-end-column="86" />
-          <folding />
+        <state vertical-scroll-proportion="0.585034">
+          <caret line="452" column="44" selection-start-line="452" selection-start-column="44" selection-end-line="452" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#352#1618#0" expanded="false" />
+            <element signature="e#1780#3126#0" expanded="false" />
+            <element signature="e#3295#4043#0" expanded="false" />
+            <element signature="e#4122#4266#0" expanded="false" />
+            <element signature="e#4297#4569#0" expanded="false" />
+            <element signature="e#4597#4780#0" expanded="false" />
+            <element signature="e#4899#5018#0" expanded="false" />
+            <element signature="e#5048#5277#0" expanded="false" />
+            <element signature="e#5309#5777#0" expanded="false" />
+            <element signature="e#7235#9903#0" expanded="false" />
+            <element signature="e#13884#13921#0" expanded="false" />
+            <element signature="n#!!block;n#post_ctrl_id#0" expanded="false" />
+            <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
+            <element signature="n#!!block;n#check_it#0" expanded="false" />
+            <element signature="e#22844#23120#0" expanded="false" />
+            <element signature="n#!!block;n#checked_done#0" expanded="false" />
+            <element signature="n#!!block;n#goods_list_cls#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

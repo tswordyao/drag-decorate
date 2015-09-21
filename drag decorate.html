@@ -16,15 +16,13 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-brand" href="#">&lt;&lt;</a>
-         <a class="navbar-brand"  id="btn-info"  href="#">保存</a>
-         <a class="navbar-brand"  id="btn-count" href="#">状态</a>
-         <a class="navbar-brand"  tempid=""       href="#">清空</a>
-         <a class="navbar-brand"  tempid="temp01" href="#">默认模板</a>
-         <a class="navbar-brand"  tempid="temp02" href="#">模板二</a>
-         <a class="navbar-brand"  tempid="temp03" href="#">模板三</a>
-         <a class="navbar-brand"  tempid="tbstyle" href="#">温馨风</a>
-         <a class="navbar-brand"  tempid="hdstyle" href="#">海带风</a>
+         <a class="navbar-brand"  href="#">&lt;&lt;店铺首页装修\</a>
+         <a class="navbar-brand"  id="btn-info"          href="#">保存</a>
+         <a class="navbar-brand"  id="btn-count"         href="#">状态</a>
+         <a class="navbar-brand"  tempid=""              href="#">清空</a>
+         <a class="navbar-brand"  tempid="tempDefault"  href="#">默认模板</a>
+         <a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>
+         <a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>
      </div>
     </nav>
 
@@ -33,48 +31,25 @@
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-                <li id="li-00">
-                    <div class="mol-tag mol-tag-assertive" id="tag-tb-category" draggable="true" >类别组合</div>
-                </li>
-                <li id="li-01">
-                    <div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >单宝贝列表</div>
-                </li>
-                <li id="li-02">
-                    <div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >双宝贝列表</div>
-                </li>
-                <li id="li-03">
-                    <div class="mol-tag" id="tag-singleGood" draggable="true" >单宝贝模块</div>
-                </li>
-                <!--<li id="li-04">-->
-                    <!--<div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div>-->
-                <!--</li>-->
-                <li id="li-05">
-                    <div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div>
-                </li>
-                <li id="li-06">
-                    <div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div>
-                </li>
-                <li id="li-07">
-                    <div class="mol-tag mol-tag-positive" id="tag-wordPic" draggable="true"  >左文右图模块</div>
-                </li>
-                <li id="li-08">
-                 <div class="mol-tag mol-tag-positive" id="tag-titleOnly" draggable="true"  >标题模块</div>
-                </li>
-                <li id="li-09">
-                    <div class="mol-tag mol-tag-positive" id="tag-wordOnly" draggable="true"  >黑板报模块</div>
-                </li>
-                <li id="li-10">
-                    <div class="mol-tag mol-tag-positive" id="tag-contract" draggable="true"  >联系模块</div>
-                </li>
-                <li id="li-11">
-                    <div class="mol-tag mol-tag-assertive" id="tag-tb-features" draggable="true" >优势宣传</div>
-                </li>
-                <li id="li-12">
-                    <div class="mol-tag mol-tag-assertive" id="tag-hd-category" draggable="true" >热门类别</div>
-                </li>
-                <li id="li-13">
-                    <div class="mol-tag mol-tag-assertive" id="tag-brands" draggable="true" >热门品牌</div>
-                </li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-tb-category" draggable="true" >类别组合</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >单宝贝列表</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >双宝贝列表</div></li>
+
+                <!--<li><div class="mol-tag" id="tag-singleGood" draggable="true" >单宝贝模块</div></li>-->
+                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
+                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
+
+                <li><div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div></li>
+                <li><div class="mol-tag" id="tag-slidePic"  draggable="true"  >轮播图模块</div></li>
+                <li><div class="mol-tag" id="tag-wordPic"   draggable="true"  >左文右图模块</div></li>
+
+                <li><div class="mol-tag mol-tag-positive"   id="tag-titleOnly"  draggable="true"  >标题模块</div></li>
+                <li><div class="mol-tag mol-tag-positive"   id="tag-wordOnly"   draggable="true"  >黑板报模块</div></li>
+                <li><div class="mol-tag mol-tag-positive"   id="tag-contract"   draggable="true"  >联系模块</div></li>
+
+                <li><div class="mol-tag mol-tag-assertive" id="tag-hd-category"  draggable="true" >热门类别</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-brands"       draggable="true" >热门品牌</div></li>
             </ul>
 
 
@@ -133,13 +108,13 @@
                    <div class="good-list-pager">
                        <a href="" class="go-first">|«</a>
                        <a href="" class="go-prev">«</a>
-                       <a href="" class="page-clicker">1</a>
-                       <a href="" class="page-clicker">2</a>
-                       <a href="" class="page-clicker">3</a>
+                       <!--<a href="" class="page-clicker">1</a>-->
+                       <!--<a href="" class="page-clicker">2</a>-->
+                       <!--<a href="" class="page-clicker">3</a>-->
                        ...
                        <a href="" class="go-next">»</a>
                        <a href="" class="go-last">»|</a>
-                       共&nbsp;<i>8</i>&nbsp;页
+                       &nbsp;第<i id="now-pagenum">1</i>页/共<i id="total-pagenum">8</i>&nbsp;页
                    </div>
                    <div id="good-checked-list"></div>
                </div>
@@ -228,7 +203,7 @@
     <script type="text/template" id="temp-good-cell">
     <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
        <img src="{imgsrc}" alt="" class=""/>
-       <p class="good-name">{goodname}</p>
+       <p class="good-name">{name}</p>
        <p class="good-price">￥{price}</p>
     </a>
     </script>
@@ -346,28 +321,28 @@
     <script type="text/template" id="temp-ctrl-tb-features">
         <div class="mol-ctrl-wrap" ctrlid="tb-features">
             <h2>优势宣传</h2>
-            <b>此模块不可编辑</b>
+            <hr><b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-hd-features">
         <div class="mol-ctrl-wrap" ctrlid="hd-features">
             <h2>优势宣传</h2>
-            <b>此模块不可编辑</b>
+            <hr><b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-brands">
         <div class="mol-ctrl-wrap" ctrlid="brands">
             <h2>热门品牌</h2>
-            <b>此模块不可编辑</b>
+            <hr><b>此模块不可编辑</b>
         </div>
     </script>
 
     <script type="text/template" id="temp-ctrl-hd-category">
         <div class="mol-ctrl-wrap" ctrlid="hd-category">
             <h2>热门分类</h2>
-            <b>此模块不可编辑</b>
+            <hr><b>此模块不可编辑</b>
         </div>
     </script>
 
@@ -413,9 +388,17 @@
 
     <script type="text/template" id="temp-ctrl-slidePic">
         <div class="mol-ctrl-wrap" ctrlid="slidePic">
-            <h2>焦点图(自定义)</h2>
-            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <h2>轮播图(自定义)</h2>
+            <hr><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc2"     placeholder="输入图片2地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href2"       placeholder="输入链接2转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc3"     placeholder="输入图片3地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href3"       placeholder="输入链接3转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc4"     placeholder="输入图片4地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href4"       placeholder="输入链接4转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc5"     placeholder="输入图片5地址">
+            <br><label>跳转链接：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">
             <form class="img-up-form">
                 <label>图片上传：</label>
                 <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
@@ -433,7 +416,7 @@
             <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
             <form class="img-up-form">
                 <label>图片上传：</label>
-                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file"  accept="image/*" maxLength="1"/>
                 <input type="submit">
                 <p>图片大小不超过200k</p>
             </form>
