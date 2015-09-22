@@ -113,7 +113,7 @@
                 desc:'LOGO AREA<br>奶粉专区',
                 href2:'#',
                 imgsrc2:'area-logo-02.jpg',
-                desc2:'LOGO AREA<br>玩具专区',
+                desc2:'LOGO AREA<br>玩具日用',
                 href3:'#',
                 imgsrc3:'area-logo-03.jpg',
                 desc3:'LOGO AREA<br>婴童服饰',
@@ -156,7 +156,8 @@
 
 
 /*后台接口,获取宝贝数据*/
-    var actionSearch='http://192.168.32.199/fenxiao/goods/appGoodsList';
+    var actionSearch='http://127.0.0.1:8080/goods/appGoodsList';
+    /*
     $.post(actionSearch,{pageSize:20,pageNum:1,keyword:''},function(resp){
         if(resp.result==1){
             //console.info(resp);
@@ -165,6 +166,7 @@
             window.goods=[];
         }
     });
+    */
 
 
     // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
@@ -440,7 +442,7 @@
                     html=html.replace('{'+k+'}',obj[k]);
                 }
             }
-            console.log(obj)
+            //console.log(obj)
             //更新模板默认数据和选中块数据
             //window.mol_val_dic['val-'+molid]=obj;
 
@@ -453,6 +455,7 @@
         // 打开模态页时,载入goods数组
         .on('click','.show-good-list',function(){
             goods_list_cls();
+            /*
             var html=$('#temp-good-cell')[0].innerHTML;
             var goodList=$('.good-list')[0];
             var good;
@@ -466,26 +469,8 @@
                 good.data('good-info',obj);
                 goodList.appendChild(good[0]);
             });
-            /*
-            $.post(actionSearch,{pageSize:20,pageNum:1,keyword:''},function(resp){
-                if(resp.result==1){
-                    //console.info(resp);
-                     $('#total-pagenum').text(resp.pageCount)
-                     datas=resp.data;
-                     datas.forEach(function(obj,i){
-                         good=$(html.replace('{name}',obj['name'])
-                         .replace('{small}',obj['small'])
-                         .replace('{href}',obj['href'])
-                         .replace('{price}',obj['price']));
-                         good.data('good-info',obj);
-                         goodList.appendChild(good[0]);
-                     });
-                }else{
-                    $('#total-pagenum').text('0');
-                    $('#now-pagenum').text('0');
-                }
-            });
             */
+             fillGoods();
         }).on('click','.btn-reset',function(e){
             $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea,[type=upload]').each(function(){this.value='';})
             $('.mol-ctrl-wrap').find('p.uploaded-info,p.upload-ok-tip').remove();
@@ -506,7 +491,7 @@
         );
     }
 
-    // 载入宝贝列表
+    // 载入到宝贝列表模块
     function goods_list_instance(datas,rowCount){
         var html_wrap,html_good,div=$('<div>');
         if(rowCount==1){
@@ -583,142 +568,70 @@
         window.checkedGoods=[];
     }
 
-    $('.go-next').click(function(){
-        var nowPageNum= +$('#now-pagenum').text();
-        var totalCount=+$('#total-pagenum').text();
+    // 装载宝贝到待选页面
+    function fillGoods(pageNum){
         var keyword= $('#keyword-for-search').val();
-        var html=$('#temp-good-cell')[0].innerHTML;
-        var goodList=$('.good-list')[0];
-        var good;
-        var datas;
-        if(nowPageNum+1 > totalCount){
-            return false;
-        }
-        $.post(actionSearch,{pageSize:20,pageNum:nowPageNum+1,keyword:keyword},function(resp){
-            if(resp.result==1){
-                //console.info(resp);
+        $.post(actionSearch,{pageSize:20,pageNum:pageNum||1,keyword:keyword},function(resp){
+            if(resp.result==1) {
+                var html = $('#temp-good-cell').html();
+                var goodList = $('.good-list');
+                var good;
                 //先置空
                 goodList.html('');
-                //更新页码显示
-                $('#now-pagenum').text(nowPageNum+1);
-                $('#total-pagenum').text(resp.pageCount);
                 //载入宝贝数组
-                datas=resp.data;
-                datas.forEach(function(obj,i){
-                    good=$(html.replace('{name}',obj['name'])
-                        .replace('{small}',obj['small'])
-                        .replace('{href}',obj['href'])
-                        .replace('{price}',obj['price']));
-                    good.data('good-info',obj);
-                    goodList.appendChild(good[0]);
+                resp.data.forEach(function (obj, i) {
+                    good = $(html.replace('{name}', obj['name'])
+                        .replace('{small}', obj['picPath'])
+                        .replace('{href}', '#/tab/goods/'+obj['goodsId'])
+                        .replace('{price}', obj['price']));
+                    good.data('good-info', obj);
+                    goodList.append(good);
                 });
+                //更新页码显示
+                $('#now-pagenum').text(resp.page.pageNum);
+                $('#total-pagenum').text(resp.page.pageCount);
             }else{
-                //$('#total-pagenum').text('0');
-                //$('#now-pagenum').text('0');
+                console.info(resp);
+                //$('#total-pagenum,#now-pagenum').text('0');
             }
-        });
+        })
+    }
+
+    //下一页
+    $('.go-next').click(function(){
+        var nowPageNum= +$('#now-pagenum').text();
+        if(nowPageNum == $('#total-pagenum').text() ){
+            return false;
+        }
+        fillGoods(nowPageNum+1);
     })
 
+    //上一页
     $('.go-prev').click(function(){
         var nowPageNum= +$('#now-pagenum').text();
-        var totalCount=+$('#total-pagenum').text();
-        var keyword= $('#keyword-for-search').val();
-        var html=$('#temp-good-cell')[0].innerHTML;
-        var goodList=$('.good-list')[0];
-        var good;
-        var datas;
         if(nowPageNum<2){
             return false;
         }
-        $.post(actionSearch,{pageSize:20,pageNum:nowPageNum-1,keyword:keyword},function(resp){
-            if(resp.result==1){
-                //console.info(resp);
-                //先置空
-                goodList.html('');
-                //更新页码显示
-                $('#now-pagenum').text(nowPageNum+1);
-                $('#total-pagenum').text(resp.pageCount);
-                //载入宝贝数组
-                datas=resp.data;
-                datas.forEach(function(obj,i){
-                    good=$(html.replace('{name}',obj['name'])
-                        .replace('{small}',obj['small'])
-                        .replace('{href}',obj['href'])
-                        .replace('{price}',obj['price']));
-                    good.data('good-info',obj);
-                    goodList.appendChild(good[0]);
-                });
-            }else{
-                //$('#total-pagenum').text('0');
-                //$('#now-pagenum').text('0');
-            }
-        });
+        fillGoods(nowPageNum-1);
     })
 
+    //第一页
     $('.go-first').click(function(){
         var nowPageNum= +$('#now-pagenum').text();
-        var totalCount=+$('#total-pagenum').text();
-        var keyword= $('#keyword-for-search').val();
-        var html=$('#temp-good-cell')[0].innerHTML;
-        var goodList=$('.good-list')[0];
-        var good;
-        var datas;
-        $.post(actionSearch,{pageSize:20,pageNum:1,keyword:keyword},function(resp){
-            if(resp.result==1){
-                //console.info(resp);
-                //先置空
-                goodList.html('');
-                //更新页码显示
-                $('#now-pagenum').text(1);
-                $('#total-pagenum').text(resp.pageCount);
-                //载入宝贝数组
-                datas=resp.data;
-                datas.forEach(function(obj,i){
-                    good=$(html.replace('{name}',obj['name'])
-                        .replace('{small}',obj['small'])
-                        .replace('{href}',obj['href'])
-                        .replace('{price}',obj['price']));
-                    good.data('good-info',obj);
-                    goodList.appendChild(good[0]);
-                });
-            }else{
-                //$('#total-pagenum').text('0');
-                //$('#now-pagenum').text('0');
-            }
-        });
+        if(nowPageNum==1 || nowPageNum==0){
+            return false;
+        }
+        fillGoods(1);
     })
 
+    //最后一页
     $('.go-last').click(function(){
         var nowPageNum= +$('#now-pagenum').text();
         var totalCount=+$('#total-pagenum').text();
-        var keyword= $('#keyword-for-search').val();
-        var html=$('#temp-good-cell')[0].innerHTML;
-        var goodList=$('.good-list')[0];
-        var good;
-        var datas;
-        $.post(actionSearch,{pageSize:20,pageNum:totalCount,keyword:keyword},function(resp){
-            if(resp.result==1){
-                //console.info(resp);
-                //先置空
-                goodList.html('');
-                //更新页码显示
-                $('#now-pagenum').text(totalCount);
-                $('#total-pagenum').text(resp.pageCount);
-                //载入宝贝数组
-                datas=resp.data;
-                datas.forEach(function(obj,i){
-                    good=$(html.replace('{name}',obj['name'])
-                        .replace('{small}',obj['small'])
-                        .replace('{href}',obj['href'])
-                        .replace('{price}',obj['price']));
-                    good.data('good-info',obj);
-                    goodList.appendChild(good[0]);
-                });
-            }else{
-                //$('#total-pagenum').text('0');
-                //$('#now-pagenum').text('0');
-            }
-        });
+        if(nowPageNum == totalCount){
+            return false;
+        }
+        fillGoods(totalCount);
     })
 
     //图片上传
@@ -789,12 +702,17 @@
 
     // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
     $('#btn-info').click(function(){
+        var molid;
         var json=[];
         var mols=$('#show-mobile').find('.mol-wrap');
         mols.each(function(v,i){
+            molid=this.getAttribute('molid');
+            if(molid=="tb-category"){
+                $(this).data('native','null');
+            }
             json.push({
-                'name':this.getAttribute('molid'),
-                'data':$(this).data('native')||window.mol_val_dic['val-'+this.getAttribute('molid')]||null
+                'name':molid,
+                'data':$(this).data('native')||window.mol_val_dic['val-'+molid]||null
             })
         });
         console.table(json);

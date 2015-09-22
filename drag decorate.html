@@ -300,7 +300,7 @@
 
     <script type="text/template" id="temp-titleOnly">
        <div class="mol-wrap" molid="titleOnly" ng-href="{href}">
-           <h3>{title}</h3>
+           <div class="brand-title"><div></div><h3>{title}</h3></div>
        </div>
     </script>
 
@@ -389,13 +389,14 @@
        <div class="mol-ctrl-wrap" ctrlid="wordPic">
            <h2>图文模块(自定义)</h2>
            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-           <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
+           <!--<br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">-->
+           <br><label>文字描述：</label><textarea   mapid="desc"    placeholder="输入文字描述"></textarea>
            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
            <form class="img-up-form">
                <label>图片上传：</label>
-               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file"   accept="image/*" maxLength="1"/>
                <input type="submit">
-               <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
+               <p>选择图片不超过200k,左侧色调尽量统一,作为文字背景</p>
            </form>
        </div>
     </script>
@@ -415,7 +416,7 @@
             <br><label>跳转链接：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">
             <form class="img-up-form">
                 <label>图片上传：</label>
-                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" />
                 <input type="submit">
                 <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
             </form>
@@ -460,6 +461,8 @@
     <script type="text/template" id="temp-ctrl-tb-category">
         <div class="mol-ctrl-wrap" ctrlid="tb-category">
             <h2>宝贝类别(默认四大类)</h2>
+            <hr><b>此模块不可编辑</b>
+            <!--
             <hr><label>图片地址：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
             <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
             <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
@@ -475,6 +478,7 @@
             <hr><label>图片地址4：</label><input type="text"   mapid="imgsrc4"    placeholder="输入图片地址">
             <br><label>跳转链接4：</label><input type="text"   mapid="href4"      placeholder="输入链接转向地址">
             <br><label>文字描述4：</label><input type="text"   mapid="desc4"      placeholder="输入图片文字描述">
+            -->
         </div>
     </script>
 

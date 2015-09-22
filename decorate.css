@@ -200,10 +200,13 @@ hr{border-color: #ccc!important;}
     position: absolute;
     left: 10px;
     top:5px;
-    max-height:60px;
+    /*max-height:80px;*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
     color:#ed3577;
  }
 #model-list,#ctrl-area{
@@ -614,4 +617,28 @@ textarea{
 .upload-ok-tip{
     color: #f1f1f1;
     font-weight: bold;
+}
+
+.brand-title{
+    position: relative;
+    margin: 10px 0;
+    background: #fff;
+    clear:both;
+    overflow: hidden;
+}
+.brand-title>div, .title-wrap>h3{
+    display:inline-block;
+}
+.brand-title>div{
+    width:5px;
+    height: 36px;
+    background:#ff6599;
+    margin:0 5px;
+}
+.brand-title>h3{
+    position: relative;
+    display: inline-block;
+    top: -10px;
+    font-size: 20px;
+    margin-bottom: 5px;
 }

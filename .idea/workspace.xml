@@ -28,34 +28,34 @@
       <file leaf-file-name="decorate.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decorate.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.322581">
-              <caret line="125" column="65" selection-start-line="125" selection-start-column="65" selection-end-line="125" selection-end-column="65" />
+            <state vertical-scroll-proportion="-7.311828">
+              <caret line="643" column="1" selection-start-line="643" selection-start-column="1" selection-end-line="643" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decorate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="583" column="5" selection-start-line="583" selection-start-column="5" selection-end-line="583" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.9875283">
+              <caret line="471" column="14" selection-start-line="471" selection-start-column="14" selection-end-line="471" selection-end-column="14" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#24990#26315#0" expanded="false" />
-                <element signature="e#26352#27664#0" expanded="false" />
-                <element signature="e#27702#28930#0" expanded="false" />
-                <element signature="e#28967#30213#0" expanded="false" />
+                <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
+                <element signature="n#!!block;n#check_it#0" expanded="false" />
+                <element signature="e#23427#23703#0" expanded="false" />
+                <element signature="n#!!block;n#checked_done#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drag decorate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54948807">
-              <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
+            <state vertical-scroll-proportion="-8.0625">
+              <caret line="302" column="57" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -77,9 +77,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/drag decorate.html" />
         <option value="$PROJECT_DIR$/decorate.css" />
         <option value="$PROJECT_DIR$/decorate.js" />
-        <option value="$PROJECT_DIR$/drag decorate.html" />
       </list>
     </option>
   </component>
@@ -199,7 +199,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1810" height="1088" extended-state="7" />
+    <frame x="-4" y="-4" width="1810" height="1088" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12808989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -239,7 +239,7 @@
           <url>file://$PROJECT_DIR$/drag decorate.html</url>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -254,31 +254,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decorate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.322581">
-          <caret line="125" column="65" selection-start-line="125" selection-start-column="65" selection-end-line="125" selection-end-column="65" />
+        <state vertical-scroll-proportion="-7.311828">
+          <caret line="643" column="1" selection-start-line="643" selection-start-column="1" selection-end-line="643" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drag decorate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0625">
+          <caret line="302" column="57" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decorate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="583" column="5" selection-start-line="583" selection-start-column="5" selection-end-line="583" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.9875283">
+          <caret line="471" column="14" selection-start-line="471" selection-start-column="14" selection-end-line="471" selection-end-column="14" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#24990#26315#0" expanded="false" />
-            <element signature="e#26352#27664#0" expanded="false" />
-            <element signature="e#27702#28930#0" expanded="false" />
-            <element signature="e#28967#30213#0" expanded="false" />
+            <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
+            <element signature="n#!!block;n#check_it#0" expanded="false" />
+            <element signature="e#23427#23703#0" expanded="false" />
+            <element signature="n#!!block;n#checked_done#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/drag decorate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54948807">
-          <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
