@@ -7,15 +7,20 @@
         // 模块映射
         window.mol_dic={
             'tb-features':document.getElementById('temp-tb-features').innerHTML,
+            'bb-features':document.getElementById('temp-bb-features').innerHTML,
             'hd-features':document.getElementById('temp-hd-features').innerHTML,
-            'brands':document.getElementById('temp-brands').innerHTML,
+            'tb-category':document.getElementById('temp-tb-category').innerHTML,
             'hd-category':document.getElementById('temp-hd-category').innerHTML,
+            'bb-category':document.getElementById('temp-bb-category').innerHTML,
+            'brands':document.getElementById('temp-brands').innerHTML,
+
             'singleGood':document.getElementById('temp-singleGood').innerHTML,
             'doubleGood':document.getElementById('temp-doubleGood').innerHTML,
             'slidePic':document.getElementById('temp-slidePic').innerHTML,
             'singlePic':document.getElementById('temp-singlePic').innerHTML,
+            'bannerPic':document.getElementById('temp-bannerPic').innerHTML,
             'doublePic':document.getElementById('temp-doublePic').innerHTML,
-            'tb-category':document.getElementById('temp-tb-category').innerHTML,
+
             'wordPic':document.getElementById('temp-wordPic').innerHTML,
             'titleOnly':document.getElementById('temp-titleOnly').innerHTML,
             'wordOnly':document.getElementById('temp-wordOnly').innerHTML,
@@ -31,16 +36,21 @@
         // 编辑模块映射
         window.mol_ctrl_dic={
             'tb-features':document.getElementById('temp-ctrl-tb-features').innerHTML,
+            'bb-features':document.getElementById('temp-ctrl-bb-features').innerHTML,
             'hd-features':document.getElementById('temp-ctrl-hd-features').innerHTML,
             'tb-category':document.getElementById('temp-ctrl-tb-category').innerHTML,
             'hd-category':document.getElementById('temp-ctrl-hd-category').innerHTML,
+            'bb-category':document.getElementById('temp-ctrl-bb-category').innerHTML,
             'brands':document.getElementById('temp-ctrl-brands').innerHTML,
+
             'singleGood':document.getElementById('temp-ctrl-singleGood').innerHTML,
             'doubleGood':document.getElementById('temp-ctrl-doubleGood').innerHTML,
             'slidePic':document.getElementById('temp-ctrl-slidePic').innerHTML,
             'singlePic':document.getElementById('temp-ctrl-singlePic').innerHTML,
+            'bannerPic':document.getElementById('temp-ctrl-bannerPic').innerHTML,
             'doublePic':document.getElementById('temp-ctrl-doublePic').innerHTML,
             'wordPic':document.getElementById('temp-ctrl-wordPic').innerHTML,
+
             'titleOnly':document.getElementById('temp-ctrl-titleOnly').innerHTML,
             'wordOnly':document.getElementById('temp-ctrl-wordOnly').innerHTML,
             'contract':document.getElementById('temp-ctrl-contract').innerHTML,
@@ -74,17 +84,17 @@
         window.mol_val_dic={
             "val-singleGood":{
                 href:'#',
-                small:'good03.jpg',
-                name:'优质棉麻男童马夹 保暖透气',
+                picPath:'re-good.jpg',
+                name:'宝乐滋3罐超值特价装!',
                 price:92.00
             },
             "val-doubleGood":{
                 href:'#',
-                small:'good17.jpg',
+                picPath:'good17.jpg',
                 name:'漂亮的女童裤子 纯棉',
                 price:56.00,
                 href2:'#',
-                small2:'good13.jpg',
+                picPath2:'good13.jpg',
                 name2:'小脚裤子批发 颜色多',
                 price2:52.00
             },
@@ -93,7 +103,7 @@
                 imgsrc:'word-pic.jpg',
                 desc:'图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
             },
-            "val-slidePic":[{href:'#', imgsrc:'hot.jpg'},{href:'#', imgsrc:'hot2.jpg'}],
+            "val-slidePic":[{href:'#', imgsrc:'slide.jpg'},{href:'#', imgsrc:'hot2.jpg'}],
             "val-singlePic":{
                 href:'#',
                 imgsrc:'hot3.jpg',
@@ -121,6 +131,9 @@
                 imgsrc4:'area-logo-04.jpg',
                 desc4:'LOGO AREA<br>亲子母婴',
             },
+            "val-bannerPic":{imgsrc:"banner.jpg",href:'#'},
+            "val-bb-category":{imgsrc:"masonry.png"},
+            "val-bb-features":{imgsrc:"bb-features.png"},
             "val-titleOnly":{title:'推荐宝贝'},
             "val-wordOnly":{desc:'欢迎光临小店!<br>本店的所有商品都是真宗境外直邮, 海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
             "val-contract":{tel:'1381396655', wechat:'weixina2017006'}
@@ -129,18 +142,21 @@
         // 模块使用数限制状态机
         window.mol_count_dic={
             'tb-features':2,
+            'bb-features':2,
             'hd-features':2,
-            'brands':2,
-            'hd-category':2,
-            'singleGood':1,
-            'doubleGood':1,
-            'slidePic':1,
-            'singlePic':3,
-            'doublePic':2,
             'tb-category':2,
+            'bb-category':2,
+            'hd-category':2,
+            'brands':2,
+            'singleGood':16,
+            'doubleGood':12,
+            'slidePic':1,
+            'singlePic':16,
+            'bannerPic':16,
+            'doublePic':2,
             'wordPic':3,
             'wordOnly':3,
-            'titleOnly':3,
+            'titleOnly':12,
             'contract':2,
             'singleGoodList':1,
             'doubleGoodList':1
@@ -148,59 +164,45 @@
 
         // 几套默认的模板组合
         window.templates= {
-            'tempDefault': ['singlePic',  'wordOnly','titleOnly', 'singleGoodList', 'contract'],
-            tbstyle:['singlePic','wordOnly','tb-features','tb-category','doubleGoodList', 'contract'],
-            hdstyle:['slidePic','hd-features','brands','hd-category', 'singleGoodList', 'contract']
+            'tempDefault': ['singlePic',  'wordOnly','brands','titleOnly', 'singleGoodList', 'contract'],
+            tbstyle:['singlePic','wordOnly','tb-features','tb-category','titleOnly','doubleGoodList', 'contract'],
+            bbstyle:['slidePic','bb-features','bb-category','titleOnly','bannerPic','bannerPic','titleOnly','singleGood','doubleGoodList', 'contract'],
+            hdstyle:['slidePic','hd-features','brands','hd-category','titleOnly', 'singleGoodList', 'contract']
         };
     }
 
-
-/*后台接口,获取宝贝数据*/
-    var actionSearch='http://127.0.0.1:8080/goods/appGoodsList';
-    /*
-    $.post(actionSearch,{pageSize:20,pageNum:1,keyword:''},function(resp){
-        if(resp.result==1){
-            //console.info(resp);
-            window.goods=resp.data.result;
-        }else{
-            window.goods=[];
-        }
-    });
-    */
-
-
     // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
     window.goods=[
-        {goods_id:1001,small:'good31.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1002,small:'good32.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
-        {goods_id:1003,small:'good33.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
-        {goods_id:1004,small:'good34.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
-        {goods_id:1005,small:'good35.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
-        {goods_id:1006,small:'good36.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
-        {goods_id:1007,small:'good37.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1008,small:'good38.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
-        {goods_id:1009,small:'good39.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
-        {goods_id:1010,small:'good10.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
-        {goods_id:1011,small:'good11.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
-        {goods_id:1012,small:'good12.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
-        {goods_id:1013,small:'good13.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1014,small:'good14.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
-        {goods_id:1015,small:'good15.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
-        {goods_id:1016,small:'good16.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
-        {goods_id:1017,small:'good17.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
-        {goods_id:1018,small:'good18.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
-        {goods_id:1019,small:'good19.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1020,small:'good20.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
-        {goods_id:1021,small:'good21.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
-        {goods_id:1022,small:'good22.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
-        {goods_id:1023,small:'good23.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1024,small:'good24.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
-        {goods_id:1025,small:'good25.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
-        {goods_id:1026,small:'good26.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
-        {goods_id:1027,small:'good27.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
-        {goods_id:1028,small:'good28.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
-        {goods_id:1029,small:'good29.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
-        {goods_id:1030,small:'good30.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1001,picPath:'good31.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1002,picPath:'good32.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1003,picPath:'good33.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
+        {goods_id:1004,picPath:'good34.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
+        {goods_id:1005,picPath:'good35.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
+        {goods_id:1006,picPath:'good36.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
+        {goods_id:1007,picPath:'good37.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1008,picPath:'good38.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1009,picPath:'good39.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
+        {goods_id:1010,picPath:'good10.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
+        {goods_id:1011,picPath:'good11.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
+        {goods_id:1012,picPath:'good12.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
+        {goods_id:1013,picPath:'good13.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1014,picPath:'good14.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1015,picPath:'good15.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
+        {goods_id:1016,picPath:'good16.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
+        {goods_id:1017,picPath:'good17.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
+        {goods_id:1018,picPath:'good18.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
+        {goods_id:1019,picPath:'good19.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1020,picPath:'good20.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1021,picPath:'good21.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
+        {goods_id:1022,picPath:'good22.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
+        {goods_id:1023,picPath:'good23.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1024,picPath:'good24.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
+        {goods_id:1025,picPath:'good25.jpg',href:'',mktprice:110,price:30,name:'韩版2015春秋款秋款秋装女宝宝'},
+        {goods_id:1026,picPath:'good26.jpg',href:'',mktprice:110,price:40,name:'夏季新款童裤女童棉麻短裤无烟'},
+        {goods_id:1027,picPath:'good27.jpg',href:'',mktprice:110,price:50,name:'巴布泡泡 松紧系带 毛圈 蓬松'},
+        {goods_id:1028,picPath:'good28.jpg',href:'',mktprice:110,price:60,name:'韩版2015春秋款秋款秋装女godd'},
+        {goods_id:1029,picPath:'good29.jpg',href:'',mktprice:110,price:10,name:'2015韩版春款纯色纯棉女童大童中童小童花纹打底裤花童裤时尚百搭'},
+        {goods_id:1030,picPath:'good30.jpg',href:'',mktprice:110,price:20,name:'童装男童男孩小孩纯棉夏天好用'},
     ];
     // 选中的宝贝
     window.checkedGoods=[];
@@ -211,8 +213,8 @@
     function bootAlert(str){
         $('.alert').fadeIn(300,function(){
             setTimeout((function(){
-                $(this).fadeOut(500);
-            }).bind(this),1500);
+                $(this).fadeOut(600);
+            }).bind(this),1800);
         }).html(function(i,old){return old.replace('{content}',str)});
         return false;
     }
@@ -252,6 +254,8 @@
         $('#ctrl-wrap').data('index',indexOfGoodlist);
         var listType=$('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid')=='singleGoodList' ? 1:2;
         goods_list_instance(window.goods.slice(0,16), listType);
+        // 默认隐藏上下调整小按钮
+        $('.go-recycle,.go-up,.go-down').hide();
     }
 
     // 载入组合模板
@@ -272,12 +276,14 @@
             // 拖放完成,先取消默认事件
             event.preventDefault();
             // 再提取传递的信息
-            var molid=event.dataTransfer.getData("Text").replace('tag-','');
+            var tagName=event.dataTransfer.getData("Text");
+            var molid=tagName.replace('tag-','');
             // 找到蓝顶标记的参照元素
             var target= $('.mol-wrap').filter('.blue-top')[0];
             // 超限控制及提示
-            if(!window.mol_count_dic[molid]){
+            if(!window.mol_count_dic[molid] && tagName.indexOf('tag')==0){ //防止内部拖动出现提示
                 bootAlert('该组件的使用次数已达上限。');
+                return false;
             }
             // 获取模板HTML和默认数据, 将其实例化
             var html=window.mol_dic[molid];
@@ -290,7 +296,7 @@
                 }
             }
             // 转为节点, 加上按钮, 插入
-            var div=$(html)[0];
+            var div=$(html)[0]; //因为是根据tag上传来的molid来取的html,因此并不支持内部拖动
             div.innerHTML+= '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
             // 判断参照元素是否存在,不存在就直接插入最后面
             target?this.insertBefore(div,target):this.appendChild(div);
@@ -407,7 +413,7 @@
                 $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea').each(function(){
                     key=this.getAttribute('mapid')||'none';
                     if(obj&&obj[key])
-                        this.innerText?this.innerText=obj[key]:this.value=obj[key].replace(/\<br\>/gm,'\n');
+                        this.innerText?this.innerText=obj[key]:this.value=(obj[key]+'').replace(/\<br\>/gm,'\n');
                 });
             }
         })
@@ -455,22 +461,7 @@
         // 打开模态页时,载入goods数组
         .on('click','.show-good-list',function(){
             goods_list_cls();
-            /*
-            var html=$('#temp-good-cell')[0].innerHTML;
-            var goodList=$('.good-list')[0];
-            var good;
-            var datas;
-            datas=window.goods.slice(0,20);
-            datas.forEach(function(obj,i){
-                good=$(html.replace('{name}',obj['name'])
-                            .replace('{small}',obj['small'])
-                            .replace('{href}',obj['href'])
-                            .replace('{price}',obj['price']));
-                good.data('good-info',obj);
-                goodList.appendChild(good[0]);
-            });
-            */
-             fillGoods();
+            fillGoods();
         }).on('click','.btn-reset',function(e){
             $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea,[type=upload]').each(function(){this.value='';})
             $('.mol-ctrl-wrap').find('p.uploaded-info,p.upload-ok-tip').remove();
@@ -496,15 +487,15 @@
         var html_wrap,html_good,div=$('<div>');
         if(rowCount==1){
             html_wrap='<div class="" molid="singleGood"></div>';
-            html_good='<a class="singleGood-wrap-one"  molid="singleGood" > <img src="{small}" ><p>{name}</p><i>￥{price}</i></a>';
+            html_good='<a class="singleGood-wrap-one"  molid="singleGood" > <img src="{picPath}" ><p>{name}</p><i>￥{price}</i></a>';
         }else{
             html_wrap='<div class="" molid="doubleGood"></div>';
-            html_good='<a class="doubleGood-wrap-one"  > <img src="{small}" ><p>{name}</p><i>￥{price}</i></a>';
+            html_good='<a class="doubleGood-wrap-one"  > <img src="{picPath}" ><p>{name}</p><i>￥{price}</i></a>';
         }
         var html,node_good,node_wrap=$(html_wrap)[0];
         datas.forEach(function(obj,i){
             html=html_good.replace('{name}',obj['name'])
-                .replace('{small}',obj['small'])
+                .replace('{picPath}',obj['picPath'])
                 .replace('{href}',obj['href'])
                 .replace('{price}',obj['price']);
             node_good=$(html)[0];
@@ -524,20 +515,27 @@
         });
         // 找到要应用的元素
         molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
-        molobj.html( div.html() +  '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
+        // 查看全部宝贝
+        var allGoodsHref='<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
+        molobj.html( div.html() + allGoodsHref + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>' );
         // 同时保存原始数据
         molobj.data('native',datas);
     }
 
     // 单个选中
     function check_it(good){
+        var goodCheckedList=$('#good-checked-list');
         var goodInfo=$(good).data('good-info');
         var good_tag=$('<div class="good-tag">');
         $(good).find('img').clone().appendTo(good_tag);
         good_tag.append('<i>&times;</i>');
         good_tag.data('good-info',goodInfo);
         window.checkedGoods.push(goodInfo);
-        $('#good-checked-list').append(good_tag);
+        if(goodCheckedList.children().length<21){
+            goodCheckedList.append(good_tag);
+        }else{
+            bootAlert('首页推荐宝贝列表最多装载20个, 其余的可点击"全部宝贝"查看');
+        }
     }
 
     // 单个删除
@@ -568,10 +566,24 @@
         window.checkedGoods=[];
     }
 
+    /*后台接口,获取宝贝数据*/
+    var actionSearch='http://localhost:8080/goods/appGoodsList';
+    //var actionSearch='../../goods/appGoodsList';
+
+     $.post(actionSearch,{pageSize:20,pageNum:1,keyword:''},function(resp){
+         resp=JSON.parse(resp);
+         if(resp.result==1){
+            window.goods=resp.data;
+         }else{
+            window.goods=[];
+         }
+     });
+
     // 装载宝贝到待选页面
     function fillGoods(pageNum){
         var keyword= $('#keyword-for-search').val();
         $.post(actionSearch,{pageSize:20,pageNum:pageNum||1,keyword:keyword},function(resp){
+            resp=JSON.parse(resp)
             if(resp.result==1) {
                 var html = $('#temp-good-cell').html();
                 var goodList = $('.good-list');
@@ -581,7 +593,7 @@
                 //载入宝贝数组
                 resp.data.forEach(function (obj, i) {
                     good = $(html.replace('{name}', obj['name'])
-                        .replace('{small}', obj['picPath'])
+                        .replace('{picPath}', obj['picPath'])
                         .replace('{href}', '#/tab/goods/'+obj['goodsId'])
                         .replace('{price}', obj['price']));
                     good.data('good-info', obj);
@@ -635,12 +647,14 @@
     })
 
     //图片上传
-    var decorateUploadAction='http://seatent.com/decorate/upload';
+    var decorateUploadAction='http://localhost:8080/goods/appUploadShopPic';
     $(document).on('submit','.img-up-form',function(){
         // 图片检测
         var files=$('.img-up-file')[0].files;
         if(!files.length){
             return false;
+        }else if(files.length>5){
+            bootAlert('最多上传5张图片');
         }
         for(var i=0;i<files.length;i++){
             //alert(files[i].size)
@@ -650,38 +664,40 @@
             }
         }
         // h5表单多文件上传
-        var data = new FormData($('#img-up-form')[0]);
-        //$.ajax({
-        //    url: decorateUploadAction,
-        //    type: 'POST',
-        //    data: data,
-        //    dataType: 'JSON',
-        //    cache: false,
-        //    processData: false,
-        //    contentType: false,
-        //    success:function(res){
-        //        console.log("UploadFile Success");
-        //        //把回传过来的img-src地址,显示在下方,并保存到该模块对应的data中
-        //        if(res.srcs){
-                    var res={};
-                    res.srcs=[
-                        'hot2.jpg',
-                        'dgtbpoopi22.jpg',
-                        'sdfjifuiifug33.png',
-                    ];
+        var data = new FormData($('.img-up-form')[0]);
+
+        $.ajax({
+            url: decorateUploadAction,
+            type: 'POST',
+            data: data,
+            dataType: 'JSON',
+            cache: false,
+            processData: false,
+            contentType: false,
+            success:function(res){
+                if(res.result==1){
+                    res.srcs=res.data;
+                }else{
+                    console.info(res);
+                    res.srcs=[];
+                }
+                //把回传过来的img-src地址,显示在下方,并保存到该模块对应的data中
+                if(res.srcs){
                     var molobj=$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index')),
                         m=document.getElementsByClassName('mol-ctrl-wrap')[0],
                         fg=document.createDocumentFragment(),
                         p,arr;
+                    /*
                     res.srcs.forEach(function(v,i){
                         p=document.createElement('p');
                         p.className='uploaded-info';
                         p.innerHTML=v;
                         fg.appendChild(p);
                     })
+                    */
                     p=document.createElement('p');
                     p.className='upload-ok-tip';
-                    p.innerHTML='上传成功,地址如上.';
+                    p.innerHTML='上传成功,图片地址如上,已经自动填入.';
                     fg.appendChild(p);
                     m.appendChild(fg);
                     molobj.data('native',res.srcs);
@@ -689,9 +705,10 @@
                         this.value=res.srcs[i]||this.value;
                     })
                     molobj.find('img')[0].src=res.srcs[0];
-            //    }
-            //}
-        //});
+                    bootAlert('上传成功,图片地址已经自动填入文本框.');
+                }
+            }
+        });
         return false;
     });
 

@@ -75,7 +75,7 @@ hr{border-color: #ccc!important;}
 }
 #model-list li{
     display: block;
-    height:42px;
+    height:30px;
     width:122px;
     margin: 15px auto;
     text-align: center;
@@ -83,7 +83,7 @@ hr{border-color: #ccc!important;}
 #model-list .mol-tag{
     margin: 0 auto;
     width:  120px;
-    line-height: 40px;
+    line-height: 36px;
     border-radius:8px ;
     color:white;
     text-shadow:  0 .2px 0 rgba(255,255,255,.3);
@@ -118,9 +118,9 @@ hr{border-color: #ccc!important;}
     background-image: -webkit-linear-gradient(top,#1a79d9,#1a70c7);
 }
 #model-list .mol-tag-energized {
-    background-color:#F8E97E;
-    background-image: -webkit-linear-gradient(top,#D1B70D, #D8C97C);
-    border: 1px solid #E7CD0D;
+    background-color:#A0964C;
+    background-image: -webkit-linear-gradient(top,#D1B70D, #9B8513);
+    border: 1px solid #9F8C03;
 }
 #model-list .mol-tag-energized:hover{
     background-image: -webkit-linear-gradient(top,#D8C97C,#D1B70D);
@@ -141,7 +141,7 @@ hr{border-color: #ccc!important;}
     margin: 5px 1px;
     padding: 1px;
     background: #fff;
-    border: 1px solid #aac;
+    border: 1px dotted #aac;
     border-radius:3px ;
     overflow: hidden;
 }
@@ -223,13 +223,13 @@ hr{border-color: #ccc!important;}
     width:460px;
 }
 #ctrl-area .img-up-form>p{
-    margin-left: 78px;
-    font-size: 13px;
+    margin: 5px 5px 10px 80px;
+    font-size: 14px;
     color: maroon;
 }
 #ctrl-area [type="file"]{
     display: inline-block;
-    width: 260px;
+    width: 224px;
 }
 #ctrl-area h2{
     color:white;
@@ -296,7 +296,11 @@ a.doubleGood-wrap-one{
 }
 [molid=doubleGoodList] i{
     font-size: 14px;
-    color:pink;
+    color:#ed3577;
+}
+[molid=singleGood]{
+    margin-top: 5px;
+    padding:0 3px;
 }
 [molid=singleGood] u{
     display: inline-block;
@@ -305,6 +309,9 @@ a.doubleGood-wrap-one{
     text-overflow: ellipsis;
     overflow: hidden;
     text-decoration: none;
+}
+[molid=singleGood] I{
+    color: #ed3577;
 }
 .assertive{
     border: 2px solid #f21;
@@ -590,6 +597,10 @@ a.doubleGood-wrap-one{
     width: 17%;
     margin: 5px 12.5px;
 }
+.feature-text>b{
+    font-weight: 400;
+    margin: 3px 17px;;
+}
 .brands>img{
     width: 89px;
     float: left;
@@ -621,7 +632,6 @@ textarea{
 
 .brand-title{
     position: relative;
-    margin: 10px 0;
     background: #fff;
     clear:both;
     overflow: hidden;
@@ -638,7 +648,34 @@ textarea{
 .brand-title>h3{
     position: relative;
     display: inline-block;
-    top: -10px;
+    top: -12px;
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+}
+.store-name{
+    line-height: 38px;
+    padding-left: 10px;
+    background: #333;
+    color:#fff;
+    font-size: 18px;
+}
+.uploaded-info{
+    word-break: break-all;
+}
+
+#ctrl-wrap form{
+    margin-top: 15px;
+}
+
+a.all-goods-href{
+    clear: both;
+    display: block;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+a.all-goods-href:hover{
+    cursor: pointer;
+    color:maroon;
 }

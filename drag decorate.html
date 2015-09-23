@@ -22,6 +22,7 @@
          <a class="navbar-brand"  tempid=""              href="#">清空</a>
          <a class="navbar-brand"  tempid="tempDefault"  href="#">默认模板</a>
          <a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>
+         <a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>
          <a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>
      </div>
     </nav>
@@ -31,22 +32,25 @@
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-                <li><div class="mol-tag mol-tag-positive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-tb-category" draggable="true" >类别组合</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-hd-category"  draggable="true" >热门类别</div></li>
-
-                <li><div class="mol-tag mol-tag-assertive" id="tag-brands"       draggable="true" >品牌陈列</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >单宝贝列表</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >双宝贝列表</div></li>
-
-                <!--<li><div class="mol-tag" id="tag-singleGood" draggable="true" >单宝贝模块</div></li>-->
-                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
-                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
-
                 <li><div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div></li>
                 <li><div class="mol-tag" id="tag-slidePic"  draggable="true"  >轮播图模块</div></li>
+                <li><div class="mol-tag" id="tag-bannerPic" draggable="true"  >banner图模块</div></li>
                 <li><div class="mol-tag" id="tag-wordPic"   draggable="true"  >左文右图模块</div></li>
+
+                <li><div class="mol-tag mol-tag-positive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-bb-features" draggable="true" >优势宣传3</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-tb-category" draggable="true" >类别组合</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-hd-category"  draggable="true" >类别组合2</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-bb-category"  draggable="true" >类别组合3</div></li>
+
+                <li><div class="mol-tag mol-tag-assertive" id="tag-brands"          draggable="true" >品牌陈列</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>
+
+                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
+                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
 
                 <li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报模块</div></li>
                 <li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >标题模块</div></li>
@@ -61,7 +65,7 @@
             <div id="mobile-wrap">
                 <div id="show-mobile"  class="col-lg-4-" data-mcs-theme="dark">
                 <div class="iphone-head"><i></i></div>
-                <div id="store-head">
+                <!--div-- id="store-head"-->
                     <!--<img src="store-logo.jpg" alt="" id="store-log"/>-->
                     <!--<div id="store-info">-->
                         <!--<h3 id="store-name">小于梦的店</h3>-->
@@ -73,7 +77,8 @@
                         <!--<li><p>5</p><h5>优惠</h5></li>-->
                         <!--<li><p>0</p><h5>微店广播</h5></li>-->
                     <!--</ul>-->
-                </div>
+                <!--/div-->
+                <div class="store-name">莉莉chou的小店.*^_^*.</div>
                 <!--<div id="store-bottom"><a href="">查看所有宝贝</a></div>-->
                 <div class="iphone-foot"><i></i></div>
             </div>
@@ -140,7 +145,7 @@
        </div><!-- /.modal -->
     </div>
 
-    <!-- 组件使用超限提示-->
+    <!-- 提示组件-->
     <div class="alert alert-assertive">
        <strong>提示！</strong>{content}
     </div>
@@ -161,6 +166,7 @@
             <img src="feature/hd-feature02.png"  alt=""/>
             <img src="feature/hd-feature03.png"  alt=""/>
             <img src="feature/hd-feature04.png"  alt=""/>
+            <p class="feature-text"><b>全球货源</b><b>品质保障</b><b>超值价格</b><b>闪电发货</b></p>
         </div>
     </script>
 
@@ -216,7 +222,7 @@
 
     <script type="text/template" id="temp-good-cell">
     <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
-       <img src="{small}" alt="" class=""/>
+       <img src="{picPath}" alt="" class=""/>
        <p class="good-name">{name}</p>
        <p class="good-price">￥{price}</p>
     </a>
@@ -224,20 +230,20 @@
 
     <script type="text/template" id="temp-singleGood">
     <a class="mol-wrap" molid="singleGood" href="{href}">
-      <img src="{small}"  alt="">
-      <p><u>{goodname}</u><i>￥{price}</i></p>
+      <img src="{picPath}"  alt="">
+      <p><u>{name}</u><i>￥{price}</i></p>
     </a>
     </script>
 
     <script type="text/template" id="temp-doubleGood">
     <div class="mol-wrap" molid="doubleGood">
         <a class="doubleGood-wrap-one"  href="{href}">
-          <img src="{small}"  alt="">
+          <img src="{picPath}"  alt="">
           <p><u>{goodname}</u></p>
           <i>￥{price}</i>
        </a>
         <a class="doubleGood-wrap-one"  href="{href2}">
-          <img src="{small2}"  alt="">
+          <img src="{picPath2}"  alt="">
           <p><u>{goodname2}</u></p>
           <i>￥{price2}</i>
        </a>
@@ -255,6 +261,24 @@
       <img src="{imgsrc}" alt="">
       <p>{desc}</p>
     </a>
+    </script>
+
+    <script type="text/template" id="temp-bannerPic">
+        <a class="mol-wrap" molid="bannerPic" href="{href}">
+            <img src="{imgsrc}" alt="">
+        </a>
+    </script>
+
+    <script type="text/template" id="temp-bb-category">
+        <a class="mol-wrap" molid="bb-category">
+            <img src="{imgsrc}" alt="">
+        </a>
+    </script>
+
+    <script type="text/template" id="temp-bb-features">
+        <a class="mol-wrap" molid="bb-features">
+            <img src="{imgsrc}" alt="">
+        </a>
     </script>
 
     <script type="text/template" id="temp-doublePic">
@@ -331,9 +355,17 @@
        </div>
     </script>
 
+
     <!-- 设置模板的模板 -->
     <script type="text/template" id="temp-ctrl-tb-features">
         <div class="mol-ctrl-wrap" ctrlid="tb-features">
+            <h2>优势宣传</h2>
+            <hr><b>此模块不可编辑</b>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-bb-features">
+        <div class="mol-ctrl-wrap" ctrlid="bb-features">
             <h2>优势宣传</h2>
             <hr><b>此模块不可编辑</b>
         </div>
@@ -360,12 +392,19 @@
         </div>
     </script>
 
+    <script type="text/template" id="temp-ctrl-bb-category">
+        <div class="mol-ctrl-wrap" ctrlid="bb-category">
+            <h2>栏目分类</h2>
+            <hr><b>此模块不可编辑</b>
+        </div>
+    </script>
+
     <script type="text/template" id="temp-ctrl-singleGood">
         <div class="mol-ctrl-wrap" ctrlid="singleGood">
             <h2>单个宝贝(自定义)</h2>
-            <hr><label>图片地址：</label><input type="text"   mapid="small"     placeholder="输入宝贝图片地址">
+            <hr><label>图片地址：</label><input type="text"   mapid="picPath"     placeholder="输入宝贝图片地址">
             <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
-            <br><label>宝贝名称：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝名称">
+            <br><label>宝贝名称：</label><input type="text"   mapid="name"   placeholder="输入宝贝名称">
             <br><label>宝贝价格：</label><input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
         </div>
     </script>
@@ -373,12 +412,12 @@
     <script type="text/template" id="temp-ctrl-doubleGood">
         <div class="mol-ctrl-wrap" ctrlid="doubleGood">
             <h2>一行双宝贝(自定义)</h2>
-            <hr><label>图片地址1：</label><input type="text"   mapid="small"     placeholder="输入宝贝1图片地址">
+            <hr><label>图片地址1：</label><input type="text"   mapid="picPath"     placeholder="输入宝贝1图片地址">
             <br><label>宝贝链接1：</label><input type="text"   mapid="href"       placeholder="输入宝贝1链接地址">
             <br><label>宝贝名称1：</label><input type="text"   mapid="goodname"   placeholder="输入宝贝1名称">
             <br><label>宝贝价格1：</label><input type="number" mapid="price"      placeholder="输入宝贝1价格(纯数字,可精确到2位小数)">
             <br><hr>
-            <br><label>图片地址2：</label><input type="text"   mapid="small2"    placeholder="输入宝贝2图片地址">
+            <br><label>图片地址2：</label><input type="text"   mapid="picPath2"    placeholder="输入宝贝2图片地址">
             <br><label>宝贝链接2：</label><input type="text"   mapid="href2"      placeholder="输入宝贝2链接地址">
             <br><label>宝贝名称2：</label><input type="text"   mapid="goodname2"  placeholder="输入宝贝2名称">
             <br><label>宝贝价格2：</label><input type="number" mapid="price2"     placeholder="输入宝贝2价格(纯数字,可精确到2位小数)">
@@ -394,8 +433,8 @@
            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
            <form class="img-up-form">
                <label>图片上传：</label>
-               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file"   accept="image/*" maxLength="1"/>
-               <input type="submit">
+               <input type="file"   mapid="img-up"   name='files' class="img-up-file"   accept="image/*" maxLength="1"/>
+               <input type="submit" value=" 开始上传 ">
                <p>选择图片不超过200k,左侧色调尽量统一,作为文字背景</p>
            </form>
        </div>
@@ -404,20 +443,20 @@
     <script type="text/template" id="temp-ctrl-slidePic">
         <div class="mol-ctrl-wrap" ctrlid="slidePic">
             <h2>轮播图(自定义)</h2>
-            <hr><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-            <br><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-            <br><label>图片链接：</label><input type="text"   mapid="imgsrc2"     placeholder="输入图片2地址">
-            <br><label>跳转链接：</label><input type="text"   mapid="href2"       placeholder="输入链接2转向地址">
-            <br><label>图片链接：</label><input type="text"   mapid="imgsrc3"     placeholder="输入图片3地址">
-            <br><label>跳转链接：</label><input type="text"   mapid="href3"       placeholder="输入链接3转向地址">
-            <br><label>图片链接：</label><input type="text"   mapid="imgsrc4"     placeholder="输入图片4地址">
-            <br><label>跳转链接：</label><input type="text"   mapid="href4"       placeholder="输入链接4转向地址">
-            <br><label>图片链接：</label><input type="text"   mapid="imgsrc5"     placeholder="输入图片5地址">
-            <br><label>跳转链接：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">
+            <hr><label>图片链接1：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <br><label>跳转链接1：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>图片链接2：</label><input type="text"   mapid="imgsrc2"     placeholder="输入图片2地址">
+            <br><label>跳转链接2：</label><input type="text"   mapid="href2"       placeholder="输入链接2转向地址">
+            <br><label>图片链接3：</label><input type="text"   mapid="imgsrc3"     placeholder="输入图片3地址">
+            <br><label>跳转链接3：</label><input type="text"   mapid="href3"       placeholder="输入链接3转向地址">
+            <br><label>图片链接4：</label><input type="text"   mapid="imgsrc4"     placeholder="输入图片4地址">
+            <br><label>跳转链接4：</label><input type="text"   mapid="href4"       placeholder="输入链接4转向地址">
+            <br><label>图片链接5：</label><input type="text"   mapid="imgsrc5"     placeholder="输入图片5地址">
+            <br><label>跳转链接5：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">
             <form class="img-up-form">
-                <label>图片上传：</label>
-                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" />
-                <input type="submit">
+                <label>图片上传&nbsp;&nbsp;：</label>
+                <input type="file"   mapid="img-up"   name='files' class="img-up-file" multiple="true"  accept="image/*" />
+                <input type="submit" value=" 开始上传 ">
                 <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
             </form>
         </div>
@@ -429,10 +468,24 @@
             <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
             <br><label>文字描述：</label><input type="text"   mapid="desc"       placeholder="输入图片文字描述">
             <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
-            <form class="img-up-form">
+            <form class="img-up-form" enctype="multipart/form-data">
                 <label>图片上传：</label>
-                <input type="file"   mapid="img-up"   name='img-up' class="img-up-file"  accept="image/*" maxLength="1"/>
-                <input type="submit">
+                <input type="file"   mapid="img-up"   name='files' class="img-up-file"  accept="image/*" maxLength="1"/>
+                <input type="submit" value=" 开始上传 ">
+                <p>图片大小不超过200k</p>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/template" id="temp-ctrl-bannerPic">
+        <div class="mol-ctrl-wrap" ctrlid="bannerPic">
+            <h2>banner图(自定义)</h2>
+            <hr><label>跳转链接：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
+            <br><label>图片链接：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
+            <form class="img-up-form" enctype="multipart/form-data">
+                <label>图片上传：</label>
+                <input type="file"   mapid="img-up"   name='files' class="img-up-file"  accept="image/*" maxLength="1"/>
+                <input type="submit" value=" 开始上传 ">
                 <p>图片大小不超过200k</p>
             </form>
         </div>
@@ -450,8 +503,8 @@
            <br><label>文字描述2：</label><input type="text"   mapid="desc2"      placeholder="输入图片文字描述">
            <form class="img-up-form">
                <label>图片上传：</label>
-               <input type="file"   mapid="img-up"   name='img-up' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
-               <input type="submit">
+               <input type="file"   mapid="img-up"   name='files' class="img-up-file" multiple="true"  accept="image/*" maxLength="1"/>
+               <input type="submit" value=" 开始上传 ">
                <p>可以一次选择多张图片,单张不超过200k,比例一致</p>
            </form>
        </div>

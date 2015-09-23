@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.css" afterPath="$PROJECT_DIR$/decorate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.js" afterPath="$PROJECT_DIR$/decorate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drag decorate.html" afterPath="$PROJECT_DIR$/drag decorate.html" />
-    </list>
+    <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="" />
     <ignored path="decorate.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decorate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decorate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9875283">
-              <caret line="471" column="14" selection-start-line="471" selection-start-column="14" selection-end-line="471" selection-end-column="14" />
+            <state vertical-scroll-proportion="-12.068966">
+              <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
@@ -51,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/drag decorate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0625">
-              <caret line="302" column="57" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.10466439">
+              <caret line="335" column="56" selection-start-line="335" selection-start-column="56" selection-end-line="335" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -80,6 +76,9 @@
         <option value="$PROJECT_DIR$/drag decorate.html" />
         <option value="$PROJECT_DIR$/decorate.css" />
         <option value="$PROJECT_DIR$/decorate.js" />
+        <option value="$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/decorate.css" />
+        <option value="$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/decorate.js" />
+        <option value="$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/drag decorate.html" />
       </list>
     </option>
   </component>
@@ -239,7 +238,7 @@
           <url>file://$PROJECT_DIR$/drag decorate.html</url>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -260,18 +259,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drag decorate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0625">
-          <caret line="302" column="57" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decorate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9875283">
-          <caret line="471" column="14" selection-start-line="471" selection-start-column="14" selection-end-line="471" selection-end-column="14" />
+        <state vertical-scroll-proportion="-12.068966">
+          <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#goods_list_instance#0" expanded="false" />
@@ -279,6 +270,38 @@
             <element signature="e#23427#23703#0" expanded="false" />
             <element signature="n#!!block;n#checked_done#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/decorate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/drag decorate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7117647">
+          <caret line="395" column="37" selection-start-line="395" selection-start-column="37" selection-end-line="395" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/骆冰/apache-tomcat-7.0.63/apache-tomcat-7.0.63/webapps/ROOT/views/decorate/decorate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025246982">
+          <caret line="633" column="6" selection-start-line="633" selection-start-column="6" selection-end-line="633" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drag decorate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10466439">
+          <caret line="335" column="56" selection-start-line="335" selection-start-column="56" selection-end-line="335" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
