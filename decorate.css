@@ -190,8 +190,12 @@ hr{border-color: #ccc!important;}
     position: absolute;
     width:100%;
     bottom: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
     color: #fff;
+    line-height: 32px;
+    margin: 0 0 0 0;
+    padding-left: 10px;
+    font-family: microsoft yahei;
 }
 [molid=wordPic]>img{
     width:100%;
@@ -317,7 +321,7 @@ a.doubleGood-wrap-one{
     border: 2px solid #f21;
 }
 .wordOnly{
-    margin: 10px 10px 15px 10px;
+    margin: 6px 3px 6px 3px;
     padding: 15px;
     font-size: 16px;
     text-overflow: ellipsis;
@@ -435,7 +439,7 @@ a.doubleGood-wrap-one{
 .good-tag{
     position: relative;
     display: inline-block;
-    margin: 0px 15px;
+    margin: 0px 15px 15px 15px;
     width:60px;
     height: 60px;
     border: 1px solid silver;
@@ -539,6 +543,7 @@ a.doubleGood-wrap-one{
     width: 100%;
     background: #fcc;
     text-align: center;
+    z-index: 9999;
 }
 .rows{
     position: relative;
@@ -678,4 +683,28 @@ a.all-goods-href{
 a.all-goods-href:hover{
     cursor: pointer;
     color:maroon;
+}
+.main-help{
+    color: #BA4E4E;
+    white-space: pre;
+    border-bottom: 1px dashed silver;
+    padding: 8px 5px 8px 15px;
+    background-color: antiquewhite;
+    position: relative;
+}
+.main-help .close{
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    font-size: 12px;
+    border: 1px solid #441C1C;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #000;
+    opacity: 0.3;
+    margin-right: 5px;
+}
+.decorate-navbar.navbar{
+    margin-bottom: 2px;
 }

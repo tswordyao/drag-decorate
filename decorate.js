@@ -64,8 +64,13 @@
 
         // 提示语映射
         window.mol_tip_dic={
-            'features':'品牌优势',
-            'hd-features':'品牌优势',
+            'tb-features':'品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
+            'hd-features':'品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
+            'bb-features':'品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
+            'brands':'各大品牌LOGO陈列,一个品牌一个贴图,琳琅满目,快拖进手机里看看吧~',
+            'tb-category': '商品分类,列出宝贝的几大类,供顾客挑选哦~',
+            'bb-category':'商品分类,列出宝贝的几大类,供顾客挑选哦~',
+            'hd-category':'商品分类,列出宝贝的几大类,供顾客挑选哦~',
             'singleGood':'这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
             'doubleGood':'这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
             'singlePic':'单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
@@ -106,7 +111,7 @@
             "val-slidePic":[{href:'#', imgsrc:'slide.jpg'},{href:'#', imgsrc:'hot2.jpg'}],
             "val-singlePic":{
                 href:'#',
-                imgsrc:'hot3.jpg',
+                imgsrc:'baby-house.jpg',
                 desc:'婴童夏装换季清仓中! 点击进入专区!',
             },
             "val-doublePic":{
@@ -135,7 +140,7 @@
             "val-bb-category":{imgsrc:"masonry.png"},
             "val-bb-features":{imgsrc:"bb-features.png"},
             "val-titleOnly":{title:'推荐宝贝'},
-            "val-wordOnly":{desc:'欢迎光临小店!<br>本店的所有商品都是真宗境外直邮, 海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
+            "val-wordOnly":{desc:'欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
             "val-contract":{tel:'1381396655', wechat:'weixina2017006'}
         };
 
@@ -163,11 +168,59 @@
         };
 
         // 几套默认的模板组合
+        /*
         window.templates= {
             'tempDefault': ['singlePic',  'wordOnly','brands','titleOnly', 'singleGoodList', 'contract'],
             tbstyle:['singlePic','wordOnly','tb-features','tb-category','titleOnly','doubleGoodList', 'contract'],
             bbstyle:['slidePic','bb-features','bb-category','titleOnly','bannerPic','bannerPic','titleOnly','singleGood','doubleGoodList', 'contract'],
             hdstyle:['slidePic','hd-features','brands','hd-category','titleOnly', 'singleGoodList', 'contract']
+        };
+        */
+        window.templates= {
+            'tempDefault': ['singlePic',  'wordOnly','brands','titleOnly', 'singleGoodList', 'contract'],
+            tbstyle:[  {name:'singlePic'},
+                        {name:'wordOnly'},
+                        {name:'tb-features'},
+                        {name:'titleOnly',data:{title:'热门品类'}},
+                        {name:'tb-category'},
+                        {name:'titleOnly'},
+                        {name:'doubleGoodList'},
+                        {name:'contract'}],
+            bbstyle:[  {name:'slidePic'},
+                        {name:'bb-features'},
+                        {name:'bb-category'},
+                        {name:'titleOnly',data:{title:'热门推荐'}},
+                        {name:'bannerPic'},
+                        {name:'bannerPic',data:{imgsrc:"banner2.jpg",href:'#'}},
+                        {name:'bannerPic',data:{imgsrc:"banner3.jpg",href:'#'}},
+                        {name:'bannerPic',data:{imgsrc:"banner4.jpg",href:'#'}},
+                        {name:'bannerPic',data:{imgsrc:"banner5.jpg",href:'#'}},
+                        {name:'titleOnly',data:{title:'热销宝贝'}},
+                        {name:'singleGood'},
+                        {name:'singleGood',data:{
+                            href:'#',
+                            picPath:'re-good2.jpg',
+                            name:'秋装新款 童装毛衣 外贸出口!',
+                            price:52.00
+                        }},
+                        {name:'singleGood',data:{
+                            href:'#',
+                            picPath:'re-good3.jpg',
+                            name:'宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
+                            price:168.00
+                        }},
+                        {name:'titleOnly'},
+                        {name:'doubleGoodList'},
+                        {name:'contract'}],
+
+            hdstyle:[  {name:'slidePic',data:[{href:'#', imgsrc:'hot.jpg'},{href:'#', imgsrc:'hot2.jpg'}]},
+                        {name:'hd-features'},
+                        {name:'titleOnly',data:{title:'热门分类'}},
+                        {name:'brands'},
+                        {name:'hd-category'},
+                        {name:'titleOnly'},
+                        {name: 'singleGoodList'},
+                        {name:'contract'}]
         };
     }
 
@@ -210,11 +263,11 @@
 
 /*交互方法*/
     // 写一个通用的alert提示,bootstrap样式
-    function bootAlert(str){
+    function bootAlert(str,holdTime){
         $('.alert').fadeIn(300,function(){
             setTimeout((function(){
                 $(this).fadeOut(600);
-            }).bind(this),1800);
+            }).bind(this),holdTime||1800);
         }).html(function(i,old){return old.replace('{content}',str)});
         return false;
     }
@@ -225,9 +278,35 @@
         if(typeof tempid=='undefined' || !tempid){
             return false;
         }
-        var molids=window.templates[tempid];
-        var html,defaultVals, div,i, k,mobile=$('#show-mobile')[0];
 
+        var html,defaultVals, div,i, k,name,data,mobile=$('#show-mobile')[0];
+
+        var mols=window.templates[tempid]||[];
+        // 获取模板HTML和默认数据, 并实例化
+        for(i=0;i<mols.length;i++){
+            name=mols[i].name;
+            data=mols[i].data||window.mol_val_dic['val-'+name];
+            html=window.mol_dic[name];
+            if(name=='slidePic'){
+                html=html.replace('{imgsrc}',data[0]['imgsrc']).replace('{href}',data[0]['href']);
+            }else{
+                for(k in data){
+                    html=html.replace('{'+k+'}',data[k]);
+                }
+            }
+            // 转为节点, 加上按钮, 插入
+            div=$(html)[0];
+            div.innerHTML+= '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+            mobile.appendChild(div);
+            window.mol_count_dic[div.getAttribute('molid')]-=1;
+        }
+        // 自动装载宝贝列表,目前只支持一个页面存在一个宝贝列表
+        mols.forEach(function(v,i){
+            if(v.name.indexOf('GoodList')!=-1){
+                indexOfGoodlist=i;
+            }
+        })
+        /*
         // 获取模板HTML和默认数据, 并实例化
         for(i=0;i<molids.length;i++){
             html=window.mol_dic[molids[i]];
@@ -251,6 +330,7 @@
                 indexOfGoodlist=i;
             }
         })
+        */
         $('#ctrl-wrap').data('index',indexOfGoodlist);
         var listType=$('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid')=='singleGoodList' ? 1:2;
         goods_list_instance(window.goods.slice(0,16), listType);
@@ -336,7 +416,7 @@
         .on('mousedown',function(){
             // 显示提示框,设置内容
             var the=this;
-            $('.mol-tip').show().css('opacity',0).animate({top:$(this).parent().index()*57,opacity:0.9},function(){
+            $('.mol-tip').show().css('opacity',0).animate({top:$(this).parent().index()*44,opacity:0.9},function(){
                 $(this).html(function(i,old) {
                     return old + window.mol_tip_dic[this.id.replace('tag-', '')]
                 }.bind(the));
@@ -531,7 +611,7 @@
         good_tag.append('<i>&times;</i>');
         good_tag.data('good-info',goodInfo);
         window.checkedGoods.push(goodInfo);
-        if(goodCheckedList.children().length<21){
+        if(goodCheckedList.children().length<20){
             goodCheckedList.append(good_tag);
         }else{
             bootAlert('首页推荐宝贝列表最多装载20个, 其余的可点击"全部宝贝"查看');
@@ -655,6 +735,7 @@
             return false;
         }else if(files.length>5){
             bootAlert('最多上传5张图片');
+            return false;
         }
         for(var i=0;i<files.length;i++){
             //alert(files[i].size)
@@ -694,18 +775,27 @@
                         p.innerHTML=v;
                         fg.appendChild(p);
                     })
-                    */
                     p=document.createElement('p');
                     p.className='upload-ok-tip';
                     p.innerHTML='上传成功,图片地址如上,已经自动填入.';
                     fg.appendChild(p);
                     m.appendChild(fg);
+                     */
                     molobj.data('native',res.srcs);
                     $('.mol-ctrl-wrap').find('[mapid^=imgsrc]').each(function(i,val){
                         this.value=res.srcs[i]||this.value;
+                        if(i<res.srcs.length){
+                            $(this).css('background','#fbb');
+                        }
+                        /*
+                        setTimeout(function(){
+                            $(this).css('background','');
+                        }.bind(this),5600)
+                        */
                     })
                     molobj.find('img')[0].src=res.srcs[0];
-                    bootAlert('上传成功,图片地址已经自动填入文本框.');
+                    bootAlert('上传成功,图片地址已经自动填入文本框.',2400);
+                    $('.img-up-file')[0].value=null;
                 }
             }
         });
@@ -717,6 +807,7 @@
         console.info(window.mol_count_dic);
     });
 
+    var decorateSaveAction='http://localhost:8080/goods/appSaveDecoration';
     // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
     $('#btn-info').click(function(){
         var molid;
@@ -733,7 +824,22 @@
             })
         });
         console.table(json);
-        console.log(JSON.stringify(json));
+        var jsonstr=JSON.stringify(json);
+        //console.log(jsonstr);
+        $.post(decorateSaveAction,{shopId:'7888996',content:jsonstr},function(res){
+            console.info(res)
+        })
+        /*
+        $.ajax({
+            url:decorateSaveAction,
+            data:{shopId:7888996,content:jsonstr},
+            dataType:'json',
+            success:function(res){
+                console.info(res)
+            }
+        })
+        */
+
     });
 
 
