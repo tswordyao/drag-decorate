@@ -708,3 +708,6 @@ a.all-goods-href:hover{
 .decorate-navbar.navbar{
     margin-bottom: 2px;
 }
+button.show-good-list:focus{
+    outline: -webkit-focus-ring-color auto 0px;
+}

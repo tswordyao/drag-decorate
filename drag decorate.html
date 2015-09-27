@@ -25,22 +25,22 @@
          <a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>
          <a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>
          <a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>
-         <a class="navbar-brand"  id="btn-help"         href="#">?&nbsp;教程</a>
-         <a class="navbar-brand"  id="" onclick="crossTest()"  href="#">测试</a>
+         <a class="navbar-brand"  id="btn-help"    target="_blank"     href="#">?&nbsp;教程</a>
      </div>
-        <form class="navbar-form navbar-right" role="form">
-            <input type="text" placeholder="测试输入店铺ID" class="form-control" id="shopId-inp">
-            <button type="submit" class="btn btn-success btn-save">保存</button>
-        </form>
+    <form class="navbar-form navbar-right" role="form">
+        <input type="text" placeholder="测试输入店铺名称" class="form-control" id="shopName-inp">
+        <input type="text" placeholder="测试输入店铺ID" class="form-control" id="shopId-inp">
+        <button type="submit" class="btn btn-success btn-save">保存</button>
+    </form>
     </nav>
 
-    <P class="main-help">点住左侧模块按钮, 将其拖动到中间的手机视图中, 将看到对应的效果。  或者亲可以试试点击上面的已有模板组合哦~   ==> 在手机中点击某模块,可在右侧编辑该模块的数据。<b class="close" onclick="$(this).parent().after('<hr>');$(this).parent().hide()">我知道了 &times;</b></P>
+    <P class="main-help">点住左侧模块按钮, 将其拖动到中间的手机视图中, 将看到对应的效果。  或者亲可以试试点击上面的已有模板组合哦~   ==> 在手机中点击某模块,可在右侧编辑该模块的数据。<b class="close">我知道了 &times;</b></P>
 
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-                <li><div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div></li>
                 <li><div class="mol-tag" id="tag-slideBox"  draggable="true"  >轮播图模块</div></li>
+                <li><div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div></li>
                 <li><div class="mol-tag" id="tag-bannerPic" draggable="true"  >banner图模块</div></li>
                 <li><div class="mol-tag" id="tag-wordPic"   draggable="true"  >左文右图模块</div></li>
 
@@ -51,7 +51,7 @@
                 <li><div class="mol-tag mol-tag-positive" id="tag-hd-category"  draggable="true" >类别组合2</div></li>
                 <li><div class="mol-tag mol-tag-positive" id="tag-bb-category"  draggable="true" >类别组合3</div></li>
 
-                <li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"          draggable="true" >品牌陈列</div></li>
+                <li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"      draggable="true" >品牌陈列</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>
@@ -150,9 +150,7 @@
     </div>
 
     <!-- 提示组件-->
-    <div class="alert alert-assertive">
-       <strong>提示！</strong>{content}
-    </div>
+    <div class="alert alert-assertive"></div>
 
     <!-- 模板 -->
     <div>
@@ -226,11 +224,11 @@
         </script>
 
         <script type="text/template" id="temp-good-cell">
-        <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
-           <img src="{picPath}" alt="" class=""/>
-           <p class="good-name">{name}</p>
-           <p class="good-price">￥{price}</p>
-        </a>
+            <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)">
+               <img src="{picPath}" alt="" class=""/>
+               <p class="good-name">{name}</p>
+               <p class="good-price">￥{price}</p>
+            </a>
         </script>
 
         <script type="text/template" id="temp-singleGood">
