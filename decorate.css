@@ -1,7 +1,7 @@
 *{  margin: 0;  padding: 0;  }
 ul,li {list-style-type : none}
 .clear{  clear:both;  }
-body{background:url(bg.png)!important;}
+body{background:url(img/decorate/bg.png)!important;}
 hr{border-color: #ccc!important;}
 #main{
     margin: 1px auto;
@@ -351,7 +351,7 @@ a.doubleGood-wrap-one{
     vertical-align: top;
     color: gray;
     background: #fff;
-    background-image: url("store-head.png");
+    background-image: url("img/decorate/store-head.png");
     background-size: cover;
 }
 #store-head>img,#store-head>div,#store-head li{

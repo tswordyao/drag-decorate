@@ -38,59 +38,59 @@
             var mol_val_dic = {
                 "val-singleGood": {
                     href: '#',
-                    picPath: 're-good.jpg',
+                    picPath: 'img/decorate/re-good.jpg',
                     name: '宝乐滋3罐超值特价装!',
                     price: 92.00
                 },
                 "val-doubleGood": {
                     href: '#',
-                    picPath: 'good17.jpg',
+                    picPath: 'img/decorate/good17.jpg',
                     name: '漂亮的女童裤子 纯棉',
                     price: 56.00,
                     href2: '#',
-                    picPath2: 'good13.jpg',
+                    picPath2: 'img/decorate/good13.jpg',
                     name2: '小脚裤子批发 颜色多',
                     price2: 52.00
                 },
                 "val-wordPic": {
                     href: '#',
-                    imgsrc: 'word-pic.jpg',
+                    imgsrc: 'img/decorate/word-pic.jpg',
                     desc: '图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
                 },
-                "val-slideBox": [{href: '#', imgsrc: 'slide.jpg'}, {href: '#', imgsrc: 'slide2.jpg'}, {
+                "val-slideBox": [{href: '#', imgsrc: 'img/decorate/slide.jpg'}, {href: '#', imgsrc: 'img/decorate/slide2.jpg'}, {
                     href: '#',
-                    imgsrc: 'slide3.jpg'
+                    imgsrc: 'img/decorate/slide3.jpg'
                 }],
                 "val-singlePic": {
                     href: '#',
-                    imgsrc: 'baby-house.jpg',
+                    imgsrc: 'img/decorate/baby-house.jpg',
                     desc: '婴童夏装换季清仓中! 点击进入专区!',
                 },
                 "val-doublePic": {
                     href: '#',
-                    imgsrc: 'baby-joy01.jpg',
+                    imgsrc: 'img/decorate/baby-joy01.jpg',
                     desc: '童车特价中! 点击进入专区!',
                     href2: '#',
-                    imgsrc2: 'baby-joy02.jpg',
+                    imgsrc2: 'img/decorate/baby-joy02.jpg',
                     desc2: '玩具特价! 点击进入专区!',
                 },
                 "val-tb-category": {
                     href: '#',
-                    imgsrc: 'area-logo-01.jpg',
+                    imgsrc: 'img/decorate/area-logo-01.jpg',
                     desc: 'LOGO AREA<br>奶粉专区',
                     href2: '#',
-                    imgsrc2: 'area-logo-02.jpg',
+                    imgsrc2: 'img/decorate/area-logo-02.jpg',
                     desc2: 'LOGO AREA<br>日用品专区',
                     href3: '#',
-                    imgsrc3: 'area-logo-03.jpg',
+                    imgsrc3: 'img/decorate/area-logo-03.jpg',
                     desc3: 'LOGO AREA<br>尿不湿专区',
                     href4: '#',
-                    imgsrc4: 'area-logo-04.jpg',
+                    imgsrc4: 'img/decorate/area-logo-04.jpg',
                     desc4: 'LOGO AREA<br>妈妈专区',
                 },
-                "val-bannerPic": {imgsrc: "banner.jpg", href: '#'},
-                "val-bb-category": {imgsrc: "masonry.png"},
-                "val-bb-features": {imgsrc: "bb-features.png"},
+                "val-bannerPic": {imgsrc: "img/decorate/banner.jpg", href: '#'},
+                "val-bb-category": {imgsrc: "img/decorate/masonry.png"},
+                "val-bb-features": {imgsrc: "img/decorate/bb-features.png"},
                 "val-titleOnly": {title: '推荐宝贝'},
                 "val-wordOnly": {desc: '欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
                 "val-contract": {tel: '1381396655', wechat: 'weixina2017006'}
@@ -133,16 +133,16 @@
                     {name: 'bb-category'},
                     {name: 'titleOnly', data: {title: '热门推荐'}},
                     {name: 'bannerPic'},
-                    {name: 'bannerPic', data: {imgsrc: "banner2.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "banner3.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "banner4.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "banner5.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner2.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner3.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner4.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner5.jpg", href: '#'}},
                     {name: 'titleOnly', data: {title: '热销宝贝'}},
                     {name: 'singleGood'},
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 're-good2.jpg',
+                        picPath: 'img/decorate/re-good2.jpg',
                         name: '秋装新款 童装毛衣 外贸出口!',
                         price: 52.00
                     }
@@ -150,7 +150,7 @@
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 're-good3.jpg',
+                        picPath: 'img/decorate/re-good3.jpg',
                         name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
                         price: 168.00
                     }
@@ -158,7 +158,7 @@
                     {name: 'titleOnly'},
                     {name: 'doubleGoodList'},
                     {name: 'contract'}],
-                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: 'hot.jpg'}, {href: '#', imgsrc: 'hot2.jpg'}]},
+                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: 'img/decorate/hot.jpg'}, {href: '#', imgsrc: 'img/decorate/hot2.jpg'}]},
                     {name: 'hd-features'},
                     {name: 'titleOnly', data: {title: '热门分类'}},
                     {name: 'hd-brands'},
