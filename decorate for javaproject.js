@@ -38,59 +38,59 @@
             var mol_val_dic = {
                 "val-singleGood": {
                     href: '#',
-                    picPath: 'img/decorate/re-good.jpg',
+                    picPath: '../img/decorate/re-good.jpg',
                     name: '宝乐滋3罐超值特价装!',
                     price: 92.00
                 },
                 "val-doubleGood": {
                     href: '#',
-                    picPath: 'img/decorate/good17.jpg',
+                    picPath: '../img/decorate/good17.jpg',
                     name: '漂亮的女童裤子 纯棉',
                     price: 56.00,
                     href2: '#',
-                    picPath2: 'img/decorate/good13.jpg',
+                    picPath2: '../img/decorate/good13.jpg',
                     name2: '小脚裤子批发 颜色多',
                     price2: 52.00
                 },
                 "val-wordPic": {
                     href: '#',
-                    imgsrc: 'img/decorate/word-pic.jpg',
+                    imgsrc: '../img/decorate/word-pic.jpg',
                     desc: '图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
                 },
-                "val-slideBox": [{href: '#', imgsrc: 'img/decorate/slide.jpg'}, {href: '#', imgsrc: 'img/decorate/slide2.jpg'}, {
+                "val-slideBox": [{href: '#', imgsrc: '../img/decorate/slide.jpg'}, {href: '#', imgsrc: '../img/decorate/slide2.jpg'}, {
                     href: '#',
-                    imgsrc: 'img/decorate/slide3.jpg'
+                    imgsrc: '../img/decorate/slide3.jpg'
                 }],
                 "val-singlePic": {
                     href: '#',
-                    imgsrc: 'img/decorate/baby-house.jpg',
+                    imgsrc: '../img/decorate/baby-house.jpg',
                     desc: '婴童夏装换季清仓中! 点击进入专区!',
                 },
                 "val-doublePic": {
                     href: '#',
-                    imgsrc: 'img/decorate/baby-joy01.jpg',
+                    imgsrc: '../img/decorate/baby-joy01.jpg',
                     desc: '童车特价中! 点击进入专区!',
                     href2: '#',
-                    imgsrc2: 'img/decorate/baby-joy02.jpg',
+                    imgsrc2: '../img/decorate/baby-joy02.jpg',
                     desc2: '玩具特价! 点击进入专区!',
                 },
                 "val-tb-category": {
                     href: '#',
-                    imgsrc: 'img/decorate/area-logo-01.jpg',
+                    imgsrc: '../img/decorate/area-logo-01.jpg',
                     desc: 'LOGO AREA<br>奶粉专区',
                     href2: '#',
-                    imgsrc2: 'img/decorate/area-logo-02.jpg',
+                    imgsrc2: '../img/decorate/area-logo-02.jpg',
                     desc2: 'LOGO AREA<br>日用品专区',
                     href3: '#',
-                    imgsrc3: 'img/decorate/area-logo-03.jpg',
+                    imgsrc3: '../img/decorate/area-logo-03.jpg',
                     desc3: 'LOGO AREA<br>尿不湿专区',
                     href4: '#',
-                    imgsrc4: 'img/decorate/area-logo-04.jpg',
+                    imgsrc4: '../img/decorate/area-logo-04.jpg',
                     desc4: 'LOGO AREA<br>妈妈专区',
                 },
-                "val-bannerPic": {imgsrc: "img/decorate/banner.jpg", href: '#'},
-                "val-bb-category": {imgsrc: "img/decorate/masonry.png"},
-                "val-bb-features": {imgsrc: "img/decorate/bb-features.png"},
+                "val-bannerPic": {imgsrc: "../img/decorate/banner.jpg", href: '#'},
+                "val-bb-category": {imgsrc: "../img/decorate/masonry.png"},
+                "val-bb-features": {imgsrc: "../img/decorate/bb-features.png"},
                 "val-titleOnly": {title: '推荐宝贝'},
                 "val-wordOnly": {desc: '欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
                 "val-contract": {tel: '1381396655', wechat: 'weixina2017006'}
@@ -133,16 +133,16 @@
                     {name: 'bb-category'},
                     {name: 'titleOnly', data: {title: '热门推荐'}},
                     {name: 'bannerPic'},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner2.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner3.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner4.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner5.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "../img/decorate/banner2.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "../img/decorate/banner3.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "../img/decorate/banner4.jpg", href: '#'}},
+                    {name: 'bannerPic', data: {imgsrc: "../img/decorate/banner5.jpg", href: '#'}},
                     {name: 'titleOnly', data: {title: '热销宝贝'}},
                     {name: 'singleGood'},
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'img/decorate/re-good2.jpg',
+                        picPath: '../img/decorate/re-good2.jpg',
                         name: '秋装新款 童装毛衣 外贸出口!',
                         price: 52.00
                     }
@@ -150,7 +150,7 @@
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'img/decorate/re-good3.jpg',
+                        picPath: '../img/decorate/re-good3.jpg',
                         name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
                         price: 168.00
                     }
@@ -158,7 +158,7 @@
                     {name: 'titleOnly'},
                     {name: 'doubleGoodList'},
                     {name: 'contract'}],
-                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: 'img/decorate/hot.jpg'}, {href: '#', imgsrc: 'img/decorate/hot2.jpg'}]},
+                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: '../img/decorate/hot.jpg'}, {href: '#', imgsrc: '../img/decorate/hot2.jpg'}]},
                     {name: 'hd-features'},
                     {name: 'titleOnly', data: {title: '品牌馆'}},
                     {name: 'hd-brands'},
@@ -169,15 +169,10 @@
                     {name: 'contract'}]
             };
             // 后台接口,获取宝贝数据
-            var actionSearch = 'http://localhost:3000/goods';
-            var decorateSaveAction = 'http://localhost:3000/shopDataSave';
-            var decorateUploadAction = 'http://localhost:8080/goods/appUploadShopPic';
-            //var actionSearch='http://localhost:8080/goods/appGoodsList';
-            //var decorateSaveAction='http://localhost:8080/goods/appSaveDecoration';
-            //var decorateUploadAction = 'http://localhost:8080/goods/appUploadShopPic';
-            //var decorateUploadAction = '../../goods/appUploadShopPic';
-            //var actionSearch='../../goods/appGoodsList';
-            //var decorateSaveAction='../../goods/appSaveDecoration';
+            var actionSearch = getContextPath() + '/goods/appGoodsList';
+            var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
+            var decorateUploadAction = getContextPath() + '/goods/appUploadShopPic';
+            var decorateContentAction = getContextPath() + '/goods/appShopDecoration';
 
             // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
             var gotGoods = [];
@@ -495,7 +490,7 @@
                 var html, node_good, node_wrap = $(html_wrap)[0];
                 datas.forEach(function (obj, i) {
                     html = html_good.replace('{name}', obj['name'])
-                        .replace('{picPath}', obj['picPath'])
+                        .replace('{picPath}', obj['thumbnail'] || '#')
                         .replace('{href}', obj['href'])
                         .replace('{price}', obj['price']);
                     node_good = $(html)[0];
@@ -513,6 +508,7 @@
                         }
                     }
                 });
+                
                 // 找到要应用的元素
                 molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
                 // 查看全部宝贝
@@ -573,6 +569,7 @@
 
 
             $.ajax(actionSearch).always(function (res) {
+            	res=JSON.parse(res);
                 if (res.result) {
                     gotGoods = res.data;
                 }
@@ -596,8 +593,10 @@
                 $.ajax({
                     url: actionSearch,
                     data: {pageSize: 20, pageNum: pageNum || 1, keyword: keyword},
+                    dataType:'json',
                     type: 'post'
                 }).always(function (resp) {
+                	//resp=JSON.parse(resp)
                     console.info(resp)
                     if (resp.result == 1) {
                         var html = $('#temp-good-cell').html();
@@ -608,7 +607,7 @@
                         //载入宝贝数组
                         resp.data.forEach(function (obj, i) {
                             good = $(html.replace('{name}', obj['name'])
-                                .replace('{picPath}', obj['picPath'])
+                                .replace('{picPath}', obj['thumbnail'])
                                 .replace('{href}', '#/tab/goods/' + obj['goodsId'])
                                 .replace('{price}', obj['price']));
                             good.data('good-info', obj);
@@ -758,7 +757,7 @@
                 var jsonstr = JSON.stringify(json);
                 //console.log(jsonstr);
                 $.post(decorateSaveAction, {shopId: shopId,shopName: shopName , content: jsonstr}).always(function (res) {
-                    console.info(res);
+                	res=JSON.parse(res);
                     if(res.result){
                         bootAlert('保存成功 OK!')
                     }
@@ -775,6 +774,42 @@
                  */
             });
         }
+
+		window.init_current=function init_current(mols){   
+                var html, defaultVals, div, i, k, name, data, mobile = $('#show-mobile')[0];
+                var mols = mols || [];
+        
+                // 获取模板HTML和默认数据, 并实例化
+                for (i = 0; i < mols.length; i++) {
+                	if(mols[i].data=='null'){
+                		mols[i].data=null;
+                	}
+                    name = mols[i].name;
+                    data = mols[i].data || mol_val_dic['val-' + name];
+                    html = get_mol(name);
+                    if (name == 'slideBox') {
+                        html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
+                    } else if(name == 'singleGoodList'){
+						$('#ctrl-wrap').data('index', i);
+						$('#ctrl-wrap').data('listType', 1);
+					} else if(name == 'doubleGoodList'){
+						$('#ctrl-wrap').data('index', i);
+						$('#ctrl-wrap').data('listType', 2);
+					}else {
+                        for (k in data) {
+                            html = html.replace('{' + k + '}', data[k]);
+                        }
+                    }
+                    // 转为节点, 加上按钮, 插入
+                    div = $(html)[0];
+                    div.innerHTML += '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+                    mobile.appendChild(div);
+                    $(div).data('native', data);
+                    mol_count_dic[div.getAttribute('molid')] -= 1;
+                }
+                goods_list_instance(mols[$('#ctrl-wrap').data('index')].data,$('#ctrl-wrap').data('listType'));
+                $('.go-recycle,.go-up,.go-down').hide();
+		}
 })(window.jQuery)
     
     
