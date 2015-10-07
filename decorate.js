@@ -206,8 +206,8 @@
             });
 
             // 自动装载模板组合中的各模块, 此函数为模板载入的关键依赖
-            var autoAppendNodes=function(tempid, indexOfGoodlist) {
-                var indexOfGoodlist;
+            var autoAppendNodes=function(tempid) {
+                //var indexOfGoodlist;
                 if (typeof tempid == 'undefined' || !tempid) {
                     return false;
                 }
@@ -221,6 +221,9 @@
                     html = get_mol(name);
                     if (name == 'slideBox') {
                         html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
+                    } else if(name.lastIndexOf('GoodList')>-1){
+                        data=data||gotGoods.slice(0, 16);console.info(data)
+                        html=html.replace('{content}',goods_list_instance(data, name.indexOf('single')==0?1:2));
                     } else {
                         for (k in data) {
                             html = html.replace('{' + k + '}', data[k]);
@@ -234,17 +237,19 @@
                     mol_count_dic[div.getAttribute('molid')] -= 1;
                 }
 
-                // 自动装载宝贝列表,目前只支持一个页面存在一个宝贝列表
-                mols.forEach(function (v, i) {
-                    if (v.name.indexOf('GoodList') != -1) {
-                        indexOfGoodlist = i;
-                    }
-                })
+                /*自动装载宝贝列表,目前只支持一个页面存在一个宝贝列表
+                    mols.forEach(function (v, i) {
+                        if (v.name.indexOf('GoodList') != -1) {
+                            indexOfGoodlist = i;
+                        }
+                    })
+
                 $('#ctrl-wrap').data('index', indexOfGoodlist);
                 var listType = $('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid') == 'singleGoodList' ? 1 : 2;
 
                 //默认给宝贝列表装载最前的16个宝贝,后端建议默认按热销排行
                 goods_list_instance(gotGoods.slice(0, 16), listType);
+                */
 
                 // 默认隐藏上下调整小按钮
                 $('.go-recycle,.go-up,.go-down').hide();
@@ -513,13 +518,14 @@
                         }
                     }
                 });
-                // 找到要应用的元素
-                molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
+                //// 找到要应用的元素
+                //molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
                 // 查看全部宝贝
                 var allGoodsHref = '<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
-                molobj.html(div.html() + allGoodsHref + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
-                // 同时保存原始数据
-                molobj.data('native', datas);
+                //molobj.html(div.html() + allGoodsHref + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
+                //// 同时保存原始数据
+                //molobj.data('native', datas);
+                return div.html() + allGoodsHref;
             }
 
             //宝贝搜索
@@ -556,15 +562,18 @@
 
             // 选择宝贝完毕,实例化数据
             window.checked_done=function checked_done(the) {
-                if ($(the).data('for-ctrlid') == 'doubleGoodList') {
-                    goods_list_instance(checkedGoods, 2);
-                } else {
-                    goods_list_instance(checkedGoods, 1);
-                }
+                // 找到要应用的元素
+                var molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
+                var count;
+                ($(the).data('for-ctrlid') == 'doubleGoodList') ? count=2 : count=1;
+                // 更新宝贝列表内容
+                molobj.html(goods_list_instance(checkedGoods, count) + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
+                // 同时保存原始数据
+                molobj.data('native', checkedGoods);
                 goods_list_cls();
             }
 
-            // 清空宝贝列表
+            // 清空选择的宝贝
             window.goods_list_cls=function goods_list_cls() {
                 $('#good-checked-list').html('');
                 $('.good-list').html('');

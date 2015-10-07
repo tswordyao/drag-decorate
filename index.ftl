@@ -1,4 +1,9 @@
-<!doctype html>
+<#assign contextPath = request.contextPath>
+<#if (appSettings.assetsPath)?has_content>
+<#assign contextPath = appSettings.assetsPath>
+</#if>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,32 +11,36 @@
 <meta name="Author" content="">
 <meta name="Keywords" content="">
 <meta name="Description" content="">
-<title>Decorate</title>
-<script src="hd.jquery.min.js"></script>
-<link rel="stylesheet"  href="decorate.css"/>
-<!--   <script src="pub_js/angular-1.3.0.js"></script> -->
+<title>海带分销-店铺装修</title>
+<script>function getContextPath() {return '${contextPath}';}</script>
+<script src="${contextPath}/assets/lib/js/jquery.min.js"></script>
+<link rel="stylesheet"  href="${contextPath}/assets/css/decorate.css"/>
 </head>
 <body ng-app="dsale" ng-controller="dsaleCtrl">
 
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top decorate-navbar" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
-     <div class="navbar-header">
-         <a class="navbar-brand"  href="#">店铺首页装修&nbsp;|</a>
-         <a class="navbar-brand"  id="btn-back"          href="#">返回</a>
+      <div class="navbar-header">
+         <@hd.a class="navbar-brand" text="店铺首页装修&nbsp;|" href="/decorate/index" />
          <a class="navbar-brand btn-save"                href="#">保存</a>
          <!--<a class="navbar-brand"  id="btn-count"         href="#">状态</a>-->
          <!--<a class="navbar-brand"  tempid="tempDefault"  href="#">默认模板</a>-->
+         <@hd.a class="navbar-brand" id="btn-preview" target="_blank" text="预览"
+                href="http://${shop.domain}.${appSettings.shopDomainPost!}" />
          <a class="navbar-brand"  tempid=""              href="#">清空</a>
          <a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>
          <a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>
          <a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>
          <a class="navbar-brand"  id="btn-help"    target="_blank"     href="#">?&nbsp;教程</a>
-     </div>
-    <form class="navbar-form navbar-right" role="form">
+      </div>
+     
+      <#--
+      <form class="navbar-form navbar-right" role="form">
         <input type="text" placeholder="测试输入店铺名称" class="form-control" id="shopName-inp">
         <input type="text" placeholder="测试输入店铺ID" class="form-control" id="shopId-inp">
         <button type="submit" class="btn btn-success btn-save">保存</button>
-    </form>
+      </form>
+      -->
     </nav>
 
     <P class="main-help">点住左侧模块按钮, 将其拖动到中间的手机视图中, 将看到对应的效果。  或者亲可以试试点击上面的已有模板组合哦~   ==> 在手机中点击某模块,可在右侧编辑该模块的数据。<b class="close">我知道了 &times;</b></P>
@@ -84,7 +93,7 @@
                         <!--<li><p>0</p><h5>微店广播</h5></li>-->
                     <!--</ul>-->
                 <!--/div-->
-                <div class="store-name">莉莉chou的小店.*^_^*.</div>
+                <div class="store-name">${(shop.title)!}的小店.*^_^*.</div>
                 <!--<div id="store-bottom"><a href="">查看所有宝贝</a></div>-->
                 <div class="iphone-foot"><i></i></div>
             </div>
@@ -156,66 +165,66 @@
     <div>
         <script type="text/template" id="temp-tb-features">
             <div class="mol-wrap features-wrap" molid="tb-features">
-                <img src="img/decorate/feature/feature01.jpg"  alt=""/>
-                <img src="img/decorate/feature/feature02.jpg"  alt=""/>
-                <img src="img/decorate/feature/feature03.jpg"  alt=""/>
-                <img src="img/decorate/feature/feature04.jpg"  alt=""/>
+                <img src="../img/decorate/feature/feature01.jpg"  alt=""/>
+                <img src="../img/decorate/feature/feature02.jpg"  alt=""/>
+                <img src="../img/decorate/feature/feature03.jpg"  alt=""/>
+                <img src="../img/decorate/feature/feature04.jpg"  alt=""/>
             </div>
         </script>
 
         <script type="text/template" id="temp-hd-features">
             <div class="mol-wrap features-wrap hd" molid="hd-features">
-                <img src="img/decorate/feature/hd-feature01.png"  alt=""/>
-                <img src="img/decorate/feature/hd-feature02.png"  alt=""/>
-                <img src="img/decorate/feature/hd-feature03.png"  alt=""/>
-                <img src="img/decorate/feature/hd-feature04.png"  alt=""/>
+                <img src="../img/decorate/feature/hd-feature01.png"  alt=""/>
+                <img src="../img/decorate/feature/hd-feature02.png"  alt=""/>
+                <img src="../img/decorate/feature/hd-feature03.png"  alt=""/>
+                <img src="../img/decorate/feature/hd-feature04.png"  alt=""/>
                 <p class="feature-text"><b>全球货源</b><b>品质保障</b><b>超值价格</b><b>闪电发货</b></p>
             </div>
         </script>
 
         <script type="text/template" id="temp-hd-brands">
             <div class="mol-wrap hd-brands" molid="hd-brands">
-                <img src="img/decorate/brand/g1.jpg" alt=""/>
-                <img src="img/decorate/brand/g2.jpg" alt=""/>
-                <img src="img/decorate/brand/g3.jpg" alt=""/>
-                <img src="img/decorate/brand/g4.jpg" alt=""/>
-                <img src="img/decorate/brand/g5.jpg" alt=""/>
-                <img src="img/decorate/brand/g6.jpg" alt=""/>
-                <img src="img/decorate/brand/g7.jpg" alt=""/>
-                <img src="img/decorate/brand/g8.jpg" alt=""/>
-                <img src="img/decorate/brand/g9.jpg" alt=""/>
-                <img src="img/decorate/brand/g10.jpg" alt=""/>
-                <img src="img/decorate/brand/g11.jpg" alt=""/>
-                <img src="img/decorate/brand/g12.jpg" alt=""/>
-                <img src="img/decorate/brand/g13.jpg" alt=""/>
-                <img src="img/decorate/brand/g14.jpg" alt=""/>
-                <img src="img/decorate/brand/g15.jpg" alt=""/>
-                <img src="img/decorate/brand/g16.jpg" alt=""/>
+                <img src="../img/decorate/brand/g1.jpg" alt=""/>
+                <img src="../img/decorate/brand/g2.jpg" alt=""/>
+                <img src="../img/decorate/brand/g3.jpg" alt=""/>
+                <img src="../img/decorate/brand/g4.jpg" alt=""/>
+                <img src="../img/decorate/brand/g5.jpg" alt=""/>
+                <img src="../img/decorate/brand/g6.jpg" alt=""/>
+                <img src="../img/decorate/brand/g7.jpg" alt=""/>
+                <img src="../img/decorate/brand/g8.jpg" alt=""/>
+                <img src="../img/decorate/brand/g9.jpg" alt=""/>
+                <img src="../img/decorate/brand/g10.jpg" alt=""/>
+                <img src="../img/decorate/brand/g11.jpg" alt=""/>
+                <img src="../img/decorate/brand/g12.jpg" alt=""/>
+                <img src="../img/decorate/brand/g13.jpg" alt=""/>
+                <img src="../img/decorate/brand/g14.jpg" alt=""/>
+                <img src="../img/decorate/brand/g15.jpg" alt=""/>
+                <img src="../img/decorate/brand/g16.jpg" alt=""/>
             </div>
         </script>
 
         <script type="text/template" id="temp-hd-category">
             <div class="mol-wrap hd-category" molid="hd-category">
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category01.jpg" alt=""/>
+                    <img src="../img/decorate/category/hd-category01.jpg" alt=""/>
                     <div class="wrap-r">
                         <h3>奶粉</h3><P>全球奶粉跨境购</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category02.jpg" alt=""/>
+                    <img src="../img/decorate/category/hd-category02.jpg" alt=""/>
                     <div class="wrap-r">
                         <h3>尿不湿</h3><P>轻松透气一整天</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category03.jpg" alt=""/>
+                    <img src="../img/decorate/category/hd-category03.jpg" alt=""/>
                     <div class="wrap-r">
                         <h3>辅食</h3><P>肠胃健康妈妈放心</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category04.jpg" alt=""/>
+                    <img src="../img/decorate/category/hd-category04.jpg" alt=""/>
                     <div class="wrap-r">
                         <h3>保健品</h3><P>全球保健品一站采购</P>
                     </div>
@@ -339,24 +348,22 @@
 
         <script type="text/template" id="temp-contract">
            <a class="mol-wrap" molid="contract" ng-href="{href}">
-               <img src="img/decorate/tel.png"  alt=""/><b>{tel}</b>
-               <img src="img/decorate/wechat.png"  alt=""/><b>{wechat}</b>
+               <img src="../img/decorate/tel.png"  alt=""/><b>{tel}</b>
+               <img src="../img/decorate/wechat.png"  alt=""/><b>{wechat}</b>
            </a>
         </script>
 
         <script type="text/template" id="temp-singleGoodList">
            <div class="mol-wrap" molid="singleGoodList">
-                {content}
-                <!--<h4>宝贝列表</h4>-->
-                <!--<p>每行一个,依次排列,请点击为其选择宝贝.</p>-->
+                <h4>宝贝列表</h4>
+                <p>每行一个,依次排列,请点击为其选择宝贝.</p>
            </div>
         </script>
 
         <script type="text/template" id="temp-doubleGoodList">
            <div class="mol-wrap" molid="doubleGoodList">
-               {content}
-               <!--<h4>宝贝列表</h4>-->
-               <!--<p>每行两个,依次排列,请点击为其选择宝贝.</p>-->
+               <h4>宝贝列表</h4>
+               <p>每行两个,依次排列,请点击为其选择宝贝.</p>
            </div>
         </script>
     </div>
@@ -583,9 +590,14 @@
         </script>
     </div>
 
-    <link rel="stylesheet" href="bootstrap.css">
-    <script src="bootstrap.min.js"></script>
-    <script src="decorate.js"></script>
-
+    <link rel="stylesheet" href="${contextPath}/assets/lib/css/bootstrap.min.css">
+    <script src="${contextPath}/assets/lib/js/bootstrap.min.js"></script>
+    <script src="${contextPath}/assets/js/decorate.js"></script>
+    <script>
+      $(document).ready(function() {
+        var data = JSON.parse('${(decoration.content)!}');
+        init_current(data);
+      });
+    </script>
 </body>
 </html>
