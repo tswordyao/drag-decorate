@@ -79,9 +79,11 @@ hr{border-color: #ccc!important;}
 }
 #show-mobile>.iphone-head{
     top:0;
+    border-radius: 62px 62px 0 0;
 }
 #show-mobile>.iphone-foot{
     bottom:0;
+    border-radius:0 0 62px 62px;
 }
 #show-mobile>.iphone-head>i{
     display: inline-block;
