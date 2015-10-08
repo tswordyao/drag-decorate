@@ -202,7 +202,7 @@
             });
 
             $('.main-help>.close').click(function(){
-                $(this).parent().after('<hr>');$(this).parent().hide()
+                $(this).parent().after('<hr>').hide();
             });
 
             // 自动装载模板组合中的各模块, 此函数为模板载入的关键依赖
@@ -222,7 +222,7 @@
                     if (name == 'slideBox') {
                         html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
                     } else if(name.lastIndexOf('GoodList')>-1){
-                        data=data||gotGoods.slice(0, 16);console.info(data)
+                        data=data||gotGoods.slice(0, 12);
                         html=html.replace('{content}',goods_list_instance(data, name.indexOf('single')==0?1:2));
                     } else {
                         for (k in data) {
@@ -286,6 +286,8 @@
                 var defaultVals = mol_val_dic['val-' + molid];
                 if (molid == 'slideBox') {
                     html = html.replace('{imgsrc}', defaultVals[0]['imgsrc']).replace('{href}', defaultVals[0]['href']);
+                } else if(molid.lastIndexOf('GoodList')>-1){
+                    html=html.replace('{content}',goods_list_instance(gotGoods.slice(0, 6), molid.indexOf('single')==0?1:2));
                 } else {
                     for (var k in defaultVals) {
                         html = html.replace('{' + k + '}', defaultVals[k]);
@@ -607,7 +609,7 @@
                     data: {pageSize: 20, pageNum: pageNum || 1, keyword: keyword},
                     type: 'post'
                 }).always(function (resp) {
-                    console.info(resp)
+                    //console.info(resp)
                     if (resp.result == 1) {
                         var html = $('#temp-good-cell').html();
                         var goodList = $('.good-list');
@@ -756,7 +758,9 @@
                 mols.each(function (v, i) {
                     molid = this.getAttribute('molid');
                     if (molid == "tb-category") {
-                        $(this).data('native', 'null');
+                        $(this).data('native', null);
+                    }else if(molid.lastIndexOf('GoodList')>-1){
+                        $(this).data('native',  $(this).data('native') || goods_list_instance(gotGoods.slice(0, 6)) );
                     }
                     json.push({
                         'name': molid,

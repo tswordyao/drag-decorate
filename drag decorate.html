@@ -16,22 +16,23 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top decorate-navbar" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-brand"  href="#">店铺首页装修&nbsp;|</a>
-         <a class="navbar-brand"  id="btn-back"          href="#">返回</a>
-         <a class="navbar-brand btn-save"                href="#">保存</a>
-         <!--<a class="navbar-brand"  id="btn-count"         href="#">状态</a>-->
-         <!--<a class="navbar-brand"  tempid="tempDefault"  href="#">默认模板</a>-->
-         <a class="navbar-brand"  tempid=""              href="#">清空</a>
+         <a class="navbar-brand"  href="#">店铺首页装修</a>
          <a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>
          <a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>
          <a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>
+         <a class="navbar-brand disabled" disabled="true"               href="#">&nbsp;|&nbsp;</a>
+         <a class="navbar-brand"  id="btn-back"          href="#">返回</a>
+         <!--<a class="navbar-brand"  id="btn-count"         href="#">状态</a>-->
+         <!--<a class="navbar-brand"  tempid="tempDefault"  href="#">默认模板</a>-->
+         <a class="navbar-brand"  tempid=""              href="#">清空</a>
+         <a class="navbar-brand btn-save"                href="#">保存</a>
          <a class="navbar-brand"  id="btn-help"    target="_blank"     href="#">?&nbsp;教程</a>
      </div>
-    <form class="navbar-form navbar-right" role="form">
-        <input type="text" placeholder="测试输入店铺名称" class="form-control" id="shopName-inp">
-        <input type="text" placeholder="测试输入店铺ID" class="form-control" id="shopId-inp">
-        <button type="submit" class="btn btn-success btn-save">保存</button>
-    </form>
+    <!--<form class="navbar-form navbar-right" role="form">-->
+        <!--<input type="text" placeholder="测试输入店铺名称" class="form-control" id="shopName-inp">-->
+        <!--<input type="text" placeholder="测试输入店铺ID" class="form-control" id="shopId-inp">-->
+        <!--<button type="submit" class="btn btn-success btn-save">保存</button>-->
+    <!--</form>-->
     </nav>
 
     <P class="main-help">点住左侧模块按钮, 将其拖动到中间的手机视图中, 将看到对应的效果。  或者亲可以试试点击上面的已有模板组合哦~   ==> 在手机中点击某模块,可在右侧编辑该模块的数据。<b class="close">我知道了 &times;</b></P>
@@ -39,29 +40,30 @@
     <div id="main" class="container">
         <div class="rows">
             <ul id="model-list" class="col-lg-4-">
-                <li><div class="mol-tag" id="tag-slideBox"  draggable="true"  >轮播图模块</div></li>
-                <li><div class="mol-tag" id="tag-singlePic" draggable="true"  >焦点图模块</div></li>
-                <li><div class="mol-tag" id="tag-bannerPic" draggable="true"  >banner图模块</div></li>
-                <li><div class="mol-tag" id="tag-wordPic"   draggable="true"  >左文右图模块</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-slideBox"  draggable="true"  >轮播图</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-singlePic" draggable="true"  >焦点图</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-bannerPic" draggable="true"  >banner图</div></li>
+                <li><div class="mol-tag mol-tag-positive" id="tag-wordPic"   draggable="true"  >左文右图</div></li>
 
-                <li><div class="mol-tag mol-tag-positive" id="tag-tb-features" draggable="true" >优势宣传</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-bb-features" draggable="true" >优势宣传3</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-tb-category" draggable="true" >类别组合</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-hd-category"  draggable="true" >类别组合2</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-bb-category"  draggable="true" >类别组合3</div></li>
+                <li><div class="mol-tag" id="tag-tb-features" draggable="true" >优势宣传</div></li>
+                <li><div class="mol-tag" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
+                <li><div class="mol-tag" id="tag-bb-features" draggable="true" >优势宣传3</div></li>
+
+                <li><div class="mol-tag mol-tag-aqua" id="tag-tb-category" draggable="true" >类别组合</div></li>
+                <li><div class="mol-tag mol-tag-aqua" id="tag-hd-category"  draggable="true" >类别组合2</div></li>
+                <li><div class="mol-tag mol-tag-aqua" id="tag-bb-category"  draggable="true" >类别组合3</div></li>
+
+                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
+                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
+
+                <li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报</div></li>
+                <li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >区域标题</div></li>
+                <li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>
 
                 <li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"      draggable="true" >品牌陈列</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>
                 <li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>
-
-                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
-                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
-
-                <li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报模块</div></li>
-                <li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >标题模块</div></li>
-                <li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>
 
 
             </ul>
