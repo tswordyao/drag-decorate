@@ -113,7 +113,7 @@ hr{border-color: #ccc!important;}
     border-radius:8px ;
     color:white;
     text-shadow:  0 .2px 0 rgba(255,255,255,.3);
-    box-shadow:  0px 2px 0px rgba(255,255,255,.5) inset,8px 8px 8px rgba(0,0,0,.2);
+    box-shadow:  0px 2px 0px rgba(255,255,255,.5) inset,7px 6px 5px rgba(0,0,0,.2);
     /*-webkit-tap-highlight-color: rgba(225, 225, 225, 0.498039);*/
     background-image: -webkit-linear-gradient(top, rgb(173, 218, 77), rgb(134, 184, 70));
     background-origin: padding-box;
@@ -271,7 +271,7 @@ hr{border-color: #ccc!important;}
 #ctrl-area .img-up-form>p{
     margin: 5px 5px 10px 80px;
     font-size: 14px;
-    color: maroon;
+    color: orangered;
 }
 #ctrl-area [type="file"]{
     display: inline-block;
