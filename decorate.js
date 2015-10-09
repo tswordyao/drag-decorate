@@ -331,8 +331,11 @@
                     $('.mol-tip').fadeOut(300, function () {
                         $(this).html('<div class="arrow"></div>')
                     });
+                    // 未点击不出现编辑按钮
+                    $('.submit-reset-wrap').css('visibility','hidden');
                 })
-                .on('mousedown', function () {
+                .on('mouseover', function () {
+                    $('.mol-tip').html('<div class="arrow"></div>');
                     // 显示提示框,设置内容
                     var the = this;
                     $('.mol-tip').show().css('opacity', 0).animate({
@@ -344,7 +347,11 @@
                         }.bind(the));
                     });
                 })
-                .on('mouseup', function () {
+                .on('mouseleave', function () {
+                    // 隐藏提示框,清空内容
+                    $('.mol-tip').hide().html('<div class="arrow"></div>')
+                })
+                .on('mousedown', function () {
                     // 隐藏提示框,清空内容
                     $('.mol-tip').fadeOut(300, function () {
                         $(this).html('<div class="arrow"></div>')
@@ -393,6 +400,7 @@
                 })
                 // 选中块开始编辑(自定义模块数据的关键依赖)
                 .on('click', '.mol-wrap', function (e) {
+                    $('.submit-reset-wrap').css('visibility','visible');
                     var molid = this.getAttribute('molid');
                     var obj = $(this).data('native') || mol_val_dic['val-' + molid];
                     var key;

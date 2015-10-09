@@ -119,7 +119,7 @@ hr{border-color: #ccc!important;}
     /*-webkit-tap-highlight-color: rgba(225, 225, 225, 0.498039);*/
     background-image: -webkit-linear-gradient(top, rgb(173, 218, 77), rgb(134, 184, 70));
     background-origin: padding-box;
-    font-family:微软雅黑;
+    font-family:micro;
 }
 #model-list .mol-tag:hover {
     background-image: -webkit-linear-gradient(top, #9ac244, #78a53e);
@@ -283,9 +283,8 @@ hr{border-color: #ccc!important;}
     color:#333;
 }
 #ctrl-area>.submit-reset-wrap{
-    position: absolute;
-    top: 728px;
-    right:40px;
+    margin-left: 210px;
+    visibility: hidden;
 }
 #ctrl-area>.submit-reset-wrap>input{
     float: left;
@@ -558,7 +557,7 @@ a.doubleGood-wrap-one{
 }
 .mol-wrap[molid="titleOnly"]>h3{
     margin:5px 0;
-    font-family: 微软雅黑;
+    font-family: microsoft yahei;
     margin-top: 5px;
     margin-bottom: 5px;
     padding-left: 15px;
