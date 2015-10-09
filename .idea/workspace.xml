@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorate.css" afterPath="$PROJECT_DIR$/decorate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drag decorate.html" afterPath="$PROJECT_DIR$/drag decorate.html" />
-    </list>
+    <list default="true" id="e88fdedb-e945-455d-89c9-ffa135538471" name="Default" comment="" />
     <ignored path="decorate.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +44,8 @@
       <file leaf-file-name="drag decorate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/drag decorate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4181818">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.052272726">
+              <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -319,8 +316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drag decorate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4181818">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.052272726">
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
           <folding />
         </state>
       </provider>

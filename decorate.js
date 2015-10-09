@@ -287,7 +287,7 @@
                 if (molid == 'slideBox') {
                     html = html.replace('{imgsrc}', defaultVals[0]['imgsrc']).replace('{href}', defaultVals[0]['href']);
                 } else if(molid.lastIndexOf('GoodList')>-1){
-                    html=html.replace('{content}',goods_list_instance(gotGoods.slice(0, 6), molid.indexOf('single')==0?1:2));
+                    html=html.replace('{content}',goods_list_instance(gotGoods.slice(0, 8), molid.indexOf('single')==0?1:2));
                 } else {
                     for (var k in defaultVals) {
                         html = html.replace('{' + k + '}', defaultVals[k]);
@@ -760,7 +760,7 @@
                     if (molid == "tb-category") {
                         $(this).data('native', null);
                     }else if(molid.lastIndexOf('GoodList')>-1){
-                        $(this).data('native',  $(this).data('native') || goods_list_instance(gotGoods.slice(0, 6)) );
+                        $(this).data('native',  $(this).data('native') || goods_list_instance(gotGoods.slice(0, 8)) );
                     }
                     json.push({
                         'name': molid,
@@ -787,6 +787,38 @@
                  })
                  */
             });
+
+			window.init_current=function init_current(mols){   
+                var html, defaultVals, div, i, k, name, data, mobile = $('#show-mobile')[0];
+                var mols = mols || [];
+        
+                // 获取模板HTML和默认数据, 并实例化
+                for (i = 0; i < mols.length; i++) {
+                	if(mols[i].data=='null'){
+                		mols[i].data=null;
+                	}
+                    name = mols[i].name;
+                    data = mols[i].data || mol_val_dic['val-' + name];
+                    html = get_mol(name);
+                    if (name == 'slideBox') {
+                        html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
+                    } else if(name.lastIndexOf('GoodList')>-1){
+                        data=data||gotGoods.slice(0, 12);
+                        html=html.replace('{content}',goods_list_instance(data, name.indexOf('single')==0?1:2));
+					}else {
+                        for (k in data) {
+                            html = html.replace('{' + k + '}', data[k]);
+                        }
+                    }
+                    // 转为节点, 加上按钮, 插入
+                    div = $(html)[0];
+                    div.innerHTML += '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+                    mobile.appendChild(div);
+                    $(div).data('native', data);
+                    mol_count_dic[div.getAttribute('molid')] -= 1;
+                }
+                $('.go-recycle,.go-up,.go-down').hide();
+		}
         }
 })(window.jQuery)
     
