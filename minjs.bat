@@ -1,0 +1,1 @@
+uglifyjs decorate.js -m -o decorate.min.js
