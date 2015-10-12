@@ -432,7 +432,7 @@
             // 右侧编辑确定后处理数据( 自定义数据的关键方法! )
             $('#ctrl-area')
                 // 编辑完成
-                .on('click', '.btn-submit', function (e) {
+                .on('click', '.submit', function (e) {
                     var molid = $('.mol-ctrl-wrap').attr('ctrlid'),
                         html = get_mol(molid),
                         key,
@@ -475,7 +475,7 @@
                 .on('click', '.show-good-list', function () {
                     goods_list_cls();
                     fillGoods();
-                }).on('click', '.btn-reset', function (e) {
+                }).on('click', '.reset', function (e) {
                     $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea,[type=file],[type=color]').each(function () {
                         this.value = '';
                     })
@@ -768,7 +768,7 @@
                     if (molid == "tb-category") {
                         $(this).data('native', null);
                     }else if(molid.lastIndexOf('GoodList')>-1){
-                        $(this).data('native',  $(this).data('native') || goods_list_instance(gotGoods.slice(0, 8)) );
+                        $(this).data('native',  $(this).data('native') || gotGoods.slice(0, 8));
                     }
                     json.push({
                         'name': molid,
@@ -827,9 +827,35 @@
                 }
                 $('.go-recycle,.go-up,.go-down').hide();
 		}
+
+            // 关闭帮助 与 显示帮助
+            var closeHelp=function(delay){
+                var flag=$('#never-again')[0].checked;
+                setTimeout(function(){
+                    flag && (localStorage.hdDecotateHelpKnew=1);
+                    $('#helps p').animate({width:0,height:50},300,function(){
+                        $(this).hide(200);
+                    })
+                },delay||0);
+            }
+            $('#helps .btn').on('click',function(){
+                closeHelp(200);
+                $('#btn-help').mouseenter(function(){
+                    $('#helps p').css({width:198,height:118}).show();
+                }).mouseleave(function(){
+                    $('#helps p').hide();
+                })
+            });
+            $('document').ready(function(){
+                if(localStorage.hdDecotateHelpKnew!=1) {
+                    $('#helps').show();
+                }
+            });
+
+
         }
 })(window.jQuery)
-    
+
     
     
     

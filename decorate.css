@@ -12,18 +12,26 @@ hr{border-color: #ccc!important;}
 .decorate-navbar a{
     color:#333!important;
     font-size: 14px!important;
+    -webkit-user-select: none;
 }
 .decorate-navbar a:hover{
     color:#333!important;
     border-bottom: 3px solid #397EEA;
     background-color: #eee!important;
 }
-.decorate-navbar a:first-child,.decorate-navbar a:first-child:hover{
+.decorate-navbar a.navbar-brand:first-child,.decorate-navbar a.navbar-brand:first-child:hover,
+.decorate-navbar a.btn-save,.decorate-navbar a.btn-save:hover
+{
     color:#fff!important;
     background-color: #EF3F3F!important;
     border-bottom: none!important;
+    min-width: 5em;
+    text-align: center;
+    border-right: none!important;
 }
-.decorate-navbar a.disabled:hover{
+.decorate-navbar a.disabled,.decorate-navbar a.disabled:hover{
+    width:160px;
+    text-align: center;
     color:#333;
     cursor: none;
     border-bottom: none;
@@ -753,4 +761,87 @@ a.all-goods-href:hover{
 }
 button.show-good-list:focus{
     outline: -webkit-focus-ring-color auto 0px;
+}
+#ctrl-area h2{
+    font-size: 24px;
+    font-family: microsoft yahei,monospace;
+    margin-bottom: 0;
+}
+#ctrl-area hr{
+    margin:10px 0;
+}
+/*new update*/
+div#helps{
+    position: relative;
+    height:100%;
+    width:100%;
+    min-height: 0px;
+    display: none;
+}
+div#helps>p{
+    border-radius: 5px;
+    height: 118px;
+    width:198px;
+    position: absolute;
+    top:-8px;
+    z-index: 99;
+    background-color:rgba(8,8,8,.95);
+    color:#fff;
+    padding: 10px;
+    white-space: pre;
+}
+#help-one{
+    left: 160px;
+}
+div#helps>#help-two{
+    right:36%;
+    top:50px;
+}
+#help-three{
+    right:20px;
+}
+div#helps .arrow{
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+}
+#help-one>.arrow{
+    top:60px;
+    left:-22px;
+    border-color:transparent rgba(8,8,8,.95) transparent transparent;
+}
+#help-two>.arrow{
+    top:118px;
+    left:118px;
+    border-color:rgba(8,8,8,.95) transparent transparent transparent ;
+}
+#help-three>.arrow{
+    top:-22px;
+    left:158px;
+    border-color:transparent transparent rgba(8,8,8,.95) transparent ;
+}
+#help-three button{
+    line-height:1;
+}
+div#helps big{
+    color:#EF3F3F;
+    font-size:24px;
+}
+.navbar-header{
+    width: 100%;
+}
+.navbar-header a:nth-child(even){
+    border-right: 1px dotted #eee;
+}
+.fr{
+    float:right!important;
+}
+.navbar-header h2{
+    position: absolute;
+    width: 28%;
+    left: 42%;
+    top:-5px;
+    font-size: 20px;
 }
