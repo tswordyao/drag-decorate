@@ -257,7 +257,17 @@
             }
 
             // 载入组合模板
-            $('a[tempid]').on('click', function () {
+            $('[tempid]').on('click', function () {
+                var tempid=$(this).attr('tempid');
+                var str;
+                if(tempid==''){
+                    str='确定清空? 将清除页面当前的装修布置. ';
+                }else{
+                    str='确定应用此模版? 来替换页面当前的装修布置. '
+                }
+                if(!confirm(str)){
+                    return false;
+                }
                 // 先清空
                 $('#show-mobile').find('.mol-wrap').each(function () {
                     $(this).remove();
@@ -265,7 +275,8 @@
                 });
                 $('#ctrl-wrap').empty();
                 //再载入
-                autoAppendNodes($(this).attr('tempid'));
+                autoAppendNodes(tempid);
+                $('#checked_done2')[0].click();
             });
 
             // 拖拽方法(拖入的容器上定义的部分)
@@ -759,6 +770,9 @@
 
             // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
             $('.btn-save').click(function () {
+                if(!confirm('确定发布? 将把店铺首页更新为当前页面的布置')){
+                    return false;
+                }
                 var shopId = $('#shopId-inp').val();
                 var shopName = $('#shopName-inp').val();
                 var molid;
@@ -782,7 +796,10 @@
                 $.post(decorateSaveAction, {shopId: shopId,shopName: shopName , content: jsonstr}).always(function (res) {
                     console.info(res);
                     if(res.result){
-                        bootAlert('保存成功 OK!')
+                        bootAlert('<b>发布成功!</b><a href="#" onclick="window.open(\'http://localhost:63342/testshop\')">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>',9999)
+                        //if(confirm('发布成功! 立刻前往我的店铺查看效果?')){
+                        //    $('.temp-save')[0].click();
+                        //}
                     }
                 })
                 /*

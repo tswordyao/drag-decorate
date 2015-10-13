@@ -40,8 +40,8 @@ hr{border-color: #ccc!important;}
     background-color:transparent!important;
 }
 #main{
-    margin: 1px auto;
-    padding: 1px 10px;
+    margin: 0 auto;
+    padding: 0 10px;
     width:100%;
     min-width: 1280px;
     min-height:800px;
@@ -270,7 +270,7 @@ hr{border-color: #ccc!important;}
     min-height:780px;
     background: #e1e1e1;
     border: 0px solid silver;
-    border-radius:5px ;
+    border-radius:0 0 3px 5px ;
     /*box-shadow: 0 2px 0 0px #aaa inset,10px 12px 10px #999;*/
 }
 #ctrl-area{
@@ -763,7 +763,7 @@ a.all-goods-href:hover{
     margin-right: 5px;
 }
 .decorate-navbar.navbar{
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 button.show-good-list:focus{
     outline: -webkit-focus-ring-color auto 0px;
@@ -788,8 +788,10 @@ div#helps>p{
     border-radius: 5px;
     height: 118px;
     width:208px;
-    position: absolute;
-    top:-8px;
+    /*position: absolute;*/
+    /*top:-8px;*/
+    position: fixed;
+    top:58px;
     z-index: 99;
     background-color:rgba(8,8,8,.95);
     color:#fff;
@@ -801,7 +803,8 @@ div#helps>p{
 }
 div#helps>#help-two{
     right:36%;
-    top:50px;
+    /*top:50px;*/
+    top:100px;
 }
 #help-three{
     right:20px;
@@ -846,7 +849,7 @@ div#helps big{
     border-right: none;
 }
 a.btn-save{
-    margin-right:10px;
+    margin-right:0px;
 }
 .fr{
     float:right!important;
@@ -902,16 +905,21 @@ div.mask-main{
     -webkit-filter: blur(1.5px)
 }
 .mol-tip hr{
-    margin: 2px auto;
+    margin: 5px auto;
 }
 #mols-modal>.modal-dialog{
-    width: 960px!important;
-    height:620px;
+    width: 800px!important;
+    height:700px!important;
+}
+#mols-modal .modal-footer{
+    display: none;
 }
 #molslist-forcheck2{
-    height:420px;
-    padding-left: 40px;
+    height:520px;
+    padding-left: 50px;
+    padding-top:20px;
     overflow: scroll;
+    background: aliceblue;
 }
 #molslist-forcheck2:after{
     display: table;
@@ -920,8 +928,92 @@ div.mask-main{
 }
 .molbox{
     float: left;
-    margin: 0 40px 40px 0;
-    height: 220px;
-    width: 110px;
-    background: darkslategray;
+    margin: 0 50px 30px 0;
+    height: 222px;
+    width: 128px;
+    background: none;
+    background-size: contain;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 0px groove silver;
+    /*box-shadow: 5px 5px 3px silver;*/
+    /*box-shadow: 0px 2px 0px rgba(255,255,255,.5) inset;*/
+    transition: 0.8s 0s ease;
+}
+
+.molbox:nth-child(1){
+    background-image:url(img/decorate/hdstyle-mol.png);
+    /*transform: rotate(-32deg) translate(65px,90px);*/
+    /*z-index: 1;*/
+ }
+.molbox:nth-child(2){
+    background-image:url(img/decorate/bbstyle-mol.png);
+    /*transform: scale(1.2,1.2) rotate(-15deg) translate(30px,35px);*/
+    /*z-index: 2;*/
+}
+.molbox:nth-child(3){
+    background-image:url(img/decorate/tbstyle-mol.png);
+    /*transform: scale(1.4,1.4) translate(0,30px);*/
+    /*z-index: 3;*/
+}
+.molbox:nth-child(4){
+    background-image:url(img/decorate/lmstyle-mol.png);
+    /*transform: scale(1.6,1.6) rotate(12deg) translate(-30px,45px);*/
+    /*z-index: 4;*/
+}
+.molbox:nth-child(5){
+    background-image:url(img/decorate/qzstyle-mol.png);
+    /*transform: scale(1.8,1.8) rotate(30deg) translate(-25px,110px);*/
+    /*z-index: 5;*/
+}
+.molbox:hover{
+     cursor: pointer;
+     box-shadow:none;
+     transform: scale(1.5,1.5) rotate(0deg) translate(0,30px);
+     z-index: 999;
+ }
+/*.molbox:nth-child(3):hover{*/
+    /*cursor: pointer;*/
+    /*transform: scale(2,2)  translate(-60px,60px);*/
+    /*z-index: 999;*/
+/*}*/
+/*.molbox:nth-child(4):hover{*/
+    /*cursor: pointer;*/
+    /*transform: scale(2,2)  rotate(-7deg) translate(-100px,60px);*/
+    /*z-index: 999;*/
+/*}*/
+.molbox b {
+    display: block;
+    /*width: 150%;*/
+    /*margin-top: 60px;*/
+    /*margin-left: -30px;*/
+    margin-top:180px ;
+    line-height: 26px;
+    background: rgba(0,0,0,0.7);
+    /*transform: rotate(30deg);*/
+    font-size: 13px;
+    color: #ed3577;
+    /*transition: 0.8s 0s ease;*/
+}
+.molbox:hover b{
+    display: none;
+    /*margin-top: 20px;*/
+    /*margin-left: -10px;*/
+    /*line-height: 18px;*/
+    /*font-size: 12px;*/
+}
+@keyframes  comeon{
+    from,to{
+        transform: none;
+    }
+    50%{
+        transform: scale(1.5,1.5);
+    }
+}
+nav.decorate-navbar>.navbar-header{
+    position: fixed;
+    z-index: 999;
+    background-color: #fff;
+    top: -2px;
 }
