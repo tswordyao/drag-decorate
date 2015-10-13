@@ -14,25 +14,26 @@
             }
             // 模板说明映射
             var mol_tip_dic = {
-                'tb-features': '品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
-                'hd-features': '品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
-                'bb-features': '品牌优势,四个圆圆的LOGO,醒目展现亲小店的优势',
-                'hd-brands': '各大品牌LOGO陈列,一个品牌一个贴图,琳琅满目,快拖进手机里看看吧~',
-                'tb-category': '商品分类,列出宝贝的几大类,供顾客挑选哦~',
-                'bb-category': '商品分类,列出宝贝的几大类,供顾客挑选哦~',
-                'hd-category': '商品分类,列出宝贝的几大类,供顾客挑选哦~',
-                'singleGood': '这是单宝贝模块, 拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
-                'doubleGood': '这是双宝贝模块,两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
-                'singlePic': '单图片模块,一般选择一张宣传热图, 或者,可以一张装饰性的图片, 如果是纯装饰性的 ,可以不要文字和链接',
-                'slideBox': '轮播图片模块,也称幻灯片,可以选择多张图片(直接输入链接或上传),将在首页自动切换轮播',
-                'doublePic': '并列图片,一般用来做品牌区域,块状LOGO图',
-                'tb-category': '4格图片,一般用来做品牌或类别分类',
-                'wordPic': '图文并茂, 做图需要美工在左侧纯色或留白',
-                'titleOnly': '纯文字的标题,用于分段标注',
-                'wordOnly': '纯粹的文字,说一些你想跟卖家说的话吧',
-                'contract': '您的联系电话,写上电话卖家更容易联系到你',
-                'singleGoodList': '这是一个宝贝列表模块,有很多行, 每行一次展示一个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
-                'doubleGoodList': '这是一个宝贝列表模块,有很多行, 每行展示两个宝贝,包括图片,文字介绍,和价格, 具体设置请拖入手机后, 单击手机内该模块',
+                'tb-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
+                'hd-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
+                'bb-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
+                'hd-brands': '各大品牌LOGO陈列<hr>一个品牌一个贴图,琳琅满目,快拖进手机里看看吧~',
+                'tb-category': '商品分类<hr>列出宝贝的几大类,供顾客挑选哦~',
+                'bb-category': '商品分类<hr>列出宝贝的几大类,供顾客挑选哦~',
+                'hd-category': '商品分类<hr>列出宝贝的几大类,供顾客挑选哦~',
+                'singleGood': '这是单宝贝模块<hr>拖入手机 ,然后点击,可以在右侧自定义宝贝的信息',
+                'doubleGood': '这是双宝贝模块<hr>两个宝贝并列, 拖入手机后点击,在右侧自定义宝贝的信息',
+                'singlePic': '单图片模块<hr>一般选择一张宣传热图, 或者,可以一张装饰性的图片.<br>如果是纯装饰性的 ,可以不要文字和链接',
+                'slideBox': '轮播图片模块<hr>也称幻灯片,可以选择多张图片(直接输入链接或上传),将在首页自动切换轮播',
+                'doublePic': '并列图片<hr>一般用来做品牌区域,块状LOGO图',
+                'tb-category': '4格图片<hr>一般用来做品牌或类别分类',
+                'wordPic': '图文并茂<hr> 做图需要美工在左侧纯色或留白',
+                'bannerPic': '横幅图片<hr>醒目的广告宣传横图,独占一行,可以放入多幅',
+                'titleOnly': '纯文字的标题<hr>用于分段标注',
+                'wordOnly': '纯粹的文字<hr>说一些你想跟卖家说的话吧',
+                'contract': '您的联系方式<hr>写上电话卖家更容易联系到你',
+                'singleGoodList': '宝贝列表模块<hr>多行, 每行展示一个宝贝,包括图片,文字介绍和价格.<br>具体设置请拖入手机后, 单击手机内该模块',
+                'doubleGoodList': '宝贝列表模块<hr>多行, 每行展示两个宝贝,包括图片,文字介绍和价格.<br>具体设置请拖入手机后, 单击手机内该模块',
             }
             // 模块默认值映射
             var mol_val_dic = {
@@ -339,17 +340,17 @@
                     // 显示提示框,设置内容
                     var the = this;
                     $('.mol-tip').show().css('opacity', 0).animate({
-                        top: $(this).parent().index() * 44,
+                        top: $(the).offset().top-80,
                         opacity: 0.9
-                    }, function () {
+                    },'fast', function () {
                         $(this).html(function (i, old) {
-                            return old + mol_tip_dic[this.id.replace('tag-', '')]
+                            return '<div class="arrow"></div>' + mol_tip_dic[this.id.replace('tag-', '')]
                         }.bind(the));
                     });
                 })
                 .on('mouseleave', function () {
                     // 隐藏提示框,清空内容
-                    $('.mol-tip').hide().html('<div class="arrow"></div>')
+                    $('.mol-tip').html('<div class="arrow"></div>').hide()
                 })
                 .on('mousedown', function () {
                     // 隐藏提示框,清空内容
@@ -829,27 +830,35 @@
 		}
 
             // 关闭帮助 与 显示帮助
-            var closeHelp=function(delay){
+            var closeHelp=function(showAnimate){
                 var flag=$('#never-again')[0].checked;
-                setTimeout(function(){
-                    flag && (localStorage.hdDecotateHelpKnew=1);
-                    $('#helps p').animate({width:0,height:50},300,function(){
+                flag && (localStorage.hdDecotateHelpKnew=1);
+                $('.mask-main').hide();
+                $('#main').removeClass('blur');
+                if(showAnimate===true){
+                    $('#helps p').animate({width:0,height:30},300,function(){
                         $(this).hide(200);
                     })
-                },delay||0);
-            }
-            $('#helps .btn').on('click',function(){
-                closeHelp(200);
-                $('#btn-help').mouseenter(function(){
-                    $('#helps p').css({width:198,height:118}).show();
-                }).mouseleave(function(){
+                }else{
                     $('#helps p').hide();
-                })
-            });
-            $('document').ready(function(){
-                if(localStorage.hdDecotateHelpKnew!=1) {
-                    $('#helps').show();
                 }
+
+            }
+            var showHelp=function(showMask){
+                $('#helps').show();
+                $('#helps p').css({width:208,height:118}).show();
+                (showMask===true) && $('.mask-main').show();
+                $('#main').addClass('blur');
+            }
+            var toggle=function(){$('#btn-help').mouseenter(showHelp).mouseleave(closeHelp);};
+
+            $('#helps .btn').on('click',function() {
+                closeHelp(true);
+                toggle();
+            });
+
+            $('document').ready(function(){
+                (localStorage.hdDecotateHelpKnew==1) ? toggle(): showHelp(true);
             });
 
 

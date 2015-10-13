@@ -20,7 +20,7 @@
          <!--<a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>-->
          <!--<a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>-->
          <!--<a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>-->
-         <a class="navbar-brand"   id="btn-templates"       href="#">选择模版</a>
+         <a class="navbar-brand"   id="btn-templates"    data-toggle="modal" data-target="#mols-modal"   href="#">选择模版</a>
          <a class="navbar-brand"   id=""       href="#">查看店铺</a>
          <a class="navbar-brand"  id="btn-help"    target="_blank"     href="#">?&nbsp;教程</a>
 
@@ -47,39 +47,75 @@
         <p id="help-one"> <b class="arrow"></b><big>①</big>  点住想要添加的模块，<br>拖放到中间手机中; </p>
         <p id="help-two"> <b class="arrow"></b><big> ②</big>   单击手机中的某模块，<br>在右侧编辑其内容;           <br><br>        (编辑后,右侧下方确定↘)</p>
         <p id="help-three"> <b class="arrow"></b><big> ③</big>   最后，点击发布，<br>就完成了首页更新。
-            <br><button class="btn btn-sm">关闭 &times;</button>  <small>(下次不再提醒 )</small> <input type="checkbox" name="" id="never-again"/></p>
+            <br><button class="btn btn-sm">知道了&times;</button>  <small>(下次不再提醒 )</small> <input type="checkbox" name="" id="never-again"/></p>
     </div>
 
     <div id="main" class="container">
         <div class="rows">
-            <ul id="model-list" class="col-lg-4-">
-                <li><div class="mol-tag mol-tag-positive" id="tag-slideBox"  draggable="true"  >轮播图</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-singlePic" draggable="true"  >焦点图</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-bannerPic" draggable="true"  >banner图</div></li>
-                <li><div class="mol-tag mol-tag-positive" id="tag-wordPic"   draggable="true"  >左文右图</div></li>
+            <!--<ul id="model-list" class="col-lg-4-">-->
+                <!--<li><div class="mol-tag mol-tag-positive" id="tag-slideBox"  draggable="true"  >轮播图</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-positive" id="tag-singlePic" draggable="true"  >焦点图</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-positive" id="tag-bannerPic" draggable="true"  >banner图</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-positive" id="tag-wordPic"   draggable="true"  >左文右图</div></li>-->
 
-                <li><div class="mol-tag" id="tag-tb-features" draggable="true" >优势宣传</div></li>
-                <li><div class="mol-tag" id="tag-hd-features" draggable="true" >优势宣传2</div></li>
-                <li><div class="mol-tag" id="tag-bb-features" draggable="true" >优势宣传3</div></li>
+                <!--<li><div class="mol-tag" id="tag-tb-features" draggable="true" >优势宣传</div></li>-->
+                <!--<li><div class="mol-tag" id="tag-hd-features" draggable="true" >优势宣传2</div></li>-->
+                <!--<li><div class="mol-tag" id="tag-bb-features" draggable="true" >优势宣传3</div></li>-->
 
-                <li><div class="mol-tag mol-tag-aqua" id="tag-tb-category" draggable="true" >类别组合</div></li>
-                <li><div class="mol-tag mol-tag-aqua" id="tag-hd-category"  draggable="true" >类别组合2</div></li>
-                <li><div class="mol-tag mol-tag-aqua" id="tag-bb-category"  draggable="true" >类别组合3</div></li>
+                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-tb-category" draggable="true" >类别组合</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-hd-category"  draggable="true" >类别组合2</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-bb-category"  draggable="true" >类别组合3</div></li>-->
 
-                <!--<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>-->
-                <!--<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>-->
+                <!--&lt;!&ndash;<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>&ndash;&gt;-->
 
-                <li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报</div></li>
-                <li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >区域标题</div></li>
-                <li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>
+                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >区域标题</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>-->
 
-                <li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"      draggable="true" >品牌陈列</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>
-                <li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>
+                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"      draggable="true" >品牌陈列</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>-->
+                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>-->
 
 
-            </ul>
+            <!--</ul>-->
+
+
+            <div id="model-list" class="col-lg-4">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#model-list" href="#pics-words">图文类</a>
+                <dl id="pics-words" class="accordion-body in">
+                    <dd class="mol-tag" draggable="true" id="tag-slideBox">多图轮播</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-singlePic">焦点图</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-bannerPic">横幅图</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-wordPic">左文右图</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-wordOnly">黑板报</dd>
+                </dl>
+                <hr>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#model-list" href="#dist-areas">区域类</a>
+                <dl id="dist-areas" class="accordion-body in">
+                    <dd class="mol-tag" draggable="true" id="tag-tb-category">四方图类别</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-hd-category">四方图类别2</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-bb-category">不规则类别</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-hd-brands">品牌陈列</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-titleOnly">区块标题</dd>
+                </dl>
+                <hr>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#model-list" href="#good-models">宝贝类</a>
+                <dl id="good-models" class="accordion-body in">
+                    <dd class="mol-tag" draggable="true" id="tag-singleGoodList">宝贝列表1</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-doubleGoodList">宝贝列表2</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-singleGood">单宝贝推荐</dd>
+                </dl>
+                <hr>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#model-list" href="#sale-models">营销类</a>
+                <dl id="sale-models" class="accordion-body in">
+                    <dd class="mol-tag" draggable="true" id="tag-tb-features">优势展现1</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-hd-features">优势宣传2</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-bb-features">优势宣传3</dd>
+                    <dd class="mol-tag" draggable="true" id="tag-contract">联系方式</dd>
+                </dl>
+            </div>
 
             <div class="mol-tip"><div class="arrow"></div></div>
 
@@ -126,7 +162,7 @@
            <div class="modal-content">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title" id="myModalLabel">宝贝选择</h4>
+                   <h4 class="modal-title" class="myModalLabel">宝贝选择</h4>
                </div>
                <div class="modal-body" id="goodlist-forcheck2" >
                    <div class="toolbar">
@@ -152,7 +188,7 @@
                        <!--<button id="go-the-page">到</button>-->
                        <a href="javascript:void(0)" class="go-next">»</a>
                        <a href="javascript:void(0)" class="go-last">»|</a>
-                       &nbsp;第<i id="now-pagenum">1</i>页/共<i id="total-pagenum">8</i>&nbsp;页
+                       &nbsp;第<i id="now-pagenum">1</i>页/共<i id="total-pagenum">1</i>&nbsp;页
                    </div>
                    <div id="good-checked-list"></div>
                </div>
@@ -162,6 +198,29 @@
                </div>
            </div><!-- /.modal-content -->
        </div><!-- /.modal -->
+    </div>
+
+    <!-- 模版列表模态框（Modal） -->
+    <div class="modal fade" id="mols-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" class="myModalLabel">模版选择</h4>
+                </div>
+                <div class="modal-body" id="molslist-forcheck2" >
+                    <div class="molbox"></div>
+                    <div class="molbox"></div>
+                    <div class="molbox"></div>
+                    <div class="molbox"></div>
+                    <div class="molbox"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="mols_list_cls()">取消</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="checked_done2(this)" id="checked_done2">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
     </div>
 
     <!-- 提示组件-->
@@ -597,7 +656,7 @@
            </div>
         </script>
     </div>
-
+    <div class="mask-main"></div>
     <link rel="stylesheet" href="bootstrap.css">
     <script src="bootstrap.min.js"></script>
     <script src="decorate.js"></script>
