@@ -2,7 +2,7 @@
     /*检测浏览器,不是chrome直接提示*/
         var isChrome = window.navigator.userAgent.indexOf("Chrome") > -1;
         if(!isChrome){
-            document.body.innerHTML='<br><h2>&nbsp;您目前的浏览器不是chrome(谷歌)浏览器，不支持相关操作。 请更换浏览器后再进入本页面。<br>&nbsp;<a href="https://www.baidu.com/s?ie=UTF-8&wd=chrome">点击此处下载</a></h2>'
+            document.body.innerHTML='<br><h2>&nbsp;您目前的浏览器不是chrome(谷歌)浏览器，不支持相关操作。 请更换浏览器后再进入本页面。<br><br>&nbsp;<a href="https://www.baidu.com/s?ie=UTF-8&wd=chrome">点击此处下载</a></h2>'
         }else {
             // 模块映射
             var get_mol = function (molid) {
@@ -14,9 +14,9 @@
             }
             // 模板说明映射
             var mol_tip_dic = {
-                'tb-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
-                'hd-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
-                'bb-features': '品牌优势<hr>四个圆圆的LOGO,醒目展现亲小店的优势',
+                'tb-features': '品牌优势<hr>四个LOGO,醒目展现亲小店的优势',
+                'hd-features': '品牌优势<hr>四个LOGO,醒目展现亲小店的优势',
+                'bb-features': '品牌优势<hr>四个LOGO,醒目展现亲小店的优势',
                 'hd-brands': '各大品牌LOGO陈列<hr>一个品牌一个贴图,琳琅满目,快拖进手机里看看吧~',
                 'tb-category': '商品分类<hr>列出宝贝的几大类,供顾客挑选哦~',
                 'bb-category': '商品分类<hr>列出宝贝的几大类,供顾客挑选哦~',
@@ -134,26 +134,54 @@
                     {name: 'bb-category'},
                     {name: 'titleOnly', data: {title: '热门推荐'}},
                     {name: 'bannerPic'},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner2.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner3.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner4.jpg", href: '#'}},
-                    {name: 'bannerPic', data: {imgsrc: "img/decorate/banner5.jpg", href: '#'}},
+                    //{name: 'bannerPic', data: {imgsrc: "img/decorate/banner2.jpg", href: '#'}},
+                    //{name: 'bannerPic', data: {imgsrc: "img/decorate/banner3.jpg", href: '#'}},
+                    //{name: 'bannerPic', data: {imgsrc: "img/decorate/banner4.jpg", href: '#'}},
+                    //{name: 'bannerPic', data: {imgsrc: "img/decorate/banner5.jpg", href: '#'}},
                     {name: 'titleOnly', data: {title: '热销宝贝'}},
-                    {name: 'singleGood'},
+                    //{name: 'singleGood'},
+                    //{
+                    //    name: 'singleGood', data: {
+                    //    href: '#',
+                    //    picPath: 'img/decorate/re-good2.jpg',
+                    //    name: '秋装新款 童装毛衣 外贸出口!',
+                    //    price: 52.00
+                    //}
+                    //},
+                    //{
+                    //    name: 'singleGood', data: {
+                    //    href: '#',
+                    //    picPath: 'img/decorate/re-good3.jpg',
+                    //    name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
+                    //    price: 168.00
+                    //}
+                    //},
+                    //http://120.26.112.178/statics/attachment/adv/201508251149578842.jpg
+                    //http://120.26.112.178/statics/attachment/adv/201508251149362020.jpg
+                    //http://120.26.112.178/statics/attachment/adv/201508251149126985.jpg
+
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'img/decorate/re-good2.jpg',
-                        name: '秋装新款 童装毛衣 外贸出口!',
-                        price: 52.00
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150129137.jpg',//'img/decorate/re-good2.jpg',
+                        name: '德国 碧然德 滤水壶,给健康的限时特价!',
+                        price: 168.00
                     }
                     },
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'img/decorate/re-good3.jpg',
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150511809.jpg',//'img/decorate/re-good2.jpg',
+                        name: '荷兰牛栏三段,市场优选!',
+                        price: 252.00
+                    }
+                    },
+                    {
+                        name: 'singleGood', data: {
+                        href: '#',
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150338462.jpg',//'img/decorate/re-good3.jpg',
                         name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
-                        price: 168.00
+                        price: 268.00
                     }
                     },
                     {name: 'titleOnly'},
@@ -261,9 +289,9 @@
                 var tempid=$(this).attr('tempid');
                 var str;
                 if(tempid==''){
-                    str='确定清空? 将清除页面当前的装修布置. ';
+                    str='\n确定清空? \n\n将清除页面当前的装修预览.\n ';
                 }else{
-                    str='确定应用此模版? 来替换页面当前的装修布置. '
+                    str='\n确定应用此模版? \n\n替换页面当前的装修预览.\n '
                 }
                 if(!confirm(str)){
                     return false;
@@ -377,6 +405,9 @@
                 .on('click', '.go-recycle', function (e) {
                     event.preventDefault();
                     $(this.parentNode).remove();
+                    setTimeout(function(){
+                        $('#ctrl-wrap').empty();
+                    })
                     mol_count_dic[this.parentNode.getAttribute('molid')] += 1;
                 })
                 .on('click', '.go-down', function (e) {
@@ -433,7 +464,7 @@
                             arr[i] ? this.value = arr[i].href || '' : void(0);
                         })
                     } else {
-                        $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea').each(function () {
+                        $('.mol-ctrl-wrap').find('input,textarea').each(function () {
                             key = this.getAttribute('mapid') || 'none';
                             if (obj && obj[key])
                                 this.innerText ? this.innerText = obj[key] : this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
@@ -769,12 +800,8 @@
             });
 
             // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
-            $('.btn-save').click(function () {
-                if(!confirm('确定发布? 将把店铺首页更新为当前页面的布置')){
-                    return false;
-                }
-                var shopId = $('#shopId-inp').val();
-                var shopName = $('#shopName-inp').val();
+
+            function makeJson(){
                 var molid;
                 var json = [];
                 var mols = $('#show-mobile').find('.mol-wrap');
@@ -791,15 +818,29 @@
                     })
                 });
                 console.table(json);
-                var jsonstr = JSON.stringify(json);
-                //console.log(jsonstr);
-                $.post(decorateSaveAction, {shopId: shopId,shopName: shopName , content: jsonstr}).always(function (res) {
+                return JSON.stringify(json);
+            }
+
+            $('.btn-save').click(function () {
+                if(!confirm('\n确定发布? \n\n将把店铺首页更新为当前页面的布置\n')){
+                    return false;
+                }
+                var jsonstr = makeJson();
+                var shopId = $('#shopId-inp').val();
+                var shopName = $('#shopName-inp').val();
+                $.post(decorateSaveAction, {shopId: shopId||'',shopName: shopName||'' , content: jsonstr}).always(function (res) {
                     console.info(res);
                     if(res.result){
-                        bootAlert('<b>发布成功!</b><a href="#" onclick="window.open(\'http://localhost:63342/testshop\')">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>',9999)
+                        localStorage.hdDecotateTempSaveData='';
+                        bootAlert('<b>发布成功!</b><a href="#" target="_blank">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>'.replace('#',$('#goto-shop')[0].href),9999)
                         //if(confirm('发布成功! 立刻前往我的店铺查看效果?')){
                         //    $('.temp-save')[0].click();
                         //}
+                    }else if(res.resul.msg='session过期'){
+                        //暂存一下
+                        localStorage.hdDecotateTempSaveData=jsonstr;
+                        //提示刷新
+                        bootAlert('登陆状态过期,请刷新重新登陆!')
                     }
                 })
                 /*
@@ -844,7 +885,15 @@
                     mol_count_dic[div.getAttribute('molid')] -= 1;
                 }
                 $('.go-recycle,.go-up,.go-down').hide();
+                return true;
 		}
+
+            // 暂存
+            $('.temp-save').click(function(){
+                var jsonstr = makeJson();
+                localStorage.hdDecotateTempSaveData=jsonstr;
+                bootAlert('暂存成功,下次本机打开可以继续编辑.')
+            })
 
             // 关闭帮助 与 显示帮助
             var closeHelp=function(showAnimate){
@@ -868,17 +917,17 @@
                 $('#main').addClass('blur');
             }
             var toggle=function(){$('#btn-help').mouseenter(showHelp).mouseleave(closeHelp);};
-
             $('#helps .btn').on('click',function() {
                 closeHelp(true);
                 toggle();
             });
-
             $('document').ready(function(){
                 (localStorage.hdDecotateHelpKnew==1) ? toggle(): showHelp(true);
             });
 
-
+            $(function(){
+                localStorage.hdDecotateTempSaveData && init_current(JSON.parse(localStorage.hdDecotateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.');
+            });
         }
 })(window.jQuery)
 

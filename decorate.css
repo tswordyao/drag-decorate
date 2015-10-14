@@ -6,7 +6,7 @@ hr{border-color: #ccc!important;}
 .decorate-navbar{
     background-color: #fff!important;
     border-color: #fafafa!important;
-    border-bottom:5px solid #eee!important
+    border-bottom:5px solid #eee!important;
 }
 .decorate-navbar a{
     color:#333!important;
@@ -68,6 +68,7 @@ hr{border-color: #ccc!important;}
     display: block;
     position:relative;
     /*margin: 0 auto;*/
+    margin-top:12px;
     width: 400px;
     min-height: 800px;
     overflow: auto;
@@ -264,7 +265,7 @@ hr{border-color: #ccc!important;}
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    color:#ed3577;
+    color:#928187;
  }
 #model-list,#ctrl-area{
     min-height:780px;
@@ -359,6 +360,10 @@ a.doubleGood-wrap-one{
     margin-top: 5px;
     padding:0 3px;
 }
+[molid=singleGood] p{
+    margin-top:10px;
+    padding:0 12px 0 8px;
+}
 [molid=singleGood] u{
     display: inline-block;
     width:260px;
@@ -367,8 +372,9 @@ a.doubleGood-wrap-one{
     overflow: hidden;
     text-decoration: none;
 }
-[molid=singleGood] I{
+[molid=singleGood] i{
     color: #ed3577;
+    float: right;
 }
 .assertive{
     border: 2px solid #f21;
@@ -606,7 +612,7 @@ a.doubleGood-wrap-one{
     display: none;
     position: absolute;
     top: 0px;
-    left: 300px;
+    left: 280px;
     width: 200px;
     height: 160px;
     padding: 15px;
@@ -619,7 +625,7 @@ a.doubleGood-wrap-one{
 }
 .arrow{
     position: absolute;
-    top: 24px;
+    top: 28px;
     left: -32px;
     width: 0;
     border-style:solid;
@@ -681,7 +687,8 @@ a.doubleGood-wrap-one{
 }
 #ctrl-wrap textarea{
     display: block;
-    min-width: 372px;
+    margin-left: 75px;
+    min-width: 297px;
     min-height: 120px;
     padding: 5px;
     border-radius: 5px;
@@ -863,13 +870,20 @@ a.btn-save{
 }
 /*new left mol-list*/
 #model-list{
-    padding-top: 10px;
-    padding-right: 3px;
+    padding:12px 5px;
+}
+#model-list .panel{
+    margin-bottom: 10px;
+}
+#model-list .accordion-body{
+    padding-left: 15px;
 }
 #model-list a{
     display: block;
     margin-bottom: 10px;
     font-size: 18px;
+    -webkit-user-select: none;
+    text-decoration: none;
 }
 #model-list dl{
     overflow: hidden;
@@ -1016,4 +1030,8 @@ nav.decorate-navbar>.navbar-header{
     z-index: 999;
     background-color: #fff;
     top: -2px;
+    border-bottom: 0px solid #EF3F3F!important;
+}
+[type=color]{
+    margin-left: 5px;
 }
