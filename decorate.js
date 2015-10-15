@@ -201,12 +201,13 @@
             var actionSearch = 'http://localhost:3000/goods';
             var decorateSaveAction = 'http://localhost:3000/shopDataSave';
             var decorateUploadAction = 'http://localhost:8080/goods/appUploadShopPic';
-            //var actionSearch='http://localhost:8080/goods/appGoodsList';
-            //var decorateSaveAction='http://localhost:8080/goods/appSaveDecoration';
-            //var decorateUploadAction = 'http://localhost:8080/goods/appUploadShopPic';
             //var decorateUploadAction = '../../goods/appUploadShopPic';
             //var actionSearch='../../goods/appGoodsList';
             //var decorateSaveAction='../../goods/appSaveDecoration';
+            //var actionSearch = getContextPath() + '/goods/appGoodsList';
+            //var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
+            //var decorateUploadAction = getContextPath() + '/goods/appUploadShopPic';
+            //var decorateContentAction = getContextPath() + '/goods/appShopDecoration';
 
             // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
             var gotGoods = [];
@@ -304,7 +305,8 @@
                 $('#ctrl-wrap').empty();
                 //再载入
                 autoAppendNodes(tempid);
-                $('#checked_done2')[0].click();
+                $('#mols-modal').modal('hide');
+                bootAlert('载入成功',600);
             });
 
             // 拖拽方法(拖入的容器上定义的部分)
@@ -407,7 +409,8 @@
                     $(this.parentNode).remove();
                     setTimeout(function(){
                         $('#ctrl-wrap').empty();
-                    })
+                        $('.submit-reset-wrap').hide();
+                    },100)
                     mol_count_dic[this.parentNode.getAttribute('molid')] += 1;
                 })
                 .on('click', '.go-down', function (e) {
@@ -470,7 +473,10 @@
                                 this.innerText ? this.innerText = obj[key] : this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
                         });
                     }
+                    $('.submit-reset-wrap').show();
                 })
+            // hide it when init
+            $('.submit-reset-wrap').hide();
 
             // 右侧编辑确定后处理数据( 自定义数据的关键方法! )
             $('#ctrl-area')
@@ -487,7 +493,11 @@
                     } else if (molid == 'slideBox') {
                         obj = [];
                         $('.mol-ctrl-wrap').find('[mapid^=imgsrc]').each(function (i, val) {
-                            obj[i] = {imgsrc: this.value || ''};
+                            if(this.value.length>4){
+                                obj[i] = {imgsrc: this.value};
+                            }else{
+                                obj[i] ={};
+                            }
                         })
                             .end().find('[mapid^=href]').each(function (i, val) {
                                 (typeof(obj[i]) == 'object' && obj[i].imgsrc) ? (obj[i].href = this.value || '') : void(0);
@@ -553,7 +563,7 @@
                 var html, node_good, node_wrap = $(html_wrap)[0];
                 datas.forEach(function (obj, i) {
                     html = html_good.replace('{name}', obj['name'])
-                        .replace('{picPath}', obj['picPath'])
+                        .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
                         .replace('{href}', obj['href'])
                         .replace('{price}', obj['price']);
                     node_good = $(html)[0];
@@ -670,7 +680,7 @@
                         //载入宝贝数组
                         resp.data.forEach(function (obj, i) {
                             good = $(html.replace('{name}', obj['name'])
-                                .replace('{picPath}', obj['picPath'])
+                                .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
                                 .replace('{href}', '#/tab/goods/' + obj['goodsId'])
                                 .replace('{price}', obj['price']));
                             good.data('good-info', obj);
@@ -800,7 +810,6 @@
             });
 
             // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
-
             function makeJson(){
                 var molid;
                 var json = [];
@@ -891,14 +900,14 @@
             // 暂存
             $('.temp-save').click(function(){
                 var jsonstr = makeJson();
-                localStorage.hdDecotateTempSaveData=jsonstr;
+                localStorage.hdDecorateTempSaveData=jsonstr;
                 bootAlert('暂存成功,下次本机打开可以继续编辑.')
             })
 
             // 关闭帮助 与 显示帮助
             var closeHelp=function(showAnimate){
                 var flag=$('#never-again')[0].checked;
-                flag && (localStorage.hdDecotateHelpKnew=1);
+                flag && (localStorage.hdDecorateHelpKnew=1);
                 $('.mask-main').hide();
                 $('#main').removeClass('blur');
                 if(showAnimate===true){
@@ -917,16 +926,16 @@
                 $('#main').addClass('blur');
             }
             var toggle=function(){$('#btn-help').mouseenter(showHelp).mouseleave(closeHelp);};
-            $('#helps .btn').on('click',function() {
+            $('#helps .btn,.mask-main').on('click',function() {
                 closeHelp(true);
                 toggle();
             });
             $('document').ready(function(){
-                (localStorage.hdDecotateHelpKnew==1) ? toggle(): showHelp(true);
+                (localStorage.hdDecorateHelpKnew==1) ? toggle(): showHelp(true);
             });
 
             $(function(){
-                localStorage.hdDecotateTempSaveData && init_current(JSON.parse(localStorage.hdDecotateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.');
+                localStorage.hdDecorateTempSaveData && init_current(JSON.parse(localStorage.hdDecorateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.');
             });
         }
 })(window.jQuery)

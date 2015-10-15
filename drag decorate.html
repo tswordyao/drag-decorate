@@ -16,7 +16,7 @@
     <!-- nav bar-->
     <nav class="navbar navbar-inverse navbar-abstract-top decorate-navbar" role="navigation"><!---navbar-fixed-top就是固定上方,注意下面元素留出上边距-->
      <div class="navbar-header">
-         <a class="navbar-brand orange"  id="btn-back"href="#">&lt;&lt;&nbsp;返回</a>
+         <a class="navbar-brand orange"  id="btn-back"href="#"><i class="icon-arrow-left"></i>&nbsp;返回</a>
          <!--<a class="navbar-brand"  tempid="tbstyle"      href="#">温馨风</a>-->
          <!--<a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>-->
          <!--<a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>-->
@@ -30,8 +30,6 @@
          <a class="navbar-brand  btn-save fr"  href="#">发布</a>
          <a class="navbar-brand temp-save fr"  href="javascript:void(0);">暂存</a>
          <a class="navbar-brand btn-cls fr"  tempid="" href="#">清空</a>
-
-
      </div>
     <!--<form class="navbar-form navbar-right" role="form">-->
         <!--&lt;!&ndash;<input type="text" placeholder="测试输入店铺名称" class="form-control" id="shopName-inp">&ndash;&gt;-->
@@ -47,39 +45,11 @@
         <p id="help-one"> <b class="arrow"></b><big>①</big>  点住想要添加的模块，<br>拖放到中间手机中; </p>
         <p id="help-two"> <b class="arrow"></b><big> ②</big>   单击手机中的某模块，<br>在右侧编辑其内容;           <br><br>        (编辑后,右侧下方确定↘)</p>
         <p id="help-three"> <b class="arrow"></b><big> ③</big>   最后，点击发布，<br>就完成了首页更新。
-            <br><input type="checkbox" name="" id="never-again"/><small>(下次不再提醒 )</small>    <button class="btn btn-sm">知道了&times;</button> </p>
+            <br><input type="checkbox" name="" id="never-again"/><small>(下次不再提醒 )</small>    <button class="btn btn-sm btn-primary">知道了&times;</button> </p>
     </div>
 
     <div id="main" class="container">
         <div class="rows">
-            <!--<ul id="model-list" class="col-lg-4-">-->
-                <!--<li><div class="mol-tag mol-tag-positive" id="tag-slideBox"  draggable="true"  >轮播图</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-positive" id="tag-singlePic" draggable="true"  >焦点图</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-positive" id="tag-bannerPic" draggable="true"  >banner图</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-positive" id="tag-wordPic"   draggable="true"  >左文右图</div></li>-->
-
-                <!--<li><div class="mol-tag" id="tag-tb-features" draggable="true" >优势宣传</div></li>-->
-                <!--<li><div class="mol-tag" id="tag-hd-features" draggable="true" >优势宣传2</div></li>-->
-                <!--<li><div class="mol-tag" id="tag-bb-features" draggable="true" >优势宣传3</div></li>-->
-
-                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-tb-category" draggable="true" >类别组合</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-hd-category"  draggable="true" >类别组合2</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-aqua" id="tag-bb-category"  draggable="true" >类别组合3</div></li>-->
-
-                <!--&lt;!&ndash;<li id="li-04"><div class="mol-tag" id="tag-doubleGood" draggable="true" >双宝贝模块</div></li>&ndash;&gt;-->
-                <!--&lt;!&ndash;<li><div class="mol-tag" id="tag-doublePic" draggable="true"  >双图片模块</div></li>&ndash;&gt;-->
-
-                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-wordOnly"   draggable="true"  >黑板报</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-titleOnly"  draggable="true"  >区域标题</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-energized"   id="tag-contract"   draggable="true"  >联系模块</div></li>-->
-
-                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-hd-brands"      draggable="true" >品牌陈列</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-singleGoodList" draggable="true" >宝贝列表1</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-doubleGoodList" draggable="true" >宝贝列表2</div></li>-->
-                <!--<li><div class="mol-tag mol-tag-assertive" id="tag-singleGood"      draggable="true" >单宝贝模块</div></li>-->
-            <!--</ul>-->
-
-
             <div id="model-list" class="col-lg-4 panel-group-nonono">
                 <div class="panel panel-default">
                     <a class="accordion-toggle panel-heading" data-toggle="collapse" data-parent="#model-list-nonono" href="#pics-words">图文类</a>
@@ -150,8 +120,8 @@
             <div id="ctrl-area"  class="col-lg-4-">
                 <div id="ctrl-wrap"></div>
                 <div class="submit-reset-wrap">
-                <input type="reset" class="reset btn btn-default" value="重置">
-                <input type="submit"  class="submit btn btn-primary" value="确定">
+                    <input type="reset" class="reset btn btn-default" value="重置">
+                    <input type="submit"  class="submit btn btn-primary" value="确定">
                 </div>
             </div>
 
@@ -221,10 +191,10 @@
                     <!--<div class="molbox" tempid="lmstyle"><b>辣妈风</b></div>-->
                     <!--<div class="molbox" tempid="qzstyle"><b>亲子风</b></div>-->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="mols_list_cls()">取消</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="checked_done2(this)" id="checked_done2">确定</button>
-                </div>
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal" onclick="mols_list_cls()">取消</button>-->
+                    <!--<button type="button" class="btn btn-success" data-dismiss="modal" onclick="checked_done2(this)" id="checked_done2">确定</button>-->
+                <!--</div>-->
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
