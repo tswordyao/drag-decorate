@@ -39,7 +39,7 @@
             var mol_val_dic = {
                 "val-singleGood": {
                     href: '#',
-                    picPath: 'img/decorate/re-good.jpg',
+                    picPath: 'img/decorate/re-good.jpg',//   真实目录为../../img/   CSS真实图片目录为../img
                     name: '宝乐滋3罐超值特价装!',
                     price: 92.00
                 },
