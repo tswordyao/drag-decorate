@@ -305,8 +305,9 @@
                 $('#ctrl-wrap').empty();
                 //再载入
                 autoAppendNodes(tempid);
+                $('.submit-reset-wrap').hide();
                 $('#mols-modal').modal('hide');
-                bootAlert('载入成功',600);
+                bootAlert('操作成功',600);
             });
 
             // 拖拽方法(拖入的容器上定义的部分)
@@ -808,9 +809,12 @@
             $('#btn-count').click(function () {
                 console.info(mol_count_dic);
             });
-
+			
             // 保存方法(统计当前模块排列组合的信息及其绑定的数据,此函数为操作后的最终步骤. 数据最后直接提供给api,保存成功即PC流程完成)
             function makeJson(){
+		        // goodsid数组
+		        var goodsIdArr=[];
+		        var goodsIdObj={};
                 var molid;
                 var json = [];
                 var mols = $('#show-mobile').find('.mol-wrap');
@@ -820,27 +824,35 @@
                         $(this).data('native', null);
                     }else if(molid.lastIndexOf('GoodList')>-1){
                         $(this).data('native',  $(this).data('native') || gotGoods.slice(0, 8));
+	                    $(this).data('native').forEach(function(goods){
+	                        goodsIdObj[goods.goods_id+'']='';
+	                    });
                     }
                     json.push({
                         'name': molid,
                         'data': $(this).data('native') || mol_val_dic['val-' + molid] || null
                     })
                 });
+                for(var n in goodsIdObj){
+                    goodsIdArr.push(n);
+                }
+                console.log(goodsIdArr);
                 console.table(json);
-                return JSON.stringify(json);
+                return {content:JSON.stringify(json),goods_id_arr:goodsIdArr};
             }
 
             $('.btn-save').click(function () {
                 if(!confirm('\n确定发布? \n\n将把店铺首页更新为当前页面的布置\n')){
                     return false;
                 }
-                var jsonstr = makeJson();
+				var wrap=makeJson();
+                var jsonstr = wrap.content;
                 var shopId = $('#shopId-inp').val();
                 var shopName = $('#shopName-inp').val();
-                $.post(decorateSaveAction, {shopId: shopId||'',shopName: shopName||'' , content: jsonstr}).always(function (res) {
+                $.post(decorateSaveAction, {shopId: shopId||'',shopName: shopName||'' , content: jsonstr , goods_ids:wrap.goods_id_arr.join(',')}).always(function (res) {
                     console.info(res);
                     if(res.result){
-                        localStorage.hdDecotateTempSaveData='';
+                        localStorage.hdDecorateTempSaveData='';
                         bootAlert('<b>发布成功!</b><a href="#" target="_blank">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>'.replace('#',$('#goto-shop')[0].href),9999)
                         //if(confirm('发布成功! 立刻前往我的店铺查看效果?')){
                         //    $('.temp-save')[0].click();
@@ -899,7 +911,7 @@
 
             // 暂存
             $('.temp-save').click(function(){
-                var jsonstr = makeJson();
+                var jsonstr = makeJson().content;
                 localStorage.hdDecorateTempSaveData=jsonstr;
                 bootAlert('暂存成功,下次本机打开可以继续编辑.')
             })
