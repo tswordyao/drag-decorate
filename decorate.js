@@ -220,7 +220,7 @@
                 $('.alert-assertive').fadeIn(300, function () {
                     setTimeout((function () {
                         $(this).fadeOut(600);
-                    }).bind(this), holdTime || 3200);
+                    }).bind(this), holdTime || 2400);
                 }).html(function (i, old) {
                     return str;
                 });
@@ -680,7 +680,7 @@
                         goodList.html('');
                         //载入宝贝数组
                         resp.data.forEach(function (obj, i) {
-                            good = $(html.replace('{name}', obj['name'])
+                            good = $(html.replace(/\{name\}/gm, obj['name'])
                                 .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
                                 .replace('{href}', '#/tab/goods/' + obj['goodsId'])
                                 .replace('{price}', obj['price']));
@@ -849,7 +849,7 @@
                 var jsonstr = wrap.content;
                 var shopId = $('#shopId-inp').val();
                 var shopName = $('#shopName-inp').val();
-                $.post(decorateSaveAction, {shopId: shopId||'',shopName: shopName||'' , content: jsonstr , goods_ids:wrap.goods_id_arr.join(',')}).always(function (res) {
+                $.post(decorateSaveAction, {shopId: shopId||'',shopName: shopName||'' , content: jsonstr , goodsIds:wrap.goods_id_arr.join(',')}).always(function (res) {
                     console.info(res);
                     if(res.result){
                         localStorage.hdDecorateTempSaveData='';
@@ -913,7 +913,7 @@
             $('.temp-save').click(function(){
                 var jsonstr = makeJson().content;
                 localStorage.hdDecorateTempSaveData=jsonstr;
-                bootAlert('暂存成功,下次本机打开可以继续编辑.')
+                bootAlert('暂存成功,下次本机打开可以继续编辑.',600)
             })
 
             // 关闭帮助 与 显示帮助
