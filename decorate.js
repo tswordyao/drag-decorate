@@ -94,7 +94,21 @@
                 "val-bb-features": {imgsrc: "img/decorate/bb-features.png"},
                 "val-titleOnly": {title: '推荐宝贝'},
                 "val-wordOnly": {desc: '欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
-                "val-contract": {tel: '1381396655', wechat: 'weixina2017006'}
+                "val-contract": {tel: window.telphoneAccount||'1381396655', wechat: window.wechatAccount||'weixina2017006'},
+                "val-hd-category": {
+                    href: '1100',
+                    imgsrc: 'img/decorate/area-logo-01.jpg',
+                    desc: 'LOGO AREA<br>奶粉专区',
+                    href2: '1200',
+                    imgsrc2: 'img/decorate/area-logo-02.jpg',
+                    desc2: 'LOGO AREA<br>日用品专区',
+                    href3: '1300',
+                    imgsrc3: 'img/decorate/area-logo-03.jpg',
+                    desc3: 'LOGO AREA<br>尿不湿专区',
+                    href4: '1700',
+                    imgsrc4: 'img/decorate/area-logo-04.jpg',
+                    desc4: 'LOGO AREA<br>妈妈专区',
+                }
             };
             // 模块使用数限制状态机
             var mol_count_dic = {
@@ -735,7 +749,10 @@
             })
 
             //图片上传
-            $(document).on('submit', '.img-up-form', function () {
+            $(document).on('submit', '.img-up-form', uploadimg);
+            $(document).on('change', '[type=file]', uploadimg);
+
+            function uploadimg() {
                 // 图片检测
                 var files = $('.img-up-file')[0].files;
                 if (!files.length) {
@@ -803,7 +820,7 @@
                     }
                 });
                 return false;
-            });
+            }
 
             // 查看次数限制现状
             $('#btn-count').click(function () {
