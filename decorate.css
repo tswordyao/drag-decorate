@@ -45,7 +45,7 @@ hr{border-color: #ccc!important;}
     width:100%;
     min-width: 1280px;
     min-height:800px;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #model-list{
@@ -295,7 +295,7 @@ hr{border-color: #ccc!important;}
 }
 #ctrl-area>.submit-reset-wrap{
     margin-left: 210px;
-    visibility: hidden;
+    display: none;
 }
 #ctrl-area>.submit-reset-wrap>input{
     float: left;
@@ -386,10 +386,10 @@ a.doubleGood-wrap-one{
     text-overflow: ellipsis;
     background: #3A6165;
     box-shadow: 1px 1px 3px #aaa inset,3px 6px 5px #aaa;
-    border-radius: 15px;
+    border-radius: 4px;
     font-family: microsoft yahei;
     color: #fff;
-    border: 12px ridge pink;
+    border: 10px ridge pink;
     min-height: 120px;
 }
 [molid="wordOnly"]{
@@ -903,7 +903,7 @@ a.btn-save{
     font-family: "microsoft yahei","Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #model-list dd.mol-tag:hover{
-    font-size: 16px;
+    font-size: 15px;
 }
 div.mask-main{
     position:fixed;

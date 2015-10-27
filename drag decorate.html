@@ -22,7 +22,7 @@
          <!--<a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>-->
          <a class="navbar-brand"   id="btn-templates"    data-toggle="modal" data-target="#mols-modal"   href="#">选择模版</a>
          <a class="navbar-brand"   id="goto-shop"       href="http://${shop.domain}.${appSettings.shopDomainPost!}">查看店铺</a>
-         <a class="navbar-brand"  id="btn-help"    target="_blank"     href="#">?&nbsp;教程</a>
+         <a class="navbar-brand"  id="btn-help"    target="_blank"     href="decorate.mp4">?&nbsp;教程</a>
 
          <h2 class="tilte">店铺首页装修</h2>
          <!--<a class="navbar-brand disabled" disabled="true"   href="#">&nbsp;|&nbsp;</a>-->
@@ -247,31 +247,60 @@
         <script type="text/template" id="temp-hd-category">
             <div class="mol-wrap hd-category" molid="hd-category">
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category01.jpg" alt=""/>
+                    <img src="{imgsrc}" alt=""/>
                     <div class="wrap-r">
-                        <h3>奶粉</h3><P>全球奶粉跨境购</P>
+                        <h3>{title}</h3><P>{desc}</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category02.jpg" alt=""/>
+                    <img src="{imgsrc2}" alt=""/>
                     <div class="wrap-r">
-                        <h3>尿不湿</h3><P>轻松透气一整天</P>
+                        <h3>{title2}</h3><P>{desc2}</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category03.jpg" alt=""/>
+                    <img src="{imgsrc3}" alt=""/>
                     <div class="wrap-r">
-                        <h3>辅食</h3><P>肠胃健康妈妈放心</P>
+                        <h3>{title3}</h3><P>{desc3}</P>
                     </div>
                 </div>
                 <div class="hd-category-one">
-                    <img src="img/decorate/category/hd-category04.jpg" alt=""/>
+                    <img src="{imgsrc4}" alt=""/>
                     <div class="wrap-r">
-                        <h3>保健品</h3><P>全球保健品一站采购</P>
+                        <h3>{title4}</h3><P>{desc4}</P>
                     </div>
                 </div>
             </div>
         </script>
+
+        <!--<script type="text/template" id="temp-hd-category">-->
+            <!--<div class="mol-wrap hd-category" molid="hd-category">-->
+                <!--<div class="hd-category-one">-->
+                    <!--<img src="img/decorate/category/hd-category01.jpg" alt=""/>-->
+                    <!--<div class="wrap-r">-->
+                        <!--<h3>奶粉</h3><P>全球奶粉跨境购</P>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="hd-category-one">-->
+                    <!--<img src="img/decorate/category/hd-category02.jpg" alt=""/>-->
+                    <!--<div class="wrap-r">-->
+                        <!--<h3>尿不湿</h3><P>轻松透气一整天</P>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="hd-category-one">-->
+                    <!--<img src="img/decorate/category/hd-category03.jpg" alt=""/>-->
+                    <!--<div class="wrap-r">-->
+                        <!--<h3>辅食</h3><P>肠胃健康妈妈放心</P>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="hd-category-one">-->
+                    <!--<img src="img/decorate/category/hd-category04.jpg" alt=""/>-->
+                    <!--<div class="wrap-r">-->
+                        <!--<h3>保健品</h3><P>全球保健品一站采购</P>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</script>-->
 
         <script type="text/template" id="temp-good-cell">
             <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)" title="{name}">
@@ -444,7 +473,25 @@
         <script type="text/template" id="temp-ctrl-hd-category">
             <div class="mol-ctrl-wrap" ctrlid="hd-category">
                 <h2>热门分类</h2>
-                <hr><b>此模块不可编辑</b>
+                <hr><label>分类图片：</label><input type="text"   mapid="imgsrc"     placeholder="输入分类图片网址">
+                <br><label>分类类别：</label><input type="text"   mapid="href"       placeholder="输入分类类别">
+                <br><label>分类标题：</label><input type="text"   mapid="title"      placeholder="输入分类标题">
+                <br><label>分类描述：</label><input type="text"   mapid="desc"      placeholder="输入分类描述" maxlength="9">
+
+                <hr><label>分类图片2：</label><input type="text"   mapid="imgsrc2"     placeholder="输入分类2图片网址">
+                <br><label>分类类别2：</label><input type="text"   mapid="href2"       placeholder="输入分类2类别">
+                <br><label>分类标题2：</label><input type="text"   mapid="title2"      placeholder="输入分类2标题">
+                <br><label>分类描述2：</label><input type="text"   mapid="desc2"      placeholder="输入分类2描述" maxlength="9">
+
+                <hr><label>分类图片3：</label><input type="text"   mapid="imgsrc3"     placeholder="输入分类3图片网址">
+                <br><label>分类类别3：</label><input type="text"   mapid="href3"       placeholder="输入分类3类别">
+                <br><label>分类标题3：</label><input type="text"   mapid="title3"      placeholder="输入分类3标题">
+                <br><label>分类描述3：</label><input type="text"   mapid="desc3"      placeholder="输入分类3描述" maxlength="9">
+
+                <hr><label>分类图片4：</label><input type="text"   mapid="imgsrc4"     placeholder="输入分类4图片网址">
+                <br><label>分类类别4：</label><input type="text"   mapid="href4"       placeholder="输入分类4类别">
+                <br><label>分类标题4：</label><input type="text"   mapid="title4"      placeholder="输入分类4标题">
+                <br><label>分类描述4：</label><input type="text"   mapid="desc4"      placeholder="输入分类4描述" maxlength="9">
             </div>
         </script>
 
@@ -502,19 +549,20 @@
                 <h2>轮播图(自定义)</h2>
                 <hr><label>图片链接1：</label><input type="text"   mapid="imgsrc"     placeholder="输入图片地址">
                 <br><label>跳转链接1：</label><input type="text"   mapid="href"       placeholder="输入链接转向地址">
-                <br><label>图片链接2：</label><input type="text"   mapid="imgsrc2"     placeholder="输入图片2地址">
+                <hr><label>图片链接2：</label><input type="text"   mapid="imgsrc2"     placeholder="输入图片2地址">
                 <br><label>跳转链接2：</label><input type="text"   mapid="href2"       placeholder="输入链接2转向地址">
-                <br><label>图片链接3：</label><input type="text"   mapid="imgsrc3"     placeholder="输入图片3地址">
+                <hr><label>图片链接3：</label><input type="text"   mapid="imgsrc3"     placeholder="输入图片3地址">
                 <br><label>跳转链接3：</label><input type="text"   mapid="href3"       placeholder="输入链接3转向地址">
-                <br><label>图片链接4：</label><input type="text"   mapid="imgsrc4"     placeholder="输入图片4地址">
-                <br><label>跳转链接4：</label><input type="text"   mapid="href4"       placeholder="输入链接4转向地址">
-                <br><label>图片链接5：</label><input type="text"   mapid="imgsrc5"     placeholder="输入图片5地址">
-                <br><label>跳转链接5：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">
+                <!--<br><label>图片链接4：</label><input type="text"   mapid="imgsrc4"     placeholder="输入图片4地址">-->
+                <!--<br><label>跳转链接4：</label><input type="text"   mapid="href4"       placeholder="输入链接4转向地址">-->
+                <!--<br><label>图片链接5：</label><input type="text"   mapid="imgsrc5"     placeholder="输入图片5地址">-->
+                <!--<br><label>跳转链接5：</label><input type="text"   mapid="href5"       placeholder="输入链接5转向地址">-->
+                <hr>
                 <form class="img-up-form">
-                    <label>图片上传&nbsp;&nbsp;：</label>
+                    <label>上传本地图片:</label>
                     <input type="file"   mapid="img-up"   name='files' class="img-up-file" multiple="true"  accept="image/*" />
                     <input type="submit" value=" 开始上传 ">
-                    <p>最多可以选择5张图片(比例一致),单张不超过200k。</p>
+                    <p>最多可以选择3张图片(比例一致),单张不超过200k。</p>
                 </form>
             </div>
         </script>
@@ -619,7 +667,7 @@
            <div class="mol-ctrl-wrap" ctrlid="singleGoodList">
                <h2>宝贝列表(每行一个)</h2><hr>
                <div class="show-checked-good"></div>
-               <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+               <br><button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
                <!--<button class="btn btn-success to-check-good">确定</button>-->
            </div>
         </script>
@@ -628,15 +676,34 @@
            <div class="mol-ctrl-wrap" ctrlid="doubleGoodList">
                <h2>宝贝列表(每行两个)</h2><hr>
                <div class="show-checked-good"></div>
-               <button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+               <br><button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
                <!--<button class="btn btn-success to-check-good2">确定</button>-->
            </div>
         </script>
     </div>
     <div class="mask-main"></div>
+
+
     <link rel="stylesheet" href="bootstrap.css">
     <script src="bootstrap.min.js"></script>
+    <script>
+        //window.wechatAccount = '${(seller.wechat)!}';
+       // window.telphoneAccount = '${(seller.mobile)!}';
+    </script>
     <script src="decorate.js"></script>
-
+    <script>
+        $(document).ready(function() {
+            if(localStorage.hdDecorateTempSaveData){
+                init_current(JSON.parse(localStorage.hdDecorateTempSaveData));
+                bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.');
+            }else{
+                /*
+                var data = ${(decoration.content)!};
+                console.info(data);
+                init_current(data);
+                */
+            }
+        });
+    </script>
 </body>
 </html>

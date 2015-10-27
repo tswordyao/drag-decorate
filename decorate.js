@@ -4,6 +4,21 @@
         if(!isChrome){
             document.body.innerHTML='<br><h2>&nbsp;您目前的浏览器不是chrome(谷歌)浏览器，不支持相关操作。 请更换浏览器后再进入本页面。<br><br>&nbsp;<a href="https://www.baidu.com/s?ie=UTF-8&wd=chrome">点击此处下载</a></h2>'
         }else {
+
+            var imgRoot='';
+            // 后台接口,获取宝贝数据
+            if(typeof getContextPath =='undefined'){
+                var getContextPath=function(){
+                    return 'http://localhost:3000';
+                }
+            }else{
+                imgRoot='../../';
+            }
+            var actionSearch = getContextPath() + '/goods/appGoodsList';
+            var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
+            var decorateUploadAction = getContextPath() + '/goods/appUploadShopPic';
+            var decorateContentAction = getContextPath() + '/goods/appShopDecoration';
+
             // 模块映射
             var get_mol = function (molid) {
                 return document.getElementById('temp-' + molid).innerHTML;
@@ -39,54 +54,54 @@
             var mol_val_dic = {
                 "val-singleGood": {
                     href: '#',
-                    picPath: 'img/decorate/re-good.jpg',//   真实目录为../../img/   CSS真实图片目录为../img
+                    picPath: imgRoot+'img/decorate/re-good.jpg',//   真实目录为../../img/   CSS真实图片目录为../img
                     name: '宝乐滋3罐超值特价装!',
                     price: 92.00
                 },
                 "val-doubleGood": {
                     href: '#',
-                    picPath: 'img/decorate/good17.jpg',
+                    picPath: imgRoot+'img/decorate/good17.jpg',
                     name: '漂亮的女童裤子 纯棉',
                     price: 56.00,
                     href2: '#',
-                    picPath2: 'img/decorate/good13.jpg',
+                    picPath2: imgRoot+'img/decorate/good13.jpg',
                     name2: '小脚裤子批发 颜色多',
                     price2: 52.00
                 },
                 "val-wordPic": {
                     href: '#',
-                    imgsrc: 'img/decorate/word-pic.jpg',
+                    imgsrc: imgRoot+'img/decorate/word-pic.jpg',
                     desc: '图片描述文字,一些文字,怕怕拉拉,什么的<br>或者,图片可以做成100%<br>文字遮罩在图片左上角<br>这需要图片设计配合<br>左上角统一色调或留白',
                 },
-                "val-slideBox": [{href: '#', imgsrc: 'img/decorate/slide.jpg'}, {href: '#', imgsrc: 'img/decorate/slide2.jpg'}, {
+                "val-slideBox": [{href: '#', imgsrc: imgRoot+'img/decorate/slide.jpg'}, {href: '#', imgsrc: imgRoot+'img/decorate/slide2.jpg'}, {
                     href: '#',
-                    imgsrc: 'img/decorate/slide3.jpg'
+                    imgsrc: imgRoot+'img/decorate/slide3.jpg'
                 }],
                 "val-singlePic": {
                     href: '#',
-                    imgsrc: 'img/decorate/baby-house.jpg',
+                    imgsrc: imgRoot+'img/decorate/baby-house.jpg',
                     desc: '婴童夏装换季清仓中! 点击进入专区!',
                 },
                 "val-doublePic": {
                     href: '#',
-                    imgsrc: 'img/decorate/baby-joy01.jpg',
+                    imgsrc: imgRoot+'img/decorate/baby-joy01.jpg',
                     desc: '童车特价中! 点击进入专区!',
                     href2: '#',
-                    imgsrc2: 'img/decorate/baby-joy02.jpg',
+                    imgsrc2: imgRoot+'img/decorate/baby-joy02.jpg',
                     desc2: '玩具特价! 点击进入专区!',
                 },
                 "val-tb-category": {
                     href: '#',
-                    imgsrc: 'img/decorate/area-logo-01.jpg',
+                    imgsrc: imgRoot+'img/decorate/area-logo-01.jpg',
                     desc: 'LOGO AREA<br>奶粉专区',
                     href2: '#',
-                    imgsrc2: 'img/decorate/area-logo-02.jpg',
+                    imgsrc2: imgRoot+'img/decorate/area-logo-02.jpg',
                     desc2: 'LOGO AREA<br>日用品专区',
                     href3: '#',
-                    imgsrc3: 'img/decorate/area-logo-03.jpg',
+                    imgsrc3: imgRoot+'img/decorate/area-logo-03.jpg',
                     desc3: 'LOGO AREA<br>尿不湿专区',
                     href4: '#',
-                    imgsrc4: 'img/decorate/area-logo-04.jpg',
+                    imgsrc4: imgRoot+'img/decorate/area-logo-04.jpg',
                     desc4: 'LOGO AREA<br>妈妈专区',
                 },
                 "val-bannerPic": {imgsrc: "img/decorate/banner.jpg", href: '#'},
@@ -97,17 +112,24 @@
                 "val-contract": {tel: window.telphoneAccount||'1381396655', wechat: window.wechatAccount||'weixina2017006'},
                 "val-hd-category": {
                     href: '1100',
-                    imgsrc: 'img/decorate/area-logo-01.jpg',
-                    desc: 'LOGO AREA<br>奶粉专区',
+                    imgsrc: imgRoot+'img/decorate/category/hd-category01.jpg',
+                    title: '奶粉',
+                    desc:'全球奶粉跨境购',
+
                     href2: '1200',
-                    imgsrc2: 'img/decorate/area-logo-02.jpg',
-                    desc2: 'LOGO AREA<br>日用品专区',
+                    imgsrc2: imgRoot+'img/decorate/category/hd-category02.jpg',
+                    title2: '尿不湿',
+                    desc2:'轻松透气一整天',
+
                     href3: '1300',
-                    imgsrc3: 'img/decorate/area-logo-03.jpg',
-                    desc3: 'LOGO AREA<br>尿不湿专区',
+                    imgsrc3: imgRoot+'img/decorate/category/hd-category03.jpg',
+                    title3: '辅食',
+                    desc3:'肠胃健康妈妈放心',
+
                     href4: '1700',
-                    imgsrc4: 'img/decorate/area-logo-04.jpg',
-                    desc4: 'LOGO AREA<br>妈妈专区',
+                    imgsrc4: imgRoot+'img/decorate/category/hd-category04.jpg',
+                    title4: '保健品',
+                    desc4:'全球保健品一站购',
                 }
             };
             // 模块使用数限制状态机
@@ -119,11 +141,11 @@
                 'bb-category': 2,
                 'hd-category': 2,
                 'hd-brands': 2,
-                'singleGood': 16,
+                'singleGood': 12,
                 'doubleGood': 12,
                 'slideBox': 1,
-                'singlePic': 16,
-                'bannerPic': 16,
+                'singlePic': 6,
+                'bannerPic': 6,
                 'doublePic': 2,
                 'wordPic': 3,
                 'wordOnly': 3,
@@ -157,7 +179,7 @@
                     //{
                     //    name: 'singleGood', data: {
                     //    href: '#',
-                    //    picPath: 'img/decorate/re-good2.jpg',
+                    //    picPath: imgRoot+'img/decorate/re-good2.jpg',
                     //    name: '秋装新款 童装毛衣 外贸出口!',
                     //    price: 52.00
                     //}
@@ -165,7 +187,7 @@
                     //{
                     //    name: 'singleGood', data: {
                     //    href: '#',
-                    //    picPath: 'img/decorate/re-good3.jpg',
+                    //    picPath: imgRoot+'img/decorate/re-good3.jpg',
                     //    name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
                     //    price: 168.00
                     //}
@@ -177,7 +199,7 @@
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150129137.jpg',//'img/decorate/re-good2.jpg',
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150129137.jpg',//imgRoot+'img/decorate/re-good2.jpg',
                         name: '德国 碧然德 滤水壶,给健康的限时特价!',
                         price: 168.00
                     }
@@ -185,7 +207,7 @@
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150511809.jpg',//'img/decorate/re-good2.jpg',
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150511809.jpg',//imgRoot+'img/decorate/re-good2.jpg',
                         name: '荷兰牛栏三段,市场优选!',
                         price: 252.00
                     }
@@ -193,7 +215,7 @@
                     {
                         name: 'singleGood', data: {
                         href: '#',
-                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150338462.jpg',//'img/decorate/re-good3.jpg',
+                        picPath: 'http://120.26.112.178/statics/attachment/adv/201508251150338462.jpg',//imgRoot+'img/decorate/re-good3.jpg',
                         name: '宝宝的小屁屁最好的呵护~~~ 金装尿不湿!',
                         price: 268.00
                     }
@@ -201,7 +223,7 @@
                     {name: 'titleOnly'},
                     {name: 'doubleGoodList'},
                     {name: 'contract'}],
-                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: 'img/decorate/hot.jpg'}, {href: '#', imgsrc: 'img/decorate/hot2.jpg'}]},
+                hdstyle: [{name: 'slideBox', data: [{href: '#', imgsrc: imgRoot+'img/decorate/hot.jpg'}, {href: '#', imgsrc: imgRoot+'img/decorate/hot2.jpg'}]},
                     {name: 'hd-features'},
                     {name: 'titleOnly', data: {title: '品牌馆'}},
                     {name: 'hd-brands'},
@@ -211,17 +233,8 @@
                     {name: 'singleGoodList'},
                     {name: 'contract'}]
             };
-            // 后台接口,获取宝贝数据
-            var actionSearch = 'http://localhost:3000/goods';
-            var decorateSaveAction = 'http://localhost:3000/shopDataSave';
-            var decorateUploadAction = 'http://localhost:8080/goods/appUploadShopPic';
-            //var decorateUploadAction = '../../goods/appUploadShopPic';
-            //var actionSearch='../../goods/appGoodsList';
-            //var decorateSaveAction='../../goods/appSaveDecoration';
-            //var actionSearch = getContextPath() + '/goods/appGoodsList';
-            //var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
-            //var decorateUploadAction = getContextPath() + '/goods/appUploadShopPic';
-            //var decorateContentAction = getContextPath() + '/goods/appShopDecoration';
+
+
 
             // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
             var gotGoods = [];
@@ -367,8 +380,7 @@
                     // 拖入区域,准备放置...
                     event.preventDefault();
                     // 先清空上次的标记
-                    $('.mol-wrap').removeClass('assertive');
-                    $('.mol-wrap').removeClass('blue-top');
+                    $('.mol-wrap').removeClass('assertive blue-top');
                     //鼠标所处的已有模块打上蓝顶标记,表示松手即放置其上
                     $(event.target).parents('.mol-wrap').eq(0).addClass('blue-top');
                 });
@@ -388,8 +400,6 @@
                     $('.mol-tip').fadeOut(300, function () {
                         $(this).html('<div class="arrow"></div>')
                     });
-                    // 未点击不出现编辑按钮
-                    $('.submit-reset-wrap').css('visibility','hidden');
                 })
                 .on('mouseover', function () {
                     $('.mol-tip').html('<div class="arrow"></div>');
@@ -461,7 +471,6 @@
                 })
                 // 选中块开始编辑(自定义模块数据的关键依赖)
                 .on('click', '.mol-wrap', function (e) {
-                    $('.submit-reset-wrap').css('visibility','visible');
                     var molid = this.getAttribute('molid');
                     var obj = $(this).data('native') || mol_val_dic['val-' + molid];
                     var key;
@@ -488,7 +497,7 @@
                                 this.innerText ? this.innerText = obj[key] : this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
                         });
                     }
-                    $('.submit-reset-wrap').show();
+                    (molid.indexOf('GoodList')<0 && mol_val_dic['val-'+molid]) ? $('.submit-reset-wrap').show() : $('.submit-reset-wrap').hide() ;
                 })
             // hide it when init
             $('.submit-reset-wrap').hide();
@@ -522,7 +531,7 @@
                     } else {
                         $(this.parentNode).prev().find('input,textarea').each(function () {
                             key = this.getAttribute('mapid') || 'none';
-                            this.innerText ? obj[key] = this.innerText : obj[key] = this.value.replace(/\n/gm, '<br>');
+                            this.innerText ? obj[key] = this.innerText||'' : obj[key] = this.value.replace(/\n/gm, '<br>')||'';
                         });
                         //实例化HTML内容
                         for (var k in obj) {
@@ -649,6 +658,7 @@
                 // 同时保存原始数据
                 molobj.data('native', checkedGoods);
                 goods_list_cls();
+                bootAlert('宝贝挑选成功',900);
             }
 
             // 清空选择的宝贝
@@ -750,15 +760,15 @@
 
             //图片上传
             $(document).on('submit', '.img-up-form', uploadimg);
-            $(document).on('change', '[type=file]', uploadimg);
+            //$(document).on('change', '[type=file]', uploadimg);
 
             function uploadimg() {
                 // 图片检测
                 var files = $('.img-up-file')[0].files;
                 if (!files.length) {
                     return false;
-                } else if (files.length > 5) {
-                    bootAlert('最多上传5张图片');
+                } else if (files.length > 3) {
+                    bootAlert('最多上传3张图片');
                     return false;
                 }
                 for (var i = 0; i < files.length; i++) {
@@ -814,7 +824,7 @@
                                 //setTimeout(function(){$(this).css('background','');}.bind(this),5600)
                             })
                             molobj.find('img')[0].src = res.srcs[0];
-                            bootAlert('上传成功,图片地址已经自动填入文本框.', 2400);
+                            bootAlert('上传成功,图片地址已经依次填入文本框. 也可以手动剪切图片地址, 调整次序.', 2400);
                             $('.img-up-file')[0].value = null;
                         }
                     }
@@ -870,7 +880,7 @@
                     console.info(res);
                     if(res.result){
                         localStorage.hdDecorateTempSaveData='';
-                        bootAlert('<b>发布成功!</b><a href="#" target="_blank">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>'.replace('#',$('#goto-shop')[0].href),9999)
+                        bootAlert('<b>发布成功!</b><a href="#" target="_blank">&nbsp;&nbsp;&nbsp;立刻前往我的店铺查看效果</a>'.replace('#',$('#goto-shop')[0].href),1500)
                         //if(confirm('发布成功! 立刻前往我的店铺查看效果?')){
                         //    $('.temp-save')[0].click();
                         //}
@@ -964,7 +974,7 @@
             });
 
             $(function(){
-                localStorage.hdDecorateTempSaveData && init_current(JSON.parse(localStorage.hdDecorateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.');
+                localStorage.hdDecorateTempSaveData && init_current(JSON.parse(localStorage.hdDecorateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.',1200);
             });
         }
 })(window.jQuery)
