@@ -120,7 +120,7 @@
             <div id="ctrl-area"  class="col-lg-4-">
                 <div id="ctrl-wrap"></div>
                 <div class="submit-reset-wrap">
-                    <input type="reset" class="reset btn btn-default" value="重置">
+                    <input type="reset" class="reset btn btn-default" value="清空">
                     <input type="submit"  class="submit btn btn-primary" value="确定">
                 </div>
             </div>
@@ -128,19 +128,19 @@
             <div class="clear"></div>
         </div>
     </div>
-    <hr/>
+
     <!--<div id="goodlist-forcheck " class="modal fade  my-modal modle-content"></div>-->
 
 
     <!-- 宝贝列表模态框（Modal） -->
-    <div class="modal fade" id="goods-modal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="goods-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
        <div class="modal-dialog">
            <div class="modal-content">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                    <h4 class="modal-title" class="myModalLabel">宝贝选择</h4>
                </div>
-               <div class="modal-body" id="goodlist-forcheck2" >
+               <div class="modal-body" id="goodslist-forcheck2" >
                    <div class="toolbar">
                        <input type="text" id="keyword-for-search" placeholder="输入宝贝关键字"/>
                        <button href="" class="btn btn-search">搜索</button>
@@ -153,8 +153,8 @@
                        <!--<li class="good-type" id=""></li>-->
                        <!--<li class="good-type" id=""></li>-->
                    <!--</ul>-->
-                   <div class="good-list"></div>
-                   <div class="good-list-pager">
+                   <div id="goods-list"></div>
+                   <div class="goods-list-pager">
                        <a href="javascript:void(0)" class="go-first">|«</a>
                        <a href="javascript:void(0)" class="go-prev">«</a>
                        <!--<a href="" class="page-clicker">1</a>-->
@@ -166,11 +166,11 @@
                        <a href="javascript:void(0)" class="go-last">»|</a>
                        &nbsp;第<i id="now-pagenum">1</i>页/共<i id="total-pagenum">1</i>&nbsp;页
                    </div>
-                   <div id="good-checked-list"></div>
+                   <div id="goods-checked-list"></div>
                </div>
                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goods_list_cls()">取消</button>
-                   <button type="button" class="btn btn-success" data-dismiss="modal" onclick="checked_done(this)" id="checked_done">提交</button>
+                   <button type="button" class="btn btn-default" data-dismiss="modal" id="goods-list-cls">取消</button>
+                   <button type="button" class="btn btn-success" data-dismiss="modal" id="goods-checked-done">提交</button>
                </div>
            </div><!-- /.modal-content -->
        </div><!-- /.modal -->
@@ -182,7 +182,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" class="myModalLabel">模版选择</h4>
+                    <h4 class="modal-title myModalLabel">模版选择</h4>
                 </div>
                 <div class="modal-body" id="molslist-forcheck2" >
                     <div class="molbox" tempid="hdstyle"><b>海带风</b></div>
@@ -303,10 +303,11 @@
         <!--</script>-->
 
         <script type="text/template" id="temp-good-cell">
-            <a class="good-cell" href="javascript:void(0);" onclick="check_it(this)" title="{name}">
+            <a class="good-cell" href="javascript:void(0);"  title="{name}">
                <img src="{picPath}" alt="" class=""/>
                <p class="good-name">{name}</p>
                <p class="good-price">￥{price}</p>
+               <p class="soldoff">已失效</p>
             </a>
         </script>
 
@@ -667,7 +668,8 @@
            <div class="mol-ctrl-wrap" ctrlid="singleGoodList">
                <h2>宝贝列表(每行一个)</h2><hr>
                <div class="show-checked-good"></div>
-               <br><button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+               <br><button class="btn btn-danger show-goods-list" data-toggle="modal" data-target="#goods-modal" >选择宝贝</button><hr>
+               <div class="ctrlArea-goodsChecked-wrap"></div>
                <!--<button class="btn btn-success to-check-good">确定</button>-->
            </div>
         </script>
@@ -676,7 +678,8 @@
            <div class="mol-ctrl-wrap" ctrlid="doubleGoodList">
                <h2>宝贝列表(每行两个)</h2><hr>
                <div class="show-checked-good"></div>
-               <br><button class="btn btn-danger show-good-list" data-toggle="modal" data-target="#goods-modal" onclick="post_ctrl_id(this)">选择宝贝</button>
+               <br><button class="btn btn-danger show-goods-list" data-toggle="modal" data-target="#goods-modal" >选择宝贝</button><hr>
+               <div class="ctrlArea-goodsChecked-wrap"></div>
                <!--<button class="btn btn-success to-check-good2">确定</button>-->
            </div>
         </script>

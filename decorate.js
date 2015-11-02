@@ -7,12 +7,12 @@
 
             var imgRoot='';
             // 后台接口,获取宝贝数据
-            if(typeof getContextPath =='undefined'){
-                var getContextPath=function(){
+            if(typeof getContextPath =='function'){
+                imgRoot='../../';
+            }else{
+                window.getContextPath=function(){
                     return 'http://localhost:3000';
                 }
-            }else{
-                imgRoot='../../';
             }
             var actionSearch = getContextPath() + '/goods/appGoodsList';
             var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
@@ -50,7 +50,7 @@
                 'singleGoodList': '宝贝列表模块<hr>多行, 每行展示一个宝贝,包括图片,文字介绍和价格.<br>具体设置请拖入手机后, 单击手机内该模块',
                 'doubleGoodList': '宝贝列表模块<hr>多行, 每行展示两个宝贝,包括图片,文字介绍和价格.<br>具体设置请拖入手机后, 单击手机内该模块',
             }
-            // 模块默认值映射
+            // 模块默认值映射设定
             var mol_val_dic = {
                 "val-singleGood": {
                     href: '#',
@@ -104,11 +104,11 @@
                     imgsrc4: imgRoot+'img/decorate/area-logo-04.jpg',
                     desc4: 'LOGO AREA<br>妈妈专区',
                 },
-                "val-bannerPic": {imgsrc: "img/decorate/banner.jpg", href: '#'},
-                "val-bb-category": {imgsrc: "img/decorate/masonry.png"},
-                "val-bb-features": {imgsrc: "img/decorate/bb-features.png"},
+                "val-bannerPic": {imgsrc: imgRoot+"img/decorate/banner.jpg", href: '#'},
+                "val-bb-category": {imgsrc: imgRoot+"img/decorate/masonry.png"},
+                "val-bb-features": {imgsrc: imgRoot+"img/decorate/hdnew-features.png"},
                 "val-titleOnly": {title: '推荐宝贝'},
-                "val-wordOnly": {desc: '欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮,欢迎亲多多选购~~~ '},
+                "val-wordOnly": {desc: '欢迎光临小店!<br>本店的所有商品都是真宗境外海淘<br>海关保税仓发货, 优惠多多, 还有包邮<br>欢迎亲多多选购~~~ '},
                 "val-contract": {tel: window.telphoneAccount||'1381396655', wechat: window.wechatAccount||'weixina2017006'},
                 "val-hd-category": {
                     href: '1100',
@@ -141,8 +141,8 @@
                 'bb-category': 2,
                 'hd-category': 2,
                 'hd-brands': 2,
-                'singleGood': 12,
-                'doubleGood': 12,
+                'singleGood': 8,
+                'doubleGood': 8,
                 'slideBox': 1,
                 'singlePic': 6,
                 'bannerPic': 6,
@@ -235,16 +235,41 @@
             };
 
 
-
             // 先打开宝贝选择页面, 然后选择想要赋值给宝贝列表的宝贝们, 假设这些是后台选取的宝贝数据
             var gotGoods = [];
             // 选中的宝贝
             var checkedGoods = [];
+            // 临时选中的宝贝
+            var tempCheckedGoods=[];
+            // 装载默认宝贝
+            $.ajax(actionSearch).always(function (res) {
+                if (res.result) {
+                    gotGoods = res.data;
+                    mol_val_dic['val-singleGoodList']=mol_val_dic['val-doubleGoodList']=gotGoods.slice(0,6);
+                }
+            });
 
-            /* 以下是交互方法 */
+
+            // 选择器预备
+            var tempGoodSell=$('#temp-good-cell').html()
+            var showMobile= $('#show-mobile')
+            var moveBtnHtml='<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+            var submitResetWrap=$('.submit-reset-wrap')
+            var ctrlArea=$('#ctrl-area')
+            var ctrlWrap=$('#ctrl-wrap')
+            var molCtrlWrap
+            var goodsCheckedDone=$('#goods-checked-done')
+            var goodsListCls=$('#goods-list-cls')
+            var allGoodsHref = '<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
+            var goodsCheckedList=$('#goods-checked-list')
+            //var ctrlAreaGoodsCheckedWrap=$('.ctrlArea-goodsChecked-wrap');
+            var goodsList=$('#goods-list')
+            var keywordForSearch=$('#keyword-for-search')
+            var alertAssertive=$('.alert-assertive')
+
             // 写一个通用的alert提示,bootstrap样式
             var bootAlert=function(str, holdTime) {
-                $('.alert-assertive').fadeIn(300, function () {
+                alertAssertive.fadeIn(300, function () {
                     setTimeout((function () {
                         $(this).fadeOut(600);
                     }).bind(this), holdTime || 2400);
@@ -253,23 +278,29 @@
                 });
                 return false;
             };
-
-            $('.alert-assertive').click(function(){
+            alertAssertive.click(function(){
                 $(this).hide();
             });
 
-            $('.main-help>.close').click(function(){
-                $(this).parent().after('<hr>').hide();
-            });
+            //$('.main-help>.close').click(function(){
+            //    $(this).parent().after('<hr>').hide();
+            //});
 
-            // 自动装载模板组合中的各模块, 此函数为模板载入的关键依赖
-            var autoAppendNodes=function(tempid) {
-                //var indexOfGoodlist;
-                if (typeof tempid == 'undefined' || !tempid) {
-                    return false;
-                }
+
+            // 检测当前宝贝列表各个宝贝有效性
+            window.indexCheckedGoods=window.indexCheckedGoods||[{"_id":"5616195a5eb52804daf0f122","goods_id":1002,"picPath":"img/decorate/goods/good32.jpg","href":"","mktprice":110,"price":20,"name":"童装男童男孩小孩纯棉夏天好用"}];
+            var indexCheckedGoodsDic={};
+            window.indexCheckedGoods.forEach(function(v,i){
+                indexCheckedGoodsDic[v.goods_id || v.goodsId]=v;
+            })
+
+
+            /* 以下是交互方法 */
+
+            // 自动装载模板组合中的各模块, 此函数为模板载入的关键依赖--------------------------------------------------------------------------------------------------
+            var autoAppendNodes=function(mols) {
+                mols = mols || [];
                 var html, defaultVals, div, i, k, name, data, mobile = $('#show-mobile')[0];
-                var mols = templates[tempid] || [];
 
                 // 获取模板HTML和默认数据, 并实例化
                 for (i = 0; i < mols.length; i++) {
@@ -279,7 +310,7 @@
                     if (name == 'slideBox') {
                         html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
                     } else if(name.lastIndexOf('GoodList')>-1){
-                        data=data||gotGoods.slice(0, 12);
+                        data=data||gotGoods.slice(0, 8);
                         html=html.replace('{content}',goods_list_instance(data, name.indexOf('single')==0?1:2));
                     } else {
                         for (k in data) {
@@ -288,25 +319,11 @@
                     }
                     // 转为节点, 加上按钮, 插入
                     div = $(html)[0];
-                    div.innerHTML += '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+                    div.innerHTML += moveBtnHtml;
                     mobile.appendChild(div);
                     $(div).data('native', data);
                     mol_count_dic[div.getAttribute('molid')] -= 1;
                 }
-
-                /*自动装载宝贝列表,目前只支持一个页面存在一个宝贝列表
-                    mols.forEach(function (v, i) {
-                        if (v.name.indexOf('GoodList') != -1) {
-                            indexOfGoodlist = i;
-                        }
-                    })
-
-                $('#ctrl-wrap').data('index', indexOfGoodlist);
-                var listType = $('#show-mobile').find('.mol-wrap').eq(indexOfGoodlist).attr('molid') == 'singleGoodList' ? 1 : 2;
-
-                //默认给宝贝列表装载最前的16个宝贝,后端建议默认按热销排行
-                goods_list_instance(gotGoods.slice(0, 16), listType);
-                */
 
                 // 默认隐藏上下调整小按钮
                 $('.go-recycle,.go-up,.go-down').hide();
@@ -331,14 +348,14 @@
                 });
                 $('#ctrl-wrap').empty();
                 //再载入
-                autoAppendNodes(tempid);
+                autoAppendNodes(templates[tempid]);
                 $('.submit-reset-wrap').hide();
                 $('#mols-modal').modal('hide');
                 bootAlert('操作成功',600);
             });
 
             // 拖拽方法(拖入的容器上定义的部分)
-            $('#show-mobile').on('drop', function (e) {
+            showMobile.on('drop', function (e) {
                 // 拖放完成,先取消默认事件
                 event.preventDefault();
                 // 再提取传递的信息
@@ -353,11 +370,11 @@
                 }
                 // 获取模板HTML和默认数据, 将其实例化
                 var html = get_mol(molid);
-                var defaultVals = mol_val_dic['val-' + molid];
+                var defaultVals = mol_val_dic['val-' + molid] || gotGoods.slice(0, 8);
                 if (molid == 'slideBox') {
                     html = html.replace('{imgsrc}', defaultVals[0]['imgsrc']).replace('{href}', defaultVals[0]['href']);
                 } else if(molid.lastIndexOf('GoodList')>-1){
-                    html=html.replace('{content}',goods_list_instance(gotGoods.slice(0, 8), molid.indexOf('single')==0?1:2));
+                    html=html.replace('{content}',goods_list_instance(defaultVals, molid.indexOf('single')==0?1:2));
                 } else {
                     for (var k in defaultVals) {
                         html = html.replace('{' + k + '}', defaultVals[k]);
@@ -365,13 +382,15 @@
                 }
                 // 转为节点, 加上按钮, 插入
                 var div = $(html)[0]; //因为是根据tag上传来的molid来取的html,因此并不支持内部拖动
-                div.innerHTML += '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
+                div.innerHTML += moveBtnHtml;
                 // 判断参照元素是否存在,不存在就直接插入最后面
                 target ? this.insertBefore(div, target) : this.appendChild(div);
                 //更新计数器, 去除插入位置蓝顶标记, 重置右侧编辑区
                 mol_count_dic[div.getAttribute('molid')]--;
                 $('.mol-wrap').removeClass('blue-top');
-                $('#ctrl-wrap')[0].innerHTML = '';
+                ctrlWrap[0].innerHTML = '';
+                //把默认数据先挂上去
+                $(div).data('native',defaultVals);
             })
                 .on('dragenter', function (e) {
                     //console.info('dragenter!');
@@ -426,7 +445,7 @@
                 })
 
             // 上下移动,删除,和点击开始编辑模块数据( 模块交互操作的关键方法! )
-            $('#show-mobile').on('selectstart', '.go-down,.go-up,.go-recycle', function (e) {
+            showMobile.on('selectstart', '.go-down,.go-up,.go-recycle', function (e) {
                 return false;
             })
                 .on('click', '.go-recycle', function (e) {
@@ -434,7 +453,7 @@
                     $(this.parentNode).remove();
                     setTimeout(function(){
                         $('#ctrl-wrap').empty();
-                        $('.submit-reset-wrap').hide();
+                        submitResetWrap.hide();
                     },100)
                     mol_count_dic[this.parentNode.getAttribute('molid')] += 1;
                 })
@@ -469,51 +488,88 @@
                 .on('mouseleave', '.mol-wrap', function (e) {
                     $(this).find('.go-down,.go-up,.go-recycle').hide();
                 })
-                // 选中块开始编辑(自定义模块数据的关键依赖)
+
+                // 选中块开始编辑(自定义模块数据的关键依赖)----------------------------------------------------------------------------------------------------------------
                 .on('click', '.mol-wrap', function (e) {
+                    checkedGoods=[];
+
                     var molid = this.getAttribute('molid');
                     var obj = $(this).data('native') || mol_val_dic['val-' + molid];
                     var key;
-                    //高亮当前选中块
+
+                    // 高亮当前选中块
                     $('.mol-wrap').removeClass('assertive');
                     $(this).addClass('assertive');
-                    //记录下当前编辑节点的索引
+                    // 记录下当前编辑节点的索引
                     $('#ctrl-wrap').data('index', $(this).index() - 3)
                         //载入节点对应的编辑模块
                         .html(get_mol_ctrl(molid));
-                    //编辑模块再载入节点当前数据
+                    // mol-ctrl-wrap有了
+                    molCtrlWrap=$('.mol-ctrl-wrap');
+                    // 编辑模块再载入节点当前数据
                     if (molid == 'slideBox') {
                         var arr = obj;
-                        $('.mol-ctrl-wrap').find('[mapid^=imgsrc]').each(function (i, val) {
+                        molCtrlWrap.find('[mapid^=imgsrc]').each(function (i, val) {
                             arr[i] ? this.value = arr[i].imgsrc || '' : void(0);
                         })
-                        $('.mol-ctrl-wrap').find('[mapid^=href]').each(function (i, val) {
+                        molCtrlWrap.find('[mapid^=href]').each(function (i, val) {
                             arr[i] ? this.value = arr[i].href || '' : void(0);
                         })
+                    }else if(molid.indexOf('GoodList')>-1){
+                        // 正式列表对应当前宝贝列表的数据
+                        checkedGoods=$(this).data('native');
+                        // 再显示到编辑区列表
+                        fillCtrlWrapGoodsList();
                     } else {
-                        $('.mol-ctrl-wrap').find('input,textarea').each(function () {
+                        molCtrlWrap.find('input,textarea').each(function () {
                             key = this.getAttribute('mapid') || 'none';
                             if (obj && obj[key])
-                                this.innerText ? this.innerText = obj[key] : this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
+                                this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
                         });
                     }
-                    (molid.indexOf('GoodList')<0 && mol_val_dic['val-'+molid]) ? $('.submit-reset-wrap').show() : $('.submit-reset-wrap').hide() ;
+                    (molid.indexOf('GoodList')>-1 || mol_val_dic['val-'+molid]) ? submitResetWrap.show() : submitResetWrap.hide() ;
                 })
-            // hide it when init
-            $('.submit-reset-wrap').hide();
 
-            // 右侧编辑确定后处理数据( 自定义数据的关键方法! )
-            $('#ctrl-area')
+
+            // 装载宝贝到编辑区宝贝列表------------------------------------------------------------------------------------------------------------------------------------
+            function fillCtrlWrapGoodsList(){
+                // 准备一个片段
+                var fg = $(document.createDocumentFragment());
+                // 准备一个good个例
+                var good;
+                checkedGoods.forEach(function(obj,i){
+                    good = $(tempGoodSell.replace(/\{name\}/gm, obj['name'])
+                        .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
+                        .replace('{href}', '#/tab/goods/' + obj['goods_id']||obj['goodsId'])
+                        .replace('{price}', obj['price']))
+
+                    good.data('good-info', obj).html(function(i,old){return old+'<i>×</i>'});
+
+
+                    //indexCheckedGoodsDic[ obj['goods_id']||obj['goodsId'] ] || good.addClass('disabled');
+
+
+                    fg.append(good);
+                })
+                $('.ctrlArea-goodsChecked-wrap').empty().append(fg);
+            }
+
+
+
+
+            // 右侧编辑确定后处理数据( 自定义数据的关键方法! )--------------------------------------------------------------------------------------------------------------
+            ctrlArea
                 // 编辑完成
                 .on('click', '.submit', function (e) {
                     var molid = $('.mol-ctrl-wrap').attr('ctrlid'),
                         html = get_mol(molid),
                         key,
                         obj = {},
-                        molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
+                        molobj = showMobile.find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
                     //获取并用键值对保存编辑区数据
                     if (molid.indexOf('GoodList')>-1){
-                        return false;
+                        html=html.replace('{content}',goods_list_instance(checkedGoods, molid.indexOf('single')==0?1:2));
+                        obj=checkedGoods;
                     } else if (molid == 'slideBox') {
                         obj = [];
                         $('.mol-ctrl-wrap').find('[mapid^=imgsrc]').each(function (i, val) {
@@ -523,68 +579,83 @@
                                 obj[i] ={};
                             }
                         })
-                            .end().find('[mapid^=href]').each(function (i, val) {
-                                (typeof(obj[i]) == 'object' && obj[i].imgsrc) ? (obj[i].href = this.value || '') : void(0);
-                            });
+                        .end().find('[mapid^=href]').each(function (i, val) {
+                            (typeof(obj[i]) == 'object' && obj[i].imgsrc) ? (obj[i].href = this.value || '') : void(0);
+                        });
                         //实例化HTML内容
                         html = html.replace('{imgsrc}', obj[0]['imgsrc']).replace('{href}', obj[0]['href']);
                     } else {
                         $(this.parentNode).prev().find('input,textarea').each(function () {
                             key = this.getAttribute('mapid') || 'none';
-                            this.innerText ? obj[key] = this.innerText||'' : obj[key] = this.value.replace(/\n/gm, '<br>')||'';
+                            obj[key] = this.value.replace(/\n/gm, '<br>')||'';
                         });
                         //实例化HTML内容
                         for (var k in obj) {
                             html = html.replace('{' + k + '}', obj[k]);
                         }
                     }
-                    //console.log(obj)
-                    //更新模板默认数据和选中块数据
-                    //mol_val_dic['val-'+molid]=obj;
-
                     //保存原始数据
                     molobj.data('native', obj);
 
                     //别忘了加上按钮
-                    molobj.html($(html)[0].innerHTML + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
+                    molobj.html($(html)[0].innerHTML + moveBtnHtml);
                 })
-                // 打开模态页时,载入goods数组
-                .on('click', '.show-good-list', function () {
-                    goods_list_cls();
-                    fillGoods();
-                }).on('click', '.reset', function (e) {
-                    $('.mol-ctrl-wrap').find('[type=text],[type=number],textarea,[type=file],[type=color]').each(function () {
+                // 重置编辑区数据
+                .on('click', '.reset', function (e) {
+                    var molCtrlWrap=$('.mol-ctrl-wrap');
+                    var molid = molCtrlWrap.attr('ctrlid');
+                    if (molid.indexOf('GoodList')>-1){
+                        $('.ctrlArea-goodsChecked-wrap').empty();
+                        checkedGoods=[];
+                    }
+                    molCtrlWrap.find('[type=text],[type=number],textarea,[type=file],[type=color]').each(function () {
                         this.value = '';
                     })
-                    $('.mol-ctrl-wrap').find('p.uploaded-info,p.upload-ok-tip').remove();
+                    molCtrlWrap.find('p.uploaded-info,p.upload-ok-tip').remove();
                     //$('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index')).data('native',null)
                 })
+
+
 
             /*
              *  宝贝列表 选择宝贝
              *  先打开模态页面,列出供选
-             *  然后点击一个选中一个,加入checkedGoods数组
+             *  然后点击一个选中一个,加入checkedGoods数组-------------------------------------------------------------------------------------------------------------------
              *  最后点确定,直接应用到选中的宝贝列表上
              */
 
-            // 传递给宝贝选择页面,告诉确定按钮, 选中的宝贝应用于singleList还是doubleList模块
-            window.post_ctrl_id=function post_ctrl_id(the) {
-                $('#checked_done').data('for-ctrlid',
-                    $(the).parent().attr('ctrlid')
-                );
-            }
 
-            // 载入到宝贝列表模块
-            window.goods_list_instance=function goods_list_instance(datas, rowCount) {
+            // 选择宝贝按钮,弹出模态窗
+            ctrlWrap.on('click','.show-goods-list',function(){
+                // 传递给宝贝选择页面,告诉确定按钮, 选中的宝贝应用于singleList还是doubleList模块
+                var ctrlid=$(this).parent().attr('ctrlid');
+                goodsCheckedDone.data('for-ctrlid',ctrlid);
+                // 装载新内容
+                fillGoods();
+                // 临时选中列表清空
+                tempCheckedGoods=[];
+                // 装载当前宝贝列表的内容
+                addCheckedGoods(checkedGoods,false,true);
+                //临时置为当前(经过上面2步,已经同步了)
+                //tempCheckedGoods=checkedGoods.slice();
+            })
+
+
+
+            // 装载宝贝到宝贝列表模块----------------------------------------------------------------------------------------------------------------------------------------
+            function goods_list_instance(datas, rowCount) {
                 var html_wrap, html_good, div = $('<div>');
+
                 if (rowCount == 1) {
                     html_wrap = '<div class="" molid="singleGood"></div>';
-                    html_good = '<a class="singleGood-wrap-one"  molid="singleGood" > <img src="{picPath}" ><p>{name}</p><i>￥{price}</i></a>';
+                    html_good = '<a class="singleGood-wrap-one"  > <img src="{picPath}" ><p>{name}</p><i>￥{price}</i></a>';
                 } else {
                     html_wrap = '<div class="" molid="doubleGood"></div>';
                     html_good = '<a class="doubleGood-wrap-one"  > <img src="{picPath}" ><p>{name}</p><i>￥{price}</i></a>';
                 }
+
                 var html, node_good, node_wrap = $(html_wrap)[0];
+
                 datas.forEach(function (obj, i) {
                     html = html_good.replace('{name}', obj['name'])
                         .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
@@ -605,112 +676,137 @@
                         }
                     }
                 });
-                //// 找到要应用的元素
-                //molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
-                // 查看全部宝贝
-                var allGoodsHref = '<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
-                //molobj.html(div.html() + allGoodsHref + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
-                //// 同时保存原始数据
-                //molobj.data('native', datas);
+
                 return div.html() + allGoodsHref;
             }
 
-            //宝贝搜索
-            $('.btn-search').click(function () {
-                fillGoods(1);
-            });
 
-            // 单个选中
-            window.check_it=function check_it(good) {
-                var goodCheckedList = $('#good-checked-list');
-                var goodInfo = $(good).data('good-info');
-                var good_tag = $('<div class="good-tag">');
-                $(good).find('img').clone().appendTo(good_tag);
-                good_tag.append('<i>&times;</i>');
-                good_tag.data('good-info', goodInfo);
-                checkedGoods.push(goodInfo);
-                if (goodCheckedList.children().length < 20) {
-                    goodCheckedList.append(good_tag);
-                } else {
-                    bootAlert('首页推荐宝贝列表最多装载20个, 其余的可点击[全部宝贝]查看');
-                }
+            // 装载宝贝到模态窗下方已选区----------------------------------------------------------------------------------------------------------------------------------------
+            function addCheckedGoods(goodsArr,hasPushed,isTemped){
+                var good_tag,src,img;
+
+                goodsArr.every(function(goodInfo,i){
+                    if (goodsCheckedList.children().length < 12) {
+
+                        // 实例化单个elelment
+                        src = goodInfo['picPath'] || goodInfo['thumbnail'];
+                        img=$('<img>').prop('src',src);
+                        good_tag= $('<div class="good-tag">')
+                            .append(img)
+                            .append('<i>&times;</i>')
+                            .data('good-info', goodInfo);
+
+                        /* 失效标记?
+                        if(!indexCheckedGoodsDic[ goodInfo['goods_id']||goodInfo['goodsId'] ]){
+                            good_tag.addClass('disabled');
+                        }
+                        */
+
+                        if(!hasPushed){
+                            // 登记到队列
+                            isTemped ? tempCheckedGoods.push(goodInfo): checkedGoods.push(goodInfo) ;
+                            // 加入下方显示区
+                            goodsCheckedList.append(good_tag);
+                        }
+
+                        return true;
+
+                    } else {
+                        bootAlert('首页推荐宝贝列表最多装载12个, 其余的可点击[全部宝贝]查看');
+                        return false;
+                    }
+                })
+
             }
 
+
+
+            // 单个选中-------------------------------------------------------------------------------------------------------------------------------------------------------
+            $('#goods-list').on('click','.good-cell',function(){
+                var goodInfo=$(this).data('good-info');
+
+                var checkedIds=tempCheckedGoods.map(function(g){
+                    return g.goods_id || g.goodsId ;
+                })
+
+                var isChecked=checkedIds.indexOf(+(goodInfo['goods_id']||goodInfo['goodsId']))>-1;
+
+                addCheckedGoods([goodInfo],isChecked,true);
+            })
+
+
             // 单个删除
-            $('#good-checked-list').on('click', 'i', function () {
-                var goodInfo = $(this).parent().data('good-info');
-                checkedGoods.forEach(function (obj, i) {
-                    if (obj.goods_id == goodInfo.goods_id) {
-                        checkedGoods.splice(i, 1);
-                    }
-                });
+            function delSingleGoodChecked(eve,isTemp){
+                var index=$(this).parent().index();
+                isTemp ? tempCheckedGoods.splice(index, 1) : checkedGoods.splice(index, 1);
                 $(this).parent().remove();
-            });
+            }
+            goodsCheckedList.on('click', 'i', function(eve){delSingleGoodChecked.bind(this)(eve,true)}); //方法带入事件中时,注意this绑定和默认参数占位
+            ctrlWrap.on('click', '.ctrlArea-goodsChecked-wrap i', delSingleGoodChecked);
+
+
+            window.test=function(){console.table(checkedGoods);console.log(JSON.stringify(checkedGoods))}
+
 
             // 选择宝贝完毕,实例化数据
-            window.checked_done=function checked_done(the) {
+            goodsCheckedDone.click(function(){
+                var the=this;
                 // 找到要应用的元素
                 var molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index'));
-                var count;
-                ($(the).data('for-ctrlid') == 'doubleGoodList') ? count=2 : count=1;
+                var count = ($(the).data('for-ctrlid') == 'doubleGoodList') ? 2 : 1;
                 // 更新宝贝列表内容
-                molobj.html(goods_list_instance(checkedGoods, count) + '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>');
+                molobj.html(goods_list_instance(checkedGoods, count) + moveBtnHtml);
+                // 临时列表转正
+                checkedGoods=tempCheckedGoods.slice();
                 // 同时保存原始数据
                 molobj.data('native', checkedGoods);
                 goods_list_cls();
                 bootAlert('宝贝挑选成功',900);
-            }
+            })
+
 
             // 清空选择的宝贝
-            window.goods_list_cls=function goods_list_cls() {
-                $('#good-checked-list').html('');
-                $('.good-list').html('');
-                checkedGoods = [];
+            function goods_list_cls(isCancel) {
+                goodsCheckedList.empty();
+                goodsList.empty();
+                //checkedGoods = [];  // 这里不置空,每次点击模块的时候置空
+                tempCheckedGoods=[];
+                !isCancel && fillCtrlWrapGoodsList();
             }
+            goodsListCls.click(goods_list_cls);
 
-
-            $.ajax(actionSearch).always(function (res) {
-                if (res.result) {
-                    gotGoods = res.data;
-                }
+            // 关闭模态窗
+            $('#goods-modal .close').click(function(){
+                goods_list_cls(true);
             });
 
 
-            //$.post(actionSearch,{pageSize:20,pageNum:1,keyword:''},function(resp){
-            //    resp=JSON.parse(resp);
-            //    if(resp.result==1){
-            //       window.gotGoods=resp.data;
-            //    }else{
-            //       window.gotGoods=[];
-            //    }
-            //});
 
-            // 装载宝贝到待选页面
-            window.fillGoods=function fillGoods(pageNum) {
-                var keyword = $('#keyword-for-search').val();
-                //$.post(actionSearch,{pageSize:20,pageNum:pageNum||1,keyword:keyword},function(resp){
-                //resp=JSON.parse(resp)
+            // 装载宝贝到模态窗
+            function fillGoods(pageNum) {
+                var keyword = keywordForSearch.val();
                 $.ajax({
                     url: actionSearch,
                     data: {pageSize: 20, pageNum: pageNum || 1, keyword: keyword},
                     type: 'post'
                 }).always(function (resp) {
-                    //console.info(resp)
+                    console.info(resp)
                     if (resp.result == 1) {
-                        var html = $('#temp-good-cell').html();
-                        var goodList = $('.good-list');
                         var good;
                         //先置空
-                        goodList.html('');
+                        goodsList.empty();
+                        //准备一个片段
+                        var fg = $(document.createDocumentFragment());
                         //载入宝贝数组
                         resp.data.forEach(function (obj, i) {
-                            good = $(html.replace(/\{name\}/gm, obj['name'])
+                            good = $(tempGoodSell.replace(/\{name\}/gm, obj['name'])
                                 .replace('{picPath}', obj['thumbnail'] || obj['picPath'])
                                 .replace('{href}', '#/tab/goods/' + obj['goodsId'])
                                 .replace('{price}', obj['price']));
                             good.data('good-info', obj);
-                            goodList.append(good);
+                            fg.append(good);
                         });
+                        goodsList.append(fg)
                         //更新页码显示
                         $('#now-pagenum').text(resp.page.pageNum);
                         $('#total-pagenum').text(resp.page.pageCount);
@@ -720,6 +816,11 @@
                     }
                 })
             }
+
+            // 宝贝搜索
+            $('.btn-search').click(function () {
+                fillGoods(1);
+            });
 
             //下一页
             $('.go-next').click(function () {
@@ -758,6 +859,7 @@
                 fillGoods(totalCount);
             })
 
+
             //图片上传
             $(document).on('submit', '.img-up-form', uploadimg);
             //$(document).on('change', '[type=file]', uploadimg);
@@ -779,8 +881,7 @@
                     }
                 }
                 // h5表单多文件上传
-                var data = new FormData($('.img-up-form')[0]);
-
+                var data = new FormData(document.querySelector('.img-up-form'));
                 $.ajax({
                     url: decorateUploadAction,
                     type: 'POST',
@@ -799,7 +900,7 @@
                         //把回传过来的img-src地址,显示在下方,并保存到该模块对应的data中
                         if (res.srcs) {
                             var molobj = $('#show-mobile').find('.mol-wrap').eq(+$('#ctrl-wrap').data('index')),
-                                m = document.getElementsByClassName('mol-ctrl-wrap')[0],
+                                m = document.querySelector('.mol-ctrl-wrap'),
                                 fg = document.createDocumentFragment(),
                                 p, arr;
                             /*
@@ -824,8 +925,8 @@
                                 //setTimeout(function(){$(this).css('background','');}.bind(this),5600)
                             })
                             molobj.find('img')[0].src = res.srcs[0];
-                            bootAlert('上传成功,图片地址已经依次填入文本框. 也可以手动剪切图片地址, 调整次序.', 2400);
-                            $('.img-up-file')[0].value = null;
+                            bootAlert('上传成功,图片地址已自动依次填入. 也可以手动剪切图片地址, 调整次序.', 2400);
+                            document.querySelector('.img-up-file').value = null;
                         }
                     }
                 });
@@ -891,50 +992,7 @@
                         bootAlert('登陆状态过期,请刷新重新登陆!')
                     }
                 })
-                /*
-                 $.ajax({
-                 url:decorateSaveAction,
-                 data:{shopId:7888996,content:jsonstr},
-                 dataType:'json',
-                 success:function(res){
-                 console.info(res)
-                 }
-                 })
-                 */
             });
-
-			window.init_current=function init_current(mols){   
-                var html, defaultVals, div, i, k, name, data, mobile = $('#show-mobile')[0];
-                var mols = mols || [];
-        
-                // 获取模板HTML和默认数据, 并实例化
-                for (i = 0; i < mols.length; i++) {
-                	if(mols[i].data=='null'){
-                		mols[i].data=null;
-                	}
-                    name = mols[i].name;
-                    data = mols[i].data || mol_val_dic['val-' + name];
-                    html = get_mol(name);
-                    if (name == 'slideBox') {
-                        html = html.replace('{imgsrc}', data[0]['imgsrc']).replace('{href}', data[0]['href']);
-                    } else if(name.lastIndexOf('GoodList')>-1){
-                        data=data||gotGoods.slice(0, 12);
-                        html=html.replace('{content}',goods_list_instance(data, name.indexOf('single')==0?1:2));
-					}else {
-                        for (k in data) {
-                            html = html.replace('{' + k + '}', data[k]);
-                        }
-                    }
-                    // 转为节点, 加上按钮, 插入
-                    div = $(html)[0];
-                    div.innerHTML += '<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
-                    mobile.appendChild(div);
-                    $(div).data('native', data);
-                    mol_count_dic[div.getAttribute('molid')] -= 1;
-                }
-                $('.go-recycle,.go-up,.go-down').hide();
-                return true;
-		}
 
             // 暂存
             $('.temp-save').click(function(){
@@ -973,9 +1031,34 @@
                 (localStorage.hdDecorateHelpKnew==1) ? toggle(): showHelp(true);
             });
 
+            /*
             $(function(){
                 localStorage.hdDecorateTempSaveData && init_current(JSON.parse(localStorage.hdDecorateTempSaveData)) && bootAlert('载入成功!&nbsp;&nbsp;&nbsp;已经恢复上次暂存的布置,&nbsp;亲可以继续编辑.',1200);
             });
+            */
+
+            // 装载目前店铺的装修数据
+            window.init_current=function(data){
+                //更新装修数据中宝贝信息
+                var updated;
+                //var deleted=[];
+                data.forEach(function(mol){
+                    updated=[];
+                    if(mol.name.indexOf('GoodList')>-1){
+                        mol.data.forEach(function(g){
+                            if(indexCheckedGoodsDic[ g.goods_id || g.goodsId]){
+                                updated.push(indexCheckedGoodsDic[ g.goods_id || g.goodsId]) ;
+                            }else{
+                                //(deleted.indexOf(g.goods_id || g.goodsId)<0) && deleted.push(g.goods_id || g.goodsId);
+                            }
+                        });
+                        mol.data=updated;
+                    }
+                })
+                autoAppendNodes(data);
+                //deleted.length && bootAlert(deleted.length +'个宝贝已经失效')
+            }
+            window.bootAlert=bootAlert;
         }
 })(window.jQuery)
 
