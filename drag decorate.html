@@ -21,7 +21,7 @@
          <!--<a class="navbar-brand"  tempid="bbstyle"      href="#">缤纷风</a>-->
          <!--<a class="navbar-brand"  tempid="hdstyle"      href="#">海带风</a>-->
          <a class="navbar-brand"   id="btn-templates"    data-toggle="modal" data-target="#mols-modal"   href="#">选择模版</a>
-         <a class="navbar-brand"   id="goto-shop"       href="http://${shop.domain}.${appSettings.shopDomainPost!}">查看店铺</a>
+         <a class="navbar-brand"   id="goto-shop"   target="_blank"    href="http://${shop.domain}.${appSettings.shopDomainPost!}">查看店铺<div class="imgWrap"><img src="${request.contextPath}/shop/qrcode"><h5>微信扫一扫,在手机中查看</h5></div></a>
          <a class="navbar-brand"  id="btn-help"    target="_blank"     href="decorate.mp4">?&nbsp;教程</a>
 
          <h2 class="tilte">店铺首页装修</h2>
@@ -38,7 +38,7 @@
         <!--<button type="submit" class="btn btn-success btn-save">保存</button>-->
     <!--</form>-->
     </nav>
-    <a href="https://amos.alicdn.com/getcid.aw?spm=2013.1.1000126.5.GDlKYV&amp;v=3&amp;site=cntaobao&amp;groupid=0&amp;s=1&amp;fromid=cntaobaolinmin112233&amp;uid=zjhuafj" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。" data-spm-anchor-id="2013.1.1000126.5"><span>旺旺在线</span></a>
+    <!--<a href="https://amos.alicdn.com/getcid.aw?spm=2013.1.1000126.5.GDlKYV&amp;v=3&amp;site=cntaobao&amp;groupid=0&amp;s=1&amp;fromid=cntaobaolinmin112233&amp;uid=zjhuafj" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。" data-spm-anchor-id="2013.1.1000126.5"><span>旺旺在线</span></a>-->
     <!--<P class="main-help">①点住左侧某个模块;    ②将其拖放到中间的手机中;    ③单击手机中任意模块,在右侧编辑其内容.    (也可以点击预置的风格模板, 自动载入整套组合).<b class="close">我知道了 &times;</b></P>-->
 
     <div id="helps">
@@ -143,7 +143,7 @@
                <div class="modal-body" id="goodslist-forcheck2" >
                    <div class="toolbar">
                        <input type="text" id="keyword-for-search" placeholder="输入宝贝关键字"/>
-                       <button href="" class="btn btn-search">搜索</button>
+                       <button href="" class="btn btn-search" id="goods-search-btn">搜索</button>
                    </div>
                    <!--<ul class="good-type">-->
                        <!--<li class="good-type" id=""></li>-->
@@ -199,8 +199,235 @@
         </div><!-- /.modal -->
     </div>
 
+    <!-- 链接选取模态框（Modal） -->
+    <div class="modal fade" id="links-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" class="myModalLabel">链接小工具</h2>
+                </div>
+
+                <div class="modal-body" id="links-body" >
+
+                    <ul id="links-tab" class="nav nav-tabs">
+                        <li class="active"> <a href="#links-goods"    data-toggle="tab">宝贝链接</a>    </li>
+                        <li class="">       <a href="#links-category" data-toggle="tab">分类链接</a>    </li>
+                        <!--<li class="">       <a href="#links-favor" data-toggle="tab">自定义链接</a>  </li>-->
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Java<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                                <li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+                                <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul>
+
+                    <div id="linksTabContent" class="tab-content">
+
+                        <div class="tab-pane fade in active" id="links-goods">
+                            <div class="toolbar">
+                                <input type="search" id="links-keyword-for-search" placeholder="输入宝贝关键字" class="form-control"/>
+                                <button href="" class="btn btn-success" id="links-goods-search-btn">搜索宝贝</button>
+                            </div>
+
+                            <div id="links-goods-list"></div>
+                            <div class="links-list-pager">
+                                <a href="javascript:void(0)" class="links-go-first">|«</a>
+                                <a href="javascript:void(0)" class="links-go-prev">«</a>
+                                <a href="javascript:void(0)" class="links-go-next">»</a>
+                                <a href="javascript:void(0)" class="links-go-last">»|</a>
+                                &nbsp;第<i id="links-now-pagenum">1</i>页/共<i id="links-total-pagenum">1</i>&nbsp;页
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="links-category">
+                            <div id="category1">
+                                <h5>一级类目</h5>
+                                <div id="category1-list">
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+                                    <div class="category1-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>奶粉</p>
+                                    </div>
+
+                                </div>
+
+                                <div id="category1-ctrl-wrap">
+                                    <button class="btn btn-sm btn-success" id="link-check1-btn">选此分类</button>
+                                    <button class="btn btn-sm btn-default" id="go-category2-btn">在其下级分类挑选</button>
+                                </div>
+
+                            </div>
+                            <div id="category2">
+                                <h5>二级类目</h5>
+                                <div id="category2-list">
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>牛栏</p>
+                                    </div>
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>爱他美</p>
+                                    </div>
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>美素</p>
+                                    </div>
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>科瑞昂</p>
+                                    </div>
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>觅宝</p>
+                                    </div>
+                                    <div class="category2-cell category-cell">
+                                        <img src="http://15968881922.testshop.helpbm.com/img/categories/1103.png"/>
+                                        <p>特福芬</p>
+                                    </div>
+                                </div>
+                                <div id="category2-ctrl-wrap">
+                                    <button class="btn btn-sm btn-success" id="link-check2-btn">选此分类</button>
+                                </div>
+                                <button class="btn btn-sm btn-danger" id="go-category1-btn">返回上级分类</button>
+                            </div>
+                        </div>
+
+                        <!--
+                        <div class="tab-pane fade" id="links-favor">
+                            <p></p>
+                        </div>
+                        -->
+                        <!--
+                        <div class="tab-pane fade" id="jmeter">
+                            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+                        </div>
+                        <div class="tab-pane fade" id="ejb">
+                            <p></p>
+                        </div>
+                        -->
+                    </div>
+
+
+                </div>
+
+                <div class="modal-footer">
+                    这个小工具帮你获取无线页面链接&nbsp;(^_^)
+                </div>
+
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+
+
+    <!-- 图片选取模态框（Modal） -->
+    <div class="modal fade" id="imgs-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" class="myModalLabel">图片小工具</h2>
+                </div>
+                <div class="modal-body" id="imgs-body" >
+
+                    <ul id="imgs-tab" class="nav nav-tabs">
+                        <li class="active"> <a href="#imgs-haidai"    data-toggle="tab">海带图库</a>    </li>
+                        <li class="">       <a href="#imgs-category" data-toggle="tab">个人上传</a>    </li>
+                        <!--<li class="">       <a href="#imgs-favor" data-toggle="tab">自定义链接</a>  </li>-->
+                    </ul>
+
+                    <div id="imgsTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="imgs-haidai">
+                            <div class="toolbar">
+                                <input type="search" id="imgs-keyword-for-search" placeholder="输入图片关键字" class="form-control"/>
+                                <button href="" class="btn btn-success " id="imgs-goods-search-btn">搜索宝贝</button>
+                            </div>
+                            <div id="imgs-haidai-list">
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="imgs-category">
+                            <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                                TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+                        </div>
+                        <!--<div class="tab-pane fade" id="imgs-favor">-->
+                            <!--<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple-->
+                                <!--TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="imgs-list-pager">
+                        <a href="javascript:void(0)" class="imgs-go-first">|«</a>
+                        <a href="javascript:void(0)" class="imgs-go-prev">«</a>
+                        <a href="javascript:void(0)" class="imgs-go-next">»</a>
+                        <a href="javascript:void(0)" class="imgs-go-last">»|</a>
+                        &nbsp;第<i id="imgs-now-pagenum">1</i>页/共<i id="imgs-total-pagenum">1</i>&nbsp;页
+                    </div>
+                    <div id="imgs-tip"></div>
+                </div>
+                <div class="modal-footer">
+                    这个小工具帮你获取图片链接&nbsp;(^_^)
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
     <!-- 提示组件-->
     <div class="alert alert-assertive"></div>
+    <div class="confirm confirm-assertive" id="confirm-main">
+        <p id="confirm-content"></p>
+        <button type="button" class="btn btn-sm btn-default"  id="confirm-cancel">取消</button>
+        <button type="button" class="btn btn-sm btn-success"  id="confirm-ok">确定</button>
+    </div>
 
     <!-- 模板 -->
     <div>
@@ -273,43 +500,36 @@
             </div>
         </script>
 
-        <!--<script type="text/template" id="temp-hd-category">-->
-            <!--<div class="mol-wrap hd-category" molid="hd-category">-->
-                <!--<div class="hd-category-one">-->
-                    <!--<img src="img/decorate/category/hd-category01.jpg" alt=""/>-->
-                    <!--<div class="wrap-r">-->
-                        <!--<h3>奶粉</h3><P>全球奶粉跨境购</P>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="hd-category-one">-->
-                    <!--<img src="img/decorate/category/hd-category02.jpg" alt=""/>-->
-                    <!--<div class="wrap-r">-->
-                        <!--<h3>尿不湿</h3><P>轻松透气一整天</P>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="hd-category-one">-->
-                    <!--<img src="img/decorate/category/hd-category03.jpg" alt=""/>-->
-                    <!--<div class="wrap-r">-->
-                        <!--<h3>辅食</h3><P>肠胃健康妈妈放心</P>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="hd-category-one">-->
-                    <!--<img src="img/decorate/category/hd-category04.jpg" alt=""/>-->
-                    <!--<div class="wrap-r">-->
-                        <!--<h3>保健品</h3><P>全球保健品一站采购</P>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</script>-->
-
-        <script type="text/template" id="temp-good-cell">
-            <a class="good-cell" href="javascript:void(0);"  title="{name}">
-               <img src="{picPath}" alt="" class=""/>
-               <p class="good-name">{name}</p>
-               <p class="good-price">￥{price}</p>
-               <p class="soldoff">已失效</p>
-            </a>
+        <!--
+        <script type="text/template" id="temp-hd-category">
+            <div class="mol-wrap hd-category" molid="hd-category">
+                <div class="hd-category-one">
+                    <img src="img/decorate/category/hd-category01.jpg" alt=""/>
+                    <div class="wrap-r">
+                        <h3>奶粉</h3><P>全球奶粉跨境购</P>
+                    </div>
+                </div>
+                <div class="hd-category-one">
+                    <img src="img/decorate/category/hd-category02.jpg" alt=""/>
+                    <div class="wrap-r">
+                        <h3>尿不湿</h3><P>轻松透气一整天</P>
+                    </div>
+                </div>
+                <div class="hd-category-one">
+                    <img src="img/decorate/category/hd-category03.jpg" alt=""/>
+                    <div class="wrap-r">
+                        <h3>辅食</h3><P>肠胃健康妈妈放心</P>
+                    </div>
+                </div>
+                <div class="hd-category-one">
+                    <img src="img/decorate/category/hd-category04.jpg" alt=""/>
+                    <div class="wrap-r">
+                        <h3>保健品</h3><P>全球保健品一站采购</P>
+                    </div>
+                </div>
+            </div>
         </script>
+        -->
 
         <script type="text/template" id="temp-singleGood">
         <a class="mol-wrap" molid="singleGood" ng-href="{href}">
@@ -354,7 +574,7 @@
 
         <script type="text/template" id="temp-bb-category">
             <a class="mol-wrap" molid="bb-category">
-                <img src="{imgsrc}" alt="">
+                <img src="img/decorate/masonry.png" alt="">
             </a>
         </script>
 
@@ -439,6 +659,26 @@
                <!--<p>每行两个,依次排列,请点击为其选择宝贝.</p>-->
            </div>
         </script>
+
+        <script type="text/template" id="temp-good-cell">
+            <a class="good-cell" href="javascript:void(0);"  title="{name}">
+                <img src="{picPath}" alt="" class=""/>
+                <p class="good-name">{name}</p>
+                <p class="good-price">￥{price}</p>
+                <p class="soldoff">已失效</p>
+            </a>
+        </script>
+
+        <script type="text/template" id="temp-link-good-cell">
+            <a class="link-goods-one" title="{name}">
+                <img src="{imgsrc}" alt="{name}"/>
+                <p>{name}</p>
+                <b>￥{price}</b>
+                <button class="btn btn-sm btn-default link-check-goods">选此链接</button>
+            </a>
+        </script>
+
+
     </div>
 
     <!-- 设置模板的模板 -->
@@ -504,12 +744,12 @@
         </script>
 
         <script type="text/template" id="temp-ctrl-singleGood">
-            <div class="mol-ctrl-wrap" ctrlid="singleGood">
+            <div class="mol-ctrl-wrap" ctrlid="singleGood" role="form">
                 <h2>单个宝贝(自定义)</h2>
-                <hr><label>图片地址：</label><input type="text"   mapid="picPath"     placeholder="输入宝贝图片地址">
-                <br><label>宝贝链接：</label><input type="text"   mapid="href"       placeholder="输入宝贝链接地址">
-                <br><label>宝贝名称：</label><input type="text"   mapid="name"   placeholder="输入宝贝名称">
-                <br><label>宝贝价格：</label><input type="number" mapid="price"      placeholder="输入宝贝价格(纯数字,可精确到2位小数)">
+                <hr><label>图片地址：</label><input type="text"  mapid="picPath" placeholder="输入宝贝图片地址"><button class="btn btn-sm btn-default" data-toggle="modal" data-target="#imgs-modal">选取图片</button>
+                <br><label>宝贝链接：</label><input type="text"  mapid="href"    placeholder="输入宝贝链接地址"><button class="btn btn-sm btn-default" data-toggle="modal" data-target="#links-modal">选取链接</button>
+                <br><label>宝贝名称：</label><input type="text"   mapid="name"   placeholder="输入宝贝名称" readonly>
+                <br><label>宝贝价格：</label><input type="number" mapid="price"  placeholder="输入宝贝价格" readonly>
             </div>
         </script>
 
@@ -616,7 +856,6 @@
            </div>
         </script>
 
-
         <script type="text/template" id="temp-ctrl-tb-category">
             <div class="mol-ctrl-wrap" ctrlid="tb-category">
                 <h2>宝贝类别(默认四大类)</h2>
@@ -652,8 +891,18 @@
         <script type="text/template" id="temp-ctrl-titleOnly">
            <div class="mol-ctrl-wrap" ctrlid="titleOnly">
                <h2>标题模块(自定义)</h2>
-               <hr><label>标题文字：</label><input type="text"   mapid="title"       placeholder="输入标题文字">
+               <hr>
+               <div class="input-group">
+                   <label class="input-group-addon">标题文字：</label>
+                   <input type="text"    mapid="title"    class="form-control"  placeholder="输入标题文字">
+               </div>
+               <!--<div class="input-group">-->
+                   <!--<label class="input-group-addon">标题文字：</label>-->
+                   <!--<input type="text" class="form-control" placeholder="twitterhandle">-->
+                   <!--<a class="btn  btn-default input-group-btn">选择链接</a>-->
+               <!--</div>-->
            </div>
+
         </script>
 
         <script type="text/template" id="temp-ctrl-contract">
