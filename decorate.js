@@ -5,6 +5,1049 @@
         if(!isChrome){
             document.body.innerHTML='<br><h2>&nbsp;您目前的浏览器不是chrome(谷歌)浏览器，不支持相关操作。 请更换浏览器后再进入本页面。<br><br>&nbsp;<a href="https://www.baidu.com/s?ie=UTF-8&wd=chrome">点击此处下载</a></h2>'
         }else {
+            var resp={
+                "result": 1,
+                "data": [
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1101,
+                                "cat_order": 1101,
+                                "cat_path": "0|1100|1101|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "爱他美",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 28,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1102,
+                                "cat_order": 1102,
+                                "cat_path": "0|1100|1102|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "牛栏",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1103,
+                                "cat_order": 1103,
+                                "cat_path": "0|1100|1103|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "喜宝",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1104,
+                                "cat_order": 1104,
+                                "cat_path": "0|1100|1104|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "美素",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1105,
+                                "cat_order": 1105,
+                                "cat_path": "0|1100|1105|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "可瑞康",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1106,
+                                "cat_order": 1106,
+                                "cat_path": "0|1100|1106|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "特福芬",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1107,
+                                "cat_order": 1107,
+                                "cat_path": "0|1100|1107|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "贝拉米",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1108,
+                                "cat_order": 1108,
+                                "cat_path": "0|1100|1108|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "惠氏",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1109,
+                                "cat_order": 1109,
+                                "cat_path": "0|1100|1109|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "智多健",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1110,
+                                "cat_order": 1110,
+                                "cat_path": "0|1100|1110|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "其他品牌",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1111,
+                                "cat_order": 1111,
+                                "cat_path": "0|1100|1111|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "成人奶粉",
+                                "parent_id": 1100,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1100,
+                        "cat_order": 1100,
+                        "cat_path": "0|1100|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "奶粉",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1201,
+                                "cat_order": 1201,
+                                "cat_path": "0|1200|1201|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "花王纸尿裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1202,
+                                "cat_order": 1202,
+                                "cat_path": "0|1200|1202|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "花王拉拉裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1203,
+                                "cat_order": 1203,
+                                "cat_path": "0|1200|1203|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "尤妮佳纸尿裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1204,
+                                "cat_order": 1204,
+                                "cat_path": "0|1200|1204|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "尤妮佳拉拉裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1205,
+                                "cat_order": 1205,
+                                "cat_path": "0|1200|1205|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "大王纸尿裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1206,
+                                "cat_order": 1206,
+                                "cat_path": "0|1200|1206|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "大王拉拉裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1207,
+                                "cat_order": 1207,
+                                "cat_path": "0|1200|1207|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "帮宝适纸尿裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1208,
+                                "cat_order": 1208,
+                                "cat_path": "0|1200|1208|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "帮宝适拉拉裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1209,
+                                "cat_order": 1209,
+                                "cat_path": "0|1200|1209|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "其他品牌尿裤",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1210,
+                                "cat_order": 1210,
+                                "cat_path": "0|1200|1210|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "婴儿湿巾",
+                                "parent_id": 1200,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1200,
+                        "cat_order": 1200,
+                        "cat_path": "0|1200|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "尿裤湿巾",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1301,
+                                "cat_order": 1301,
+                                "cat_path": "0|1300|1301|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "粉/糊",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1302,
+                                "cat_order": 1302,
+                                "cat_path": "0|1300|1302|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "果汁果茶",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1303,
+                                "cat_order": 1303,
+                                "cat_path": "0|1300|1303|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "面条",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1304,
+                                "cat_order": 1304,
+                                "cat_path": "0|1300|1304|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "饼干/磨牙",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1305,
+                                "cat_order": 1305,
+                                "cat_path": "0|1300|1305|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "调味品",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1306,
+                                "cat_order": 1306,
+                                "cat_path": "0|1300|1306|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "果蔬泥",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1307,
+                                "cat_order": 1307,
+                                "cat_path": "0|1300|1307|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "泡芙",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1308,
+                                "cat_order": 1308,
+                                "cat_path": "0|1300|1308|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "溶豆",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1309,
+                                "cat_order": 1309,
+                                "cat_path": "0|1300|1309|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "肉鱼松",
+                                "parent_id": 1300,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1300,
+                        "cat_order": 1300,
+                        "cat_path": "0|1300|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "营养辅食",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1401,
+                                "cat_order": 1401,
+                                "cat_path": "0|1400|1401|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "奶瓶奶嘴",
+                                "parent_id": 1400,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1402,
+                                "cat_order": 1402,
+                                "cat_path": "0|1400|1402|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "餐具",
+                                "parent_id": 1400,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1403,
+                                "cat_order": 1403,
+                                "cat_path": "0|1400|1403|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "杯子",
+                                "parent_id": 1400,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1404,
+                                "cat_order": 1404,
+                                "cat_path": "0|1400|1404|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "牙胶",
+                                "parent_id": 1400,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1400,
+                        "cat_order": 1400,
+                        "cat_path": "0|1400|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "喂养用品",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1501,
+                                "cat_order": 1501,
+                                "cat_path": "0|1500|1501|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "宝宝洗浴",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1502,
+                                "cat_order": 1502,
+                                "cat_path": "0|1500|1502|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "宝宝护肤",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1503,
+                                "cat_order": 1503,
+                                "cat_path": "0|1500|1503|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "牙膏",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1504,
+                                "cat_order": 1504,
+                                "cat_path": "0|1500|1504|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "牙刷",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1505,
+                                "cat_order": 1505,
+                                "cat_path": "0|1500|1505|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "驱蚊",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1506,
+                                "cat_order": 1506,
+                                "cat_path": "0|1500|1506|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "退烧/感冒贴",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1507,
+                                "cat_order": 1507,
+                                "cat_path": "0|1500|1507|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "耳温枪",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1508,
+                                "cat_order": 1508,
+                                "cat_path": "0|1500|1508|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "口罩",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1509,
+                                "cat_order": 1509,
+                                "cat_path": "0|1500|1509|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "清洁/消毒",
+                                "parent_id": 1500,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1500,
+                        "cat_order": 1500,
+                        "cat_path": "0|1500|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "宝宝护理",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1601,
+                                "cat_order": 1601,
+                                "cat_path": "0|1600|1601|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "玩具/童车",
+                                "parent_id": 1600,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1600,
+                        "cat_order": 1600,
+                        "cat_path": "0|1600|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "玩具/童车",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1701,
+                                "cat_order": 1701,
+                                "cat_path": "0|1700|1701|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "澳佳宝",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1702,
+                                "cat_order": 1702,
+                                "cat_path": "0|1700|1702|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "Salus",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1703,
+                                "cat_order": 1703,
+                                "cat_path": "0|1700|1703|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "Swisse",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1704,
+                                "cat_order": 1704,
+                                "cat_path": "0|1700|1704|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "童年时光",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1705,
+                                "cat_order": 1705,
+                                "cat_path": "0|1700|1705|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "Femibion",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1706,
+                                "cat_order": 1706,
+                                "cat_path": "0|1700|1706|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "Osteocare",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1707,
+                                "cat_order": 1707,
+                                "cat_path": "0|1700|1707|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "其他品牌",
+                                "parent_id": 1700,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1700,
+                        "cat_order": 1700,
+                        "cat_path": "0|1700|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "保健品",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1801,
+                                "cat_order": 1801,
+                                "cat_path": "0|1800|1801|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "休闲零食",
+                                "parent_id": 1800,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1802,
+                                "cat_order": 1802,
+                                "cat_path": "0|1800|1802|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "饮品",
+                                "parent_id": 1800,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1800,
+                        "cat_order": 1800,
+                        "cat_path": "0|1800|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "进口食品",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    },
+                    {
+                        "Items": [
+                            {
+                                "cat_id": 1901,
+                                "cat_order": 1901,
+                                "cat_path": "0|1900|1901|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "孕妇护肤品",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1902,
+                                "cat_order": 1902,
+                                "cat_path": "0|1900|1902|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "授乳枕",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1903,
+                                "cat_order": 1903,
+                                "cat_path": "0|1900|1903|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "面部护肤",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1904,
+                                "cat_order": 1904,
+                                "cat_path": "0|1900|1904|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "美发",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1905,
+                                "cat_order": 1905,
+                                "cat_path": "0|1900|1905|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "卫生巾",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            },
+                            {
+                                "cat_id": 1906,
+                                "cat_order": 1906,
+                                "cat_path": "0|1900|1906|",
+                                "children": [ ],
+                                "goods_count": 0,
+                                "hasChildren": false,
+                                "image": "",
+                                "list_show": "1",
+                                "name": "身体护理",
+                                "parent_id": 1900,
+                                "state": "",
+                                "type_id": 0,
+                                "type_name": ""
+                            }
+                        ],
+                        "cat_id": 1900,
+                        "cat_order": 1900,
+                        "cat_path": "0|1900|",
+                        "children": [ ],
+                        "goods_count": 0,
+                        "hasChildren": false,
+                        "image": "",
+                        "list_show": "1",
+                        "name": "成人日化",
+                        "parent_id": 0,
+                        "state": "",
+                        "type_id": 0,
+                        "type_name": ""
+                    }
+                ]
+            }
 
             var imgRoot='';
             // 后台接口,获取宝贝数据
@@ -293,29 +1336,40 @@
             var category2CtrlWrap=$('#category2-ctrl-wrap')
 
             linksModal.on('click','.category1-cell',function(){
-                category1CtrlWrap.show();
+                category1CtrlWrap.show().data('checkedItem',$(this).data('initData'));
             })
-            .on('click','.category1-cell',function(){
-                    category1CtrlWrap.show();
-                })
             .on('click','.category2-cell',function(){
-                    category2CtrlWrap.show();
+                category2CtrlWrap.show().data('checkedItem',$(this).data('initData'));
             })
 
             linkCheck1Btn.on('click',function(){
+
+                var checkedItem=$(this).parent().data('checkedItem')
+                var href='/#/category/'+checkedItem.cat_id;
+                var target=ctrlWrap.data('linkFor');
+                target.find('[mapid=href]').val(href);
+
                 category1CtrlWrap.hide();
                 linksModal.modal('hide');
+                bootAlert('链接选取成功, 已经自动填入',980)
             })
             linkCheck2Btn.on('click',function(){
+
+                var checkedItem=$(this).parent().data('checkedItem')
+                var href='/#/category/'+checkedItem.cat_id;
+                var target=ctrlWrap.data('linkFor');
+                target.find('[mapid=href]').val(href);
+
                 category2CtrlWrap.hide();
-                category2.hide();
-                category1.show();
+                category2.hide(),category1.show();
                 linksModal.modal('hide');
+                bootAlert('链接选取成功, 已经自动填入',980)
             })
             goCategory2Btn.on('click',function(){
                 category1CtrlWrap.hide();
                 category1.hide();
                 category2.fadeIn();
+                linkFillItems(2);
             })
             goCategory1Btn.on('click',function(){
                 category2CtrlWrap.hide();
@@ -334,6 +1388,7 @@
                 });
                 return false;
             };
+
             alertAssertive.click(function(){
                 $(this).hide();
             });
@@ -410,10 +1465,10 @@
 
             // cell实例工厂
             var cellFactory=function(htmlTempId,initData,mapDic){
-                var html=document.getElementById(htmlTempId).innerHTML;
+                var html=document.getElementById('temp-'+htmlTempId).innerHTML;
                 if(mapDic){
                     for(var n in mapDic){
-                        html=html.replace(new RegExp('\{'+n+'\}','gm'),initData[mapDic[n]])
+                        html=html.replace( new RegExp('\{'+n+'\}','gm'), String( initData[mapDic[n]] ) )
                     }
                 }else{
                     html=html.replace(/\{[^\}]+\}/gm,function(m){
@@ -421,7 +1476,30 @@
                     })
                     //html.replace(/\{\w+\}/gm,function(m){console.info(m);})
                 }
-                return $(html).data('dataNative',initData);
+                return $(html).data('initData',initData);
+            }
+
+            // 装载链接分类列表
+            var linkFillItems=function(grade){
+                if(grade==1){
+                    categoryList1.empty()
+                    var $fg=$(document.createDocumentFragment());
+                    //var mapDic={name:'name',imgsrc:'picPath',price:'price'}
+                    resp.data.forEach(function(item){
+                        $fg.append(cellFactory('link-item-cell',item).addClass('category1-cell'))
+                    })
+                    categoryList1.append($fg)
+                }else{
+                    categoryList2.empty()
+                    var checkedItem=category1CtrlWrap.data('checkedItem')
+                    var $fg=$(document.createDocumentFragment());
+                    //var mapDic={name:'name',imgsrc:'picPath',price:'price'}
+                    checkedItem.Items.forEach(function(item){
+                        $fg.append(cellFactory('link-item-cell',item).addClass('category2-cell'))
+                    })
+                    categoryList2.append($fg)
+                }
+
             }
 
             // 装载链接宝贝列表
@@ -431,7 +1509,7 @@
                     var $fg=$(document.createDocumentFragment());
                     var mapDic={name:'name',imgsrc:'picPath',price:'price'}
                     gotGoods.slice(0,5).forEach(function(g){
-                        $fg.append(cellFactory('temp-link-good-cell',g,mapDic))
+                        $fg.append(cellFactory('link-good-cell',g,mapDic))
                     });
                     linksGoodsList.append($fg)
                 }
@@ -455,6 +1533,7 @@
             ctrlWrap.on('click',linkSelectBtn,function(){
                 linksFillGoods(1);
                 ctrlWrap.data('linkFor', $(this).parent() );
+                linkFillItems(1);
             })
 
             // 链接宝贝搜索
@@ -501,15 +1580,15 @@
 
             // 选中宝贝链接
             $('#links-goods-list').on('click','.link-check-goods',function(){
-                var dataNative=$(this).parent().data('dataNative')
-                var href='/#/goods/'+dataNative.goods_id;
+                var initData=$(this).parent().data('initData')
+                var href='/#/goods/'+initData.goods_id;
                 var target=ctrlWrap.data('linkFor');
 
-                //for(var n in dataNative){
-                //    target.find('[mapid='+n+']').val(dataNative[n])
+                //for(var n in initData){
+                //    target.find('[mapid='+n+']').val(initData[n])
                 //}
-                target.find('[mapid=name]').val(dataNative.name);
-                target.find('[mapid=price]').val(dataNative.price);
+                target.find('[mapid=name]').val(initData.name);
+                target.find('[mapid=price]').val(initData.price);
                 target.find('[mapid=href]').val(href);
 
                 linksModal.modal('hide');
@@ -1015,7 +2094,7 @@
                                 this.value = (obj[key] + '').replace(/\<br\>/gm, '\n');
                         });
                     }
-                    (molid.indexOf('GoodList')>-1 || mol_val_dic['val-'+molid]) ? submitResetWrap.show() : submitResetWrap.hide() ;
+                    (molid.indexOf('GoodList')>-1 || molid.indexOf('ategory')>-1 || mol_val_dic['val-'+molid]) ? submitResetWrap.show() : submitResetWrap.hide() ;
                 })
 
 
