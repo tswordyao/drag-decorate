@@ -1061,6 +1061,7 @@
             var actionSearch = getContextPath() + '/goods/appGoodsList';
             var decorateSaveAction = getContextPath() + '/goods/appSaveDecoration';
             var decorateUploadAction = getContextPath() + '/goods/appUploadShopPic';
+            var decorateUploadAction2 = getContextPath() + '/uploadImg'//'/multerUpload';
             var decorateContentAction = getContextPath() + '/goods/appShopDecoration';
 
             // 模块映射
@@ -1295,87 +1296,46 @@
 
             // 选择器预备
             var molsModal=$('#mols-modal')
-            var linksModal=$('#links-modal')
-            var molTip=$('.mol-tip')
-            var tempGoodSell=$('#temp-good-cell').html()
-            var showMobile= $('#show-mobile')
-            var moveBtnHtml='<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>';
-            var submitResetWrap=$('.submit-reset-wrap')
-            var ctrlArea=$('#ctrl-area')
-            var ctrlWrap=$('#ctrl-wrap')
-            var molCtrlWrap
-            var goodsCheckedDone=$('#goods-checked-done')
-            var goodsListCls=$('#goods-list-cls')
-            var allGoodsHref = '<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
-            var goodsCheckedList=$('#goods-checked-list')
-            var goodsList=$('#goods-list')
-            var keywordForSearch=$('#keyword-for-search')
-            var linksKeywordForSearch=$('#links-keyword-for-search')
-            var maskMain=$('.mask-main')
-            var mainDiv=$('#main')
-            var helps=$('#helps')
-            var btnHelp=$('#btn-help')
-            var neverAgain=$('#never-again')
-            var confirmMain=$('#confirm-main')
-            var confirmContent=$('#confirm-content')
-            var confirmCancel=$('#confirm-cancel')
-            var confirmOk=$('#confirm-ok')
-            var confirmEvent={str:'',handleEvent:function(){}}
-            var alertAssertive=$('.alert-assertive')
-            var linksGoodsList=$('#links-goods-list')
-            var linkSelectBtn='[data-target=#links-modal]'
-            var category1=$('#category1')
-            var category2=$('#category2')
-            var categoryList1=$('#category1-list')
-            var categoryList2=$('#category2-list')
-            var linkCheck1Btn= $('#link-check1-btn')
-            var linkCheck2Btn= $('#link-check2-btn')
-            var goCategory1Btn=$('#go-category1-btn')
-            var goCategory2Btn=$('#go-category2-btn')
-            var category1CtrlWrap=$('#category1-ctrl-wrap')
-            var category2CtrlWrap=$('#category2-ctrl-wrap')
+             ,  linksModal=$('#links-modal')
+             ,  molTip=$('.mol-tip')
+             ,  tempGoodSell=$('#temp-good-cell').html()
+             ,  showMobile= $('#show-mobile')
+             ,  moveBtnHtml='<a class="go-recycle">删除</a><a class="go-up">移上</a><a class="go-down">移下</a>'
+             ,  submitResetWrap=$('.submit-reset-wrap')
+             ,  ctrlArea=$('#ctrl-area')
+             ,  ctrlWrap=$('#ctrl-wrap')
+             ,  molCtrlWrap
+             ,  goodsCheckedDone=$('#goods-checked-done')
+             ,  goodsListCls=$('#goods-list-cls')
+             ,  allGoodsHref = '<a class="all-goods-href">查看所有宝贝&nbsp;&gt;&gt;</a>'
+             ,  goodsCheckedList=$('#goods-checked-list')
+             ,  goodsList=$('#goods-list')
+             ,  keywordForSearch=$('#keyword-for-search')
+             ,  linksKeywordForSearch=$('#links-keyword-for-search')
+             ,  maskMain=$('.mask-main')
+             ,  mainDiv=$('#main')
+             ,  helps=$('#helps')
+             ,  btnHelp=$('#btn-help')
+             ,  neverAgain=$('#never-again')
+             ,  confirmMain=$('#confirm-main')
+             ,  confirmContent=$('#confirm-content')
+             ,  confirmCancel=$('#confirm-cancel')
+             ,  confirmOk=$('#confirm-ok')
+             ,  confirmEvent={str:'',handleEvent:function(){}}
+             ,  alertAssertive=$('.alert-assertive')
+             ,  linksGoodsList=$('#links-goods-list')
+             ,  linkSelectBtn='[data-target=#links-modal]'
+             ,  category1=$('#category1')
+             ,  category2=$('#category2')
+             ,  categoryList1=$('#category1-list')
+             ,  categoryList2=$('#category2-list')
+             ,  linkCheck1Btn= $('#link-check1-btn')
+             ,  linkCheck2Btn= $('#link-check2-btn')
+             ,  goCategory1Btn=$('#go-category1-btn')
+             ,  goCategory2Btn=$('#go-category2-btn')
+             ,  category1CtrlWrap=$('#category1-ctrl-wrap')
+             ,  category2CtrlWrap=$('#category2-ctrl-wrap')
 
-            linksModal.on('click','.category1-cell',function(){
-                category1CtrlWrap.show().data('checkedItem',$(this).data('initData'));
-            })
-            .on('click','.category2-cell',function(){
-                category2CtrlWrap.show().data('checkedItem',$(this).data('initData'));
-            })
-
-            linkCheck1Btn.on('click',function(){
-
-                var checkedItem=$(this).parent().data('checkedItem')
-                var href='/#/category/'+checkedItem.cat_id;
-                var target=ctrlWrap.data('linkFor');
-                target.find('[mapid=href]').val(href);
-
-                category1CtrlWrap.hide();
-                linksModal.modal('hide');
-                bootAlert('链接选取成功, 已经自动填入',980)
-            })
-            linkCheck2Btn.on('click',function(){
-
-                var checkedItem=$(this).parent().data('checkedItem')
-                var href='/#/category/'+checkedItem.cat_id;
-                var target=ctrlWrap.data('linkFor');
-                target.find('[mapid=href]').val(href);
-
-                category2CtrlWrap.hide();
-                category2.hide(),category1.show();
-                linksModal.modal('hide');
-                bootAlert('链接选取成功, 已经自动填入',980)
-            })
-            goCategory2Btn.on('click',function(){
-                category1CtrlWrap.hide();
-                category1.hide();
-                category2.fadeIn();
-                linkFillItems(2);
-            })
-            goCategory1Btn.on('click',function(){
-                category2CtrlWrap.hide();
-                category2.hide();
-                category1.fadeIn();
-            })
 
             // 写一个通用的alert提示,bootstrap样式
             var bootAlert=function(str, holdTime) {
@@ -1388,11 +1348,9 @@
                 });
                 return false;
             };
-
             alertAssertive.click(function(){
                 $(this).hide();
             });
-
             //$('.main-help>.close').click(function(){
             //    $(this).parent().after('<hr>').hide();
             //});
@@ -1407,7 +1365,6 @@
                 confirmOk[0].addEventListener('click',confirmEvent,false)
             }
             */
-
             /*IE8 confirm
             var bootConfirm=function(str,fn){
                 var maskMain=$('<div>').css({width: '100%', height: '100%', background: '#222', position: 'fixed', top: 0, left: 0, opacity: 0.7, 'z-index': 18881}).appendTo('body')
@@ -1421,7 +1378,6 @@
                 confirmOk[0].addEventListener('click',callback,false)
             }
             */
-
             /*jquery one*/
             var bootConfirm=function(str,fn){
                 confirmContent.html(str.replace(/\n/gm,'<br>'));
@@ -1430,6 +1386,16 @@
                     confirmMain.hide() && maskMain.hide();
                     fn();
                 });
+            }
+
+            // 定时变色
+            $.fn.pinkFlash=function(hold){
+                var the=$(this);
+                var old=the.css('background')
+                the.css('background','#fbb');
+                setTimeout(function(){
+                    the.css('background',old||'#fff')
+                },hold||1800)
             }
 
             // 关闭帮助 与 显示帮助
@@ -1486,6 +1452,7 @@
                     var $fg=$(document.createDocumentFragment());
                     //var mapDic={name:'name',imgsrc:'picPath',price:'price'}
                     resp.data.forEach(function(item){
+                        item.picPath=imgRoot+'img/decorate/categories/'+  (item.cat_id+1) +'.png';
                         $fg.append(cellFactory('link-item-cell',item).addClass('category1-cell'))
                     })
                     categoryList1.append($fg)
@@ -1495,11 +1462,85 @@
                     var $fg=$(document.createDocumentFragment());
                     //var mapDic={name:'name',imgsrc:'picPath',price:'price'}
                     checkedItem.Items.forEach(function(item){
+                        item.picPath=imgRoot+'img/decorate/categories/'+item.cat_id+'.png';
                         $fg.append(cellFactory('link-item-cell',item).addClass('category2-cell'))
                     })
                     categoryList2.append($fg)
                 }
 
+            }
+
+            linksModal.on('click','.category1-cell',function(){
+                category1CtrlWrap.show().data('checkedItem',$(this).data('initData'));
+            })
+                .on('click','.category2-cell',function(){
+                    category2CtrlWrap.show().data('checkedItem',$(this).data('initData'));
+                })
+
+            linkCheck1Btn.on('click',function(){
+                var checkedItem=$(this).parent().data('checkedItem')
+                var href='#/tab/search/'+checkedItem.cat_id;
+                var imgsrc=checkedItem.picPath;
+                var desc=checkedItem.name;
+                var target=ctrlWrap.data('linkFor');
+                target.find('[mapid^=href]').val(href).pinkFlash();
+                target.find('[mapid^=desc]').val(desc).pinkFlash();
+                category1CtrlWrap.hide();
+                linksModal.modal('hide');
+                bootAlert('链接选取成功, 已经自动填入',980)
+            })
+            linkCheck2Btn.on('click',function(){
+                var checkedItem=$(this).parent().data('checkedItem')
+                var href='#/categories/'+checkedItem.cat_id;
+                var imgsrc=checkedItem.picPath;
+                var desc=checkedItem.name;
+                var target=ctrlWrap.data('linkFor');
+                target.find('[mapid^=href]').val(href).pinkFlash();
+                target.find('[mapid^=desc]').val(desc).pinkFlash();
+                category2CtrlWrap.hide();
+                category2.hide(),category1.show();
+                linksModal.modal('hide');
+                bootAlert('链接选取成功, 已经自动填入',980)
+            })
+            goCategory2Btn.on('click',function(){
+                category1CtrlWrap.hide();
+                category1.hide();
+                category2.fadeIn();
+                linkFillItems(2);
+            })
+            goCategory1Btn.on('click',function(){
+                category2CtrlWrap.hide();
+                category2.hide();
+                category1.fadeIn();
+            })
+
+            category1CtrlWrap[0].onclick=category2CtrlWrap[0].onclick=function(){$(this).hide()}
+
+            //模态窗中上传图片
+            var uploadImgCrop=function(){
+                var data = new FormData();
+                var files=document.querySelector('#crop-up-img').files;
+                var i=files.length;
+                while (i--) {
+                    data.append('cropUpImg', files[i]);
+                }
+                $.ajax({
+                    url: decorateUploadAction,
+                    type: 'POST',
+                    data: data,
+                    dataType: 'JSON',
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        if (res.result == 1) {
+                            $('#img-up-result img')[0].src = $('#img-up-result p')[0].innerHTML = res.data[0];
+                        } else {
+                            console.info(res);
+                        }
+                    }
+                });
+                return false;
             }
 
             // 装载链接宝贝列表
@@ -1581,15 +1622,15 @@
             // 选中宝贝链接
             $('#links-goods-list').on('click','.link-check-goods',function(){
                 var initData=$(this).parent().data('initData')
-                var href='/#/goods/'+initData.goods_id;
+                var href='#/goods/'+initData.goods_id;
                 var target=ctrlWrap.data('linkFor');
 
                 //for(var n in initData){
                 //    target.find('[mapid='+n+']').val(initData[n])
                 //}
-                target.find('[mapid=name]').val(initData.name);
-                target.find('[mapid=price]').val(initData.price);
-                target.find('[mapid=href]').val(href);
+                target.find('[mapid^=name]').val(initData.name);
+                target.find('[mapid^=price]').val(initData.price);
+                target.find('[mapid^=href]').val(href).focus();
 
                 linksModal.modal('hide');
                 bootAlert('链接选取成功, 已经自动填入',980)
@@ -1775,7 +1816,7 @@
             }
 
             //图片上传
-            var uploadimg=function () {
+            var uploadImg=function () {
                 // 图片检测
                 var files = $('.img-up-file')[0].files;
                 if (!files.length) {
@@ -2160,8 +2201,6 @@
                 })
 
 
-
-
             /*
              *  宝贝列表 选择宝贝
              *  先打开模态页面,列出供选
@@ -2275,8 +2314,9 @@
             })
 
             //图片上传
-            $(document).on('submit', '.img-up-form', uploadimg);
-            //$(document).on('change', '[type=file]', uploadimg);
+            $(document).on('submit', '.img-up-form', uploadImg);
+            //$(document).on('change', '[type=file]', uploadImg);
+            $('#crop-up-img').on('change', uploadImgCrop);
 
             // 查看次数限制现状
             $('#btn-count').click(function () {

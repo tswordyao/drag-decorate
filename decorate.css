@@ -279,10 +279,10 @@ hr{border-color: #ccc!important;}
     padding: 5px 15px 5px 10px;
 }
 
-.mol-ctrl-wrap>input[type=text],.mol-ctrl-wrap>input[type=number],.mol-ctrl-wrap>input[type=file]{
+.mol-ctrl-wrap input[type=text],.mol-ctrl-wrap input[type=number],.mol-ctrl-wrap input[type=file]{
     display: inline-block;
     height:32px;
-    width:275px;
+    width:270px;
     padding: 2px 5px;
     margin:5px;
     border-radius:3px;
@@ -416,7 +416,10 @@ a.doubleGood-wrap-one{
 #goods-modal>.modal-dialog{
     width:960px;
 }
-#goodslist-forcheck2 .toolbar>input{
+.toolbar{
+    margin-top: 5px;
+}
+.toolbar>input{
     margin: 5px 10px;
     height: 30px;
     width:240px;
@@ -515,7 +518,7 @@ a.doubleGood-wrap-one{
 .links-list-pager{
     margin-bottom: 5px;
 }
-.goods-list-pager>a,.links-list-pager>a{
+.goods-list-pager>a,.links-list-pager>a,.imgs-list-pager>a{
     display: inline-block;
     border: 1px solid gray;
     width: 28px;
@@ -1133,7 +1136,7 @@ nav.decorate-navbar>.navbar-header{
     border-radius:5px ;
     box-shadow: 0 0 8px rgba(253,188,33,0.6);
 }
-#links-goods-list,#links-category{
+#links-goods-list,#links-category,#imgs-haidai-list{
     height: 380px;
     overflow: hidden;
 }
@@ -1188,6 +1191,9 @@ nav.decorate-navbar>.navbar-header{
     margin:15px 2px;
     width:90px;
 }
+.category-cell :hover{
+    cursor: pointer;
+}
 .category-cell img{
     width:95%;
     margin: 0 auto;
@@ -1199,11 +1205,59 @@ nav.decorate-navbar>.navbar-header{
 }
 #category1-ctrl-wrap,#category2-ctrl-wrap{
     position: absolute;
-    top: 120px;
-    left: 235px;
-    width: 272px;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 798px;
     display: none;
-    padding: 30px 0;
     text-align: center;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,0);
+    z-index: 18882;
+    padding-top: 172px;
+}
+
+#category1-ctrl-wrap button, #category2-ctrl-wrap button{
+    border: 15px solid gray;
+    margin-right: -10px;
+}
+
+#category1-ctrl-wrap i, #category2-ctrl-wrap i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background: #fff;
+    color:#000;
+}
+/*crop*/
+.upload-beauty{
+    position: relative;
+}
+.upload-override{
+    opacity: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.img-up-result{
+    margin: 10px 0;
+}
+.img-up-result img {
+    min-width: 620px;
+    max-height: 360px;
+}
+.img-up-result p{
+    line-height: 32px;
+    min-height: 32px;
+    color:maroon;
+}
+#imgs-haidai-list .img-wrap{
+    width:220px;
+    height: 170px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 15px;
+    background: #ccc;
 }
